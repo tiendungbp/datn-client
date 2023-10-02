@@ -1,18 +1,21 @@
-import { faArrowPointer, faArrowRight, faBellConcierge, faCalendar, faCircleNotch, faEnvelope, faLocationDot, faPeopleGroup, faPhone, faTooth, faTrophy, faUserTag } from '@fortawesome/free-solid-svg-icons'
+import { faArrowPointer, faArrowRight, faBellConcierge, faCalendar, faCircleNotch, faEnvelope, faLocationDot, faPeopleGroup, faPhone, faQuoteLeft, faTooth, faTrophy, faUserTag, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Banner from '../../../asset/image/banner.png'
+import { Rate } from 'antd'
 
 
 const slides = [
-  { id: 1, content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
-  { id: 2, content: "Slide 2" },
-  { id: 3, content: "Slide 3" },
-  { id: 4, content: "Slide 4" },
-  { id: 5, content: "Slide 5" },
-  { id: 6, content: "Slide 6" },
+  { id: 1, name: "Tran Thi Nga", img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg", content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
+  { id: 2, name: "Tran Thi Nga", img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg", content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
+  { id: 3, name: "Tran Thi Nga", img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg", content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
+  { id: 4, name: "Tran Thi Nga", img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg", content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
+  { id: 5, name: "Tran Thi Nga", img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg", content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
+  { id: 6, name: "Tran Thi Nga", img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg", content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
+  { id: 7, name: "Tran Thi Nga", img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg", content: "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng." },
+
 ];
 
 type dataWatchDetailDoctorProp = {
@@ -27,7 +30,7 @@ type dataWatchDetailDoctorProp = {
 const dataWatchDetailDoctor: dataWatchDetailDoctorProp[] = [
   {
     name: 'Hà Mai Thảo',
-    image: 'https://i.pinimg.com/564x/1b/52/fd/1b52fd81c2282b432b85dc6a8a01f13d.jpg',
+    image: 'https://w7.pngwing.com/pngs/488/261/png-transparent-female-doctor-3d-illustration-physician-nursing-health-care-hospital-the-doctor-miscellaneous-image-file-formats-service-thumbnail.png',
     position: 'Bác sĩ nha khoa',
     description: 'Bác sĩ Hà Mai Thảo, chuyên về nha khoa. Cô ấy có trình độ cao với bằng cử nhân và thạc sĩ Nha khoa từ Đại học Y Khoa Quốc gia. Là là một chuyên gia đáng tin cậy trong lĩnh vực nha khoa, luôn sẵn sàng hỗ trợ và giúp đỡ bạn có một nụ cười khỏe đẹp và tự tin.',
     experience: 'Đạt 3 năm thành tựu trong lĩnh vực trồng răng',
@@ -166,7 +169,7 @@ const Home = () => {
                 <h3 className='font-bold text-[1.2rem]'>Niềng răng</h3>
               </div>
               <p className='line-clamp-3 overflow-ellipsis leading-[1.8rem]'>Niềng răng không chỉ là việc thẳng hàng răng mà còn là hành trình thú vị để hoàn thiện nụ cười ...Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức năng...</p>
-              <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+              <Link to="/detailServices" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
             </div>
             <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
               <div className='flex items-center gap-4 '>
@@ -238,79 +241,79 @@ const Home = () => {
                   isChooseDoctor === i && (
                     <div key={i} className='p-4 h-[18rem] relative flex justify-center shadow-2xl bg-[#DCEDFF] w-full max-w-[32rem] rounded-xl' >
                       <div className='  absolute bottom-0 h-[120%] cursor-pointer '>
-                      <motion.img src={item.image} alt={item.name} className='h-full object-cover' 
-                        onClick={() => setIsShoChooseListDoctor(!isShowChooseListDoctor)}
-                        whileTap={{scale: .9}}
-                      />                     
-                    </div>
+                        <motion.img src={item.image} alt={item.name} className='h-full object-cover'
+                          onClick={() => setIsShoChooseListDoctor(!isShowChooseListDoctor)}
+                          whileTap={{ scale: .9 }}
+                        />
+                      </div>
                     </div>
                   )
                 )
               }
               {
-                        isShowChooseListDoctor ? (
-                          <motion.div className='absolute bg-white box-shadow cursor-pointer rounded-xl py-4 px-8 w-[20rem] top-1/2 translate-y-[-50%] left-6 md:left-1/2 md:-translate-x-1/2'
-                            initial={{opacity: 0, scale: 0.8}}
-                            animate={{opacity: 1, scale: 1}}
-                            transition={{duration: 0.5, type:"spring", bounce:0.2 }}
-                            whileTap={{scale: 0.9}}
-                            onClick={() => setIsShoChooseListDoctor(false)}
-                          >
-                              <div className='bg-white box-shadow py-2 px-3 -translate-x-1/2 -translate-y-1/2 rounded-lg top-0 left-0 absolute'>
-                                <FontAwesomeIcon icon={faTooth} className='text-3xl text-blue-500'/>
-                              </div>
-                              {
-                                dataWatchDetailDoctor.map((item, index) => isChooseDoctor === index && (
-                                  <div className=''>
-                                    <h1 className='font-bold text-[#143566] text-[1.2rem]'>{item.name}</h1>
-                                    <span className='text-[0.9rem] text-gray-500'>{item.position}</span>
-                                  </div>
-                                ))
-                              }
-                              <div className='mt-4'>
-                              {
-                              dataWatchDetailDoctor.map((item, index) => 
-                                isChooseDoctor !== index && (
-                                  (
-                                    <div className=' w-[10rem] mb-4 p-2 rounded-lg flex flex-col gap-2 relative hover:bg-[#DCEDFF] w-full duration-150'>
-                                      
-                                      <div className=''>
-                                      <div className='flex gap-4' onClick={() => {
-                                        setIsChooseDoctor(index)
-                                        setIsShoChooseListDoctor(false)
-                                      }}>
-                                        <div className='w-[4rem] h-[4rem] rounded-full overflow-hidden items-center'>
-                                          <img src={item.image} alt={item.name} className='w-full h-full object-cover' />
-                                        </div>
-                                        <div>
-                                          <h1>{item.name}</h1>
-                                          <span>{item.position}</span>
-                                        </div>
-                                      </div>
-                                      </div>
-                                    </div>
-                                  )
-                                )
-                              )
-                            }
-                              </div>
-                           
-                          </motion.div>
-                        ) : (
-                          <motion.div className='absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-6 md:left-1/2 md:-translate-x-1/2'
+                isShowChooseListDoctor ? (
+                  <motion.div className='absolute bg-white box-shadow cursor-pointer rounded-xl py-4 px-8 w-[20rem] top-1/2 translate-y-[-50%] left-6 md:left-1/2 md:-translate-x-1/2'
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setIsShoChooseListDoctor(false)}
+                  >
+                    <div className='bg-white box-shadow py-2 px-3 -translate-x-1/2 -translate-y-1/2 rounded-lg top-0 left-0 absolute'>
+                      <FontAwesomeIcon icon={faXmark} className='text-3xl text-blue-500' />
+                    </div>
+                    {
+                      dataWatchDetailDoctor.map((item, index) => isChooseDoctor === index && (
+                        <div className=''>
+                          <h1 className='font-bold text-[#143566] text-[1.2rem]'>{item.name}</h1>
+                          <span className='text-[0.9rem] text-gray-500'>{item.position}</span>
+                        </div>
+                      ))
+                    }
+                    <div className='mt-4'>
+                      {
+                        dataWatchDetailDoctor.map((item, index) =>
+                          isChooseDoctor !== index && (
+                            (
+                              <div className=' w-[10rem] mb-4 p-2 rounded-lg flex flex-col gap-2 relative hover:bg-[#DCEDFF] w-full duration-150'>
 
-                          
-                          animate={{
-                            scale: [1, 1.2, 1], // Mảng giá trị để tạo hiệu ứng scale
-                          }}
-                          transition={{
-                            repeat: Infinity, // Lặp vô hạn
-                            duration: 1, // Thời gian mỗi chu kỳ
-                          }}>
-                              <FontAwesomeIcon icon={faArrowPointer} className='text-2xl text-white'/>
-                          </motion.div>
+                                <div className=''>
+                                  <div className='flex gap-4' onClick={() => {
+                                    setIsChooseDoctor(index)
+                                    setIsShoChooseListDoctor(false)
+                                  }}>
+                                    <div className='w-[4rem] h-[4rem] rounded-full overflow-hidden items-center border border-blue-500'>
+                                      <img src={item.image} alt={item.name} className='w-full h-full object-cover ' />
+                                    </div>
+                                    <div>
+                                      <h1>{item.name}</h1>
+                                      <span>{item.position}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          )
                         )
                       }
+                    </div>
+
+                  </motion.div>
+                ) : (
+                  <motion.div className='absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-6 md:left-1/2 md:-translate-x-1/2'
+
+
+                    animate={{
+                      scale: [1, 1.2, 1], // Mảng giá trị để tạo hiệu ứng scale
+                    }}
+                    transition={{
+                      repeat: Infinity, // Lặp vô hạn
+                      duration: 1, // Thời gian mỗi chu kỳ
+                    }}>
+                    <FontAwesomeIcon icon={faArrowPointer} className='text-2xl text-white' />
+                  </motion.div>
+                )
+              }
             </div>
             <div className='p-4 md:p-8 flex flex-col gap-4 '>
               <div>
@@ -374,43 +377,44 @@ const Home = () => {
         {/* end gg map*/}
 
         {/*start customer comments */}
-        <div className='w-[70%] m-auto bg-yellow-200 py-8'>
-          <div className=' bg-green-400 space-x-4 rounded-box carousel carousel-center w-full'>
+        <div className='w-[90%] md:w-[60%] m-auto mt-[4rem] '>
+          <div className='text-center pb-8 '>
+          {/* <div className='w-[300px] h-[300px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[150%] translate-y-[20%] blur-[250px]'></div> */}
+
+            <h1 className='text-[#1386ED] font-bold  text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]'>Cảm Nhận Của Khách Hàng </h1>
+            <p className='text-[0.9rem] md:text-[1rem] text-gray-500'>  Những đánh giá của khách hàng sau khi sử dụng dịch vụ tuyệt vời của ToothHive</p>
+
+          </div>
+          <div className=' space-x-4 rounded-box carousel carousel-center w-full'>
             {
               slides.map((item, index) => (
-                <div key={index} className='bg-gray-400 w-[100%] md:w-[50%] carousel-item cursor-pointer'>
-                  {item.content}
+                <div key={index} className='p-4 w-[98%] md:w-[46%] carousel-item cursor-pointer '>
+
+                  <div className='bg-white box-shadow p-4 rounded-lg flex flex-col gap-2'>
+                    <div className='flex justify-between items-center'>
+                      <FontAwesomeIcon icon={faQuoteLeft} className='text-[2.3rem] md:text-[2.5rem] text-gray-500' />
+                      <div><Rate disabled defaultValue={4} /></div>
+
+                    </div>
+                    <div className='line-clamp-3 overflow-ellipsis leading-[1.8rem]'>
+                      {item.content}
+                    </div>
+                    <div className='flex gap-4 items-center '>
+                      <div className='w-[3rem] h-[3rem] rounded-full bg-gray-100'>
+                        <img className='w-full h-full object-cover rounded-full' src={item.img} alt={item.name} />
+                      </div>
+                      <div>
+                        <p>{item.name}</p>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               ))
             }
           </div>
-          {/* <div className='text-center my-4 py-8'>
-            <h1 className='text-[#1386ED] font-bold  text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]'>Cảm Nhận Của Khách Hàng </h1>
-            <p className='text-[0.9rem] text-gray-500'> Những đánh giá của khách hàng sau khi sử dụng dịch vụ tuyệt vời của ToothHive</p>
 
-          </div>
-          <div>
-            <div className=" flex justify-center items-center">
-              <button onClick={prevSlide} className="hidden md:block mr-4">
-                Previous
-              </button>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4">
-                {slides.slice(currentSlide, currentSlide + 2).map((slide) => (
-                  <div key={slide.id} className="bg-gray-300 p-4 rounded-md shadow-md">
-                    {slide.content}
-                  </div>
-                ))}
-              </div>
-              <button onClick={nextSlide} className="hidden md:block ml-4">
-                Next
-              </button>
-
-
-            </div>
-          </div>
-*/}
-        </div> 
+        </div>
         {/* end customer comments */}
       </div>
 

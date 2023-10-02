@@ -27,7 +27,7 @@ const Router = (): JSX.Element | null => {
           element: <Home />,
         },
         {
-          path: "/contac",
+          path: "/contact",
           element: <Contact />,
         },
         {
