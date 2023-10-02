@@ -193,7 +193,7 @@ const Home = () => {
             <p className='text-[0.9rem] text-gray-500'>Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất</p>
 
           </div>
-          <div className="md:w-[70%] m-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md: gap-8">
+          <div className="md:w-[70%] m-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
             <div className=" flex flex-col gap-2">
               <div className='w-[10rem] h-[10rem] bg-pink-50 rounded-full m-auto'>
                 <img className='w-full h-full rounded-full object-cover ' src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg" alt="" />
@@ -275,7 +275,7 @@ const Home = () => {
                         dataWatchDetailDoctor.map((item, index) =>
                           isChooseDoctor !== index && (
                             (
-                              <div className=' w-[10rem] mb-4 p-2 rounded-lg flex flex-col gap-2 relative hover:bg-[#DCEDFF] w-full duration-150'>
+                              <div className=' mb-4 p-2 rounded-lg flex flex-col gap-2 relative hover:bg-[#DCEDFF] w-full duration-150'>
 
                                 <div className=''>
                                   <div className='flex gap-4' onClick={() => {
