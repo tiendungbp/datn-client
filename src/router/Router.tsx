@@ -14,6 +14,7 @@ import News from "../pages/client/news/News";
 import Services from "../pages/client/services/Services";
 import Introduce from "../pages/client/introduce/Introduce";
 import Booking from "../pages/client/booking/Booking";
+import DetailServices from "../pages/client/detailServices/DetailServices";
 
 const Router = (): JSX.Element | null => {
   const element = useRoutes([
@@ -36,6 +37,10 @@ const Router = (): JSX.Element | null => {
         {
           path: "/detailDoctor",
           element: <DetailDoctor />,
+        },
+        {
+          path: "/detailServices",
+          element: <DetailServices />,
         },
         {
           path: "/priceList",
