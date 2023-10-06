@@ -1,0 +1,129 @@
+.footer__client__toothHive {
+  background-color: #1b2433;
+  width: 100%;
+  .footer__client__toothHive__Behine {
+    padding: 40px 0px;
+    width: 90%;
+    margin: 0 auto;
+    .first__footer {
+      border-bottom: 1px solid #535252;
+      padding: 10px 0px 35px 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .title__first__footer {
+        p {
+          font-size: 32px;
+          color: #fff;
+        }
+      }
+      .btn__first__footer {
+        button {
+          padding: 10px 25px;
+          background-color: #1386ed;
+          color: #fff;
+          font-style: 12px;
+          border-radius: 32px;
+        }
+      }
+    }
+    .content__footer {
+      padding: 35px 0px 0px 0px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 70px;
+      .box__content__footer1 {
+        letter-spacing: 1px;
+        cursor: pointer;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-top: 20px;
+        p {
+          font-size: 16px;
+          color: #eeeeee;
+        }
+      }
+      .box__content__footer1__first {
+        p {
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+        }
+        .icon__footer__down,
+        .icon__footer__down1,
+        .icon__footer__down2 {
+          display: none;
+        }
+      }
+    }
+    .the__end__footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid #535252;
+      .box__the__footer {
+        display: flex;
+        gap: 30px;
+        .text-2xl {
+          border: 1px solid #eeeeee;
+          padding: 10px;
+          border-radius: 50%;
+          color: #9d9c9c;
+          transition: 0.5s;
+          cursor: pointer;
+        }
+        .text-2xl:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1080px) {
+  .footer__client__toothHive {
+    .footer__client__toothHive__Behine {
+      .content__footer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        .box__content__footee,
+        .box__content__footee1,
+        .box__content__footee2 {
+          overflow: hidden;
+          transition: height 0.5s ease;
+          border-bottom: 1px solid #eeeeee;
+          .box__content__footer1 {
+            padding-top: 5px;
+            cursor: pointer;
+            padding: 5px 0px;
+            p {
+            }
+          }
+          .box__content__footer1__first {
+            padding: 0px 10px 5px 0px;
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .icon__footer__down,
+            .icon__footer__down1,
+            .icon__footer__down2 {
+              display: block;
+            }
+          }
+        }
+      }
+      .the__end__footer {
+        border: none;
+        margin: 0px;
+        .box__the__footer{
+            margin-top: 20px;
+        }
+      }
+    }
+  }
+}

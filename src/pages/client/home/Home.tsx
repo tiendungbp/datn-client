@@ -86,7 +86,7 @@ const Home = () => {
               </div>
               <div className="md:w-full">
                 <div className=" right-0 w-full  relative ">
-                  <img src={Banner} alt="" className="w-full h-full rounded-lg object-cover shadow-xl " />
+                  <img src={Banner} alt="" className=" w-full h-full rounded-lg object-cover shadow-xl z-10" />
                   <div className="absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
                     <div className="flex justify-between gap-2 pb-3">
                       <div className="flex gap-2 justify-center items-center">
