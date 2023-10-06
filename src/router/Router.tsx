@@ -1,10 +1,10 @@
 import React from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
-import Register from "../pages/register/Register";
-import Login from "../pages/login/Login";
-import Notfound from "../pages/notfound/Notfound";
-import ForgotPass from "../pages/forgotPass/ForgotPass";
+import Register from "../pages/client/register/Register";
+import Login from "../pages/client/login/Login";
+import Notfound from "../pages/client/notfound/Notfound";
+import ForgotPass from "../pages/client/forgotPass/ForgotPass";
 import Home from "../pages/client/home/Home";
 import Contact from "../pages/client/contact/Contact";
 import DetailNews from "../pages/client/detailNews/DetailNews";
