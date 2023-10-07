@@ -63,7 +63,7 @@ const Header = () => {
         <div className="header__box__setting">
           <div className="reponsive__logo__navbars">
             <div className="header__box1">
-              <img src={logoToothHive} alt="logo" />
+              <NavLink to={"/"}><img src={logoToothHive} alt="logo" /></NavLink>
             </div>
             <div
               className="menu__nav"
@@ -135,8 +135,8 @@ const Header = () => {
                 </div>
               </div>
               <div className="header__box3">
-                <button className="booking">Đặt lich</button>
-                <button className="booking">Đăng nhập</button>
+                <button className="booking"><NavLink to={"/booking"}>Đặt lịch</NavLink></button>
+                <button className="booking"><NavLink to={"/login"}>Đăng nhập</NavLink></button>
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ const Services = () => {
               <h3 className='font-bold text-[1.2rem]'>Chăm sóc răng</h3>
             </div>
             <p className='line-clamp-3 overflow-ellipsis leading-[1.8rem]'>Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức năng...Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức năng...</p>
-            <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+            <Link to="/detailServices" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
             <div className='flex items-center gap-4 '>
@@ -32,7 +32,7 @@ const Services = () => {
               <h3 className='font-bold text-[1.2rem]'>Bọc răng sứ</h3>
             </div>
             <p className='line-clamp-3 overflow-ellipsis leading-[1.8rem]'>Khi bạn trải qua quá trình mất răng, chất lượng cuộc sống và tự tin của bạn có thể bị ảnh hưởng nghiêm...Khi bạn trải qua quá trình mất răng, chất lượng cuộc sống và tự tin của bạn có thể bị ảnh hưởng nghiêm...</p>
-            <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+            <Link to="/detailServices" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
             <div className='flex items-center gap-4 '>
@@ -40,7 +40,7 @@ const Services = () => {
               <h3 className='font-bold text-[1.2rem]'>Niềng răng</h3>
             </div>
             <p className='line-clamp-3 overflow-ellipsis leading-[1.8rem]'>Niềng răng không chỉ là việc thẳng hàng răng mà còn là hành trình thú vị để hoàn thiện nụ cười ...Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức năng...</p>
-            <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+            <Link to="/detailServices" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
             <div className='flex items-center gap-4 '>
@@ -48,7 +48,7 @@ const Services = () => {
               <h3 className='font-bold text-[1.2rem]'>Chăm sóc răng</h3>
             </div>
             <p className='line-clamp-3 overflow-ellipsis leading-[1.8rem]'>Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức năng...Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức năng...</p>
-            <Link to="/services" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+            <Link to="/detailServices" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
 
 
@@ -76,7 +76,7 @@ const Services = () => {
                 <h1 className="font-bold ">Bs. Hoàng Văn Minh</h1>
                 <span>Với 7 năm kinh nghiệm về mảng nha khoa</span>
                 <span>Trình độ: Thạc sĩ</span>
-                <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+                <Link to="/detailDoctor" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
 
               </div>
             </div>
@@ -93,7 +93,7 @@ const Services = () => {
                 <h1 className="font-bold ">Bs. Hoàng Văn Minh</h1>
                 <span>Với 7 năm kinh nghiệm về mảng nha khoa</span>
                 <span>Trình độ: Thạc sĩ</span>
-                <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+                <Link to="/detailDoctor" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
 
               </div>
             </div>
@@ -110,7 +110,7 @@ const Services = () => {
                 <h1 className="font-bold ">Bs. Hoàng Văn Minh</h1>
                 <span>Với 7 năm kinh nghiệm về mảng nha khoa</span>
                 <span>Trình độ: Thạc sĩ</span>
-                <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+                <Link to="/detailDoctor" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
 
               </div>
             </div>
@@ -127,7 +127,7 @@ const Services = () => {
                 <h1 className="font-bold ">Bs. Hoàng Văn Minh</h1>
                 <span>Với 7 năm kinh nghiệm về mảng nha khoa</span>
                 <span>Trình độ: Thạc sĩ</span>
-                <Link to="/" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
+                <Link to="/detailDoctor" className='flex items-center gap-2 text-[#1386ED]'> <span>Xem thêm </span><FontAwesomeIcon icon={faArrowRight} /></Link>
 
               </div>
             </div>
