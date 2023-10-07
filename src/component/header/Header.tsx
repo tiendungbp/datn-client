@@ -86,7 +86,7 @@ const Header = () => {
               <div className="header__box2">
                 <div className="header__box2__notification">
                   <div className="box__text">
-                    <p><NavLink to={"/"}></NavLink></p>
+                    <p><NavLink to={"/"}>Trang chủ</NavLink></p>
                   </div>
                   <div className="box__text">
                   <p><NavLink to={"/services"}>Dịch vụ</NavLink></p>
