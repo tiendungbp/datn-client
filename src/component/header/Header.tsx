@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Header.scss";
 import logoToothHive from "../../asset/image/ToothHive (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -11,8 +10,6 @@ const Header = () => {
       document.documentElement.clientWidth ||
       document.body.clientWidth
   );
- 
- 
 
   const [scrollY, setscrollY] = useState<number>(0);
 
@@ -41,17 +38,14 @@ const Header = () => {
 
     if (box) {
       if (isMenuOpen) {
-        // Mở menu
-        console.log(1);
         box.style.height = "600px";
       } else {
-        // Đóng menu
         box.style.height = "0px";
       }
-      if(widthOpen >= 1080){
+      if (widthOpen >= 1080) {
         box.style.height = "";
-      }else{
-        if(!isMenuOpen){
+      } else {
+        if (!isMenuOpen) {
           box.style.height = "0px";
         }
       }
@@ -59,7 +53,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isMenuOpen,widthOpen]);
+  }, [isMenuOpen, widthOpen]);
   const isBackgroundWhite = scrollY >= 90;
   return (
     <div className="header__nav">
@@ -80,32 +74,63 @@ const Header = () => {
               <FontAwesomeIcon className="menu__icon__sm__ls" icon={faBars} />
             </div>
           </div>
-          {/* {(isMenuOpen || widthOpen >= 1080) && ( */}
           <div className="box__reponsive__nav">
             <div className="box__reponsive__nav1">
               <div className="header__box2">
                 <div className="header__box2__notification">
                   <div className="box__text">
-                    <p><NavLink to={"/"}>Trang chủ</NavLink></p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/"}>Trang chủ</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                  <p><NavLink to={"/services"}>Dịch vụ</NavLink></p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/services"}>Dịch vụ</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                  <p><NavLink to={"/priceList"}>Bảng giá</NavLink></p>
-
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/priceList"}>Bảng giá</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                  <p><NavLink to={"/introduce"}>Giới thiệu</NavLink></p>
-
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/introduce"}>Giới thiệu</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                  <p><NavLink to={"/contact"}>Liên hệ</NavLink></p>
-
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/contact"}>Liên hệ</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                  <p><NavLink to={"/news"}>Tin tức</NavLink></p>
-
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/news"}>Tin tức</NavLink>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -115,7 +140,6 @@ const Header = () => {
               </div>
             </div>
           </div>
-          {/* )} */}
         </div>
       </div>
     </div>

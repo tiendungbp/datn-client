@@ -1,5 +1,4 @@
 import React from 'react'
-import "./style.scss"
 import { Button } from 'antd'
 
 const DetailDoctor = () => {

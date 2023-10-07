@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Footer.scss";
 import logoToothHive from "../../asset/image/ToothHive (2).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -44,33 +43,27 @@ const Footer = () => {
     ) as HTMLElement;
     if (box) {
       if (isMenuOpen) {
-        // Mở menu
         iconDown.style.transform = "rotate(180deg)";
         box.style.height = "170px";
       } else {
-        // Đóng menu
         iconDown.style.transform = "rotate(0deg)";
         box.style.height = "34px";
       }
     }
     if (box1) {
       if (isMenuOpen1) {
-        // Mở menu
         iconDown1.style.transform = "rotate(180deg)";
         box1.style.height = "170px";
       } else {
-        // Đóng menu
         iconDown1.style.transform = "rotate(0deg)";
         box1.style.height = "34px";
       }
     }
     if (box2) {
       if (isMenuOpen2) {
-        // Mở menu
         iconDown2.style.transform = "rotate(180deg)";
         box2.style.height = "260px";
       } else {
-        // Đóng menu
         iconDown2.style.transform = "rotate(0deg)";
         box2.style.height = "34px";
       }

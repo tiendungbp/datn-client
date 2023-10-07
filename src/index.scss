@@ -32,3 +32,9 @@ code {
 .shadow-2xl {
   box-shadow: #a2cbf6 -12px 12px 0px 5px;
 }
+// scss 
+@import "./component/header/Header.scss";
+@import "./component/footer/Footer.scss";
+@import "./pages/client/detailDoctor/DetailDoctor.scss";
+@import "./pages/client/detailNews/DetailNews.scss";
+
