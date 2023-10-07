@@ -2,7 +2,7 @@ import { faArrowPointer, faArrowRight, faBellConcierge, faCalendar, faCircleNotc
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Banner from '../../../asset/image/banner.png'
 import { Rate } from 'antd'
 
@@ -339,7 +339,7 @@ const Home = () => {
 
                       </div>
                       <div>
-                        <button className='bg-[#1386ED] px-8 py-3 rounded-[30px] text-white'>Xem chi tiết</button>
+                        <button className='bg-[#1386ED] px-8 py-3 rounded-[30px] text-white'><NavLink to={"/detailDoctor"}>Xem chi tiết</NavLink></button>
 
 
                       </div>

@@ -61,7 +61,7 @@ const ForgotPass = () => {
                 </Button>
               </Form.Item>
             </Form>
-            <h3>Quay về trang <NavLink className="text-blue-500 font-semibold" to="">Login</NavLink></h3>
+            <h3>Quay về trang <NavLink className="text-blue-500 font-semibold" to="/login">Login</NavLink></h3>
           </div>
         </div>
       </div>
