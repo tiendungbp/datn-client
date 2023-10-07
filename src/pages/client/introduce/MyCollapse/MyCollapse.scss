@@ -1,0 +1,24 @@
+.textColor {
+  color: #1386ed;
+}
+
+.toggle-container {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.toggle-content {
+  width: 85%;
+  margin-left: 40px;
+}
+
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  &.open {
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+  }
+}

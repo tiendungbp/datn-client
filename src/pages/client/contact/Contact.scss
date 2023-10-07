@@ -1,0 +1,40 @@
+.textColor {
+  color: #1386ed;
+}
+.myImage {
+  position: relative;
+  img {
+    position: absolute;
+    width: 435px;
+    height: 300px;
+  }
+  :first-child {
+    top: 50px;
+  }
+  :last-child {
+    top: 0;
+    left: 50px;
+  }
+}
+.contact {
+  background: linear-gradient(#dcedff, white);
+}
+
+@media (max-width: 500px) {
+  .myImage {
+    height: 300px;
+    img {
+      width: 375px;
+      height: 250px;
+    }
+  }
+}
+@media (max-width: 380px) {
+  .myImage {
+    height: 200px;
+    img {
+      width: 275px;
+      height: 200px;
+    }
+  }
+}

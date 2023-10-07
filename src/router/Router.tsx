@@ -9,11 +9,11 @@ import Home from "../pages/client/home/Home";
 import Contact from "../pages/client/contact/Contact";
 import DetailNews from "../pages/client/detailNews/DetailNews";
 import DetailDoctor from "../pages/client/detailDoctor/DetailDoctor";
-import PriceList from "../pages/client/priceList/PriceList";
 import News from "../pages/client/news/News";
 import Services from "../pages/client/services/Services";
 import Introduce from "../pages/client/introduce/Introduce";
 import Booking from "../pages/client/booking/Booking";
+import PriceList from "../pages/client/priceList/PriceList";
 
 const Router = (): JSX.Element | null => {
   const element = useRoutes([
