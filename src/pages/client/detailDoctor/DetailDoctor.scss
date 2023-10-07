@@ -1,0 +1,51 @@
+.background_shadow {
+    position: relative;
+    border-radius: 8px 16px 8px 60px;
+    background: linear-gradient(180deg, #1386ED 35.19%, rgba(19, 134, 237, 0.34) 99.99%, rgba(19, 134, 237, 0.00) 100%);
+    width: 352.37px;
+    height: 359.483px;
+    flex-shrink: 0;
+    top: 0px;
+    z-index: 2;
+}
+
+// .img_doctor{
+//     width: 352.37px;
+//         height: 359.483px;
+//         flex-shrink: 0;
+// }
+@media screen and (min-width: 1024px) {
+    .content_right {
+        width: 70%;
+        margin-left: 100px;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width:1023px) {
+    .container_detailDoctor {
+        width: 90%;
+
+    }
+
+    .content_right {
+        margin-left: 100px;
+
+    }
+
+    .background_shadow {
+        width: 100%;
+        height: 55%;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .container_detailDoctor {
+        width: 80%;
+        margin-left: 100px;
+    }
+
+    .bottom_detailDoctor {
+        gap: 30px;
+    }
+}
