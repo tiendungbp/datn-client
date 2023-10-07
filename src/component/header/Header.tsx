@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <div className="header__nav">
       <div
-        className={`header__box ${isBackgroundWhite ? "white-background" : ""}`}
+        className={`header__box ${isBackgroundWhite ? "white-background shadow" : ""}`}
       >
         <div className="header__box__setting">
           <div className="reponsive__logo__navbars">
