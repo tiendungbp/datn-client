@@ -63,7 +63,7 @@
                 height: 2px;
                 background: linear-gradient(to right, #1386ed 0%, #1386ed 100%);
                 transition: width 0.3s ease;
-                opacity: 0; 
+                opacity: 0;
               }
 
               .box__text:hover::before {
@@ -77,6 +77,8 @@
             gap: 30px;
             align-items: center;
             .booking {
+              position: relative;
+              overflow: hidden;
               display: flex;
               align-items: center;
               border-radius: 32px;
@@ -87,21 +89,39 @@
               color: #1386ed;
               white-space: nowrap;
             }
+            .booking::before {
+              content: "";
+              width: 50%;
+              height: 100%;
+              position: absolute;
+              left: -55%;
+              display: block;
+              background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0,
+                rgba(255, 255, 255, 0.3) 100%
+              );
+              transform: skewX(-25deg);
+              transition: all 0.75s;
+            }
             .booking:nth-child(2) {
               color: #fff;
               background: #1386ed;
               transition: 0.5s;
             }
-            .booking:nth-child(2):hover {
-              background: rgb(2, 0, 36);
-              background: linear-gradient(
-                90deg,
-                rgba(2, 0, 36, 1) 0%,
-                rgba(19, 134, 237, 1) 0%,
-                rgba(0, 197, 255, 1) 31%,
-                rgba(0, 224, 255, 1) 63%
-              );
+            .booking:hover::before {
+              left: 125%;
             }
+            // .booking:nth-child(2):hover {
+            //   background: rgb(2, 0, 36);
+            //   background: linear-gradient(
+            //     90deg,
+            //     rgba(2, 0, 36, 1) 0%,
+            //     rgba(19, 134, 237, 1) 0%,
+            //     rgba(0, 197, 255, 1) 31%,
+            //     rgba(0, 224, 255, 1) 63%
+            //   );
+            // }
           }
         }
       }
@@ -155,7 +175,7 @@
               display: flex;
               .header__box2__notification {
                 display: flex;
-  
+
                 .box__text {
                   position: relative;
                   cursor: pointer;
@@ -174,11 +194,15 @@
                   left: 0;
                   width: 0;
                   height: 2px;
-                  background: linear-gradient(to right, #1386ed 0%, #1386ed 100%);
+                  background: linear-gradient(
+                    to right,
+                    #1386ed 0%,
+                    #1386ed 100%
+                  );
                   transition: width 0.3s ease;
-                  opacity: 0; 
+                  opacity: 0;
                 }
-  
+
                 .box__text:hover::before {
                   width: 100%;
                   opacity: 1;
@@ -191,6 +215,7 @@
               align-items: center;
               .booking {
                 display: flex;
+                position: relative;
                 align-items: center;
                 border-radius: 32px;
                 height: 42px;
@@ -200,21 +225,36 @@
                 color: #1386ed;
                 white-space: nowrap;
               }
+              .booking::before {
+                content: "";
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                left: -100%;
+                display: block;
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 255, 255, 0) 0,
+                  rgba(255, 255, 255, 0.3) 100%
+                );
+                transform: skewX(-25deg);
+                transition: all 0.75s;
+              }
               .booking:nth-child(2) {
                 color: #fff;
                 background: #1386ed;
                 transition: 0.5s;
               }
-              .booking:nth-child(2):hover {
-                background: rgb(2, 0, 36);
-                background: linear-gradient(
-                  90deg,
-                  rgba(2, 0, 36, 1) 0%,
-                  rgba(19, 134, 237, 1) 0%,
-                  rgba(0, 197, 255, 1) 31%,
-                  rgba(0, 224, 255, 1) 63%
-                );
-              }
+              // .booking:nth-child(2):hover {
+              //   background: rgb(2, 0, 36);
+              //   background: linear-gradient(
+              //     90deg,
+              //     rgba(2, 0, 36, 1) 0%,
+              //     rgba(19, 134, 237, 1) 0%,
+              //     rgba(0, 197, 255, 1) 31%,
+              //     rgba(0, 224, 255, 1) 63%
+              //   );
+              // }
             }
           }
         }
@@ -233,7 +273,7 @@
         height: 90px;
         display: block;
         padding-top: 28px;
-        .header__box1{
+        .header__box1 {
           height: 22px;
           width: 151px;
         }
