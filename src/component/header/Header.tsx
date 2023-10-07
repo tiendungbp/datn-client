@@ -3,6 +3,7 @@ import "./Header.scss";
 import logoToothHive from "../../asset/image/ToothHive (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [widthOpen, setWidthOpen] = useState<number>(
@@ -85,22 +86,26 @@ const Header = () => {
               <div className="header__box2">
                 <div className="header__box2__notification">
                   <div className="box__text">
-                    <p>Trang chủ</p>
+                    <p><NavLink to={"/"}></NavLink></p>
                   </div>
                   <div className="box__text">
-                    <p>Dịch vụ</p>
+                  <p><NavLink to={"/services"}>Dịch vụ</NavLink></p>
                   </div>
                   <div className="box__text">
-                    <p>Bảng giá</p>
+                  <p><NavLink to={"/priceList"}>Bảng giá</NavLink></p>
+
                   </div>
                   <div className="box__text">
-                    <p>Giới thiệu</p>
+                  <p><NavLink to={"/introduce"}>Giới thiệu</NavLink></p>
+
                   </div>
                   <div className="box__text">
-                    <p>Liên hệ</p>
+                  <p><NavLink to={"/contact"}>Liên hệ</NavLink></p>
+
                   </div>
                   <div className="box__text">
-                    <p>Tin tức</p>
+                  <p><NavLink to={"/news"}>Tin tức</NavLink></p>
+
                   </div>
                 </div>
               </div>
