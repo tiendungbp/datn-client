@@ -18,7 +18,7 @@ const MyCollapse = () => {
   return (
     <div className="wrapper">
       <div
-        className="toggle-container shadow-md p-5"
+        className="toggle-container shadow-md p-5 my-10"
         onClick={() => toggleDiv(1)}
       >
         <div className="flex justify-between">
@@ -42,7 +42,7 @@ const MyCollapse = () => {
         </div>
       </div>
       <div
-        className="toggle-container shadow-md p-5"
+        className="toggle-container shadow-md p-5 my-10"
         onClick={() => toggleDiv(2)}
       >
         <div className="flex justify-between">
@@ -66,7 +66,7 @@ const MyCollapse = () => {
         </div>
       </div>
       <div
-        className="toggle-container shadow-md p-5"
+        className="toggle-container shadow-md p-5 my-10"
         onClick={() => toggleDiv(3)}
       >
         <div className="flex justify-between">
@@ -90,7 +90,7 @@ const MyCollapse = () => {
         </div>
       </div>
       <div
-        className="toggle-container shadow-md p-5"
+        className="toggle-container shadow-md p-5 my-10"
         onClick={() => toggleDiv(4)}
       >
         <div className="flex justify-between">

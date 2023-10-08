@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm/ContactForm";
 const Contact = () => {
   return (
     <div className="wrapper">
-      <div className="xl:container sm:mx-16 mx-6">
+      <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
         {/* BreadCrumb */}
         <Breadcrumb
           className={`text-sm my-8`}
@@ -26,7 +26,7 @@ const Contact = () => {
             <img src={blueSquareImage} alt="" />
             <img src={doctorImage} alt="" />
           </div>
-          <div className="right ml-10 flex-1 flex flex-col justify-between">
+          <div className="right mt-10 flex-1 flex flex-col justify-between">
             <h3 className=" text-3xl font-bold mb-7">
               Đến với <span className="textColor">ToothHive</span>
             </h3>
@@ -48,8 +48,8 @@ const Contact = () => {
         </div>
       </div>
       {/* Div contact form */}
-      <div className="contact mt-56">
-        <div className=" xl:container sm:mx-16 mx-6">
+      <div className="contact mt-32">
+        <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
           <div className="block sm:flex py-16">
             <div className="contactInfo flex-1">
               <h3 className="text-3xl font-bold">

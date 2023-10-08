@@ -5,6 +5,8 @@ import IntroduceBannerImage from "../../../assets/img/BacSiVaEmBe.png";
 import IntroduceReasonImage from "../../../assets/img/BacSiNhoRang.png";
 import CertificateImage from "../../../assets/img/certificate.png";
 import JourneyImage from "../../../assets/img/journey.png";
+import BackgroundIntroduce from "../../../assets/img/backgroundIntroduce.jpg";
+
 import {
   DotsIcon,
   FaceIcon,
@@ -36,7 +38,7 @@ const Introduce = () => {
 
   return (
     <div className="wrapper">
-      <div className="container mx-auto mb-20 px-4 sm:px-6 lg:px-8">
+      <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem] ">
         {/* BreadCrumb */}
         <Breadcrumb
           className={`text-sm my-8`}
@@ -100,7 +102,7 @@ const Introduce = () => {
         </div>
       </div>
       {/* Reasons */}
-      <div className="container mx-auto mb-20 px-4 sm:px-6 lg:px-8 reason">
+      <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  reason">
         <div className="flex sm:flex-row flex-col">
           <div className="left flex-col sm:w-2/5 w-full pr-0 sm:pr-10 ">
             <img src={IntroduceReasonImage} alt="" className="w-full" />
@@ -120,7 +122,7 @@ const Introduce = () => {
         </div>
       </div>
       {/* Certificate */}
-      <div className="container mx-auto mb-20 px-4 sm:px-6 lg:px-8 ">
+      <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  ">
         <div className="w-2/3 mx-auto">
           <h3 className="text-center text-3xl font-bold mb-3">
             Các <span className="textColor">Chứng Chỉ</span> Tại ToothHive
@@ -139,9 +141,12 @@ const Introduce = () => {
         </div>
       </div>
       {/* Data */}
-      <div className="data">
+      <div className="data ">
+        <div className="background">
+          <img src={BackgroundIntroduce} alt="" />
+        </div>
         <div className="overlay"></div>
-        <div className="showData">
+        <div className="showData m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]">
           <h3 className="text-center text-3xl font-bold mb-3 py-5">
             Nha Khoa ToothHive Qua
             <span className="textColor"> Những Con Số</span>
@@ -176,7 +181,7 @@ const Introduce = () => {
         </div>
       </div>
       {/* Dental care journey  */}
-      <div className="container mx-auto mb-20 px-4 sm:px-6 lg:px-8 ">
+      <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]  ">
         <div className="flex sm:flex-row flex-col">
           <div className="left flex-col sm:w-2/3 w-full pr-0 sm:pr-10">
             <div>
