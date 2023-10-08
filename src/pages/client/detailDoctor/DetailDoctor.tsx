@@ -7,12 +7,12 @@ const DetailDoctor = () => {
   return (
     <div className='container_detailDoctor m-auto'>
       <h1 className='font-medium'>Trang chủ <span className='text-blue-500'>/ Chi tiết bác sĩ</span></h1>
-      <div className='flex'>
-        <div className='content_left mt-10 relative w-1/3'>
-          <img className='img_doctor ml-12 absolute z-10' src="/img/image 15.png" alt="" />
-          <div className='background_shadow mt-11'></div>
+      <div className='flex flex-wrap justify-between'>
+        <div className='content_left relative mt-10'>
+          <img className='img_doctor w-full relative' src="/img/image 15.png" alt="" />
+          {/* <div className='background_shadow  mt-11'></div> */}
         </div>
-        <div className='content_right w-2/3 mt-12'>
+        <div className='content_right mt-24'>
           <h1 className=' font-bold text-2xl text-blue-500'>Bác sĩ NGUYỄN DIÊN THẢO</h1>
           <p className='mt-3 text-xl font-normal'>“ Mỗi khách hàng đối với tôi như người anh, chị, em trong gia đình. Luôn mang đến cho họ những dịch vụ với kết quả tốt nhất là điều tôi hằng tâm niệm”</p>
           <div className='text-xl mt-5'>
