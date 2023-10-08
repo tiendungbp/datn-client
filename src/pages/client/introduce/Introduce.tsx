@@ -100,9 +100,9 @@ const Introduce = () => {
         </div>
       </div>
       {/* Reasons */}
-      <div className="container mx-auto mb-20 px-4 sm:px-6 lg:px-8 ">
+      <div className="container mx-auto mb-20 px-4 sm:px-6 lg:px-8 reason">
         <div className="flex sm:flex-row flex-col">
-          <div className="left flex-col sm:w-2/5 w-full pr-0 sm:pr-10">
+          <div className="left flex-col sm:w-2/5 w-full pr-0 sm:pr-10 ">
             <img src={IntroduceReasonImage} alt="" className="w-full" />
           </div>
           <div className="right sm:w-3/5 w-full">
@@ -146,7 +146,7 @@ const Introduce = () => {
             Nha Khoa ToothHive Qua
             <span className="textColor"> Những Con Số</span>
           </h3>
-          <div className="flex flex-col sm:flex-row items-center container mx-auto py-10 mb-20 px-4 sm:px-6 lg:px-8 ">
+          <div className="flex flex-col sm:flex-row items-center justify-center container mx-auto py-10 mb-20 px-4 sm:px-6 lg:px-8 ">
             <div className="item rounded textColor flex flex-col justify-center items-center ml-5 my-3">
               <LikeIcon />
               <p className="text-3xl font-bold">100%</p>
