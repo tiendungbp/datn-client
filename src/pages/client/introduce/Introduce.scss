@@ -1,9 +1,7 @@
 .textColor {
   color: #1386ed;
 }
-img {
-  margin: 15px 0;
-}
+
 .toggle-title {
   img {
     margin: 0;
@@ -31,6 +29,18 @@ img {
       height: 125px;
       width: 175px;
       background-color: white;
+    }
+  }
+}
+.certificate {
+  img {
+    margin: 15px 0;
+  }
+}
+.reason {
+  .left {
+    img {
+      margin: 15px 0;
     }
   }
 }
