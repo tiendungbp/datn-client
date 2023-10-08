@@ -193,33 +193,33 @@ const Home = () => {
             <p className='text-[0.9rem] text-gray-500'>Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất</p>
 
           </div>
-          <div className="md:w-[70%] m-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
+          <div className="md:w-[80%] m-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
             <div className=" flex flex-col gap-2">
-              <div className='w-[10rem] h-[10rem] bg-pink-50 rounded-full m-auto'>
+              <div className='w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto'>
                 <img className='w-full h-full rounded-full object-cover ' src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg" alt="" />
               </div>
               <p className='line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]'>Niềng răng trong suốt</p>
             </div>
             <div className=" flex flex-col gap-2">
-              <div className='w-[10rem] h-[10rem] bg-pink-50 rounded-full m-auto'>
+              <div className='w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto'>
                 <img className='w-full h-full rounded-full object-cover ' src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg" alt="" />
               </div>
               <p className='line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]'>Niềng răng trong suốt</p>
             </div>
             <div className=" flex flex-col gap-2">
-              <div className='w-[10rem] h-[10rem] bg-pink-50 rounded-full m-auto'>
+              <div className='w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto'>
                 <img className='w-full h-full rounded-full object-cover ' src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg" alt="" />
               </div>
               <p className='line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]'>Niềng răng trong suốt</p>
             </div>
             <div className=" flex flex-col gap-2">
-              <div className='w-[10rem] h-[10rem] bg-pink-50 rounded-full m-auto'>
+              <div className='w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto'>
                 <img className='w-full h-full rounded-full object-cover ' src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg" alt="" />
               </div>
               <p className='line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]'>Niềng răng trong suốt</p>
             </div>
             <div className=" flex flex-col gap-2">
-              <div className='w-[10rem] h-[10rem] bg-pink-50 rounded-full m-auto'>
+              <div className='w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto'>
                 <img className='w-full h-full rounded-full object-cover ' src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg" alt="" />
               </div>
               <p className='line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]'>Niềng răng trong suốt</p>
@@ -363,7 +363,7 @@ const Home = () => {
               <p className='text-[0.9rem] md:text-[1rem] text-gray-500'>  Hãy cùng khám phá và tới thăm chúng tôi tại đây để trải nghiệm dịch vụ nha khoa chất lượng và tận hưởng nụ cười khỏe đẹp!</p>
 
             </div>
-            <div className=' md:h-[80vh] h-[60vh] md:bg-gray-400 relative rounded-lg flex items-center justify-center'>
+            <div className=' md:h-[80vh] h-[30vh] md:bg-gray-400 relative rounded-lg flex items-center justify-center'>
               <div className=' bg-white box-shadow absolute md:bottom-[-3rem]  md:left-1/2  transform md:translate-x-[-50%]  p-4 md:p-8 md:px-12 rounded-lg mt-4 mb-8'>
                 <h1 className=' text-center text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] font-bold text-[#1386ED] md:py-4 py-2'>Phòng khám nha khoa ToothHive</h1>
                 <p className='text-[0.9rem] md:text-[1.1rem] text-center md:text-start md:leading-8'>Trụ sở chính: 237 Nguyễn Tất Thành, Quận 5, Tp.HCM <br />

@@ -76,7 +76,7 @@ const DetailServices = () => {
       </div>
       {/* mo ta dich vu */}
       <div className='py-8'>
-       <p className='bg-pink-100'> Day la noi dung show ra du lieu phan mo ta chi tiet </p>
+       <p className='bg-pink-100'> Day la noi dung show ra du lieu phan mo ta chi tiet nhe </p>
 
       </div>
      
