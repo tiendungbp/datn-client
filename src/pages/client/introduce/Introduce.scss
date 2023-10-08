@@ -1,0 +1,47 @@
+.textColor {
+  color: #1386ed;
+}
+img {
+  margin: 15px 0;
+}
+.toggle-title {
+  img {
+    margin: 0;
+    width: 25px;
+    height: 25px;
+  }
+}
+.data {
+  background-image: url("../../../assets/img/backgroundIntroduce.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  // image-rendering: pixelated;
+  // object-fit: cover;
+  position: relative;
+  .overlay {
+    position: absolute;
+    background-color: #dcedff;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+  }
+  .showData {
+    position: relative;
+    .item {
+      height: 125px;
+      width: 175px;
+      background-color: white;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .data {
+    background-image: none;
+  }
+}
+@media (max-width: 380px) {
+  .data {
+    background-image: none;
+  }
+}

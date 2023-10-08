@@ -1,19 +1,20 @@
 import React from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
-import Register from "../pages/register/Register";
-import Login from "../pages/login/Login";
-import Notfound from "../pages/notfound/Notfound";
-import ForgotPass from "../pages/forgotPass/ForgotPass";
+import Register from "../pages/client/register/Register";
+import Login from "../pages/client/login/Login";
+import Notfound from "../pages/client/notfound/Notfound";
+import ForgotPass from "../pages/client/forgotPass/ForgotPass";
 import Home from "../pages/client/home/Home";
 import Contact from "../pages/client/contact/Contact";
 import DetailNews from "../pages/client/detailNews/DetailNews";
 import DetailDoctor from "../pages/client/detailDoctor/DetailDoctor";
-import PriceList from "../pages/client/priceList/PriceList";
 import News from "../pages/client/news/News";
 import Services from "../pages/client/services/Services";
 import Introduce from "../pages/client/introduce/Introduce";
 import Booking from "../pages/client/booking/Booking";
+import DetailServices from "../pages/client/detailServices/DetailServices";
+import PriceList from "../pages/client/priceList/PriceList";
 
 const Router = (): JSX.Element | null => {
   const element = useRoutes([
@@ -26,7 +27,7 @@ const Router = (): JSX.Element | null => {
           element: <Home />,
         },
         {
-          path: "/contac",
+          path: "/contact",
           element: <Contact />,
         },
         {
@@ -36,6 +37,10 @@ const Router = (): JSX.Element | null => {
         {
           path: "/detailDoctor",
           element: <DetailDoctor />,
+        },
+        {
+          path: "/detailServices",
+          element: <DetailServices />,
         },
         {
           path: "/priceList",

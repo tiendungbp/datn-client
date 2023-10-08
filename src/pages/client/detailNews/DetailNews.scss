@@ -1,0 +1,119 @@
+.btn_comment {
+  width: 100%;
+}
+.checkbox_comment {
+  width: 600px;
+}
+.img_news {
+  height: 340px;
+}
+.container_detailNews{
+    width: 90%;
+}
+
+@media screen and (min-width: 1280px) {
+    .content_leftNews {
+        width: 70%;
+    }
+
+    .content_rightNews {
+        width: 30%;
+    }
+        .btn_checkbox {
+            width: 100%;
+        }
+    
+        .input_comment {
+            width: 100%;
+        }
+    
+        .content_comment {
+            width: 100%;
+        }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .content_leftNews {
+            width: 60%;
+        }
+    
+        .content_rightNews {
+            width: 40%;
+        }
+                .btn_checkbox {
+                    width: 100%;
+                }
+        
+                .input_comment {
+                    width: 100%;
+                }
+        
+                .content_comment {
+                    width: 100%;
+                }
+}
+@media screen and (min-width: 1024px) {
+    .content_leftNews {
+            width: 60%;
+        }
+    
+        .content_rightNews {
+            width: 30%;
+        }
+        
+}
+
+@media screen and (min-width: 767px) and (max-width:1023px) {
+    .container_detailNews{
+        width: 90%;
+    }
+        .content_leftNews {
+            width: 60%;
+        }
+    
+        .content_rightNews {
+            width: 30%;
+        }
+        .form_feebback{
+            width: 100%;
+        }
+                .checkbox_comment {
+                    width: 100%;
+                }
+        
+                .input_comment {
+                    width: 100%;
+                }
+        
+                .content_comment {
+                    width: 100%;
+                }
+}
+
+@media screen and (max-width: 767px) {
+    .container_detailNews {
+            width: 90%; 
+            margin: auto;
+            // margin-left: 65px;
+        }
+    .content_rightNews{
+        display: none;
+    }
+        .content_leftNews {
+            width: 100%;
+        }
+    .checkbox_comment{
+        width: 100%;
+    }
+
+    .input_comment{
+        width: 100%;
+    }
+    .content_comment{
+        width: 100%;
+    }
+}
+@media (max-width: 575px)  {
+    .btn_checkbox .ant-form .ant-form-item{
+        width: 100%;
+    }
+}
