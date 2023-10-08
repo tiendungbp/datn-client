@@ -62,6 +62,10 @@ const Router = (): JSX.Element | null => {
           path: "/booking",
           element: <Booking />,
         },
+        {
+          path: "/404",
+          element: <Notfound />,
+        },
       ],
     },
     {
@@ -79,11 +83,7 @@ const Router = (): JSX.Element | null => {
     {
       path: "*",
       element: <Navigate to="/404" />,
-    },
-    {
-      path: "/404",
-      element: <Notfound />,
-    },
+    }
   ]);
   return element;
 };

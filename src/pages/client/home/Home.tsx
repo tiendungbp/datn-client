@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import Banner from '../../../asset/image/banner.png'
+import Banner from '../../../assets/img/banner.png'
 import { Rate } from 'antd'
 
 
@@ -377,7 +377,7 @@ const Home = () => {
         {/* end gg map*/}
 
         {/*start customer comments */}
-        <div className='w-[90%] md:w-[60%] m-auto mt-[4rem] '>
+        <div className='w-[90%] md:w-[60%] m-auto mt-[4rem] mb-[2rem] md:mb-[3rem]'>
           <div className='text-center pb-8 '>
           {/* <div className='w-[300px] h-[300px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[150%] translate-y-[20%] blur-[250px]'></div> */}
 

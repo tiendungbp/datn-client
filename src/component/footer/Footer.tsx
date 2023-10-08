@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logoToothHive from "../../asset/image/ToothHive (2).png";
+import logoToothHive from "../../assets/img/ToothHive (2).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -70,7 +70,7 @@ const Footer = () => {
     }
   });
   return (
-    <div className="footer__client__toothHive mt-[8rem]">
+    <div className="footer__client__toothHive">
       <div className="footer__client__toothHive__Behine">
         <div className="first__footer">
           <div className="title__first__footer" style={{fontWeight:"bolder"}}>
