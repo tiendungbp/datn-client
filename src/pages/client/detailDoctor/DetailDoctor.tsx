@@ -1,11 +1,12 @@
 import React from 'react'
 import "./style.scss"
 import { Button } from 'antd'
+import { Link } from 'react-router-dom'
 
 const DetailDoctor = () => {
 
   return (
-    <div className='container_detailDoctor w-4/5 m-auto'>
+    <div className='container_detailDoctor m-auto'>
       <h1 className='font-medium'>Trang chủ <span className='text-blue-500'>/ Chi tiết bác sĩ</span></h1>
       <div className='flex'>
         <div className='content_left mt-10 relative w-1/3'>
@@ -24,7 +25,7 @@ const DetailDoctor = () => {
           </div>
         </div>
       </div>
-      <div className='bottom_detailDoctor mt-16 flex flex-wrap gap-36'>
+      <div className='bottom_detailDoctor mt-24 mb-20 flex flex-wrap gap-24'>
         <div>
           <span className='flex  gap-2 items-center font-semibold text-lg'>
             <img src="./img/Group 232.png" alt="" />Danh mục điều trị của bác sĩ</span>
@@ -34,11 +35,11 @@ const DetailDoctor = () => {
             <img src="./img/Group 236.png" alt="" />Địa chỉ và thời gian làm việc</span>
           <p className='mt-7'>Địa chỉ làm việc: Cơ sở 2 - 172 Trường chinh, <br /> Tân Thới HIệp, Quận 12, Tp.HCM</p>
           <p>Thời gian: Từ 8:00 - 18:00 vào các ngày trong tuần</p>
-          <div className='float-right mt-3'>
-            <li>Nha khoa tổng quát</li>
-            <li>Niềng răng</li>
-            <li>Trồng răng implant</li>
-            <li>Nhổ răng</li>
+          <div className='mt-3 leading-10'>
+            <li className='text-blue-400'><Link to="/">Nha khoa tổng quát</Link></li>
+            <li className='text-blue-400'><Link to="/">Niềng răng</Link> </li>
+            <li className='text-blue-400'><Link to="/">Trồng răng implant</Link></li>
+            <li className='text-blue-400'><Link to="/">Nhổ răng</Link></li>
           </div>
 
         </div>

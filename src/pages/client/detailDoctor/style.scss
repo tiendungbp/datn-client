@@ -1,9 +1,12 @@
+.container_detailDoctor{
+    width: 90%;
+}
 .background_shadow {
     position: relative;
     border-radius: 8px 16px 8px 60px;
     background: linear-gradient(180deg, #1386ED 35.19%, rgba(19, 134, 237, 0.34) 99.99%, rgba(19, 134, 237, 0.00) 100%);
-    width: 352.37px;
-    height: 359.483px;
+    width: 100%;
+    height: 100%;
     flex-shrink: 0;
     top: 0px;
     z-index: 2;
