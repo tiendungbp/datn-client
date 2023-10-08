@@ -36,5 +36,13 @@
       width: 275px;
       height: 200px;
     }
+    :first-child {
+      left: 25px;
+      top: 50px;
+    }
+    :last-child {
+      top: 0;
+      left: 60px;
+    }
   }
 }

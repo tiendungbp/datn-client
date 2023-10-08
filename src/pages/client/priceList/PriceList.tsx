@@ -6,7 +6,7 @@ import TablePriceList from "./TablePriceList/TablePriceList";
 
 const PriceList = () => {
   return (
-    <div className="wrapper xl:container sm:mx-16 mx-6">
+    <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
       {/* BreadCrumb */}
       <Breadcrumb
         className={`text-sm my-8`}
