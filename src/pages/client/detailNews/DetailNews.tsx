@@ -1,7 +1,6 @@
 import { Button, Checkbox, Divider, Form, Input, Space } from 'antd'
 import TextArea from 'antd/es/input/TextArea'
 import React from 'react'
-import "./style.scss"
 import Search from 'antd/es/input/Search'
 import { UpOutlined } from '@ant-design/icons'
 

@@ -78,7 +78,7 @@ const Register = () => {
                 </Button>
               </Form.Item>
             </Form>
-            <h3 className='mb-14 text-lg'>Bạn đã có tài khoản? Đăng nhập <NavLink className="text-blue-500 font-semibold" to="">tại đây</NavLink></h3>
+            <h3 className='mb-14 text-lg'>Bạn đã có tài khoản? Đăng nhập <NavLink className="text-blue-500 font-semibold" to="/login">tại đây</NavLink></h3>
           </div>
         </div>
       </div>

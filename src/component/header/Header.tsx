@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Header.scss";
 import logoToothHive from "../../asset/image/ToothHive (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [widthOpen, setWidthOpen] = useState<number>(
@@ -10,8 +10,6 @@ const Header = () => {
       document.documentElement.clientWidth ||
       document.body.clientWidth
   );
- 
- 
 
   const [scrollY, setscrollY] = useState<number>(0);
 
@@ -40,17 +38,14 @@ const Header = () => {
 
     if (box) {
       if (isMenuOpen) {
-        // Mở menu
-        console.log(1);
         box.style.height = "600px";
       } else {
-        // Đóng menu
         box.style.height = "0px";
       }
-      if(widthOpen >= 1080){
+      if (widthOpen >= 1080) {
         box.style.height = "";
-      }else{
-        if(!isMenuOpen){
+      } else {
+        if (!isMenuOpen) {
           box.style.height = "0px";
         }
       }
@@ -58,17 +53,17 @@ const Header = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isMenuOpen,widthOpen]);
+  }, [isMenuOpen, widthOpen]);
   const isBackgroundWhite = scrollY >= 90;
   return (
     <div className="header__nav">
       <div
-        className={`header__box ${isBackgroundWhite ? "white-background" : ""}`}
+        className={`header__box ${isBackgroundWhite ? "white-background shadow" : ""}`}
       >
         <div className="header__box__setting">
           <div className="reponsive__logo__navbars">
             <div className="header__box1">
-              <img src={logoToothHive} alt="logo" />
+              <NavLink to={"/"}><img src={logoToothHive} alt="logo" /></NavLink>
             </div>
             <div
               className="menu__nav"
@@ -79,38 +74,72 @@ const Header = () => {
               <FontAwesomeIcon className="menu__icon__sm__ls" icon={faBars} />
             </div>
           </div>
-          {/* {(isMenuOpen || widthOpen >= 1080) && ( */}
           <div className="box__reponsive__nav">
             <div className="box__reponsive__nav1">
               <div className="header__box2">
                 <div className="header__box2__notification">
                   <div className="box__text">
-                    <p>Trang chủ</p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/"}>Trang chủ</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                    <p>Dịch vụ</p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/services"}>Dịch vụ</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                    <p>Bảng giá</p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/priceList"}>Bảng giá</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                    <p>Giới thiệu</p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/introduce"}>Giới thiệu</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                    <p>Liên hệ</p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/contact"}>Liên hệ</NavLink>
+                    </p>
                   </div>
                   <div className="box__text">
-                    <p>Tin tức</p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      <NavLink to={"/news"}>Tin tức</NavLink>
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="header__box3">
-                <button className="booking">Đặt lich</button>
-                <button className="booking">Đăng nhập</button>
+                <button className="booking"><NavLink to={"/booking"}>Đặt lịch</NavLink></button>
+                <button className="booking"><NavLink to={"/login"}>Đăng nhập</NavLink></button>
               </div>
             </div>
           </div>
-          {/* )} */}
         </div>
       </div>
     </div>

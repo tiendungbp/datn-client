@@ -25,7 +25,7 @@ const Login = () => {
           <h1 className='font-bold text-2xl mb-4'>Chào mừng bạn đến <br /> với Tooth<span className='font_blue'>Hive</span></h1>
           <p>Nơi mang đến cho bạn trải nghiệm dịch vụ <br /> tuyệt hảo cho nụ cười hoàn hảo.</p>
           <img width={300} src="./img/Capture-removebg-preview (1) 1.png" alt="" />
-          <div className='back_Hoem flex items-center gap-2 text-blue-500'><RollbackOutlined /><span>Quay về trang chủ</span></div>
+          <div className='back_Hoem flex items-center gap-2 text-blue-500'><RollbackOutlined /><span><NavLink to={"/"}>Quay về trang chủ</NavLink></span></div>
         </div>
         <div className='form_right w-3/5 pt-10 flex justify-center'>
           <div className='text-left'>
@@ -72,7 +72,7 @@ const Login = () => {
                   </div>
                   <div>
 
-                    <NavLink to="">Quên mật khẩu?</NavLink>
+                    <NavLink to="/forgot">Quên mật khẩu?</NavLink>
                   </div>
                 </div>
               </Form.Item>
@@ -88,7 +88,7 @@ const Login = () => {
               <img className='border-2 border-gray-500 rounded-full p-1' width={30} src="https://storage.googleapis.com/support-kms-prod/ZAl1gIwyUsvfwxoW9ns47iJFioHXODBbIkrK" alt="" />
               <img className='border-2 border-gray-500 rounded-full p-1' width={30} src="https://vi.wizcase.com/wp-content/uploads/2022/05/Facebook-Logo.png" alt="" />
             </div>
-            <h2 className='mt-10'>Bạn chưa có tài khoản? Đăng ký <NavLink className="font-semibold text-blue-500" to="">tại đây</NavLink></h2>
+            <h2 className='mt-10'>Bạn chưa có tài khoản? Đăng ký <NavLink className="font-semibold text-blue-500" to="/register">tại đây</NavLink></h2>
           </div>
         </div>
       </div>
