@@ -54,7 +54,7 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [isMenuOpen, widthOpen]);
-  const isBackgroundWhite = scrollY >= 90;
+  const isBackgroundWhite = scrollY >= 60;
   return (
     <div className="header__nav">
       <div
