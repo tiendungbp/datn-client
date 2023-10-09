@@ -1,0 +1,31 @@
+
+.admin_input_search_status{
+    .ant-select-selector{
+        background-color: #DCEDFF !important;
+
+    }
+}
+.admin_input_search_date{
+    .ant-picker{
+        height: 50px;
+        background-color: #DCEDFF !important;
+
+    }
+}
+
+.admin_input_search_phone{
+    .ant-input-group-addon{
+        background-color: #1386ED;
+        
+    }
+    .ant-input-affix-wrapper{
+        height: 50px;
+        background-color: #DCEDFF !important;
+        .ant-input{
+        background-color: #DCEDFF !important;
+
+
+        }
+
+    }
+}

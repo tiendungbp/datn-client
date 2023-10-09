@@ -73,7 +73,7 @@ const Home = () => {
 
   return (
     <>
-      <div className='  mt-12 lg:mt-[4rem] '>
+      <div className='  lg:mt-[4rem] '>
         {/* start banner  */}
         <div className='m-auto w-wd-primary md:w-wd-secondary'>
           <div className='w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-[280px]'></div>

@@ -7,17 +7,17 @@ const Services = () => {
   return (
     <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem] ">
 
-<Breadcrumb
-          className={`text-lg my-8`}
-          items={[
-            {
-              title: <a href="/">Trang chủ</a>,
-            },
-            {
-              title: <p className="textColor ">Dịch vụ</p>,
-            },
-          ]}
-        />
+      <Breadcrumb
+        className={`text-lg my-8`}
+        items={[
+          {
+            title: <a href="/">Trang chủ</a>,
+          },
+          {
+            title: <p className="textColor ">Dịch vụ</p>,
+          },
+        ]}
+      />
       {/*start category service*/}
       <div>
         <div className=' mt-4 py-8  text-center '>
