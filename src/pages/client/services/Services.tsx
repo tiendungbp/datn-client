@@ -1,12 +1,23 @@
 import { faArrowRight, faTooth } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "react-router-dom"
-import Image_map from "../../../asset/image/map.png"
+import Image_map from "../../../assets/img/map.png"
+import { Breadcrumb } from "antd"
 const Services = () => {
   return (
     <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem] ">
 
-
+      <Breadcrumb
+        className={`text-lg my-8`}
+        items={[
+          {
+            title: <a href="/">Trang chủ</a>,
+          },
+          {
+            title: <p className="textColor ">Dịch vụ</p>,
+          },
+        ]}
+      />
       {/*start category service*/}
       <div>
         <div className=' mt-4 py-8  text-center '>
@@ -151,7 +162,7 @@ const Services = () => {
 
 
       {/*start map*/}
-      <div>
+      <div className="mb-[2rem] md:mb-[3rem] ">
         <div className="mt-4 py-8  text-center">
 
           <h1 className='text-[#1386ED] font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]'>Hệ Thống Nha Khoa ToothHive</h1>

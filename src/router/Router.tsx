@@ -15,6 +15,10 @@ import Introduce from "../pages/client/introduce/Introduce";
 import Booking from "../pages/client/booking/Booking";
 import DetailServices from "../pages/client/detailServices/DetailServices";
 import PriceList from "../pages/client/priceList/PriceList";
+import Booking_profile from "../pages/client/booking_profile/Booking_profile";
+import path from "path";
+import Guarantee_profile from "../pages/client/guarantee_profile/Guarantee_profile";
+import Profile from "../pages/client/profile/Profile";
 
 const Router = (): JSX.Element | null => {
   const element = useRoutes([
@@ -62,6 +66,24 @@ const Router = (): JSX.Element | null => {
           path: "/booking",
           element: <Booking />,
         },
+        {
+          path: "/booking_profile",
+          element: <Booking_profile />,
+        },
+        {
+          path: "/guarantee_profile",
+          element: <Guarantee_profile />,
+        }
+        ,
+        {
+          path: "/profile",
+          element: <Profile/>,
+        }
+        ,
+        {
+          path: "/404",
+          element: <Notfound />,
+        },
       ],
     },
     {
@@ -79,11 +101,7 @@ const Router = (): JSX.Element | null => {
     {
       path: "*",
       element: <Navigate to="/404" />,
-    },
-    {
-      path: "/404",
-      element: <Notfound />,
-    },
+    }
   ]);
   return element;
 };
