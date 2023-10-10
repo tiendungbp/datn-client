@@ -70,11 +70,7 @@ const Footer = () => {
     }
   });
   return (
-<<<<<<< HEAD
-    <div className="footer__client__toothHive mt-[2rem]">
-=======
     <div className="footer__client__toothHive">
->>>>>>> nga
       <div className="footer__client__toothHive__Behine">
         <div className="first__footer">
           <div className="title__first__footer" style={{fontWeight:"bolder"}}>
