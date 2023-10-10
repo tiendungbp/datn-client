@@ -29,3 +29,12 @@
 
     }
 }
+.table_booking_profile{
+    overflow-x: auto;
+    max-width: 100%;
+}
+.modal_booking_profile{
+    .ant-modal-footer{
+        display: none;
+    }
+}
