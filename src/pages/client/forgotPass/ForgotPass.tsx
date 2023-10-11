@@ -1,8 +1,6 @@
 
-import React from 'react'
-import IconGg from '../../../assets/icons/google.svg'
-import IconFace from '../../../assets/icons/facebook.png'
-import { Button, Checkbox, Form, Input } from 'antd'
+
+import { Button, Form, Input } from 'antd'
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
