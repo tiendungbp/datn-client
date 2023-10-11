@@ -3,16 +3,17 @@ import React from "react";
 import { LeftArrowIcon, SearchIcon } from "../../../assets/icons/icons";
 import NewsImage from "../../../assets/img/EmBeKhamRang.png";
 import "./News.scss";
+import { NavLink } from "react-router-dom";
 
 const News = () => {
   return (
-    <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[0rem]">
+    <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
       {/* BreadCrumb */}
       <Breadcrumb
         className={`text-base mb-8`}
         items={[
           {
-            title: <a href="#">Trang chủ</a>,
+            title: <NavLink to={"/"}>Trang chủ</NavLink>,
           },
           {
             title: <span className="textColor">Tin tức</span>,
@@ -37,7 +38,9 @@ const News = () => {
                 </p>
                 <a href="#">
                   <div className="textColor flex justify-between w-2/5">
-                    <p>Xem thêm</p>
+                    <p>
+                      <NavLink to={"/detailNews"}>Xem thêm</NavLink>
+                    </p>
                     <div className=" flex justify-center items-center">
                       <LeftArrowIcon />
                     </div>
@@ -56,7 +59,9 @@ const News = () => {
                 </p>
                 <a href="#">
                   <div className="textColor flex justify-between w-2/5">
-                    <p>Xem thêm</p>
+                    <p>
+                      <NavLink to={"/detailNews"}>Xem thêm</NavLink>
+                    </p>
                     <div className=" flex justify-center items-center">
                       <LeftArrowIcon />
                     </div>
@@ -75,7 +80,9 @@ const News = () => {
                 </p>
                 <a href="#">
                   <div className="textColor flex justify-between w-2/5">
-                    <p>Xem thêm</p>
+                    <p>
+                      <NavLink to={"/detailNews"}>Xem thêm</NavLink>
+                    </p>
                     <div className=" flex justify-center items-center">
                       <LeftArrowIcon />
                     </div>
@@ -94,7 +101,9 @@ const News = () => {
                 </p>
                 <a href="#">
                   <div className="textColor flex justify-between w-2/5">
-                    <p>Xem thêm</p>
+                    <p>
+                      <NavLink to={"/detailNews"}>Xem thêm</NavLink>
+                    </p>
                     <div className=" flex justify-center items-center">
                       <LeftArrowIcon />
                     </div>
@@ -113,7 +122,9 @@ const News = () => {
                 </p>
                 <a href="#">
                   <div className="textColor flex justify-between w-2/5">
-                    <p>Xem thêm</p>
+                    <p>
+                      <NavLink to={"/detailNews"}>Xem thêm</NavLink>
+                    </p>
                     <div className=" flex justify-center items-center">
                       <LeftArrowIcon />
                     </div>
@@ -132,7 +143,9 @@ const News = () => {
                 </p>
                 <a href="#">
                   <div className="textColor flex justify-between w-2/5">
-                    <p>Xem thêm</p>
+                    <p>
+                      <NavLink to={"/detailNews"}>Xem thêm</NavLink>
+                    </p>
                     <div className=" flex justify-center items-center">
                       <LeftArrowIcon />
                     </div>

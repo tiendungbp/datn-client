@@ -70,7 +70,7 @@ const Login = () => {
             <span className="px-4 font-light tracking-wider text-gray-500">Hoặc</span>
             <hr className="w-full border-gray-400" />
           </div>
-          <div className='form_login'>
+          <div className='form_login mt-8'>
             <Form
               name="basic"
               layout="vertical"

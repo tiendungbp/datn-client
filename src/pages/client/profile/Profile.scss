@@ -1,0 +1,94 @@
+
+.tab_profile_user {
+    .ant-tabs-tab{
+        padding: 15px 40px !important;
+    }
+    .ant-tabs-card >.ant-tabs-nav .ant-tabs-tab-active{
+        background: #DCEDFF;
+    }
+}
+.profile_user_input {
+    .ant-form-item {
+        width: 100%;
+    }
+
+    .ant-picker {
+        width: 100%;
+        height: 50px;
+        background-color: #DCEDFF;
+    }
+
+    .ant-select-selector {
+        background-color: #DCEDFF !important;
+
+
+    }
+
+    .select_city {
+        width: 100%;
+    }
+}
+
+.button_profile {
+    .ant-btn-primary {
+        background-color: #1386ED;
+        height: 50px;
+
+        span {
+            padding: 0 10px;
+        }
+    }
+    .ant-btn-default{
+        height: 50px;
+
+        span{
+            padding: 0 10px;
+        }
+
+    }
+}
+.tab_account_information{
+    .input_email{
+        padding:15px ;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        background-color: #DCEDFF;
+
+
+    }
+    .button_email{
+        font-weight: 600;
+        border:1px solid #1386ED;
+        color: #1386ED;
+        padding: 15px 50px;
+        border-radius: 8px;
+        
+    }
+    .button_pass{
+        font-weight: 600;
+
+        border:1px solid #1386ED;
+        color: #1386ED;
+        padding: 15px 50px;
+        border-radius: 8px;
+
+    }
+}
+.model_email_profile{
+    .ant-modal-footer{
+        display: none;
+    }
+    .ant-input{
+        height: 50px;
+        background-color: #DCEDFF;
+    }
+    .ant-input-affix-wrapper{
+        background-color: #DCEDFF;
+
+    }
+
+}
+#file-input{
+    display: none;
+}

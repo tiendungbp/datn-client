@@ -408,11 +408,12 @@ const Home = () => {
 
         {/* start about doctor */}
 
-        <div className=" m-auto w-wd-primary md:w-wd-secondary my-[12rem]">
-          <div className=" w-full my-12 grid md:grid-cols-2 gap-4">
-            <div className="flex justify-center items-center relative">
-              {dataWatchDetailDoctor.map(
-                (item, i) =>
+        <div className=' m-auto w-wd-primary md:w-wd-secondary my-8'>
+
+          <div className=' w-full my-12 grid md:grid-cols-2 gap-4'>
+            <div className='flex justify-center items-center relative'>
+              {
+                dataWatchDetailDoctor.map((item, i) =>
                   isChooseDoctor === i && (
                     <div
                       key={i}

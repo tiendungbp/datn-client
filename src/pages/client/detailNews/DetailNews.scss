@@ -10,7 +10,14 @@
 .container_detailNews{
     width: 90%;
 }
+.content_leftNews{
 
+}
+.content_rightNews{
+    height: 40%;
+    position: sticky;
+    top: 0;
+}
 @media screen and (min-width: 1280px) {
     .content_leftNews {
         width: 70%;
