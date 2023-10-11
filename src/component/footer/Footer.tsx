@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logoToothHive from "../../asset/image/ToothHive (2).png";
+import logoToothHive from "../../assets/img/ToothHive (2).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -77,7 +77,7 @@ const Footer = () => {
             <p>Nụ Cười Hoàn Hảo <br /> Với Tooth Hive</p>
           </div>
           <div className="btn__first__footer">
-            <button>Liên hệ ToothHive</button>
+            <button className="booking">Liên hệ ToothHive</button>
           </div>
         </div>
         <div className="content__footer">
@@ -186,7 +186,7 @@ const Footer = () => {
         </div>
         <div className="the__end__footer">
           <div className="box__the__footer">
-            <p>
+            <p className="text-white">
               @ 2022 ToothHive - Nụ cười hoàn hảo và sức khỏe răng miệng hàng
               đầu
             </p>

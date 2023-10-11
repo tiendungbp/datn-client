@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
+  color: #000;
 }
 
 code {
@@ -37,4 +38,8 @@ code {
 @import "./component/footer/Footer.scss";
 @import "./pages/client/detailDoctor/DetailDoctor.scss";
 @import "./pages/client/detailNews/DetailNews.scss";
+@import "./pages/client/booking_profile/Booking_profile.scss";
+@import "./pages/client/booking/Booking.scss";
+@import "./pages/client/login/Login.scss";
 
+@import "./pages/client/profile/Profile.scss"

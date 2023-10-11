@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import logoToothHive from "../../asset/image/ToothHive (1).png";
+import React, { useEffect, useState } from "react";
+import logoToothHive from "../../assets/img/ToothHive (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
@@ -54,7 +54,7 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [isMenuOpen, widthOpen]);
-  const isBackgroundWhite = scrollY >= 90;
+  const isBackgroundWhite = scrollY >= 60;
   return (
     <div className="header__nav">
       <div

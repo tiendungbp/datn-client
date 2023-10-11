@@ -1,84 +1,120 @@
-import React from 'react'
-import { Button, Input, Form } from 'antd'
-import { NavLink } from 'react-router-dom'
-const Register = () => {
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
-  type FieldType = {
-    email?: string;
-    hoTen?: string;
-    password?: string;
-    numberPhone?: number;
-  };
+import { Button, Checkbox, Form, Input } from 'antd'
+import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShare } from '@fortawesome/free-solid-svg-icons';
+
+
+
+const onFinish = (values: any) => {
+  console.log('Success:', values);
+};
+
+const onFinishFailed = (errorInfo: any) => {
+  console.log('Failed:', errorInfo);
+};
+
+type FieldType = {
+  username?: string;
+  password?: string;
+  phone?:string;
+};
+
+const Register = () => {
   return (
-    <div className='background_login flex items-center justify-center'>
-      <div className='container flex bg-white w-3/4 rounded-lg' >
-        <div className='form_left w-2/5 pl-20 rounded-lg pt-10 pb-10'>
-          <h1 className='font-bold text-2xl mb-4'>Chào mừng bạn đến <br /> với Tooth<span className='font_blue'>Hive</span></h1>
-          <p>Nơi mang đến cho bạn trải nghiệm dịch vụ <br /> tuyệt hảo cho nụ cười hoàn hảo.</p>
-          <img width={300} src="./img/Capture-removebg-preview (1) 1.png" alt="" />
+    <div>
+      <div className='w-full  flex flex-col md:flex-row items-start'>
+        <div className='relative  w-[40%] h-screen flex flex-col bg-pink-200 hidden md:block'>
+          <img src="https://i.pinimg.com/564x/f2/b4/fa/f2b4fa6132ec15d5d7457045fe9678ef.jpg" alt="" className='w-full h-full object-cover brightness-50' />
+
+          <div className='absolute top-[25%] left-[10%] flex flex-col'>
+            <h1 className=' text-white text-2xl lg:text-3xl  font-bold'>Chào mừng bạn đến với Tooth<span className='text-[#1386ED]'>Hive</span></h1>
+            <span className='text-white py-4 lg:text-[1rem]'>Nơi mang đến cho bạn trải nghiệm dịch vụ tuyệt hảo cho nụ cười hoàn hảo.</span>
+            <div className='flex items-center gap-2 mt-4'>
+              <div className='bg-blue-50 px-6  py-3 rounded-lg text-[#1386ED] border-blue-600 '>
+              <FontAwesomeIcon  icon={faShare} className='pr-2'/>
+              
+              <NavLink to='/'>Quay về trang chủ</NavLink>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='form_right w-3/5 pt-10 flex justify-center'>
-          <div className='text-left'>
-            <h1 className='font-bold text-2xl mb-1'>Đăng ký tài khoản</h1>
-            <p className='mb-5'>Đăng ký tài khoản để trở thành một thành viên  <br /> của ToothHive</p>
+        <div className=' w-full md:w-[60%] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white'>
+          <h1 className=" text-2xl md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap">
+          Đăng ký tài khoản Tooth<span className='text-[#1386ED]'>Hive</span>
+          </h1>
+          <span className="font-light text-gray-500 mt-2">
+          Đăng ký tài khoản để trở thành một thành viên của ToothHive
+          </span>
+         
+
+          
+          <div className='form_login mt-8'>
             <Form
               name="basic"
-              style={{ maxWidth: 600 }}
+              layout="vertical"
+            
               initialValues={{ remember: true }}
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               autoComplete="off"
             >
-              <Form.Item<FieldType>
-                label="Email"
+              <Form.Item
                 name="email"
-                rules={[{ required: true, message: 'Please input your email ' }]}
-                labelCol={{ span: 24 }}
-                wrapperCol={{ span: 24 }}
+                label="E-mail"
+                rules={[
+                  {
+                    type: 'email',
+                    message: 'The input is not valid E-mail!',
+                  },
+                  {
+                    required: true,
+                    message: 'Vui lòng nhập Email!',
+                  },
+                ]}
               >
-                <Input placeholder='Nhập Email...' size="large" />
+                <Input placeholder='Nhập Email'/>
               </Form.Item>
               <Form.Item<FieldType>
                 label="Họ tên"
-                name="hoTen"
-                rules={[{ required: true, message: 'Please input your email ' }]}
-                labelCol={{ span: 24 }}
-                wrapperCol={{ span: 24 }}
+                name="username"
+                rules={[{ required: true, message: 'Vui lòng nhập họ tên!' }]}
               >
-                <Input placeholder='Nhập Email...' size="large" />
+                <Input placeholder='Nhập họ tên'/>
               </Form.Item>
-              <Form.Item
-                label="Mật khẩu mới"
+
+             
+
+              <Form.Item<FieldType>
+                label="Mật khẩu"
                 name="password"
-                rules={[{ required: true, message: 'Please input your password!' }]}
-                labelCol={{ span: 24 }}
-                wrapperCol={{ span: 24 }}
+                rules={[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]}
               >
-                <Input.Password placeholder='Nhập mật khẩu...' size="large" />
+                <Input.Password  placeholder='Nhập mật khẩu'/>
               </Form.Item>
               <Form.Item<FieldType>
                 label="Số điện thoại"
-                name="numberPhone"
-                rules={[{ required: true, message: 'Please input your email ' }]}
-                labelCol={{ span: 24 }}
-                wrapperCol={{ span: 24 }}
+                name="phone"
+                rules={[{ required: true, message: 'Vui lòng nhập số điện thoại!' }]}
               >
-                <Input placeholder='Nhập Email...' size="large" />
+                <Input placeholder='Nhập số điện thoại.'/>
               </Form.Item>
 
-              <Form.Item >
-                <Button className='w-full bg-blue-600 rounded-3xl py-3 pb-10 mt-4 text-lg font-semibold text-white' type="primary" htmlType="submit">
+             
+
+              <Form.Item 
+              // wrapperCol={{ offset: 8, span: 16 }}
+              >
+                <Button type="primary" htmlType="submit">
                   Đăng ký
                 </Button>
               </Form.Item>
+              <div className='text-center'>
+                <span className='text-center'>Bạn đã có tài khoản? Đăng nhập
+                  <NavLink to='/login' className='text-[#1386ED] font-bold'> tại đây!</NavLink>
+                </span>
+              </div>
             </Form>
-            <h3 className='mb-14 text-lg'>Bạn đã có tài khoản? Đăng nhập <NavLink className="text-blue-500 font-semibold" to="/login">tại đây</NavLink></h3>
           </div>
         </div>
       </div>
