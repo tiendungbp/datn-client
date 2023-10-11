@@ -24,7 +24,7 @@ const PriceList = () => {
         <h3 className="textColor text-3xl font-medium order-1">
           Bảng Giá Tại ToothHIve
         </h3>
-        <p className="order-3">
+        <p className="order-3 my-5">
           Nha Khoa ToothHIve cam kết đem đến cho khách hàng các gói dịch vụ Răng
           hàm mặt chất lượng hàng đầu với mức chi phí tốt nhất. Nha Khoa
           ToothHIve cam kết đem đến cho khách hàng các gói dịch vụ Răng hàm mặt
@@ -47,7 +47,7 @@ const PriceList = () => {
           </p>
         </div>
         <div className="flex flex-wrap sm:flex-nowrap justify-center">
-          <div className="item shadow-lg mr-5">
+          <div className="item box-shadow mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
@@ -70,7 +70,7 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-          <div className="item shadow-lg mr-5">
+          <div className="item box-shadow mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
@@ -93,7 +93,7 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-          <div className="item shadow-lg mr-5">
+          <div className="item box-shadow mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"

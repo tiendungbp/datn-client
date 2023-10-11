@@ -2,7 +2,7 @@ import React from "react";
 
 const TablePriceList = () => {
   return (
-    <table className="table-auto sm:container xl:container sm:m-10 border-collapse border border-slate-500 ">
+    <table className="table-auto sm:container xl:container sm:m-10 border-collapse border border-slate-500 sm:mx-auto">
       <thead className="bg-slate-700 text-white">
         <tr>
           <th className="border-collapse border border-slate-500 p-5 w-2/3">

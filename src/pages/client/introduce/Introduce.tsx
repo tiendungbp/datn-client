@@ -68,7 +68,7 @@ const Introduce = () => {
               </div>
             ) : null}
             <div>
-              <p className="mb-7 font-light">
+              <p className="mb-7 mt-5 font-light">
                 Chúng tôi tự hào mang đến một môi trường nha khoa chuyên nghiệp
                 và đẳng cấp, cam kết đem lại cho bạn trải nghiệm tốt nhất cho
                 sức khỏe nha khoa.
@@ -147,11 +147,11 @@ const Introduce = () => {
         </div>
         <div className="overlay"></div>
         <div className="showData m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]">
-          <h3 className="text-center text-3xl font-bold mb-3 py-5">
+          <h3 className="text-center text-3xl font-bold mb-3 pb-5">
             Nha Khoa ToothHive Qua
             <span className="textColor"> Những Con Số</span>
           </h3>
-          <div className="flex flex-col sm:flex-row items-center justify-center container mx-auto py-10 mb-20 px-4 sm:px-6 lg:px-8 ">
+          <div className="flex flex-col sm:flex-row items-center justify-center container mx-auto pb-10 mb-20 px-4 sm:px-6 lg:px-8 ">
             <div className="item rounded textColor flex flex-col justify-center items-center ml-5 my-3">
               <LikeIcon />
               <p className="text-3xl font-bold">100%</p>
