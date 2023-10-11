@@ -5,8 +5,8 @@
   position: relative;
   img {
     position: absolute;
-    width: 700px;
-    height: 500px;
+    width: 80%;
+    height: 480px;
   }
   :first-child {
     top: 50px;
@@ -33,7 +33,7 @@
   .myImage {
     height: 200px;
     img {
-      width: 275px;
+      width: 80%;
       height: 200px;
     }
     :first-child {
