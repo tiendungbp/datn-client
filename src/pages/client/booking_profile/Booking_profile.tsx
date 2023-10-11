@@ -5,9 +5,7 @@ import React from 'react'
 
 
 interface DataBookingProfileProp {
-
   key: string;
-
   name: string;
   age: number;
   address: string;
@@ -100,9 +98,9 @@ const Booking_profile = () => {
 
   return (
     <>
-      <div className='m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem] '>
+      <div className='m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[1rem] '>
         <Breadcrumb
-          className={`text-lg my-8`}
+          className={`text-lg mb-8`}
           items={[
             {
               title: <a href="/">Trang chủ</a>,

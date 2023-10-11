@@ -1,12 +1,25 @@
 import React from 'react'
-import { Button } from 'antd'
-import { Link } from 'react-router-dom'
+import { Breadcrumb, Button } from 'antd'
+import { Link, NavLink } from 'react-router-dom'
 
 const DetailDoctor = () => {
 
   return (
     <div className='container_detailDoctor m-auto'>
-      <h1 className='font-medium'>Trang chủ <span className='text-blue-500'>/ Chi tiết bác sĩ</span></h1>
+      <Breadcrumb
+        className={`text-base mt-4`}
+        items={[
+          {
+            title: <NavLink to={"/"}>Trang chủ</NavLink>,
+          },
+          {
+            title:  <NavLink to={"/services"}>Dịch vụ</NavLink>,
+          },
+          {
+            title: <span className="textColor">Bác sĩ Nguyễn Diên Thảo</span>,
+          },
+        ]}
+      />
       <div className='flex flex-wrap justify-between'>
         <div className='content_left relative mt-10'>
           <img className='img_doctor w-full relative' src="/img/image 15.png" alt="" />

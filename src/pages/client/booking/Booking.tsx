@@ -1,4 +1,4 @@
-import { Select, Button, Form, Input, DatePicker } from "antd";
+import { Select, Button, Form, Input, DatePicker, Breadcrumb } from "antd";
 import React, { useState } from "react";
 import dayjs from "dayjs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +9,7 @@ import {
   FieldTimeOutlined,
   SolutionOutlined,
 } from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
 const Booking = () => {
   const [selectedSpan, setSelectedSpan] = useState<string | null>(null);
   const handleSpanClick1 = (event: React.MouseEvent<HTMLSpanElement>) => {
@@ -44,11 +45,19 @@ const Booking = () => {
   // format date
   const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY", "DD-MM-YYYY", "DD-MM-YY"];
   return (
-    <div className="booking__tsx">
+    <div className="booking__tsx lg:mt-[1rem] lg:mb-[2rem]">
       <div className="title__booking">
-        <p>Trang chủ</p>
-        <p>/</p>
-        <p>Đặt lịch</p>
+        <Breadcrumb
+          className={`text-base`}
+          items={[
+            {
+              title: <NavLink to={"/"}>Trang chủ</NavLink>,
+            },
+            {
+              title: <span className="textColor">Giới thiệu</span>,
+            },
+          ]}
+        />
       </div>
       <Form
         name="basic"

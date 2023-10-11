@@ -6,10 +6,10 @@ import "./News.scss";
 
 const News = () => {
   return (
-    <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
+    <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[0rem]">
       {/* BreadCrumb */}
       <Breadcrumb
-        className={`text-sm my-8`}
+        className={`text-base mb-8`}
         items={[
           {
             title: <a href="#">Trang chủ</a>,
