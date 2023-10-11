@@ -23,11 +23,11 @@ const News = () => {
       {/* Content */}
       <div className="flex flex-col-reverse sm:flex-row">
         <div className="left flex-col sm:w-4/5 w-full pr-0 sm:pr-10">
-          <h3 className="text-3xl font-bold">
+          <h3 className="text-3xl font-bold mb-5">
             Các <span className="textColor">Bài Viết</span> Tại ToothHive
           </h3>
           <div className="flex flex-wrap justify-between">
-            <div className="news flex shadow rounded my-5">
+            <div className="news flex shadow rounded mb-5">
               <img src={NewsImage} alt="" />
               <div className="content p-3">
                 <h3 className="font-bold leading-tight">
@@ -48,7 +48,7 @@ const News = () => {
                 </a>
               </div>
             </div>
-            <div className="news flex shadow rounded my-5">
+            <div className="news flex shadow rounded mb-5">
               <img src={NewsImage} alt="" />
               <div className="content p-3">
                 <h3 className="font-bold leading-tight">
@@ -69,7 +69,7 @@ const News = () => {
                 </a>
               </div>
             </div>
-            <div className="news flex shadow rounded my-5">
+            <div className="news flex shadow rounded mb-5">
               <img src={NewsImage} alt="" />
               <div className="content p-3">
                 <h3 className="font-bold leading-tight">
@@ -90,7 +90,7 @@ const News = () => {
                 </a>
               </div>
             </div>
-            <div className="news flex shadow rounded my-5">
+            <div className="news flex shadow rounded mb-5">
               <img src={NewsImage} alt="" />
               <div className="content p-3">
                 <h3 className="font-bold leading-tight">
@@ -111,7 +111,7 @@ const News = () => {
                 </a>
               </div>
             </div>
-            <div className="news flex shadow rounded my-5">
+            <div className="news flex shadow rounded mb-5">
               <img src={NewsImage} alt="" />
               <div className="content p-3">
                 <h3 className="font-bold leading-tight">
@@ -132,7 +132,7 @@ const News = () => {
                 </a>
               </div>
             </div>
-            <div className="news flex shadow rounded my-5">
+            <div className="news flex shadow rounded mb-5">
               <img src={NewsImage} alt="" />
               <div className="content p-3">
                 <h3 className="font-bold leading-tight">

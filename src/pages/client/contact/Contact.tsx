@@ -21,7 +21,7 @@ const Contact = () => {
           ]}
         />
         {/* Banner */}
-        <div className="block sm:flex ">
+        <div className="block sm:flex">
           <div className="left block sm:flex-1 myImage">
             <img src={blueSquareImage} alt="" />
             <img src={doctorImage} alt="" />
@@ -48,7 +48,7 @@ const Contact = () => {
         </div>
       </div>
       {/* Div contact form */}
-      <div className="contact mt-32">
+      <div className="contact mt-80">
         <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
           <div className="block sm:flex py-16">
             <div className="contactInfo flex-1">
