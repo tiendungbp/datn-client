@@ -6,7 +6,7 @@ import TablePriceList from "./TablePriceList/TablePriceList";
 
 const PriceList = () => {
   return (
-    <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
+    <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
       {/* BreadCrumb */}
       <Breadcrumb
         className={`text-base mb-8`}
@@ -47,7 +47,7 @@ const PriceList = () => {
           </p>
         </div>
         <div className="flex flex-wrap sm:flex-nowrap justify-center">
-          <div className="item box-shadow mr-5 mb-5">
+          <div className="item box-shadow sm:mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
@@ -70,7 +70,7 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-          <div className="item box-shadow mr-5 mb-5">
+          <div className="item box-shadow sm:mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
@@ -93,7 +93,7 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-          <div className="item box-shadow mr-5 mb-5">
+          <div className="item box-shadow sm:mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
