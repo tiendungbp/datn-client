@@ -1,0 +1,38 @@
+.CategoryServiceCarousel {
+  .slick-prev {
+    &::before {
+      content: "";
+    }
+  }
+  .slick-next {
+    &::before {
+      content: "";
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .CategoryServiceCarousel {
+    .slick-active {
+      button {
+        background-color: #1386ed !important;
+      }
+    }
+    .slick-dots {
+      bottom: -20px;
+    }
+    .slick-prev {
+      inset-inline-start: 0px;
+      z-index: 3;
+      &::before {
+        content: "";
+      }
+    }
+    .slick-next {
+      inset-inline-end: 0px;
+      &::before {
+        content: "";
+      }
+    }
+  }
+}

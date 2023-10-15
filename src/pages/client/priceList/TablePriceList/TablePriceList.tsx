@@ -1,6 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {
+  getAllCategoryService,
+  getAllServiceService,
+} from "../../../../services/userService/userService";
 
 const TablePriceList = () => {
+  const [arrCategory, setArrCategory] = useState<any[]>([]);
+  const [arrService, setArrService] = useState<any[]>([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     await fetchAllCategory();
+  //     await fetchAllService();
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  // const fetchAllCategory = async () => {
+  //   try {
+  //     let { data } = await getAllCategoryService();
+  //     if (data && data.errCode === 0) {
+  //       setArrCategory([...data.data]);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching data: ", error);
+  //   }
+  // };
+
+  // const fetchAllService = async () => {
+  //   try {
+  //     let { data } = await getAllServiceService();
+  //     if (data && data.errCode === 0) {
+  //       setArrService([...data.data]);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching data: ", error);
+  //   }
+  // };
   return (
     <table className="table-auto sm:container xl:container sm:m-10 border-collapse border border-slate-500 sm:mx-auto">
       <thead className="bg-slate-700 text-white">
@@ -29,73 +66,6 @@ const TablePriceList = () => {
           </td>
           <td className="border-collapse border border-slate-500 p-5 text-center">
             Miễn phí
-          </td>
-        </tr>
-        {/*  */}
-        <tr>
-          <td className=" p-5 font-medium">Điều trị nha chu</td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        {/*  */}
-        <tr>
-          <td className=" p-5 font-medium">Điều trị nha chu</td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        {/*  */}
-        <tr>
-          <td className=" p-5 font-medium">Điều trị nha chu</td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
           </td>
         </tr>
       </tbody>
