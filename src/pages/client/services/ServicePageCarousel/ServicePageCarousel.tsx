@@ -4,7 +4,6 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faTooth } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { getAllCategoryService } from "../../../../services/userService/userService";
 
 const SampleNextArrow = (props: any) => {
   const { className, style, onClick } = props;
@@ -68,9 +67,6 @@ const ServicePageCarousel = ({
 
   for (let i = 0; i < arr.length; i += itemsPerDiv) {
     const group = arr.slice(i, i + itemsPerDiv);
-    if (itemsPerDiv >= 3) {
-    } else {
-    }
 
     groupedItems.push(group);
   }

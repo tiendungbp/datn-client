@@ -3,34 +3,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import Image_map from "../../../assets/img/map.png";
 import { Breadcrumb } from "antd";
-import CategoryServiceCarousel from "../home/CategoryServiceCarousel/CategoryServiceCarousel";
 import { useEffect, useState } from "react";
-import { getAllDoctorService } from "../../../services/userService/userService";
+import CategoryServiceCarousel from "../home/CategoryServiceCarousel/CategoryServiceCarousel";
+import { RootState, useAppDispatch } from "../../../store";
+import { useSelector } from "react-redux";
+import { getAllDoctor } from "../../../services/managerDoctor";
+import { getAllDoctorStore } from "../../../store/managerDoctor.services/thunkAction";
 import ServicePageCarousel from "./ServicePageCarousel/ServicePageCarousel";
+// import ServicePageCarousel from "./ServicePageCarousel/ServicePageCarousel";
 const Services = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [arrDoctor, setArrDoctor] = useState<any[]>([]);
 
-  const mobileScreen = windowWidth < 500;
+  const Appdispatch = useAppDispatch();
+  const { listDoctor } = useSelector((state: RootState) => state.managerDoctor);
+
+  const [arrDoctor, setArrDoctor] = useState<getAllDoctor[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetchAllDoctor();
+      // Gửi yêu cầu lấy danh sách danh mục
+      await Appdispatch(getAllDoctorStore());
     };
 
-    fetchData();
+    fetchData(); // Gọi hàm fetchData khi component được render
   }, []);
-
-  const fetchAllDoctor = async () => {
-    try {
-      let { data } = await getAllDoctorService();
-      if (data && data.errCode === 0) {
-        setArrDoctor([...data.data]);
-      }
-    } catch (error) {
-      console.error("Error fetching data: ", error);
+  useEffect(() => {
+    if (listDoctor) {
+      setArrDoctor(listDoctor);
     }
-  };
+  }, [listDoctor]);
+
+  const mobileScreen = windowWidth < 500;
 
   useEffect(() => {
     // Hàm xử lý thay đổi độ rộng màn hình
@@ -70,11 +73,12 @@ const Services = () => {
         <p className="text-[0.9rem] text-gray-500">
           Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
         </p>
+        <CategoryServiceCarousel
+          mobileScreen={mobileScreen}
+          windowWidth={windowWidth}
+        />
       </div>
-      <CategoryServiceCarousel
-        mobileScreen={mobileScreen}
-        windowWidth={windowWidth}
-      />
+
       {/* end category service */}
 
       {/*start doctor*/}

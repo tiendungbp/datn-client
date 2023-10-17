@@ -22,6 +22,7 @@ import Banner from "../../../assets/img/banner.png";
 import { Rate } from "antd";
 import CategoryServiceCarousel from "./CategoryServiceCarousel/CategoryServiceCarousel";
 import Top5Services from "./Top5Services/Top5Services";
+// import Top5Services from "./Top5Services/Top5Services";
 
 const slides = [
   {

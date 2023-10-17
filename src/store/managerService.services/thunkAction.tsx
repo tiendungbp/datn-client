@@ -1,12 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { managerCategoryServices } from "../../services/managerCategory";
-export const getAllCategoryStore = createAsyncThunk(
-  "Toohhive/getAllCategory",
+import { managerServiceServices } from "../../services/managerService";
+export const getAllServiceStore = createAsyncThunk(
+  "Toohhive/getAllService",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await managerCategoryServices.getAllCategory();
-      // console.log(res);
-
+      const res = await managerServiceServices.getAllService();
       return res;
     } catch (error) {
       return rejectWithValue(error);

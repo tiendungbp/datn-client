@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { getAllServiceService } from "../../../../services/userService/userService";
 import { Row, Col, Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./Top5Services.scss";
+import { RootState, useAppDispatch } from "../../../../store";
+import { useSelector } from "react-redux";
+import { getAllService } from "../../../../services/managerService";
+import { getAllServiceStore } from "../../../../store/managerService.services/thunkAction";
 
 const SampleNextArrow = (props: any) => {
   const { className, style, onClick } = props;
@@ -46,7 +49,25 @@ const settings = {
 };
 
 const Top5Services = ({ mobileScreen }: { mobileScreen: boolean }) => {
-  const [arrService, setArrService] = useState<any[]>([]);
+  const Appdispatch = useAppDispatch();
+  const { listService } = useSelector(
+    (state: RootState) => state.managerService
+  );
+  const [arrService, setArrService] = useState<getAllService[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // Gửi yêu cầu lấy danh sách danh mục
+      await Appdispatch(getAllServiceStore());
+    };
+
+    fetchData(); // Gọi hàm fetchData khi component được render
+  }, []);
+  useEffect(() => {
+    if (listService) {
+      setArrService(listService);
+    }
+  }, [listService]);
 
   return (
     <div className="mb-32">
