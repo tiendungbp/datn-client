@@ -1,26 +1,38 @@
-.textColor {
-  color: #1386ed;
-}
-.myImage {
-  position: relative;
-  img {
-    position: absolute;
-    width: 80%;
-    height: 480px;
+.contact__client {
+  .textColor {
+    color: #1386ed;
   }
-  :first-child {
-    top: 50px;
+  .myImage {
+    position: relative;
+    img {
+      position: absolute;
+      width: 70%;
+      height: 480px;
+    }
+    :first-child {
+      top: 50px;
+    }
+    :last-child {
+      top: 0;
+      left: 50px;
+    }
   }
-  :last-child {
-    top: 0;
-    left: 50px;
+  .contact {
+    background: linear-gradient(#dcedff, white);
   }
-}
-.contact {
-  background: linear-gradient(#dcedff, white);
+  .block {
+    width: 100%;
+    .left {
+      max-width: 50%;
+      background-color: red;
+    }
+    .right {
+      width: 60%;
+    }
+  }
 }
 
-@media screen and (max-width: 1080px){
+@media screen and (max-width: 1080px) {
   .myImage {
     height: 300px;
     img {
