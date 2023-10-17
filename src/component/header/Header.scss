@@ -8,7 +8,6 @@
   align-items: center;
   .menu__nav {
     display: none;
-    
   }
   .header__box {
     width: 100%;
@@ -298,20 +297,21 @@
           }
         }
         .box__reponsive__nav {
-          backdrop-filter: blur(2px); /* Điều chỉnh độ mờ tùy ý */
-          transition: backdrop-filter 0.3s ease;
           width: 100% !important;
+          height: 100vh;
           overflow: hidden;
           transition: height 0.5s ease;
           .box__reponsive__nav1 {
-            
+            height: 90vh;
+
             width: 100% !important;
             display: flex;
             flex-direction: column;
             padding: 10px 20px 20px 20px;
-            margin-top: 15px;
-            opacity: 0.9;
-            
+            margin-top: 14px;
+            background-color: #f5f4f4;
+            backdrop-filter: blur(5px); /* Điều chỉnh độ mờ tùy ý */
+            transition: backdrop-filter 0.3s ease;
             .header__box2 {
               display: flex;
               width: 100%;
@@ -350,13 +350,13 @@
                 border: solid 1px #1386ed;
                 padding: 15px 35px;
                 color: #1386ed;
-                a{
+                a {
                   width: 100%;
-                  p{
+                  p {
                     font-size: 16px;
                     width: 100%;
                     text-align: center;
-                    }
+                  }
                 }
               }
               .booking:nth-child(2) {
@@ -364,7 +364,6 @@
                 background: #1386ed;
                 transition: 0.5s;
               }
-              
             }
           }
         }
@@ -405,16 +404,19 @@
         }
         .box__reponsive__nav {
           width: 100% !important;
+          height: 100vh;
           overflow: hidden;
           transition: height 0.5s ease;
           .box__reponsive__nav1 {
             width: 100% !important;
+            height: 80vh;
             display: flex;
             flex-direction: column;
-            padding: 10px 10px 10px 10px;
+            padding: 10px 10px 20px 10px;
             margin-top: 14px;
-            opacity: 0.9;
-            background-color: #f5f3f3;
+            background-color: #f5f4f4;
+            backdrop-filter: blur(5px); /* Điều chỉnh độ mờ tùy ý */
+            transition: backdrop-filter 0.3s ease;
             .header__box2 {
               display: flex;
               width: 100%;
@@ -453,13 +455,13 @@
                 border: solid 1px #1386ed;
                 padding: 15px 35px;
                 color: #1386ed;
-                a{
+                a {
                   width: 100%;
-                  p{
+                  p {
                     font-size: 16px;
                     width: 100%;
                     text-align: center;
-                    }
+                  }
                 }
               }
               .booking:nth-child(2) {
@@ -467,7 +469,6 @@
                 background: #1386ed;
                 transition: 0.5s;
               }
-              
             }
           }
         }

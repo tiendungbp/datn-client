@@ -39,8 +39,8 @@ const Header = () => {
 
     if (box) {
       if (isMenuOpen) {
-        box.style.height = "600px";
-        
+        box.style.height = "100vh";
+
       } else {
         box.style.height = "0px";
       }
@@ -76,7 +76,7 @@ const Header = () => {
               <MenuOutlined className="menu__icon__sm__ls" />
             </div>
           </div>
-          <div className="box__reponsive__nav">
+          <div className="box__reponsive__nav ">
             <div className="box__reponsive__nav1">
               <div className="header__box2">
                 <div className="header__box2__notification">
