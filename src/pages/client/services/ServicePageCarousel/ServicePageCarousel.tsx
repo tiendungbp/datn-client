@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { Row, Col, Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faTooth } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+
+import "./ServicePageCarousel.scss";
 
 const SampleNextArrow = (props: any) => {
   const { className, style, onClick } = props;
@@ -67,12 +68,8 @@ const ServicePageCarousel = ({
 
   for (let i = 0; i < arr.length; i += itemsPerDiv) {
     const group = arr.slice(i, i + itemsPerDiv);
-
     groupedItems.push(group);
   }
-  // for (const key in arrCategory) {
-  //   arrCategory[key].description = arrDescriptions[key].description;
-  // }
   console.log("groupedItems: ", groupedItems);
 
   return (
@@ -89,9 +86,12 @@ const ServicePageCarousel = ({
               {groupedItems &&
                 groupedItems.map((group, index) => (
                   <div key={index}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8  ">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8 py-2">
                       {group.map((item, itemIndex) => (
-                        <div className="bg-white box-shadow rounded-lg  flex flex-col gap-4 l">
+                        <div
+                          className="bg-white box-shadow rounded-lg  flex flex-col gap-4"
+                          key={itemIndex}
+                        >
                           <div className="w-ful flex gap-2">
                             <div className="w-[35%] ">
                               <img

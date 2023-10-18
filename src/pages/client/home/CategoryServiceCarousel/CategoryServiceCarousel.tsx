@@ -186,11 +186,11 @@ const CategoryServiceCarousel = ({
               {groupedItems &&
                 groupedItems.map((group, index) => (
                   <div key={index}>
-                    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8 px-2">
+                    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8 py-2">
                       {group.map((item, itemIndex) => (
                         <div
                           key={itemIndex}
-                          className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4"
+                          className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4 py-5"
                         >
                           <div className="flex items-center gap-4">
                             <FontAwesomeIcon

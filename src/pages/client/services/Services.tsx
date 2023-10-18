@@ -63,22 +63,23 @@ const Services = () => {
         ]}
       />
       {/*start category service*/}
-      <div className=" mt-4 py-8  text-center ">
-        {/* //blur */}
-        {/* <div className='w-[300px] h-[300px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[200%] translate-y-[20%] blur-[200px]'></div> */}
+      <div>
+        <div className=" mt-4 py-8  text-center ">
+          {/* //blur */}
+          {/* <div className='w-[300px] h-[300px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[200%] translate-y-[20%] blur-[200px]'></div> */}
 
-        <h1 className="text-[#1386ED] font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
-          Các Danh Mục Dịch Vụ Tại ToothHive
-        </h1>
-        <p className="text-[0.9rem] text-gray-500">
-          Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
-        </p>
+          <h1 className="text-[#1386ED] font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
+            Các Danh Mục Dịch Vụ Tại ToothHive
+          </h1>
+          <p className="text-[0.9rem] text-gray-500">
+            Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
+          </p>
+        </div>
         <CategoryServiceCarousel
           mobileScreen={mobileScreen}
           windowWidth={windowWidth}
         />
       </div>
-
       {/* end category service */}
 
       {/*start doctor*/}
