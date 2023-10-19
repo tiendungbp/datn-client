@@ -1,0 +1,19 @@
+.top5ServiceCarousel {
+  .slick-active {
+    button {
+      background-color: #1386ed !important;
+    }
+  }
+  .slick-prev {
+    inset-inline-start: 0px;
+    &::before {
+      content: "";
+    }
+  }
+  .slick-next {
+    inset-inline-end: 0px;
+    &::before {
+      content: "";
+    }
+  }
+}

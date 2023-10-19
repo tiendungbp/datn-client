@@ -27,7 +27,7 @@ const Contact = () => {
             <img src={doctorImage} alt="" />
           </div>
           <div className="right mt-10 flex-1 flex flex-col justify-between">
-            <h3 className=" text-3xl font-bold mb-7">
+            <h3 className=" text-3xl font-bold my-7">
               Đến với <span className="textColor">ToothHive</span>
             </h3>
             <p className="my-3">
@@ -48,7 +48,7 @@ const Contact = () => {
         </div>
       </div>
       {/* Div contact form */}
-      <div className="contact mt-80">
+      <div className="contact xl:mt-80 lg:mt-32">
         <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
           <div className="block sm:flex py-16">
             <div className="contactInfo flex-1">

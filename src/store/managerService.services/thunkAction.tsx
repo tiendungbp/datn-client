@@ -1,35 +1,32 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import {
-  getAllCategory,
-  managerCategoryServices,
-} from "../../services/managerCategory";
-export const getAllCategoryStore = createAsyncThunk(
-  "Toohhive/getAllCategory",
+  getAllService,
+  managerServiceServices,
+} from "../../services/managerService";
+export const getAllServiceStore = createAsyncThunk(
+  "Toohhive/getAllService",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await managerCategoryServices.getAllCategory();
-      // console.log(res);
-
+      const res = await managerServiceServices.getAllService();
       return res;
     } catch (error) {
       return rejectWithValue(error);
     }
   }
 );
-export const getOneCategoryStore = createAsyncThunk(
-  "Toohhive/getOneCategory",
-  async (idCategory: getAllCategory["category_id"], { rejectWithValue }) => {
+
+export const getOneServiceStore = createAsyncThunk(
+  "Toohhive/getOneService",
+  async (idService: getAllService["category_id"], { rejectWithValue }) => {
     try {
-      const res = await managerCategoryServices.getOneCategory(idCategory);
-      // console.log(res);
-
+      console.log("idService: ", idService);
+      const res = await managerServiceServices.getOneService(idService);
       return res;
     } catch (error) {
       return rejectWithValue(error);
     }
   }
 );
-
 // export const createDoctorStore = createAsyncThunk(
 //   "Toohhive/createDoctor",
 //   async (payload: getAllDoctor, { rejectWithValue }) => {

@@ -3,7 +3,52 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import Image_map from "../../../assets/img/map.png";
 import { Breadcrumb } from "antd";
+import { useEffect, useState } from "react";
+import CategoryServiceCarousel from "../home/CategoryServiceCarousel/CategoryServiceCarousel";
+import { RootState, useAppDispatch } from "../../../store";
+import { useSelector } from "react-redux";
+import { getAllDoctor } from "../../../services/managerDoctor";
+import { getAllDoctorStore } from "../../../store/managerDoctor.services/thunkAction";
+import ServicePageCarousel from "./ServicePageCarousel/ServicePageCarousel";
+// import ServicePageCarousel from "./ServicePageCarousel/ServicePageCarousel";
 const Services = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const Appdispatch = useAppDispatch();
+  const { listDoctor } = useSelector((state: RootState) => state.managerDoctor);
+
+  const [arrDoctor, setArrDoctor] = useState<getAllDoctor[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // Gửi yêu cầu lấy danh sách danh mục
+      await Appdispatch(getAllDoctorStore());
+    };
+
+    fetchData(); // Gọi hàm fetchData khi component được render
+  }, []);
+  useEffect(() => {
+    if (listDoctor) {
+      setArrDoctor(listDoctor);
+    }
+  }, [listDoctor]);
+
+  const mobileScreen = windowWidth < 500;
+
+  useEffect(() => {
+    // Hàm xử lý thay đổi độ rộng màn hình
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    // Đăng ký sự kiện theo dõi thay đổi kích thước cửa sổ
+    window.addEventListener("resize", handleResize);
+
+    // Làm sạch sự kiện khi component bị hủy
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="services__client m-auto w-wd-primary md:w-wd-secondary lg:mt-[1rem] sm:mt-[0rem] md:mt-[0rem] xl:mt-[1rem]">
       <Breadcrumb
@@ -30,101 +75,10 @@ const Services = () => {
             Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
           </p>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8  ">
-          <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-            <div className="flex items-center gap-4 ">
-              <FontAwesomeIcon
-                icon={faTooth}
-                className="bg-[#DCEDFF] text-[#8AA7C5] p-3 text-[1.5rem] rounded-lg "
-              />
-              <h3 className="font-bold text-[1.2rem]">Chăm sóc răng</h3>
-            </div>
-            <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-              Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn
-              để khôi phục hoàn toàn chức năng...Dịch vụ Trồng Răng tại
-              ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn
-              chức năng...
-            </p>
-            <Link
-              to="/detailServices"
-              className="flex items-center gap-2 text-[#1386ED]"
-            >
-              {" "}
-              <span>Xem thêm </span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Link>
-          </div>
-          <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-            <div className="flex items-center gap-4 ">
-              <FontAwesomeIcon
-                icon={faTooth}
-                className="bg-[#FDEBFF] text-[#9B66DB] p-3 text-[1.5rem] rounded-lg "
-              />
-              <h3 className="font-bold text-[1.2rem]">Bọc răng sứ</h3>
-            </div>
-            <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-              Khi bạn trải qua quá trình mất răng, chất lượng cuộc sống và tự
-              tin của bạn có thể bị ảnh hưởng nghiêm...Khi bạn trải qua quá
-              trình mất răng, chất lượng cuộc sống và tự tin của bạn có thể bị
-              ảnh hưởng nghiêm...
-            </p>
-            <Link
-              to="/detailServices"
-              className="flex items-center gap-2 text-[#1386ED]"
-            >
-              {" "}
-              <span>Xem thêm </span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Link>
-          </div>
-          <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-            <div className="flex items-center gap-4 ">
-              <FontAwesomeIcon
-                icon={faTooth}
-                className="bg-[#FDF5EC] text-[#ECA09D] p-3 text-[1.5rem] rounded-lg "
-              />
-              <h3 className="font-bold text-[1.2rem]">Niềng răng</h3>
-            </div>
-            <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-              Niềng răng không chỉ là việc thẳng hàng răng mà còn là hành trình
-              thú vị để hoàn thiện nụ cười ...Dịch vụ Trồng Răng tại ToothHive
-              là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức
-              năng...
-            </p>
-            <Link
-              to="/detailServices"
-              className="flex items-center gap-2 text-[#1386ED]"
-            >
-              {" "}
-              <span>Xem thêm </span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Link>
-          </div>
-          <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-            <div className="flex items-center gap-4 ">
-              <FontAwesomeIcon
-                icon={faTooth}
-                className="bg-[#DCEDFF] text-[#8AA7C5] p-3 text-[1.5rem] rounded-lg "
-              />
-              <h3 className="font-bold text-[1.2rem]">Chăm sóc răng</h3>
-            </div>
-            <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-              Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn
-              để khôi phục hoàn toàn chức năng...Dịch vụ Trồng Răng tại
-              ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn
-              chức năng...
-            </p>
-            <Link
-              to="/detailServices"
-              className="flex items-center gap-2 text-[#1386ED]"
-            >
-              {" "}
-              <span>Xem thêm </span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Link>
-          </div>
-        </div>
+        <CategoryServiceCarousel
+          mobileScreen={mobileScreen}
+          windowWidth={windowWidth}
+        />
       </div>
       {/* end category service */}
 
@@ -138,8 +92,12 @@ const Services = () => {
             Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
           </p>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8  ">
+        <ServicePageCarousel
+          arr={arrDoctor}
+          mobileScreen={mobileScreen}
+          windowWidth={windowWidth}
+        />
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8  ">
           <div className="bg-white box-shadow rounded-lg  flex flex-col gap-4 l">
             <div className="w-ful flex gap-2">
               <div className="w-[35%] ">
