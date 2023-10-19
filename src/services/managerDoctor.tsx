@@ -26,5 +26,6 @@ export type getAllDoctor = {
 };
 export const managerDoctorServices = {
   getAllDoctor: () => http.get(`doctor/all`),
+  getOneDoctor: (id: getAllDoctor["doctor_id"]) => http.get(`doctor/${id}`),
   createDoctor: (payload: getAllDoctor) => http.post(`doctor/create`, payload),
 };

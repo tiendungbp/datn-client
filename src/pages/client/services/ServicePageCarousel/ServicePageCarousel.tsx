@@ -107,10 +107,9 @@ const ServicePageCarousel = ({
                               </span>
                               <span>Trình độ: {item.degree}</span>
                               <Link
-                                to="/detailDoctor"
+                                to={`/detailDoctor/${item.doctor_id}`}
                                 className="flex items-center gap-2 text-[#1386ED]"
                               >
-                                {" "}
                                 <span>Xem thêm </span>
                                 <FontAwesomeIcon icon={faArrowRight} />
                               </Link>

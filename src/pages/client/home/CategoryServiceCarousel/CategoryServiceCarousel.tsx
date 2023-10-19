@@ -209,7 +209,7 @@ const CategoryServiceCarousel = ({
                             {item.description}
                           </p>
                           <Link
-                            to={item.link}
+                            to={`/detailServices/${item.category_id}`}
                             className="flex items-center gap-2 text-[#1386ED]"
                           >
                             <span>Xem thêm </span>

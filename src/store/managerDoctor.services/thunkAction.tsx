@@ -14,6 +14,17 @@ export const getAllDoctorStore = createAsyncThunk(
     }
   }
 );
+export const getOneDoctorStore = createAsyncThunk(
+  "Toohhive/getOneDoctor",
+  async (idDoctor: getAllDoctor["doctor_id"], { rejectWithValue }) => {
+    try {
+      const res = await managerDoctorServices.getOneDoctor(idDoctor);
+      return res;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
 export const createDoctorStore = createAsyncThunk(
   "Toohhive/createDoctor",
   async (payload: getAllDoctor, { rejectWithValue }) => {

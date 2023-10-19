@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import { getAllCategory } from "../../services/managerCategory";
-import { getAllCategoryStore } from "./thunkAction";
+import { getAllCategoryStore, getOneCategoryStore } from "./thunkAction";
 // import { toast } from "react-toastify"
 
 type managerbookingRoomInitialState = {
   listCategory?: getAllCategory[];
+  category?: getAllCategory | null;
+
   isLoadingBookingRoom: boolean;
 };
 const initialState: managerbookingRoomInitialState = {
@@ -21,16 +23,16 @@ export const {
     acLoader: () => {},
   },
   extraReducers: (builder) => {
-    builder.addCase(getAllCategoryStore.fulfilled, (state, action) => {
-      console.log(action.payload.data);
-      if (action.payload.status === 200) {
-        state.listCategory = action.payload.data.data;
-      }
-    });
-    // .addCase(createDoctorStore.fulfilled, (state, action) => {
-    //   if (action.payload.status === 200) {
-    //     state.listDoctor = action.payload.data;
-    //   }
-    // });
+    builder
+      .addCase(getAllCategoryStore.fulfilled, (state, action) => {
+        if (action.payload.status === 200) {
+          state.listCategory = action.payload.data.data;
+        }
+      })
+      .addCase(getOneCategoryStore.fulfilled, (state, action) => {
+        if (action.payload.status === 200) {
+          state.category = action.payload.data.data;
+        }
+      });
   },
 });
