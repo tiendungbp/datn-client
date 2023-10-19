@@ -158,20 +158,20 @@ const CategoryServiceCarousel = ({
 
     setGroupedItems(newGroupedItems);
   }, [arrCategory, windowWidth]);
+  // TẠM CHƯA CÓ API ĐỂ TRỐNG
+  // useEffect(() => {
+  //   if (listCategory) {
+  //     // Thêm trường "description" cho mỗi phần tử trong mảng
+  //     const updatedCategory = listCategory.map((category, index) => {
+  //       return {
+  //         ...category,
+  //         description: arrDescriptions[index].description,
+  //       };
+  //     });
 
-  useEffect(() => {
-    if (listCategory) {
-      // Thêm trường "description" cho mỗi phần tử trong mảng
-      const updatedCategory = listCategory.map((category, index) => {
-        return {
-          ...category,
-          description: arrDescriptions[index].description,
-        };
-      });
-
-      setArrCategory(updatedCategory);
-    }
-  }, [listCategory]);
+  //     setArrCategory(updatedCategory);
+  //   }
+  // }, [listCategory]);
   return (
     <>
       {groupedItems.length !== 0 && (
