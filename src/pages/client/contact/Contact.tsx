@@ -6,14 +6,19 @@ import ContactForm from "./ContactForm/ContactForm";
 
 const Contact = () => {
   return (
+<<<<<<< HEAD
     <div className="wrapper">
       <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
+=======
+    <div className="contact__client wrapper">
+      <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
+>>>>>>> dev
         {/* BreadCrumb */}
         <Breadcrumb
           className={`text-base mb-12`}
           items={[
             {
-              title: <a href="#">Trang chủ</a>,
+              title: <a href="/">Trang chủ</a>,
             },
             {
               title: <span className="textColor">Liên hệ</span>,
