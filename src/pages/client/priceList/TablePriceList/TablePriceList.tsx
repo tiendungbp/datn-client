@@ -1,8 +1,42 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { getAllCategory } from "../../../../services/managerCategory";
+import { RootState, useAppDispatch } from "../../../../store";
+import { getAllCategoryStore } from "../../../../store/managerCategory.services/thunkAction";
+import { getAllServiceStore } from "../../../../store/managerService.services/thunkAction";
 const TablePriceList = () => {
+  const [arrCategory, setArrCategory] = useState<getAllCategory[]>([]);
+  const [arrService, setArrService] = useState<any[]>([]);
+
+  const Appdispatch = useAppDispatch();
+  const { listCategory } = useSelector(
+    (state: RootState) => state.managerCategory
+  );
+  const { listService } = useSelector(
+    (state: RootState) => state.managerService
+  );
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // Gửi yêu cầu lấy danh sách danh mục
+      await Appdispatch(getAllCategoryStore());
+      await Appdispatch(getAllServiceStore());
+    };
+
+    fetchData(); // Gọi hàm fetchData khi component được render
+  }, []);
+  useEffect(() => {
+    if (listCategory && listService) {
+      setArrCategory(listCategory);
+      setArrService(listService);
+    }
+  }, [listCategory, listService]);
+
+  console.log("arrCategory: ", arrCategory);
+  console.log("arrService: ", arrService);
+
   return (
-    <table className="table-auto sm:container xl:container sm:m-10 border-collapse border border-slate-500 ">
+    <table className="table-auto sm:container xl:container sm:m-10 border-collapse border border-slate-500 sm:mx-auto">
       <thead className="bg-slate-700 text-white">
         <tr>
           <th className="border-collapse border border-slate-500 p-5 w-2/3">
@@ -17,10 +51,43 @@ const TablePriceList = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
+        {arrCategory &&
+          arrCategory.map((itemCategory, index) => (
+            <>
+              <tr key={index}>
+                <td className="p-5 font-medium">
+                  {itemCategory.category_name}
+                </td>
+              </tr>
+
+              {arrService &&
+                arrService.map((itemService, serviceIndex) => {
+                  if (
+                    itemService.Category.category_id ===
+                    itemCategory.category_id
+                  ) {
+                    return (
+                      <tr key={serviceIndex}>
+                        <td className="border-collapse border border-slate-500 p-5 ">
+                          {itemService.service_name}
+                        </td>
+                        <td className="border-collapse border border-slate-500 p-5 text-center">
+                          Lần
+                        </td>
+                        <td className="border-collapse border border-slate-500 p-5 text-center">
+                          {itemService.price}
+                        </td>
+                      </tr>
+                    );
+                  }
+                  return null;
+                })}
+            </>
+          ))}
+        {/* <tr>
           <td className=" p-5 font-medium">Tổng quát</td>
-        </tr>
-        <tr>
+        </tr> */}
+        {/* <tr>
           <td className="border-collapse border border-slate-500 p-5 ">
             Khám tổng quát
           </td>
@@ -30,74 +97,7 @@ const TablePriceList = () => {
           <td className="border-collapse border border-slate-500 p-5 text-center">
             Miễn phí
           </td>
-        </tr>
-        {/*  */}
-        <tr>
-          <td className=" p-5 font-medium">Điều trị nha chu</td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        {/*  */}
-        <tr>
-          <td className=" p-5 font-medium">Điều trị nha chu</td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        {/*  */}
-        <tr>
-          <td className=" p-5 font-medium">Điều trị nha chu</td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
-        <tr>
-          <td className="border-collapse border border-slate-500 p-5 ">
-            Cạo vôi răng
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            2 Hàm
-          </td>
-          <td className="border-collapse border border-slate-500 p-5 text-center">
-            400.000
-          </td>
-        </tr>
+        </tr> */}
       </tbody>
     </table>
   );

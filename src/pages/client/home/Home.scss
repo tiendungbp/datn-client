@@ -1,0 +1,20 @@
+@media screen and (max-width: 1080px) {
+    .home__client{
+        .text-right{
+            margin-top: 10px;
+        }
+       .shadow-xl{
+        box-shadow: #c0d6ed 0px 0px 0px 5px;
+      }
+   }
+}
+@media screen and (max-width: 475px) {
+   .home__client{
+        .text-right{
+            margin-top: 10px;
+        }
+       .shadow-xl{
+        box-shadow: #c0d6ed 0px 0px 0px 5px;
+      }
+   }
+}

@@ -77,10 +77,10 @@ const Footer = () => {
             <p>Nụ Cười Hoàn Hảo <br /> Với Tooth Hive</p>
           </div>
           <div className="btn__first__footer">
-            <button>Liên hệ ToothHive</button>
+            <button className="booking">Liên hệ ToothHive</button>
           </div>
         </div>
-        <div className="content__footer">
+        <div className="content__footer pb-3">
           <div className="box__content__footeer">
             <div className="box__content__footer1__logo">
               <img src={logoToothHive} alt="logo" />
@@ -186,7 +186,7 @@ const Footer = () => {
         </div>
         <div className="the__end__footer">
           <div className="box__the__footer">
-            <p>
+            <p className="text-white">
               @ 2022 ToothHive - Nụ cười hoàn hảo và sức khỏe răng miệng hàng
               đầu
             </p>

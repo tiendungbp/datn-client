@@ -10,6 +10,7 @@
       padding: 10px 0px 35px 0px;
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
       .title__first__footer {
         p {
@@ -18,12 +19,32 @@
         }
       }
       .btn__first__footer {
-        button {
-          padding: 10px 25px;
+        .booking {
+          position: relative;
+          overflow: hidden;
+          padding: 13px 25px;
           background-color: #1386ed;
           color: #fff;
           font-style: 12px;
           border-radius: 32px;
+        }
+        .booking::before {
+          content: "";
+          margin-top: -20px;
+          width: 50%;
+          height: 120%;
+          position: absolute;
+          left: -55%;
+          background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0) 0,
+            rgba(255, 255, 255, 0.3) 100%
+          );
+          transform: skewX(-25deg);
+          transition: all 0.75s;
+        }
+        .booking:hover::before {
+          left: 126%;
         }
       }
     }
@@ -33,7 +54,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 70px;
       .box__content__footer1 {
-        letter-spacing: 1px;
+        letter-spacing: 0.3px;
         cursor: pointer;
         display: flex;
         justify-content: left;
@@ -61,7 +82,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-top: 80px;
+      margin-top: 100px;
       padding-top: 20px;
       border-top: 1px solid #535252;
       .box__the__footer {
@@ -85,7 +106,7 @@
 @media screen and (max-width: 1080px) {
   .footer__client__toothHive {
     .footer__client__toothHive__Behine {
-      width: 95%;
+      width: 93%;
       .content__footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -121,8 +142,8 @@
       .the__end__footer {
         border: none;
         margin: 0px;
-        .box__the__footer{
-            margin-top: 20px;
+        .box__the__footer {
+          margin-top: 20px;
         }
       }
     }

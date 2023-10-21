@@ -4,11 +4,19 @@
     svg {
       position: absolute;
       right: 10px;
+      top: 7px;
     }
   }
 }
 .news {
+  width: 45%;
   img {
     margin: 0;
+  }
+}
+
+@media (max-width: 550px), (max-width: 380px) {
+  .news {
+    width: 100%;
   }
 }

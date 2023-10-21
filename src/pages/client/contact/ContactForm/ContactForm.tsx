@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Form, Input, InputNumber } from "antd";
+import "./ContactForm.scss";
 
 const layout = {
   labelCol: { span: 6 },
@@ -62,8 +63,12 @@ const ContactForm: React.FC = () => (
     <Form.Item name={["user", "introduction"]} label="Introduction">
       <Input.TextArea />
     </Form.Item>
-    <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 6 }}>
-      <Button type="primary" style={{ backgroundColor: "#1386ed" }}>
+    <Form.Item>
+      <Button
+        className="btnForm"
+        type="primary"
+        style={{ backgroundColor: "#1386ed" }}
+      >
         Submit
       </Button>
     </Form.Item>

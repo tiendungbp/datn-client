@@ -6,14 +6,14 @@ import ContactForm from "./ContactForm/ContactForm";
 
 const Contact = () => {
   return (
-    <div className="wrapper">
-      <div className="xl:container sm:mx-16 mx-6">
+    <div className="contact__client wrapper">
+      <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
         {/* BreadCrumb */}
         <Breadcrumb
-          className={`text-sm my-8`}
+          className={`text-base mb-12`}
           items={[
             {
-              title: <a href="#">Home</a>,
+              title: <a href="/">Trang chủ</a>,
             },
             {
               title: <span className="textColor">Liên hệ</span>,
@@ -21,13 +21,13 @@ const Contact = () => {
           ]}
         />
         {/* Banner */}
-        <div className="block sm:flex ">
+        <div className="block sm:flex">
           <div className="left block sm:flex-1 myImage">
             <img src={blueSquareImage} alt="" />
             <img src={doctorImage} alt="" />
           </div>
-          <div className="right ml-10 flex-1 flex flex-col justify-between">
-            <h3 className=" text-3xl font-bold mb-7">
+          <div className="right mt-10 flex-1 flex flex-col justify-between">
+            <h3 className=" text-3xl font-bold my-7">
               Đến với <span className="textColor">ToothHive</span>
             </h3>
             <p className="my-3">
@@ -48,8 +48,8 @@ const Contact = () => {
         </div>
       </div>
       {/* Div contact form */}
-      <div className="contact mt-56">
-        <div className=" xl:container sm:mx-16 mx-6">
+      <div className="contact xl:mt-80 lg:mt-32">
+        <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
           <div className="block sm:flex py-16">
             <div className="contactInfo flex-1">
               <h3 className="text-3xl font-bold">

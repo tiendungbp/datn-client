@@ -1,0 +1,253 @@
+.booking__tsx {
+  max-width: 90%;
+  margin: 0 auto;
+  .title__booking {
+    display: flex;
+    p:nth-child(2) {
+      padding: 0px 10px;
+    }
+    p:nth-child(3) {
+      color: #1386ed;
+    }
+  }
+  .box__first__booking {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    .box__booking__tsx {
+      width: 50%;
+
+      .selectTime {
+        .btn__selectTime {
+          width: 60%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          span {
+            white-space: nowrap;
+            width: 100%;
+            cursor: pointer;
+            border: 1px solid #cccccc;
+            border-radius: 7px;
+            background-color: #fff;
+            color: #cccccc;
+            font-weight: bold;
+            text-align: center;
+            padding: 8px 20px;
+            transition: 0.3s;
+          }
+          span:hover {
+            background-color: #1386ed;
+            color: #fff;
+          }
+          .selected {
+            background-color: #1386ed !important;
+            color: #fff;
+          }
+        }
+      }
+      .selectCoso,
+      .select__Date,
+      .select__doctor,
+      .selectTime {
+        background-color: #f3f4f6;
+        padding: 20px 50px;
+        border-radius: 7px;
+        margin-bottom: 30px;
+        .select__inp {
+          padding: 10px 0px;
+          height: 65px;
+        }
+      }
+      .box__booking__tsx__1 {
+        p {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .place__br {
+          border: 0.5px solid #eee8e8;
+          margin: 8px 0px 15px 0px;
+        }
+        .profile__user__booking {
+          .profile__user__booking__inp {
+            margin: 10px 0px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            p {
+              font-size: 16px;
+              font-weight: 100;
+            }
+            span {
+              font-size: 16px;
+            }
+          }
+        }
+        button {
+          margin-top: 30px;
+          width: 100%;
+          background-color: #1386ed;
+          border-radius: 7px;
+          color: #fff;
+          font-weight: bold;
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+      }
+    }
+    .box__booking__tsx:nth-child(2) {
+      padding: 30px 50px;
+      background-color: #f3f4f6;
+      height: 490px;
+      border-radius: 7px;
+    }
+  }
+}
+@media screen and (max-width: 1080px) {
+  .booking__tsx {
+    max-width: 95%;
+    margin: 0 auto;
+    .title__booking {
+      display: flex;
+      p:nth-child(2) {
+        padding: 0px 10px;
+      }
+      p:nth-child(3) {
+        color: #1386ed;
+      }
+    }
+    .box__first__booking {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      .box__booking__tsx {
+        width: 100%;
+
+        .selectTime {
+          .btn__selectTime {
+            span {
+            }
+            span:hover {
+              background-color: #1386ed;
+              color: #fff;
+            }
+            .selected {
+              background-color: #1386ed !important;
+              color: #fff;
+            }
+          }
+        }
+        .selectCoso,
+        .select__Date,
+        .select__doctor,
+        .selectTime {
+          padding: 20px 20px;
+          .select__inp {
+          }
+        }
+        .box__booking__tsx__1 {
+          p {
+          }
+          .place__br {
+          }
+          .profile__user__booking {
+            .profile__user__booking__inp {
+              p {
+              }
+              span {
+              }
+            }
+          }
+          button {
+          }
+        }
+      }
+      .box__booking__tsx:nth-child(2) {
+      }
+    }
+  }
+}
+@media screen and (max-width: 1080px) {
+  .booking__tsx {
+    max-width: 95%;
+    margin: 0 auto;
+    .title__booking {
+      display: flex;
+      p:nth-child(2) {
+        padding: 0px 10px;
+      }
+      p:nth-child(3) {
+        color: #1386ed;
+      }
+    }
+    .box__first__booking {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      .box__booking__tsx {
+        width: 100%;
+
+        .selectTime {
+          .btn__selectTime {
+            width: 60%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            span {
+            }
+            span:hover {
+              background-color: #1386ed;
+              color: #fff;
+            }
+            .selected {
+              background-color: #1386ed !important;
+              color: #fff;
+            }
+          }
+        }
+        .text-lg{
+            font-size: 16px;
+        }
+        .selectCoso,
+        .select__Date,
+        .select__doctor,
+        .selectTime {
+          padding: 20px 20px;
+          .select__inp {
+          }
+        }
+        .box__booking__tsx__1 {
+          p {
+          }
+          .place__br {
+          }
+          .profile__user__booking {
+            .profile__user__booking__inp {
+              p {
+                white-space: nowrap;
+              }
+              span {
+                width: 70%;
+                text-align: right;
+              }
+            }
+          }
+          button {
+          }
+        }
+      }
+      .box__booking__tsx:nth-child(2) {
+        padding: 10px 20px;
+        height: 510px;
+      }
+    }
+  }
+}

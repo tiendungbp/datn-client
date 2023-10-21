@@ -12,13 +12,18 @@ img {
   }
 }
 .data {
-  background-image: url("../../../assets/img/backgroundIntroduce.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  // image-rendering: pixelated;
-  // object-fit: cover;
   position: relative;
+  height: 300px;
+  .background {
+    height: 100%;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
   .overlay {
+    top: 0;
     position: absolute;
     background-color: #dcedff;
     height: 100%;
@@ -26,7 +31,9 @@ img {
     opacity: 0.7;
   }
   .showData {
-    position: relative;
+    width: 100%;
+    top: 0;
+    position: absolute;
     .item {
       height: 125px;
       width: 175px;
@@ -34,14 +41,30 @@ img {
     }
   }
 }
-
-@media (max-width: 550px) {
-  .data {
-    background-image: none;
+.certificate {
+  width: 70%;
+  margin: 0 auto;
+  img {
+    margin: 15px 0;
   }
 }
-@media (max-width: 380px) {
+.reason {
+  .left {
+    img {
+      margin: 15px 0;
+    }
+  }
+}
+
+@media (max-width: 550px), (max-width: 380px) {
+  .certificate {
+    width: 40%;
+  }
   .data {
     background-image: none;
+    height: 1000px;
+    .showData {
+      left: 0%;
+    }
   }
 }
