@@ -16,10 +16,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Banner from "../../../assets/img/banner.png";
 import { Rate } from "antd";
+import CategoryServiceCarousel from "./CategoryServiceCarousel/CategoryServiceCarousel";
+import Top5Services from "./Top5Services/Top5Services";
+// import Top5Services from "./Top5Services/Top5Services";
 
 const slides = [
   {
@@ -128,10 +131,28 @@ const dataWatchDetailDoctor: dataWatchDetailDoctorProp[] = [
 const Home = () => {
   const [isChooseDoctor, setIsChooseDoctor] = useState(0);
   const [isShowChooseListDoctor, setIsShoChooseListDoctor] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const mobileScreen = windowWidth < 500;
+
+  useEffect(() => {
+    // Hàm xử lý thay đổi độ rộng màn hình
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    // Đăng ký sự kiện theo dõi thay đổi kích thước cửa sổ
+    window.addEventListener("resize", handleResize);
+
+    // Làm sạch sự kiện khi component bị hủy
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
-      <div className="  lg:mt-[1rem] ">
+      <div className="home__client  lg:mt-[1rem] ">
         {/* start banner  */}
         <div className="m-auto w-wd-primary md:w-wd-secondary">
           <div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-[280px]"></div>
@@ -150,7 +171,9 @@ const Home = () => {
                     alt=""
                     className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
                   />
-                  <div className="absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
+                  <div
+                    className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]"
+                  >
                     <div className="flex justify-between gap-2 pb-3">
                       <div className="flex gap-2 justify-center items-center">
                         <FontAwesomeIcon icon={faPhone} />
@@ -176,7 +199,7 @@ const Home = () => {
               </div>
             </div>
             <div className="md:order-1 md:w-[70%]">
-              <h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[5rem] md:mt-[2rem]">
+              <h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
                 Đánh bay sâu, giữ vững{" "}
                 <span className="text-[#157FEC]">nụ cười</span>
               </h1>
@@ -239,100 +262,15 @@ const Home = () => {
               Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8  ">
-            <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-              <div className="flex items-center gap-4 ">
-                <FontAwesomeIcon
-                  icon={faTooth}
-                  className="bg-[#DCEDFF] text-[#8AA7C5] p-3 text-[1.5rem] rounded-lg "
-                />
-                <h3 className="font-bold text-[1.2rem]">Chăm sóc răng</h3>
-              </div>
-              <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-                Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an
-                toàn để khôi phục hoàn toàn chức năng...Dịch vụ Trồng Răng tại
-                ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn
-                toàn chức năng...
-              </p>
-              <Link to="/" className="flex items-center gap-2 text-[#1386ED]">
-                {" "}
-                <span>Xem thêm </span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Link>
-            </div>
-            <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-              <div className="flex items-center gap-4 ">
-                <FontAwesomeIcon
-                  icon={faTooth}
-                  className="bg-[#FDEBFF] text-[#9B66DB] p-3 text-[1.5rem] rounded-lg "
-                />
-                <h3 className="font-bold text-[1.2rem]">Bọc răng sứ</h3>
-              </div>
-              <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-                Khi bạn trải qua quá trình mất răng, chất lượng cuộc sống và tự
-                tin của bạn có thể bị ảnh hưởng nghiêm...Khi bạn trải qua quá
-                trình mất răng, chất lượng cuộc sống và tự tin của bạn có thể bị
-                ảnh hưởng nghiêm...
-              </p>
-              <Link to="/" className="flex items-center gap-2 text-[#1386ED]">
-                {" "}
-                <span>Xem thêm </span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Link>
-            </div>
-            <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-              <div className="flex items-center gap-4 ">
-                <FontAwesomeIcon
-                  icon={faTooth}
-                  className="bg-[#FDF5EC] text-[#ECA09D] p-3 text-[1.5rem] rounded-lg "
-                />
-                <h3 className="font-bold text-[1.2rem]">Niềng răng</h3>
-              </div>
-              <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-                Niềng răng không chỉ là việc thẳng hàng răng mà còn là hành
-                trình thú vị để hoàn thiện nụ cười ...Dịch vụ Trồng Răng tại
-                ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn
-                toàn chức năng...
-              </p>
-              <Link
-                to="/detailServices"
-                className="flex items-center gap-2 text-[#1386ED]"
-              >
-                {" "}
-                <span>Xem thêm </span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Link>
-            </div>
-            <div className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4">
-              <div className="flex items-center gap-4 ">
-                <FontAwesomeIcon
-                  icon={faTooth}
-                  className="bg-[#DCEDFF] text-[#8AA7C5] p-3 text-[1.5rem] rounded-lg "
-                />
-                <h3 className="font-bold text-[1.2rem]">Chăm sóc răng</h3>
-              </div>
-              <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
-                Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an
-                toàn để khôi phục hoàn toàn chức năng...Dịch vụ Trồng Răng tại
-                ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn
-                toàn chức năng...
-              </p>
-              <Link
-                to="/services"
-                className="flex items-center gap-2 text-[#1386ED]"
-              >
-                {" "}
-                <span>Xem thêm </span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Link>
-            </div>
-          </div>
+          <CategoryServiceCarousel
+            mobileScreen={mobileScreen}
+            windowWidth={windowWidth}
+          />
         </div>
         {/* end category service */}
 
         {/*start top 5 service  */}
-        <div className=" m-auto w-wd-primary md:w-wd-secondary">
+        <div className=" m-auto w-wd-primary md:w-wd-secondary my-5">
           <div className="text-center my-4 py-8">
             <h1 className="text-[#1386ED] font-bold  text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
               Top 5 Dịch Vụ Nổi Bật
@@ -341,79 +279,17 @@ const Home = () => {
               Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
             </p>
           </div>
-          <div className="md:w-[80%] m-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
-            <div className=" flex flex-col gap-2">
-              <div className="w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto">
-                <img
-                  className="w-full h-full rounded-full object-cover "
-                  src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg"
-                  alt=""
-                />
-              </div>
-              <p className="line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]">
-                Niềng răng trong suốt
-              </p>
-            </div>
-            <div className=" flex flex-col gap-2">
-              <div className="w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto">
-                <img
-                  className="w-full h-full rounded-full object-cover "
-                  src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg"
-                  alt=""
-                />
-              </div>
-              <p className="line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]">
-                Niềng răng trong suốt
-              </p>
-            </div>
-            <div className=" flex flex-col gap-2">
-              <div className="w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto">
-                <img
-                  className="w-full h-full rounded-full object-cover "
-                  src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg"
-                  alt=""
-                />
-              </div>
-              <p className="line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]">
-                Niềng răng trong suốt
-              </p>
-            </div>
-            <div className=" flex flex-col gap-2">
-              <div className="w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto">
-                <img
-                  className="w-full h-full rounded-full object-cover "
-                  src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg"
-                  alt=""
-                />
-              </div>
-              <p className="line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]">
-                Niềng răng trong suốt
-              </p>
-            </div>
-            <div className=" flex flex-col gap-2">
-              <div className="w-[8rem] h-[8rem] bg-pink-50 rounded-full m-auto">
-                <img
-                  className="w-full h-full rounded-full object-cover "
-                  src="https://rangthudo.com.vn/images/image/nhung-truong-hop-nen-boc-rang-su.jpg"
-                  alt=""
-                />
-              </div>
-              <p className="line-clamp-2 max-w-[10rem] m-auto overflow-ellipsis leading-[1.8rem]">
-                Niềng răng trong suốt
-              </p>
-            </div>
-          </div>
+          <Top5Services mobileScreen={mobileScreen} />
         </div>
         {/* end top 5 service  */}
 
         {/* start about doctor */}
 
-        <div className=' m-auto w-wd-primary md:w-wd-secondary my-8'>
-
-          <div className=' w-full my-12 grid md:grid-cols-2 gap-4'>
-            <div className='flex justify-center items-center relative'>
-              {
-                dataWatchDetailDoctor.map((item, i) =>
+        <div className=" m-auto w-wd-primary md:w-wd-secondary my-8">
+          <div className=" w-full my-12 grid md:grid-cols-2 gap-4">
+            <div className="flex justify-center items-center relative">
+              {dataWatchDetailDoctor.map(
+                (item, i) =>
                   isChooseDoctor === i && (
                     <div
                       key={i}

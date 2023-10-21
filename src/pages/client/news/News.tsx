@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const News = () => {
   return (
-    <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
+    <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
       {/* BreadCrumb */}
       <Breadcrumb
         className={`text-base mb-8`}
@@ -37,7 +37,7 @@ const News = () => {
                   October 12, 2023
                 </p>
                 <a href="#">
-                  <div className="textColor flex justify-between w-2/5">
+                  <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2 ">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
                     </p>
@@ -58,7 +58,7 @@ const News = () => {
                   October 12, 2023
                 </p>
                 <a href="#">
-                  <div className="textColor flex justify-between w-2/5">
+                  <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
                     </p>
@@ -79,7 +79,7 @@ const News = () => {
                   October 12, 2023
                 </p>
                 <a href="#">
-                  <div className="textColor flex justify-between w-2/5">
+                  <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
                     </p>
@@ -100,7 +100,7 @@ const News = () => {
                   October 12, 2023
                 </p>
                 <a href="#">
-                  <div className="textColor flex justify-between w-2/5">
+                  <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
                     </p>
@@ -121,7 +121,7 @@ const News = () => {
                   October 12, 2023
                 </p>
                 <a href="#">
-                  <div className="textColor flex justify-between w-2/5">
+                  <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
                     </p>
@@ -142,7 +142,7 @@ const News = () => {
                   October 12, 2023
                 </p>
                 <a href="#">
-                  <div className="textColor flex justify-between w-2/5">
+                  <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
                     </p>

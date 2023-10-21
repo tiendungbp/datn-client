@@ -39,11 +39,11 @@ const Router = (): JSX.Element | null => {
           element: <DetailNews />,
         },
         {
-          path: "/detailDoctor",
+          path: "/detailDoctor/:id",
           element: <DetailDoctor />,
         },
         {
-          path: "/detailServices",
+          path: "/detailServices/:id",
           element: <DetailServices />,
         },
         {
@@ -73,13 +73,11 @@ const Router = (): JSX.Element | null => {
         {
           path: "/guarantee_profile",
           element: <Guarantee_profile />,
-        }
-        ,
+        },
         {
           path: "/profile",
-          element: <Profile/>,
-        }
-        ,
+          element: <Profile />,
+        },
         {
           path: "/404",
           element: <Notfound />,
@@ -101,7 +99,7 @@ const Router = (): JSX.Element | null => {
     {
       path: "*",
       element: <Navigate to="/404" />,
-    }
+    },
   ]);
   return element;
 };

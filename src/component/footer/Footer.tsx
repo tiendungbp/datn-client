@@ -80,7 +80,7 @@ const Footer = () => {
             <button className="booking">Liên hệ ToothHive</button>
           </div>
         </div>
-        <div className="content__footer">
+        <div className="content__footer pb-3">
           <div className="box__content__footeer">
             <div className="box__content__footer1__logo">
               <img src={logoToothHive} alt="logo" />

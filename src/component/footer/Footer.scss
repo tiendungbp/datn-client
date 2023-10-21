@@ -54,7 +54,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 70px;
       .box__content__footer1 {
-        letter-spacing: 1px;
+        letter-spacing: 0.3px;
         cursor: pointer;
         display: flex;
         justify-content: left;
@@ -82,7 +82,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-top: 80px;
+      margin-top: 100px;
       padding-top: 20px;
       border-top: 1px solid #535252;
       .box__the__footer {
@@ -106,7 +106,7 @@
 @media screen and (max-width: 1080px) {
   .footer__client__toothHive {
     .footer__client__toothHive__Behine {
-      width: 95%;
+      width: 93%;
       .content__footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);

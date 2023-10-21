@@ -1,3 +1,43 @@
 .textColor {
   color: #1386ed;
 }
+@media screen and (max-width: 1080px) {
+  .price__list__client{
+    width: 93%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .title__price__list{
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+    .title__price__list__client{
+      font-size: 21px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    .content__price__lisst{
+      margin-top: 0px;
+    }
+    .box__price__list__client{
+      p{
+        font-size: 15px;
+      }
+      a{
+        font-size: 14px;
+      }
+    }
+    .box__basis__client__pricelist{
+      .item{
+
+        width: 100% !important;
+      }
+    }
+    .select__price__list__clietn{
+      margin-bottom: 15px;
+    }
+  }
+  
+}
+@media screen and (max-width: 475px) {
+ 
+}

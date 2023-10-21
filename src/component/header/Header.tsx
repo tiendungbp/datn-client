@@ -3,6 +3,7 @@ import logoToothHive from "../../assets/img/ToothHive (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import { MenuOutlined } from "@ant-design/icons";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [widthOpen, setWidthOpen] = useState<number>(
@@ -38,7 +39,8 @@ const Header = () => {
 
     if (box) {
       if (isMenuOpen) {
-        box.style.height = "600px";
+        box.style.height = "100vh";
+
       } else {
         box.style.height = "0px";
       }
@@ -71,10 +73,10 @@ const Header = () => {
                 handleSubmitMenu();
               }}
             >
-              <FontAwesomeIcon className="menu__icon__sm__ls" icon={faBars} />
+              <MenuOutlined className="menu__icon__sm__ls" />
             </div>
           </div>
-          <div className="box__reponsive__nav">
+          <div className="box__reponsive__nav ">
             <div className="box__reponsive__nav1">
               <div className="header__box2">
                 <div className="header__box2__notification">
@@ -135,7 +137,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="header__box3">
-                <button className="booking"><NavLink to={"/booking"}>Đặt lịch</NavLink></button>
+                <button className="booking"><NavLink to={"/booking"}><p>Đặt lịch</p></NavLink></button>
                 <button className="booking"><NavLink to={"/login"}>Đăng nhập</NavLink></button>
               </div>
             </div>
