@@ -60,10 +60,10 @@ const DetailServices = () => {
 
   const dataService: DataServiceProp[] = listService
     ? listService
-        .filter((service) => {
+        .filter((service:any) => {
           return service.Category.category_id === category?.category_id;
         })
-        .map((service, index) => ({
+        .map((service:any, index:any) => ({
           key: index,
           name: service.service_name,
           price: service.price,
