@@ -152,7 +152,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="home__client  lg:mt-[1rem] ">
+      <div className="  lg:mt-[1rem] ">
         {/* start banner  */}
         <div className="m-auto w-wd-primary md:w-wd-secondary">
           <div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-[280px]"></div>
@@ -171,9 +171,7 @@ const Home = () => {
                     alt=""
                     className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
                   />
-                  <div
-                    className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]"
-                  >
+                  <div className="absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
                     <div className="flex justify-between gap-2 pb-3">
                       <div className="flex gap-2 justify-center items-center">
                         <FontAwesomeIcon icon={faPhone} />
@@ -199,7 +197,7 @@ const Home = () => {
               </div>
             </div>
             <div className="md:order-1 md:w-[70%]">
-              <h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
+              <h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[5rem] md:mt-[2rem]">
                 Đánh bay sâu, giữ vững{" "}
                 <span className="text-[#157FEC]">nụ cười</span>
               </h1>

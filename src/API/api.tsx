@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import { toast } from "react-toastify";
-export const baseURL = "http://localhost:8080/api/";
+export const baseURL = "https://haitech.me/api/";
 const http: AxiosInstance = axios.create();
 http.interceptors.request.use((config: any) => {
     return {

@@ -165,7 +165,7 @@ const CategoryServiceCarousel = ({
       const updatedCategory = listCategory.map((category, index) => {
         return {
           ...category,
-          description: arrDescriptions[index].description,
+          description: arrDescriptions[index]?.description,
         };
       });
 

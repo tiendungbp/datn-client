@@ -7,11 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const PriceList = () => {
   return (
-<<<<<<< HEAD
     <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
-=======
-    <div className="price__list__client m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
->>>>>>> dev
       {/* BreadCrumb */}
       <Breadcrumb
         className={`title__price__list text-base mb-8`}
@@ -37,7 +33,7 @@ const PriceList = () => {
         </p>
         <div className="order-2">
           <Select
-          style={{width:"100%"}}
+            style={{ width: "100%" }}
             className="select__price__list__clietn"
             showSearch
             placeholder="Chọn theo dịch vụ"
@@ -87,15 +83,9 @@ const PriceList = () => {
             Tại ToothHive sẽ có các chi nhánh về các địa điểm khác nhau
           </p>
         </div>
-<<<<<<< HEAD
         <div className="flex flex-wrap sm:flex-nowrap justify-center">
           <div className="item box-shadow sm:mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
-=======
-        <div className="box__basis__client__pricelist flex gap-7 flex-wrap justify-center">
-          <div className="item box-shadow ">
-            <div className=" w-full lg:max-w-full lg:flex">
->>>>>>> dev
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style={{
@@ -117,13 +107,8 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-<<<<<<< HEAD
           <div className="item box-shadow sm:mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
-=======
-          <div className="item box-shadow ">
-            <div className=" w-full lg:max-w-full lg:flex">
->>>>>>> dev
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style={{
@@ -145,13 +130,8 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-<<<<<<< HEAD
           <div className="item box-shadow sm:mr-5 mb-5">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
-=======
-          <div className="item box-shadow ">
-            <div className=" w-full lg:max-w-full lg:flex">
->>>>>>> dev
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style={{
