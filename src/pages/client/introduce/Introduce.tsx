@@ -37,7 +37,7 @@ const Introduce = () => {
   console.log(isMobile);
 
   return (
-    <div className="wrapper">
+    <div className="wrapper introduce__client">
       <div className="m-auto w-wd-primary md:w-wd-secondary mt-6 lg:mt-[1rem] ">
         {/* BreadCrumb */}
         <Breadcrumb
@@ -54,12 +54,12 @@ const Introduce = () => {
         {/* Banner  */}
         <div className="flex">
           <div className="left flex-col sm:w-2/3 w-full pr-0 sm:pr-10">
-            <div>
+            <div className="left__text__intro__client">
               <h3 className="text-3xl font-bold">Khám phá ToothHive</h3>
               <p className="text-3xl font-bold mb-7">
-                Nơi Hội tụ
-                <span className="textColor"> Nụ cười Tươi sáng</span> và Sự Chăm
-                sóc Nha khoa Tận tâm!
+                Nơi hội tụ
+                <span className="textColor"> Nụ cười tươi sáng</span> và sự chăm
+                sóc nha khoa tận tâm!
               </p>
             </div>
             {isMobile ? (
@@ -102,7 +102,7 @@ const Introduce = () => {
         </div>
       </div>
       {/* Reasons */}
-      <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  reason">
+      <div className="reasons__introduc m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  reason">
         <div className="flex sm:flex-row flex-col">
           <div className="left flex-col sm:w-2/5 w-full pr-0 sm:pr-10 ">
             <img src={IntroduceReasonImage} alt="" className="w-full" />
@@ -111,7 +111,7 @@ const Introduce = () => {
             <div>
               <h3 className="text-3xl font-bold mb-7 sm:text-left text-center">
                 Tại sao
-                <span className="textColor"> Nên Lựa Chọn </span>
+                <span className="textColor"> Nên lựa chọn </span>
                 sử dụng dịch vụ tại ToothHive?
               </h3>
             </div>
@@ -122,7 +122,7 @@ const Introduce = () => {
         </div>
       </div>
       {/* Certificate */}
-      <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  ">
+      <div className="certificate__client m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  ">
         <div className="w-2/3 mx-auto">
           <h3 className="text-center text-3xl font-bold mb-3">
             Các <span className="textColor">Chứng Chỉ</span> Tại ToothHive
@@ -181,14 +181,14 @@ const Introduce = () => {
         </div>
       </div>
       {/* Dental care journey  */}
-      <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]  ">
+      <div className="dental_care_journey  m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]  ">
         <div className="flex sm:flex-row flex-col">
           <div className="left flex-col sm:w-2/3 w-full pr-0 sm:pr-10">
             <div>
               <h3 className="text-3xl font-bold mb-7 sm:text-left text-center">
-                Hành Trình
-                <span className="textColor"> Chăm Sóc Răng Đẳng Cấp </span>
-                Cho Một Cuộc Sống Tự Tin
+                Hành trình
+                <span className="textColor"> Chăm sóc răng đẳng cấp </span>
+                cho một cuộc sống tự tin
               </h3>
               <p className="mb-7 font-light">
                 Tại ToothHive, chúng tôi tin rằng nụ cười không chỉ là một biểu

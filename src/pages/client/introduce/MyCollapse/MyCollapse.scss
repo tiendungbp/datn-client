@@ -1,24 +1,36 @@
-.textColor {
-  color: #1386ed;
-}
+.mycollapse__client {
+  .textColor {
+    color: #1386ed;
+  }
 
-.toggle-container {
-  &:hover {
-    cursor: pointer;
+  .toggle-container {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .toggle-content {
+    width: 85%;
+    margin-left: 40px;
+  }
+
+  .toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+    &.open {
+      max-height: 9999px;
+      transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+    }
   }
 }
-
-.toggle-content {
-  width: 85%;
-  margin-left: 40px;
-}
-
-.toggle-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  &.open {
-    max-height: 9999px;
-    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+@media screen and (max-width: 1080px), screen and (max-width: 500px) {
+  .mycollapse__client {
+    .toggle-title{
+      p{
+        font-size: 18px;
+        }
+    }
+    
   }
 }

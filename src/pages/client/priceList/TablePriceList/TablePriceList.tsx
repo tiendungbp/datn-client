@@ -32,8 +32,6 @@ const TablePriceList = () => {
     }
   }, [listCategory, listService]);
 
-  console.log("arrCategory: ", arrCategory);
-  console.log("arrService: ", arrService);
 
   return (
     <table className="table-auto sm:container xl:container sm:m-10 border-collapse border border-slate-500 sm:mx-auto">

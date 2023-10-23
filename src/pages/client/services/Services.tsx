@@ -52,7 +52,7 @@ const Services = () => {
   return (
     <div className="services__client m-auto w-wd-primary md:w-wd-secondary lg:mt-[1rem] sm:mt-[0rem] md:mt-[0rem] xl:mt-[1rem]">
       <Breadcrumb
-        className={`title__services__client text-base mb-8 sm:text-sm md:text-md`}
+        className={`title__services__client text-base mb-8 `}
         items={[
           {
             title: <a href="/">Trang chủ</a>,
