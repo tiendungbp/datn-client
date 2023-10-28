@@ -44,18 +44,19 @@ const ContactForm: React.FC = () => (
       <Input />
     </Form.Item>
     <Form.Item
+      
       name={["user", "email"]}
       label="Email"
       rules={[{ type: "email" }]}
     >
-      <Input />
+      <Input  />
     </Form.Item>
     <Form.Item
       name={["user", "age"]}
       label="Age"
       rules={[{ type: "number", min: 0, max: 99 }]}
     >
-      <InputNumber />
+      <InputNumber type="number" style={{width:"100%"}} />
     </Form.Item>
     <Form.Item name={["user", "website"]} label="Website">
       <Input />
@@ -69,7 +70,7 @@ const ContactForm: React.FC = () => (
         type="primary"
         style={{ backgroundColor: "#1386ed" }}
       >
-        Submit
+        Hẹn lịch khám
       </Button>
     </Form.Item>
   </Form>

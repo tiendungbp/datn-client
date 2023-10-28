@@ -1,70 +1,118 @@
-.textColor {
-  color: #1386ed;
-}
-img {
-  // margin: 15px 0;
-}
-.toggle-title {
-  img {
-    margin: 0;
-    width: 25px;
-    height: 25px;
+.introduce__client {
+  .textColor {
+    color: #1386ed;
   }
-}
-.data {
-  position: relative;
-  height: 300px;
-  .background {
-    height: 100%;
+  img {
+    // margin: 15px 0;
+  }
+  .toggle-title {
     img {
-      object-fit: cover;
+      margin: 0;
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .data {
+    position: relative;
+    height: 300px;
+    .background {
+      height: 100%;
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .overlay {
+      top: 0;
+      position: absolute;
+      background-color: #dcedff;
       height: 100%;
       width: 100%;
+      opacity: 0.7;
+    }
+    .showData {
+      width: 100%;
+      top: 0;
+      position: absolute;
+      .item {
+        height: 125px;
+        width: 175px;
+        background-color: white;
+      }
     }
   }
-  .overlay {
-    top: 0;
-    position: absolute;
-    background-color: #dcedff;
-    height: 100%;
-    width: 100%;
-    opacity: 0.7;
-  }
-  .showData {
-    width: 100%;
-    top: 0;
-    position: absolute;
-    .item {
-      height: 125px;
-      width: 175px;
-      background-color: white;
-    }
-  }
-}
-.certificate {
-  width: 70%;
-  margin: 0 auto;
-  img {
-    margin: 15px 0;
-  }
-}
-.reason {
-  .left {
+  .certificate {
+    width: 70%;
+    margin: 0 auto;
     img {
       margin: 15px 0;
     }
   }
+  .reason {
+    .left {
+      img {
+        margin: 15px 0;
+      }
+    }
+  }
 }
 
-@media (max-width: 550px), (max-width: 380px) {
-  .certificate {
-    width: 40%;
-  }
-  .data {
-    background-image: none;
-    height: 1000px;
-    .showData {
-      left: 0%;
+@media screen and (max-width: 1080px), screen and (max-width: 500px) {
+  .introduce__client {
+    
+    .mt-6{
+      margin-top: 10px;
+      .mb-8{
+        margin-bottom: 15px;
+      }
+    }
+    .text-base{
+      font-size: 14px;
+    }
+    .w-wd-primary{
+      width: 94%;
+    }
+    .certificate {
+      width: 40%;
+    }
+    .data {
+      background-image: none;
+      height: 1000px;
+      .showData {
+        left: 0%;
+      }
+    }
+    .flex{
+      .left__text__intro__client{
+        h3,p{
+          font-size: 21px;
+        }
+      }
+    }
+    .reasons__introduc{
+      .right{
+        h3{
+          margin-top: 10px;
+          font-size: 21px;
+        }
+      }
+    }
+    .certificate__client{
+      margin-top: 10px;
+      h3{
+        font-size: 21px;
+      }
+    }
+    .showData{
+      h3{
+        font-size: 21px;
+      }
+    }
+    .dental_care_journey{
+      h3{
+        font-size: 21px;
+      }
     }
   }
 }

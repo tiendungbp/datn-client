@@ -16,7 +16,7 @@ const MyCollapse = () => {
   };
   //
   return (
-    <div className="wrapper">
+    <div className="mycollapse__client wrapper">
       <div
         className="toggle-container box-shadow p-5 my-10"
         onClick={() => toggleDiv(1)}

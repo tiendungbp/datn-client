@@ -10,24 +10,24 @@ const Contact = () => {
       <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
         {/* BreadCrumb */}
         <Breadcrumb
-          className={`text-base mb-12`}
+          className={`title__services__client text-base mb-8 `}
           items={[
             {
               title: <a href="/">Trang chủ</a>,
             },
             {
-              title: <span className="textColor">Liên hệ</span>,
+              title: <p className="textColor ">Liên hệ</p>,
             },
           ]}
         />
         {/* Banner */}
-        <div className="block sm:flex">
+        <div className="flex gap-6 flex-wrap">
           <div className="left block sm:flex-1 myImage">
             <img src={blueSquareImage} alt="" />
             <img src={doctorImage} alt="" />
           </div>
-          <div className="right mt-10 flex-1 flex flex-col justify-between">
-            <h3 className=" text-3xl font-bold my-7">
+          <div className="right flex-1 flex flex-col justify-between">
+            <h3 className=" text-3xl font-bold mb-5">
               Đến với <span className="textColor">ToothHive</span>
             </h3>
             <p className="my-3">
@@ -50,7 +50,7 @@ const Contact = () => {
       {/* Div contact form */}
       <div className="contact xl:mt-80 lg:mt-32">
         <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
-          <div className="block sm:flex py-16">
+          <div className="block sm:flex py-16 md:gap-40 sm:gap-10">
             <div className="contactInfo flex-1">
               <h3 className="text-3xl font-bold">
                 <span className="textColor">Liên Hệ</span> Với Chúng Tôi

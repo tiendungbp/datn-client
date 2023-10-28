@@ -7,7 +7,8 @@ import { NavLink } from "react-router-dom";
 
 const News = () => {
   return (
-    <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
+    <div className="news__client">
+      <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
       {/* BreadCrumb */}
       <Breadcrumb
         className={`text-base mb-8`}
@@ -21,7 +22,7 @@ const News = () => {
         ]}
       />
       {/* Content */}
-      <div className="flex flex-col-reverse sm:flex-row">
+      <div className="content__client flex flex-col-reverse sm:flex-row">
         <div className="left flex-col sm:w-4/5 w-full pr-0 sm:pr-10">
           <h3 className="text-3xl font-bold mb-5">
             Các <span className="textColor">Bài Viết</span> Tại ToothHive
@@ -42,7 +43,7 @@ const News = () => {
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
                     </p>
                     <div className=" flex justify-center items-center">
-                      <LeftArrowIcon />
+                      <LeftArrowIcon/>
                     </div>
                   </div>
                 </a>
@@ -259,10 +260,10 @@ const News = () => {
                       5 dịch vụ nổi bật tại phòng khám nha khoa để có...
                     </h3>
                   </a>
-                  <p className="text-sm my-2" style={{ color: "#143566" }}>
+                  <p className="content__showBlog text-sm my-2" style={{ color: "#143566" }}>
                     Để có được một hàm răng đẹp rạng ngời tại Tooth...
                   </p>
-                  <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
+                  <p className="date__showBlog text-sm my-2" style={{ color: "#8E8E8E" }}>
                     October 12, 2023
                   </p>
                 </div>
@@ -275,10 +276,10 @@ const News = () => {
                       5 dịch vụ nổi bật tại phòng khám nha khoa để có...
                     </h3>
                   </a>
-                  <p className="text-sm my-2" style={{ color: "#143566" }}>
+                  <p className=" content__showBlog text-sm my-2" style={{ color: "#143566" }}>
                     Để có được một hàm răng đẹp rạng ngời tại Tooth...
                   </p>
-                  <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
+                  <p className="date__showBlog text-sm my-2" style={{ color: "#8E8E8E" }}>
                     October 12, 2023
                   </p>
                 </div>
@@ -291,10 +292,10 @@ const News = () => {
                       5 dịch vụ nổi bật tại phòng khám nha khoa để có...
                     </h3>
                   </a>
-                  <p className="text-sm my-2" style={{ color: "#143566" }}>
+                  <p className="content__showBlog text-sm my-2" style={{ color: "#143566" }}>
                     Để có được một hàm răng đẹp rạng ngời tại Tooth...
                   </p>
-                  <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
+                  <p className="date__showBlog text-sm my-2" style={{ color: "#8E8E8E" }}>
                     October 12, 2023
                   </p>
                 </div>
@@ -303,6 +304,7 @@ const News = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
