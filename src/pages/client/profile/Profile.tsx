@@ -146,7 +146,7 @@ const Profile = () => {
                       </Form.Item>
                       <Form.Item
                         name="radio-group"
-                        label="Radio.Group"
+                        label="Giới tính"
                         rules={[
                           {
                             required: true,

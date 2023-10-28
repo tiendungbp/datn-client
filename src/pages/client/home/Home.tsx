@@ -166,10 +166,6 @@ const Home = () => {
               </div>
               <div className="md:w-full">
                 <div className=" right-0 w-full  relative ">
-<<<<<<< HEAD
-                  <img src={Banner} alt="" className=" w-full h-full rounded-lg object-cover shadow-xl z-10" />
-                  <div className="hidden sm:block md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
-=======
                   <img
                     src={Banner}
                     alt=""
@@ -178,7 +174,6 @@ const Home = () => {
                   <div
                     className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]"
                   >
->>>>>>> dev
                     <div className="flex justify-between gap-2 pb-3">
                       <div className="flex gap-2 justify-center items-center">
                         <FontAwesomeIcon icon={faPhone} />
@@ -196,7 +191,7 @@ const Home = () => {
                     <div className="flex gap-2 justify-center items-center">
                       <FontAwesomeIcon icon={faLocationDot} />
                       <p className=" text-[0.9rem] md:text-[1.2rem]">
-                        Trụ sở chính: 237 Nguyễn Tất Thành, Quận 5, Tp.HCM
+                        Trụ sở chính: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM
                       </p>
                     </div>
                   </div>
@@ -450,7 +445,8 @@ const Home = () => {
                 dịch vụ nha khoa chất lượng và tận hưởng nụ cười khỏe đẹp!
               </p>
             </div>
-            <div className=" md:h-[80vh] h-[30vh] md:bg-gray-400 relative rounded-lg flex items-center justify-center">
+            <div className=" md:h-[80vh] h-[30vh]  relative rounded-lg flex items-center justify-center">
+          <iframe className="hidden md:block w-full h-full object-cover rounded-lg shadow-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d53522.97506443701!2d105.77621636333734!3d21.021569763823155!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f6367a16f17%3A0x67abfeb7e2245dc5!2zMjM3IE5ndXnhu4VuIFThuqV0IFRow6BuaCwgUGjGsOG7nW5nIDE4LCBRdeG6rW4gNCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1698481773076!5m2!1svi!2s" width="600" height="450" loading="lazy"></iframe>
               <div className=" bg-white box-shadow absolute md:bottom-[-3rem]  md:left-1/2  transform md:translate-x-[-50%]  p-4 md:p-8 md:px-12 rounded-lg mt-4 mb-8">
                 <h1 className=" text-center text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] font-bold text-[#1386ED] md:py-4 py-2">
                   Phòng khám nha khoa ToothHive
