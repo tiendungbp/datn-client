@@ -124,8 +124,8 @@ const Introduce = () => {
       </div>
       {/* Certificate */}
       <div className="certificate__client m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  ">
-        <div className="w-2/3 mx-auto">
-          <h3 className="text-center text-3xl font-bold mb-3 md:mb-8">
+        <div className=" text-center mb-3 md:mb-8">
+          <h3 className="text-center text-3xl font-bold ">
             Các <span className="textColor">Chứng Chỉ</span> Tại ToothHive
           </h3>
           <p className="mb-7 font-light text-center">
