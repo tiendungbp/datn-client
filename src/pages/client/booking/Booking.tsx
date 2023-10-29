@@ -18,6 +18,7 @@ import {
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 import { message } from "../../../module/ToastMessage";
+import { toast } from "react-toastify";
 type FieldType = {
   selectCoso?: string;
   selectDoctor?: string;
@@ -41,7 +42,7 @@ const Booking = () => {
   const handleSubmit = () => {
     const error = handleErorr();
     if (error) {
-      alert(error);
+      toast.error(error);
     } else {
     }
   };
@@ -53,17 +54,19 @@ const Booking = () => {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
   console.log(groundwork);
-  
+
   const next = () => {
-    if(groundwork){
+    if (groundwork) {
       setCurrent(current + 1);
-    }else{
-      alert("Chọn cơ sở khám để để qua bước 2")
+    }else{  
+      toast.error("Vui lòng điền thông để tiếp tục :((");
     }
   };
 
   const prev = () => {
     setCurrent(current - 1);
+    setGroundwork(true)
+
   };
   const steps = [
     {
@@ -84,7 +87,9 @@ const Booking = () => {
           <Select
             showSearch
             className="select__inp"
-            onChange={()=>{setGroundwork(true)}}
+            onChange={() => {
+              setGroundwork(true);
+            }}
             style={{ width: "100%" }}
             placeholder="Tìm kiếm cở sở khám"
             optionFilterProp="children"
@@ -130,6 +135,9 @@ const Booking = () => {
           wrapperCol={{ span: 24 }}
         >
           <DatePicker
+            onChange={() => {
+              setGroundwork(true);
+            }}
             style={{ width: "100%", height: "46px" }}
             defaultValue={dayjs("01/01/2015", dateFormatList[0])}
             format={dateFormatList}
@@ -153,6 +161,9 @@ const Booking = () => {
           wrapperCol={{ span: 24 }}
         >
           <Select
+            onChange={() => {
+              setGroundwork(true);
+            }}
             className="select__inp"
             showSearch
             style={{ width: "100%" }}
@@ -255,13 +266,14 @@ const Booking = () => {
   const items = steps.map((item) => ({ key: item.title, title: item.title }));
 
   const contentStyle: React.CSSProperties = {
-    height: "200px",
+    height: "250px",
+    width: "100%",
+    margin: "0 auto",
     textAlign: "center",
     color: token.colorTextTertiary,
     backgroundColor: token.colorFillAlter,
     borderRadius: token.borderRadiusLG,
     border: `1px dashed ${token.colorBorder}`,
-    marginTop: 16,
   };
   return (
     <div className="booking__tsx lg:mt-[1rem] lg:mb-[2rem]">
@@ -278,6 +290,15 @@ const Booking = () => {
           ]}
         />
       </div>
+      <Steps
+              style={{
+                marginBottom: "40px",
+                marginTop: "30px",
+                width: "100%",
+              }}
+              current={current}
+              items={items}
+            />
       <Form
         name="basic"
         style={{ maxWidth: "100%" }}
@@ -286,15 +307,30 @@ const Booking = () => {
       >
         <div className="box__first__booking">
           <div className="box__booking__tsx">
-            <Steps current={current} items={items} />
+            
             <div style={contentStyle}>{steps[current].content}</div>
-            <div style={{ marginTop: 24 }}>
+            <div
+              style={{
+                width: "100%",
+                display:"flex",
+                marginTop:"-70px",
+                marginLeft:"50px"
+              }}
+            >
               {current < steps.length - 1 && (
-                <button onClick={() => next()}>Next</button>
+                <button
+                  className="bg-[#1386ed] font-bold my-2 mr-2 py-2 px-5 rounded-md text-[#fff]"
+                  onClick={() => next()}
+                >
+                  Bước tiếp
+                </button>
               )}
               {current > 0 && (
-                <button style={{ margin: "0 8px" }} onClick={() => prev()}>
-                  Previous
+                <button
+                  className="bg-[#1386ed] font-bold my-2 py-2 px-5 rounded-md text-[#fff]"
+                  onClick={() => prev()}
+                >
+                  Quay lại
                 </button>
               )}
             </div>

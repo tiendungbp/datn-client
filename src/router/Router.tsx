@@ -21,7 +21,7 @@ import Guarantee_profile from "../pages/client/guarantee_profile/Guarantee_profi
 import Profile from "../pages/client/profile/Profile";
 
 const Router = (): JSX.Element | null => {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
   const element = useRoutes([
     {
       path: "/",

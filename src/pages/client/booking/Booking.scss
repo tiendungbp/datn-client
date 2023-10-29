@@ -17,8 +17,10 @@
     justify-content: space-between;
     gap: 30px;
     .box__booking__tsx {
-      width: 50%;
-
+      width: 100%;
+      position: sticky;
+      top: 100px;
+      height: 40%;
       .selectTime {
         .btn__selectTime {
           width: 60%;
@@ -97,14 +99,13 @@
       }
     }
     .box__booking__tsx:nth-child(2) {
+      width: 100%;
+      margin: 0 auto;
       padding: 30px 50px;
       background-color: #f3f4f6;
       height: 490px;
       border-radius: 7px;
-      height: 40%;
-        position: sticky;
-        top: 100px;
-        margin-bottom: 30px;
+       
     }
   }
 }

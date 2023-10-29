@@ -18,12 +18,12 @@ type FieldType = {
 const Login = (props: any) => {
   const location = useLocation();
   const { state } = location;
- if(state){
-	const { from, error } = state;
-	alert(error)
- }
- 
+  if (state) {
+    const { from, error } = state;
+  }
+
   const { message, isLoading } = useSelector((state: RootState) => state.auth);
+  console.log(message, isLoading);
   const Appdispatch = useAppDispatch();
   const [loginForm] = Form.useForm();
   useEffect(() => {
