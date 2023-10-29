@@ -52,7 +52,6 @@
       .select__Date,
       .select__doctor,
       .selectTime {
-        background-color: #f3f4f6;
         padding: 20px 50px;
         border-radius: 7px;
         margin-bottom: 30px;
@@ -102,6 +101,10 @@
       background-color: #f3f4f6;
       height: 490px;
       border-radius: 7px;
+      height: 40%;
+        position: sticky;
+        top: 100px;
+        margin-bottom: 30px;
     }
   }
 }
@@ -168,6 +171,7 @@
         }
       }
       .box__booking__tsx:nth-child(2) {
+        
       }
     }
   }
