@@ -2,21 +2,14 @@ import React from "react";
 import { Button, Form, Input, InputNumber } from "antd";
 import "./ContactForm.scss";
 
-const layout = {
-  labelCol: { span: 6 },
-  wrapperCol: { span: 16 },
-};
 
 /* eslint-disable no-template-curly-in-string */
 const validateMessages = {
-  required: "${label} is required!",
+  required: "${label} bắt buộc!",
   types: {
-    email: "${label} is not a valid email!",
-    number: "${label} is not a valid number!",
-  },
-  number: {
-    range: "${label} must be between ${min} and ${max}",
-  },
+    email: "${label} không phải là một email hợp lệ!",
+  }
+ 
 };
 /* eslint-enable no-template-curly-in-string */
 
@@ -26,19 +19,21 @@ const onFinish = (values: any) => {
 
 const ContactForm: React.FC = () => (
   <Form
-    {...layout}
     name="nest-messages"
     onFinish={onFinish}
+    layout="vertical"
     style={{
-      maxWidth: 600,
-      backgroundColor: "white",
+   
     }}
-    className="shadow-lg rounded-md py-10 px-10 sm:px-0"
+    className="shadow-lg rounded-lg p-8 md:px-[30px] lg:px-[40px] xl:px-[60px] form-contact-ui"
     validateMessages={validateMessages}
   >
+    <div className="py-4">
+      <h1 className=" font-bold text-[1.2rem] md:text-[1.6rem] text-[#1386ed] text-center ">Chúng tôi có thể giúp bạn?</h1>
+    </div>
     <Form.Item
       name={["user", "name"]}
-      label="Name"
+      label="Họ tên"
       rules={[{ required: true }]}
     >
       <Input />
@@ -47,30 +42,24 @@ const ContactForm: React.FC = () => (
       
       name={["user", "email"]}
       label="Email"
-      rules={[{ type: "email" }]}
+      rules={[{ type: "email" },{ required: true }]}
     >
-      <Input  />
+      <Input className="w-full" />
     </Form.Item>
-    <Form.Item
-      name={["user", "age"]}
-      label="Age"
-      rules={[{ type: "number", min: 0, max: 99 }]}
+    
+    <Form.Item name={["user", "introduction"]} label="Nhập lời nhắn"
+    
     >
-      <InputNumber type="number" style={{width:"100%"}} />
-    </Form.Item>
-    <Form.Item name={["user", "website"]} label="Website">
-      <Input />
-    </Form.Item>
-    <Form.Item name={["user", "introduction"]} label="Introduction">
       <Input.TextArea />
     </Form.Item>
     <Form.Item>
       <Button
         className="btnForm"
+        htmlType="submit"
         type="primary"
         style={{ backgroundColor: "#1386ed" }}
       >
-        Hẹn lịch khám
+        Gửi lời nhắn
       </Button>
     </Form.Item>
   </Form>
