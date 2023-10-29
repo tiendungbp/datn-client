@@ -14,7 +14,7 @@
   }
   .data {
     position: relative;
-    height: 300px;
+    height: 380px;
     .background {
       height: 100%;
       img {
@@ -35,27 +35,16 @@
       width: 100%;
       top: 0;
       position: absolute;
+      
       .item {
-        height: 125px;
-        width: 175px;
+        height: 160px;
+        width: 210px;
         background-color: white;
+       
       }
     }
   }
-  .certificate {
-    width: 70%;
-    margin: 0 auto;
-    img {
-      margin: 15px 0;
-    }
-  }
-  .reason {
-    .left {
-      img {
-        margin: 15px 0;
-      }
-    }
-  }
+  
 }
 
 @media screen and (max-width: 1080px), screen and (max-width: 500px) {
@@ -73,12 +62,10 @@
     .w-wd-primary{
       width: 94%;
     }
-    .certificate {
-      width: 40%;
-    }
+   
     .data {
       background-image: none;
-      height: 1000px;
+      height: 1100px;
       .showData {
         left: 0%;
       }
@@ -90,7 +77,7 @@
         }
       }
     }
-    .reasons__introduc{
+    .reasons__introduce{
       .right{
         h3{
           margin-top: 10px;
