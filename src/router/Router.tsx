@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Register from "../pages/client/register/Register";
@@ -21,6 +21,7 @@ import Guarantee_profile from "../pages/client/guarantee_profile/Guarantee_profi
 import Profile from "../pages/client/profile/Profile";
 
 const Router = (): JSX.Element | null => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
   const element = useRoutes([
     {
       path: "/",
@@ -62,14 +63,7 @@ const Router = (): JSX.Element | null => {
           path: "/introduce",
           element: <Introduce />,
         },
-        {
-          path: "/booking",
-          element: <Booking />,
-        },
-        {
-          path: "/booking_profile",
-          element: <Booking_profile />,
-        },
+
         {
           path: "/guarantee_profile",
           element: <Guarantee_profile />,
@@ -82,6 +76,40 @@ const Router = (): JSX.Element | null => {
           path: "/404",
           element: <Notfound />,
         },
+        ...(isLoggedIn
+          ? [
+              {
+                path: "/booking",
+                element: <Booking />,
+              },
+              {
+                path: "/booking_profile",
+                element: <Booking_profile />,
+              },
+            ]
+          : [
+              {
+                path: "/booking",
+                element: (
+                  <Navigate
+                    to="/login"
+                    state={{ from: "/booking", error: "Bạn cần đăng nhập" }}
+                  />
+                ),
+              },
+              {
+                path: "/booking_profile",
+                element: (
+                  <Navigate
+                    to="/login"
+                    state={{
+                      from: "/booking_profile",
+                      error: "Bạn cần đăng nhập",
+                    }}
+                  />
+                ),
+              },
+            ]),
       ],
     },
     {
@@ -90,7 +118,7 @@ const Router = (): JSX.Element | null => {
     },
     {
       path: "login",
-      element: <Login />,
+      element: <Login/>,
     },
     {
       path: "forgot",
