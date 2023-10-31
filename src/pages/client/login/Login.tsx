@@ -1,72 +1,68 @@
-import IconGg from "../../../assets/icons/google.svg";
-import IconFace from "../../../assets/icons/facebook.png";
-import { Button, Form, Input, Spin } from "antd";
-import { NavLink, useLocation } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShare } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "../../../store";
-import { loginService } from "../../../store/managerAuth.services/thunkAction";
-import { toast } from "react-toastify";
-
+import IconGg from '../../../assets/icons/google.svg';
+import IconFace from '../../../assets/icons/facebook.png';
+import { Button, Form, Input, Spin } from 'antd';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShare } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../../store';
+import { loginService } from '../../../store/managerAuth.services/thunkAction';
+import { toast } from 'react-toastify';
+import { setUserInfo } from '../../../store/managerAuth.services/userSlice';
+import Cookies from 'js-cookie';
+import { clearMessageAuth } from '../../../store/managerAuth.services/slice';
 type FieldType = {
   username?: string;
   password?: string;
 };
 
-const Login = (props: any) => {
-  const location = useLocation();
-  const { state } = location;
-  if (state) {
-    const { from, error } = state;
-  }
-
-  const { message, isLoading } = useSelector((state: RootState) => state.auth);
-  console.log(message, isLoading);
-  const Appdispatch = useAppDispatch();
-  const [loginForm] = Form.useForm();
-  useEffect(() => {
-    if (message) {
-      handleLogin(message);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [message]);
-  const checkLogin = async (values: FieldType) => {
-    await Appdispatch(loginService(values));
-  };
-  const handleLogin = async (values: any) => {
-    const { errCode, type } = message;
-    if (errCode === 0) {
-      toast.success("Đăng nhập thành công");
-      loginForm.resetFields();
-      const { refresh_token, ...data } = message.data;
-      console.log(refresh_token, data);
-      // const action = setUserInfo({ user: data, login: true });
-      // dispatch(action);
-      // dispatch(setLoginOpen(false));
-      // Cookies.set('customerRefreshToken', message.data.refresh_token);
-    } else if (errCode === 4) {
-      toast.error("Tài khoản chưa xác minh email");
-    } else if (errCode === 2 && type === "email") {
-      toast.error("Sai địa chỉ email");
-    } else if (errCode === 2 && type === "password") {
-      toast.error("Sai mật khẩu");
-    } else if (errCode === 8) {
-      toast.error("Tài khoản đã bị khóa");
-    } else {
-      toast.error("Đăng nhập thất bại");
-    }
-  };
-  return (
-    <div>
-      <div className="w-full  flex flex-col md:flex-row items-start">
-        <div className="relative  w-[40%] h-screen flex flex-col bg-pink-200 hidden md:block">
-          <img
-            src="https://i.pinimg.com/564x/f2/b4/fa/f2b4fa6132ec15d5d7457045fe9678ef.jpg"
-            alt=""
-            className="w-full h-full object-cover brightness-50"
-          />
+const Login = () => {
+	const { message, isLoading } = useSelector((state: RootState) => state.auth);
+	const Appdispatch = useAppDispatch();
+	const [loginForm] = Form.useForm();
+	const navigate = useNavigate();
+	useEffect(() => {
+		if (message) {
+			handleLogin(message);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [message]);
+	const checkLogin = async (values: FieldType) => {
+		await Appdispatch(loginService(values));
+	};
+	const handleLogin = async (values: any) => {
+		const { errCode, type } = message;
+		if (errCode === 0) {
+			loginForm.resetFields();
+			const { refresh_token, ...data } = message.data;
+			const action = setUserInfo({ user: data, login: true });
+			Appdispatch(action);
+			Cookies.set('customerRefreshToken', message.data.refresh_token);
+			navigate('/');
+			toast.success('Đăng nhập thành công');
+		} else if (errCode === 4) {
+			toast.error('Tài khoản chưa xác minh email');
+		} else if (errCode === 2 && type === 'email') {
+			toast.error('Sai địa chỉ email');
+		} else if (errCode === 2 && type === 'password') {
+			toast.error('Sai mật khẩu');
+		} else if (errCode === 8) {
+			toast.error('Tài khoản đã bị khóa');
+		} else {
+			toast.error('Đăng nhập thất bại');
+		}
+		Appdispatch(clearMessageAuth());
+	};
+	return (
+		<div>
+			<div className="w-full  flex flex-col md:flex-row items-start">
+				<div className="relative  w-[40%] h-screen flex flex-col bg-pink-200  md:block">
+					<img
+						src="https://i.pinimg.com/564x/f2/b4/fa/f2b4fa6132ec15d5d7457045fe9678ef.jpg"
+						alt=""
+						className="w-full h-full object-cover brightness-50"
+					/>
 
           <div className="absolute top-[25%] left-[10%] flex flex-col">
             <h1 className=" text-white text-2xl lg:text-3xl  font-bold">
@@ -193,5 +189,4 @@ const Login = (props: any) => {
     </div>
   );
 };
-
 export default Login;
