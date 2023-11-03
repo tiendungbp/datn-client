@@ -61,11 +61,11 @@ const Top5Services = ({ mobileScreen }: { mobileScreen: boolean }) => {
       await Appdispatch(getAllServiceStore());
     };
 
-    fetchData(); // Gọi hàm fetchData khi component được render
+    fetchData();
   }, []);
   useEffect(() => {
     if (listService) {
-      setArrService(listService);
+      setArrService(listService.slice(0, 5));
     }
   }, [listService]);
 
