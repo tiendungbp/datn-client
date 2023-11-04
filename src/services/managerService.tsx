@@ -1,4 +1,4 @@
-import React from "react";
+
 import http from "../API/api";
 
 export type Category = {

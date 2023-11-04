@@ -1,42 +1,55 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import {
-  createDoctorStore,
-  getAllDoctorStore,
-  getOneDoctorStore,
-} from "./thunkAction";
-import { toast } from "react-toastify";
-import { getAllDoctor } from "../../services/managerDoctor";
-// import { toast } from "react-toastify"
+	getAllDoctorByCategoryService,
+	getAllDoctorService,
+	getOneDoctorStore,
+} from './thunkAction';
+import { getAllDoctor } from '../../services/managerDoctor';
 
-type managerbookingRoomInitialState = {
-  listDoctor?: getAllDoctor[];
-  doctor?: getAllDoctor | null;
-  isLoadingBookingRoom: boolean;
+type doctorInitialState = {
+	listDoctor: any;
+	doctor?: getAllDoctor | null;
+	isLoadingDoctor: boolean;
 };
-const initialState: managerbookingRoomInitialState = {
-  isLoadingBookingRoom: false,
+const initialState: doctorInitialState = {
+	listDoctor: null,
+	isLoadingDoctor: false,
+	doctor: null,
 };
 export const { reducer: managerDoctorReducer, actions: managerDoctorAction } =
-  createSlice({
-    name: "managerDoctor",
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
-      builder
-        .addCase(getAllDoctorStore.fulfilled, (state, action) => {
-          if (action.payload.status === 200) {
-            state.listDoctor = action.payload.data.data;
-          }
-        })
-        .addCase(getOneDoctorStore.fulfilled, (state, action) => {
-          if (action.payload.status === 200) {
-            state.doctor = action.payload.data.data;
-          }
-        })
-        .addCase(createDoctorStore.fulfilled, (state, action) => {
-          if (action.payload.status === 200) {
-            state.listDoctor = action.payload.data;
-          }
-        });
-    },
-  });
+	createSlice({
+		name: 'managerDoctor',
+		initialState,
+		reducers: {},
+		extraReducers: (builder) => {
+			builder
+				.addCase(getAllDoctorService.pending, (state, action) => {
+					state.isLoadingDoctor = true;
+				})
+				.addCase(getAllDoctorService.fulfilled, (state, action) => {
+					if (action.payload) {
+						state.isLoadingDoctor = false;
+						state.listDoctor = action.payload.data;
+					}
+				})
+
+				.addCase(getOneDoctorStore.pending, (state, action) => {
+					state.isLoadingDoctor = true;
+				})
+				.addCase(getOneDoctorStore.fulfilled, (state, action) => {
+					if (action.payload) {
+						state.isLoadingDoctor = false;
+						state.doctor = action.payload.data;
+					}
+				})
+				.addCase(getAllDoctorByCategoryService.pending, (state, action) => {
+					state.isLoadingDoctor = true;
+				})
+				.addCase(getAllDoctorByCategoryService.fulfilled, (state, action) => {
+					if (action.payload) {
+						state.isLoadingDoctor = false;
+						state.listDoctor = action.payload.data;
+					}
+				});
+		},
+	});

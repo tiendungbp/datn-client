@@ -1,7 +1,7 @@
 import { Row, Col, Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faTooth } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 import "./ServicePageCarousel.scss";
