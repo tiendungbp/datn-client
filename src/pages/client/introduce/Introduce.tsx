@@ -1,4 +1,4 @@
-import { Breadcrumb, Button, Collapse } from "antd";
+import { Breadcrumb, Button } from "antd";
 import React, { useEffect, useState } from "react";
 import "./Introduce.scss";
 import IntroduceBannerImage from "../../../assets/img/BacSiVaEmBe.png";
@@ -44,7 +44,7 @@ const Introduce = () => {
           className={`text-base mb-8`}
           items={[
             {
-              title: <a href="#">Trang chủ</a>,
+              title: <a href="/">Trang chủ</a>,
             },
             {
               title: <span className="textColor">Giới thiệu</span>,

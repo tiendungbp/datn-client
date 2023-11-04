@@ -37,7 +37,7 @@ const News = () => {
                 <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
                   October 12, 2023
                 </p>
-                <a href="#">
+                <a href="/">
                   <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2 ">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
@@ -58,7 +58,7 @@ const News = () => {
                 <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
                   October 12, 2023
                 </p>
-                <a href="#">
+                <a href="/">
                   <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
@@ -79,7 +79,7 @@ const News = () => {
                 <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
                   October 12, 2023
                 </p>
-                <a href="#">
+                <a href="/">
                   <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
@@ -100,7 +100,7 @@ const News = () => {
                 <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
                   October 12, 2023
                 </p>
-                <a href="#">
+                <a href="/">
                   <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
@@ -121,7 +121,7 @@ const News = () => {
                 <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
                   October 12, 2023
                 </p>
-                <a href="#">
+                <a href="/">
                   <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
@@ -142,7 +142,7 @@ const News = () => {
                 <p className="text-sm my-2" style={{ color: "#8E8E8E" }}>
                   October 12, 2023
                 </p>
-                <a href="#">
+                <a href="/">
                   <div className="textColor flex justify-between xl:w-1/4 sm:w-9/12 w-1/2">
                     <p>
                       <NavLink to={"/detailNews"}>Xem thêm</NavLink>
@@ -255,7 +255,7 @@ const News = () => {
               <div className="blog flex shadow rounded my-5">
                 <img src={NewsImage} alt="" />
                 <div className="content p-3">
-                  <a href="#">
+                  <a href="/">
                     <h3 className="font-bold leading-tight text-lg">
                       5 dịch vụ nổi bật tại phòng khám nha khoa để có...
                     </h3>
@@ -271,7 +271,7 @@ const News = () => {
               <div className="blog flex shadow rounded my-5">
                 <img src={NewsImage} alt="" />
                 <div className="content p-3">
-                  <a href="#">
+                  <a href="/">
                     <h3 className="font-bold leading-tight text-lg">
                       5 dịch vụ nổi bật tại phòng khám nha khoa để có...
                     </h3>
@@ -287,7 +287,7 @@ const News = () => {
               <div className="blog flex shadow rounded my-5">
                 <img src={NewsImage} alt="" />
                 <div className="content p-3">
-                  <a href="#">
+                  <a href="/">
                     <h3 className="font-bold leading-tight text-lg">
                       5 dịch vụ nổi bật tại phòng khám nha khoa để có...
                     </h3>

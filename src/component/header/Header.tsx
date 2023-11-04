@@ -28,7 +28,7 @@ const Header = () => {
 	const items: MenuProps['items'] = [
 		{
 			label: (
-				<Button className="border-0 w-100 mt-2">
+				<Button className="border-0 w-full mt-2 flex items-start">
 					<Link to={'/quan-ly-tai-khoan'}>Quản lý tài khoản</Link>
 				</Button>
 			),
@@ -36,7 +36,7 @@ const Header = () => {
 		},
 		{
 			label: (
-				<Button className="border-0 w-100 mt-2">
+				<Button className="border-0 w-full mt-2 flex items-start">
 					<Link to={'/quan-ly-lich-hen'}>Quản lý lịch hẹn</Link>
 				</Button>
 			),
@@ -44,7 +44,10 @@ const Header = () => {
 		},
 		{
 			label: (
-				<Button onClick={handleLogout} className="border-0 w-100 mt-2">
+				<Button
+					onClick={handleLogout}
+					className="border-0 w-full mt-2 flex items-start"
+				>
 					Đăng xuất
 				</Button>
 			),

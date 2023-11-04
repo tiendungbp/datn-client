@@ -10,6 +10,8 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import persistStore from 'redux-persist/es/persistStore';
 import { userReducer } from './managerAuth.services/userSlice';
 import { patientReducer } from './managerPatient.services/slice';
+import { appointmentReducer } from './managerAppointment.services/slice';
+import { scheduleReducer } from './managerSchedule.services/slice';
 const rootReducer: any = combineReducers({
 	managerDoctor: managerDoctorReducer,
 	managerCategory: managerCategoryReducer,
@@ -17,6 +19,8 @@ const rootReducer: any = combineReducers({
 	auth: authReducer,
 	user: userReducer,
 	patient: patientReducer,
+	schedule: scheduleReducer,
+	appointment: appointmentReducer,
 });
 
 const persistConfig = {

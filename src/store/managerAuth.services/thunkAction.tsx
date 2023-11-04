@@ -4,14 +4,18 @@ type valueAuth = {
 	username?: string;
 	password?: string;
 };
-type registerValue={
+type registerValue = {
 	fullname: string;
-  dob: Date; 
-  gender: boolean; 
-  phone: string;
-  email: string;
-  password: string;
-}
+	dob: Date;
+	gender: boolean;
+	phone: string;
+	email: string;
+	password: string;
+};
+type forgotValue = {
+	role: number;
+	email: string;
+};
 export const loginService = createAsyncThunk(
 	'Toohhive/login',
 	async (value: valueAuth, { rejectWithValue }) => {
@@ -37,14 +41,14 @@ export const registerService = createAsyncThunk(
 export const changeEmailService = createAsyncThunk(
 	'Toohhive/changeEmail',
 	async (
-		data: { new_email:string;password:string; patient_id: string },
+		data: { new_email: string; password: string; patient_id: string },
 		{ rejectWithValue },
 	) => {
 		try {
 			const obj = {
-        new_email: data.new_email,
-        password: data.password,
-      };
+				new_email: data.new_email,
+				password: data.password,
+			};
 			const res = await authAPI.changeEmail(obj, data.patient_id);
 			return res;
 		} catch (error) {
@@ -54,13 +58,46 @@ export const changeEmailService = createAsyncThunk(
 );
 export const changePasswordService = createAsyncThunk(
 	'Toohhive/changePassword',
-	async (data: { current_password:string;new_password:string; patient_id: string }, { rejectWithValue }) => {
+	async (
+		data: {
+			current_password: string;
+			new_password: string;
+			patient_id: string;
+		},
+		{ rejectWithValue },
+	) => {
 		try {
 			const obj = {
-        current_password: data.current_password,
-        new_password: data.new_password,
-      };
+				current_password: data.current_password,
+				new_password: data.new_password,
+			};
 			const res = await authAPI.changePassword(obj, data.patient_id);
+			return res;
+		} catch (error) {
+			return rejectWithValue(error);
+		}
+	},
+);
+export const SendLinkResetPasswordService = createAsyncThunk(
+	'Toohhive/sendLinkResetPassword',
+	async (value: forgotValue, { rejectWithValue }) => {
+		try {
+			const res = await authAPI.sendResetLink(value);
+			return res;
+		} catch (error) {
+			return rejectWithValue(error);
+		}
+	},
+);
+export const ResetPasswordService = createAsyncThunk(
+	'Toohhive/resetPassword',
+	async (	data: {
+		user_id: string;
+		token: string;
+		password: string;
+	}, { rejectWithValue }) => {
+		try {
+			const res = await authAPI.resetPassword(data.user_id,data.token,data.password);
 			return res;
 		} catch (error) {
 			return rejectWithValue(error);

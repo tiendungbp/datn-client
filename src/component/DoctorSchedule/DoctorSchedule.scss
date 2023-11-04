@@ -1,0 +1,19 @@
+.select-date {
+	width: 70%;
+}
+
+@media (max-width: 992px) {
+	.select-date {
+		width: 100%;
+	}
+}
+.schedule-item {
+	border-radius: 0.25rem !important;
+}
+
+.schedule-item:hover {
+	background-color: #0463fa;
+	color: #ffffff;
+	transition: 0.25s;
+	cursor: pointer;
+}

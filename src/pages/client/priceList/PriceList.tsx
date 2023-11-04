@@ -1,7 +1,6 @@
-import { Breadcrumb, Card, Select } from "antd";
+import { Breadcrumb, Select } from "antd";
 import React from "react";
 import "./PriceList.scss";
-import MenuServices from "./MenuServices/MenuServices";
 import TablePriceList from "./TablePriceList/TablePriceList";
 import { NavLink } from "react-router-dom";
 
@@ -101,7 +100,7 @@ const PriceList = () => {
                 <p className="text-gray-700 text-base">
                   237 Nguyễn Tất Thành, Quận 5, Tp.HCM
                 </p>
-                <a href="" className="textColor font-medium">
+                <a href="/" className="textColor font-medium">
                   <NavLink to={"/sdsd"}>Link map tới</NavLink>
                 </a>
               </div>
@@ -124,7 +123,7 @@ const PriceList = () => {
                 <p className="text-gray-700 text-base">
                   237 Nguyễn Tất Thành, Quận 5, Tp.HCM
                 </p>
-                <a href="" className="textColor font-medium">
+                <a href="/" className="textColor font-medium">
                   <NavLink to={"/sdsd"}>Link map tới</NavLink>
                 </a>
               </div>
@@ -147,8 +146,8 @@ const PriceList = () => {
                 <p className="text-gray-700 text-base">
                   237 Nguyễn Tất Thành, Quận 5, Tp.HCM
                 </p>
-                <a href="" className="textColor font-medium">
-                  <NavLink to={"/sdsd"}>Link map tới</NavLink>
+                <a href="/" className="textColor font-medium">
+                  <NavLink to={"/"}>Link map tới</NavLink>
                 </a>
               </div>
             </div>
