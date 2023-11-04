@@ -61,14 +61,13 @@ const Top5Services = ({ mobileScreen }: { mobileScreen: boolean }) => {
 			await Appdispatch(getAllServiceStore());
 		};
 
-		fetchData(); // Gọi hàm fetchData khi component được render
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-	useEffect(() => {
-		if (listService) {
-			setArrService(listService);
-		}
-	}, [listService]);
+    fetchData();
+  }, []);
+  useEffect(() => {
+    if (listService) {
+      setArrService(listService.slice(0, 5));
+    }
+  }, [listService]);
 
 	return (
 		<div className="mb-32">

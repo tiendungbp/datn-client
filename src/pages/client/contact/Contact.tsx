@@ -66,27 +66,58 @@ const Contact = () => {
                 <p>Cơ sở 2: 172 Trường chinh, Tân Thới HIệp, Quận 12, Tp.HCM</p>
                 <p>Cơ sở 3: 287 Trần Xuân Soạn, Tân Kiểng, Quận 7, Tp.HCM</p>
               </div>
-              <div className="info mb-4">
-                <h4 className="text-xl font-medium">Email</h4>
-                <p>ToothHive@gmail.com</p>
+              {/* Div contact form */}
+              <div className="contact xl:mt-80 lg:mt-32">
+                <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
+                  <div className="block sm:flex py-16">
+                    <div className="contactInfo flex-1">
+                      <h3 className="text-3xl font-bold">
+                        <span className="textColor">Liên Hệ</span> Với Chúng Tôi
+                      </h3>
+                      <p className="font-light mt-4 mb-6">
+                        Hãy để chúng tôi giúp bạn bắt đầu hành trình chăm sóc
+                        răng đẳng cấp tại ToothHive. Chúng tôi luôn sẵn sàng
+                        lắng nghe và đồng hành cùng bạn để mang đến một nụ cười
+                        tươi sáng và hoàn hảo.
+                      </p>
+                      <div className="info mb-4">
+                        <h4 className="text-xl font-medium">Địa chỉ</h4>
+                        <p>
+                          Trụ sở chính: 237 Nguyễn Tất Thành, Quận 5, Tp.HCM
+                        </p>
+                        <p>
+                          Cơ sở 2: 172 Trường chinh, Tân Thới HIệp, Quận 12,
+                          Tp.HCM
+                        </p>
+                        <p>
+                          Cơ sở 3: 287 Trần Xuân Soạn, Tân Kiểng, Quận 7, Tp.HCM
+                        </p>
+                      </div>
+                      <div className="info mb-4">
+                        <h4 className="text-xl font-medium">Email</h4>
+                        <p>ToothHive@gmail.com</p>
+                      </div>
+                      <div className="info mb-4">
+                        <h4 className="text-xl font-medium">Số điện thoại</h4>
+                        <p>(+84) 0975 383 290</p>
+                      </div>
+                      <div className="info mb-10">
+                        <h4 className="text-xl font-medium">Giờ làm việc</h4>
+                        <p>Thứ Hai - Chủ Nhật: 8:00 AM - 6:00 PM</p>
+                      </div>
+                      <div className="info mb-4">
+                        <p>
+                          Chúng tôi luôn sẵn sàng phục vụ bạn trong giờ làm việc
+                          và có thể sắp xếp lịch hẹn ngoài giờ nếu cần thiết.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="contactForm flex-1">
+                      <ContactForm />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="info mb-4">
-                <h4 className="text-xl font-medium">Số điện thoại</h4>
-                <p>(+84) 0975 383 290</p>
-              </div>
-              <div className="info mb-10">
-                <h4 className="text-xl font-medium">Giờ làm việc</h4>
-                <p>Thứ Hai - Chủ Nhật: 8:00 AM - 6:00 PM</p>
-              </div>
-              <div className="info mb-4">
-                <p>
-                  Chúng tôi luôn sẵn sàng phục vụ bạn trong giờ làm việc và có
-                  thể sắp xếp lịch hẹn ngoài giờ nếu cần thiết.
-                </p>
-              </div>
-            </div>
-            <div className="contactForm flex-1">
-              <ContactForm />
             </div>
           </div>
         </div>
