@@ -1,17 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 import { getAllCategory } from '../../services/managerCategory';
-import { getAllCategoryStore, getOneCategoryStore } from './thunkAction';
-// import { toast } from "react-toastify"
+import { getAllCategoryService, getAllCategoryStore, getOneCategoryStore } from './thunkAction';
 
-type managerbookingRoomInitialState = {
+type categoryInitialState = {
 	listCategory?: getAllCategory[];
+	listCategoryActive:any;
 	category?: getAllCategory | null;
-
-	isLoadingBookingRoom: boolean;
+	isLoadingCategory: boolean;
 };
-const initialState: managerbookingRoomInitialState = {
-	isLoadingBookingRoom: false,
+const initialState: categoryInitialState = {
+	isLoadingCategory: false,
+	listCategoryActive:null,
 };
 export const {
 	reducer: managerCategoryReducer,
@@ -24,14 +23,23 @@ export const {
 	},
 	extraReducers: (builder) => {
 		builder
-			.addCase(getAllCategoryStore.fulfilled, (state, action) => {
-				if (action.payload.status === 200) {
-					state.listCategory = action.payload.data.data;
+			.addCase(getAllCategoryService.pending, (state, action) => {
+				state.isLoadingCategory = true;
+			})
+			.addCase(getAllCategoryService.fulfilled, (state, action) => {
+				if (action.payload) {
+					state.isLoadingCategory = false;
+					state.listCategoryActive = action.payload.data;
 				}
 			})
 			.addCase(getOneCategoryStore.fulfilled, (state, action) => {
 				if (action.payload.status === 200) {
 					state.category = action.payload.data.data;
+				}
+			})
+			.addCase(getAllCategoryStore.fulfilled, (state, action) => {
+				if (action.payload.status === 200) {
+					state.listCategory = action.payload.data.data;
 				}
 			});
 	},

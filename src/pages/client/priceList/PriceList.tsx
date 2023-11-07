@@ -1,7 +1,6 @@
 import { Breadcrumb, Card, Select } from "antd";
 import React from "react";
 import "./PriceList.scss";
-import MenuServices from "./MenuServices/MenuServices";
 import TablePriceList from "./TablePriceList/TablePriceList";
 import { NavLink } from "react-router-dom";
 
@@ -33,7 +32,7 @@ const PriceList = () => {
         </p>
         <div className="order-2">
           <Select
-          style={{width:"100%"}}
+            style={{ width: "100%" }}
             className="select__price__list__clietn"
             showSearch
             placeholder="Chọn theo dịch vụ"

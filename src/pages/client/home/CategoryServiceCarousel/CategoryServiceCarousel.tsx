@@ -9,10 +9,8 @@ import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../../../store";
 import {
   getAllCategory,
-  managerCategoryServices,
 } from "../../../../services/managerCategory";
 import { getAllCategoryStore } from "../../../../store/managerCategory.services/thunkAction";
-import { managerCategoryAction } from "../../../../store/managerCategory.services/slice";
 
 const SampleNextArrow = (props: any) => {
   const { className, style, onClick } = props;
@@ -76,6 +74,7 @@ const CategoryServiceCarousel = ({
     };
 
     fetchData(); // Gọi hàm fetchData khi component được render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (listCategory) {
@@ -83,33 +82,6 @@ const CategoryServiceCarousel = ({
     }
   }, [listCategory]);
 
-  // Mảng các items
-  const arrDescriptions = [
-    {
-      description:
-        "Dịch vụ Trồng Răng tại ToothHive là giải pháp hiện đại và an toàn để khôi phục hoàn toàn chức năng...",
-    },
-    {
-      description:
-        "Khi bạn trải qua quá trình mất răng, chất lượng cuộc sống và tự tin của bạn có thể bị ảnh hưởng nghiêm...",
-    },
-    {
-      description:
-        "Niềng răng không chỉ là việc thẳng hàng răng mà còn là hành trình thú vị để hoàn thiện nụ cười ...",
-    },
-    {
-      description:
-        "Dịch vụ abc Trồng Răng tại ToothHive là giải pháp hiện đại ",
-    },
-    {
-      description:
-        "Niềng răng xyz không chỉ là việc thẳng hàng răng mà còn là hành trìn",
-    },
-    {
-      description:
-        "Khi bạn mothaiba trải qua quá trình mất răng, chất lượng cuộc sống và tự tin của bạn ",
-    },
-  ];
   const arrColor = [
     {
       backgroundColor: "#DCEDFF",
@@ -138,13 +110,12 @@ const CategoryServiceCarousel = ({
     }
 
     const newGroupedItems: any[][] = [];
-    let colorIndex = 0;
-
-    for (let i = 0; i < arrCategory.length; i += itemsPerDiv) {
+   
+    for (let i = 0,colorIndex = 0; i < arrCategory.length; i += itemsPerDiv) {
       const group = arrCategory.slice(i, i + itemsPerDiv);
       const updatedGroup = group.map((item, index) => {
         const colorIndexWithinGroup = colorIndex % arrColor.length;
-        console.log("colorIndexWithinGroup: ", colorIndexWithinGroup);
+        
         const updatedItem = {
           ...item,
           backgroundColor: arrColor[colorIndexWithinGroup].backgroundColor,
@@ -157,6 +128,7 @@ const CategoryServiceCarousel = ({
     }
 
     setGroupedItems(newGroupedItems);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [arrCategory, windowWidth]);
   // TẠM CHƯA CÓ API ĐỂ TRỐNG
   // useEffect(() => {
@@ -190,7 +162,7 @@ const CategoryServiceCarousel = ({
                       {group.map((item, itemIndex) => (
                         <div
                           key={itemIndex}
-                          className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4 py-5"
+                          className="bg-white box-shadow rounded-lg p-8 flex flex-col gap-4 py-5 mx-1 my-1"
                         >
                           <div className="flex items-center gap-4">
                             <FontAwesomeIcon

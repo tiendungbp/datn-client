@@ -9,9 +9,7 @@ import {
   Select,
   Tabs,
 } from "antd";
-import { SizeType } from "antd/es/config-provider/SizeContext";
 import React, { ChangeEvent, useState } from "react";
-import type { RadioChangeEvent } from "antd";
 
 const { TabPane } = Tabs; // Import TabPane from Tabs
 const config = {

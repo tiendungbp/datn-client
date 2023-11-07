@@ -1,6 +1,6 @@
-import axios, { AxiosInstance } from 'axios';
-import { toast } from 'react-toastify';
-export const baseURL = 'https://haitech.me/api/';
+import axios, { AxiosInstance } from "axios";
+import { toast } from "react-toastify";
+export const baseURL = "https://haitech.me/api/";
 const http: AxiosInstance = axios.create();
 http.interceptors.request.use((config: any) => {
 	return {

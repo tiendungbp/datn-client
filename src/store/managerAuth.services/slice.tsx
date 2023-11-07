@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+	ResetPasswordService,
+	SendLinkResetPasswordService,
 	changeEmailService,
 	changePasswordService,
 	loginService,
@@ -11,6 +13,8 @@ type authInitialState = {
 	messageRegister: any;
 	messageAuthEmail: any;
 	messageAuthPassword: any;
+	messageForgot: any;
+	messageReset: any;
 	user: any;
 	login: boolean;
 };
@@ -20,6 +24,8 @@ const initialState: authInitialState = {
 	messageRegister: '',
 	messageAuthEmail: '',
 	messageAuthPassword: '',
+	messageForgot: '',
+	messageReset: '',
 	user: null,
 	login: false,
 };
@@ -32,6 +38,8 @@ export const { reducer: authReducer, actions: authAction } = createSlice({
 			state.messageAuthPassword = null;
 			state.message = null;
 			state.messageRegister = null;
+			state.messageForgot = null;
+			state.messageReset = null;
 		},
 	},
 	extraReducers: (builder) => {
@@ -70,6 +78,24 @@ export const { reducer: authReducer, actions: authAction } = createSlice({
 				state.isLoading = false;
 				if (action.payload) {
 					state.messageAuthPassword = action.payload.data;
+				}
+			})
+			.addCase(SendLinkResetPasswordService.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(SendLinkResetPasswordService.fulfilled, (state, action) => {
+				state.isLoading = false;
+				if (action.payload) {
+					state.messageForgot = action.payload.data;
+				}
+			})
+			.addCase(ResetPasswordService.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(ResetPasswordService.fulfilled, (state, action) => {
+				state.isLoading = false;
+				if (action.payload) {
+					state.messageReset = action.payload.data;
 				}
 			});
 	},
