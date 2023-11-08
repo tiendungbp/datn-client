@@ -49,45 +49,8 @@ const Contact = () => {
       </div>
       {/* Div contact form */}
       <div className="contact xl:mt-80 lg:mt-32">
-        <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
-          <div className="block sm:flex py-16 md:gap-40 sm:gap-10">
-            <div className="contactInfo flex flex-col gap-6 flex-1">
-              <h3 className="text-3xl font-bold">
-                <span className="textColor">Liên Hệ</span> Với Chúng Tôi
-              </h3>
-              <p className=" leading-8 ">
-                Hãy để chúng tôi giúp bạn bắt đầu hành trình chăm sóc răng đẳng
-                cấp tại ToothHive. Chúng tôi luôn sẵn sàng lắng nghe và đồng
-                hành cùng bạn để mang đến một nụ cười tươi sáng và hoàn hảo.
-              </p>
-              <div className="info flex flex-col gap-2 ">
-                <h4 className="text-xl font-bold">Địa chỉ</h4>
-                <p>Trụ sở chính: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM</p>
-                <p>Cơ sở 2: 172 Trường chinh, Tân Thới HIệp, Quận 12, Tp.HCM</p>
-                <p>Cơ sở 3: 287 Trần Xuân Soạn, Tân Kiểng, Quận 7, Tp.HCM</p>
-              </div>
-<<<<<<< HEAD
-              <div className="info flex flex-col gap-2">
-                <h4 className="text-xl font-bold">Email</h4>
-                <p>Toothhive@gmail.com</p>
-              </div>
-              <div className="info flex flex-col gap-2">
-                <h4 className="text-xl font-bold">Số điện thoại</h4>
-                <p>(+84) 0975 383 290</p>
-              </div>
-              <div className="info flex flex-col gap-2 mb-8 md:mb-0">
-                <h4 className="text-xl font-bold">Giờ làm việc</h4>
-                <p>Thứ Hai - Chủ Nhật: 8:00 AM - 6:00 PM</p>
-              </div>
-             
-            </div>
-            <div className=" flex-1">
-              <ContactForm />
-=======
-              {/* Div contact form */}
-              <div className="contact xl:mt-80 lg:mt-32">
                 <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
-                  <div className="block sm:flex py-16">
+                  <div className="block sm:flex gap-4 py-16">
                     <div className="contactInfo flex-1">
                       <h3 className="text-3xl font-bold">
                         <span className="textColor">Liên Hệ</span> Với Chúng Tôi
@@ -136,11 +99,6 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
->>>>>>> dev
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
