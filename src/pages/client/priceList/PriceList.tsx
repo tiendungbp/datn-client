@@ -1,11 +1,69 @@
 import { Breadcrumb, Card, Select } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./PriceList.scss";
 import MenuServices from "./MenuServices/MenuServices";
 import TablePriceList from "./TablePriceList/TablePriceList";
 import { NavLink } from "react-router-dom";
+import { RootState, useAppDispatch } from "../../../store";
+import { useSelector } from "react-redux";
+import { getAllDoctor } from "../../../services/managerDoctor";
+import { getAllServiceStore } from "../../../store/managerService.services/thunkAction";
+import { getAllService } from "../../../services/managerService";
+import { getAllCategoryStore } from "../../../store/managerCategory.services/thunkAction";
+import { getAllCategory } from "../../../services/managerCategory";
 
 const PriceList = () => {
+  const Appdispatch = useAppDispatch();
+  const { listService } = useSelector(
+    (state: RootState) => state.managerService
+  );
+  const { listCategory } = useSelector(
+    (state: RootState) => state.managerCategory
+  );
+
+  const [arrService, setArrService] = useState<getAllService[]>([]);
+  const [arrCategory, setArrCategory] = useState<getAllCategory[]>([]);
+  const [listData, setListData] = useState<getAllService[]>([]);
+  const [oneCategory, setOneCategory] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // Gửi yêu cầu lấy danh sách danh mục
+      await Appdispatch(getAllServiceStore());
+      await Appdispatch(getAllCategoryStore());
+    };
+
+    fetchData(); // Gọi hàm fetchData khi component được render
+  }, []);
+  useEffect(() => {
+    if (listService && listCategory) {
+      setArrService(listService);
+      setArrCategory(listCategory);
+    }
+  }, [listService, listCategory]);
+
+  const options = arrCategory.map((category) => ({
+    value: category.category_id,
+    label: category.category_name,
+  }));
+
+  options.push({
+    value: "all",
+    label: "Tất cả",
+  });
+
+  const handleOnchangeSelect = (e: any) => {
+    // e === idCategory
+    const resultService = arrService.filter((service) => {
+      return service.Category.category_id === e;
+    });
+    const resultCategory = options.filter((category) => {
+      return category.value === e;
+    });
+    setListData(resultService);
+    setOneCategory(resultCategory);
+  };
+
   return (
     <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
       {/* BreadCrumb */}
@@ -37,42 +95,22 @@ const PriceList = () => {
             className="select__price__list__clietn"
             showSearch
             placeholder="Chọn theo dịch vụ"
-            optionFilterProp="children"
-            filterOption={(input, option) =>
-              (option?.label ?? "").includes(input)
-            }
-            filterSort={(optionA, optionB) =>
-              (optionA?.label ?? "")
-                .toLowerCase()
-                .localeCompare((optionB?.label ?? "").toLowerCase())
-            }
-            options={[
-              {
-                value: "1",
-                label: "Not Identified",
-              },
-              {
-                value: "2",
-                label: "Closed",
-              },
-              {
-                value: "3",
-                label: "Communicated",
-              },
-              {
-                value: "4",
-                label: "Identified",
-              },
-              {
-                value: "5",
-                label: "Resolved",
-              },
-            ]}
+            // optionFilterProp="children"
+            // filterOption={(input, option) =>
+            //   (option?.label ?? "").includes(input)
+            // }
+            // filterSort={(optionA, optionB) =>
+            //   (optionA?.label ?? "")
+            //     .toLowerCase()
+            //     .localeCompare((optionB?.label ?? "").toLowerCase())
+            // }
+            options={options}
+            onChange={handleOnchangeSelect}
           />
         </div>
       </div>
       {/* Price List */}
-      <TablePriceList />
+      <TablePriceList listData={listData} id_category={oneCategory} />
       {/* facilities */}
       <div className="facilities my-10">
         <div className="title my-10">
