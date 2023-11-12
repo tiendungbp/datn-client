@@ -153,7 +153,7 @@ const Home = () => {
 			<div className="home__client  lg:mt-[1rem] ">
 				{/* start banner  */}
 				<div className="m-auto w-wd-primary md:w-wd-secondary">
-					<div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-[280px]"></div>
+					<div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-3xl "></div>
 					<div className="grid grid-cols-1 md:grid-cols-2 ">
 						<div className="md:order-2 md:p-4 float-right">
 							<div>

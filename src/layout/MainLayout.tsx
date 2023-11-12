@@ -6,8 +6,8 @@ const MainLayout = () => {
     return (
         <div>
           <Header />
-          <div className='section__home__airbnb'>
-            <div className='section__home__airbnb__1'>
+          <div className='section__home__toothhive'>
+            <div className='section__home__toothhive__1'>
               <Outlet />
             </div>
           </div>
