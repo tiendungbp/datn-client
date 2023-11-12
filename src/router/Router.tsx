@@ -92,7 +92,7 @@ const Router = (): JSX.Element | null => {
     },
 
     {
-      path: "/thong-tin-khach-hang/idNFC",
+      path: "/thong-tin-khach-hang/:idNFC",
       element: <ProfileNFC />,
     },
     {
