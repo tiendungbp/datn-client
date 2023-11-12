@@ -8,7 +8,6 @@ import {
   Select,
   Space,
   Table,
-  Tag,
 } from "antd";
 import { SearchProps } from "antd/es/input/Search";
 import { ColumnsType } from "antd/es/table";

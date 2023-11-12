@@ -15,10 +15,12 @@ import Introduce from "../pages/client/introduce/Introduce";
 import Booking from "../pages/client/booking/Booking";
 import DetailServices from "../pages/client/detailServices/DetailServices";
 import PriceList from "../pages/client/priceList/PriceList";
-import Booking_profile from "../pages/client/booking_profile/Booking_profile";
-import path from "path";
-import Guarantee_profile from "../pages/client/guarantee_profile/Guarantee_profile";
 import Profile from "../pages/client/profile/Profile";
+import Account from "../pages/client/Account/Account";
+import Appointmentdetails from "../pages/client/Appointmentdetails/Appointmentdetails";
+import ResetPassword from "../pages/client/ResetPassword/ResetPassword";
+import Appointmentlist from "../pages/client/Appointmentlist/Appointmentlist";
+import ProfileNFC from "../pages/client/ProfileNFC";
 
 const Router = (): JSX.Element | null => {
   const element = useRoutes([
@@ -67,22 +69,31 @@ const Router = (): JSX.Element | null => {
           element: <Booking />,
         },
         {
-          path: "/booking_profile",
-          element: <Booking_profile />,
-        },
-        {
-          path: "/guarantee_profile",
-          element: <Guarantee_profile />,
-        },
-        {
           path: "/profile",
           element: <Profile />,
+        },
+        {
+          path: "quan-ly-tai-khoan",
+          element: <Account />,
+        },
+        {
+          path: "/quan-ly-lich-hen",
+          element: <Appointmentlist />,
+        },
+        {
+          path: "/quan-ly-lich-hen/chi-tiet/:appointment_id",
+          element: <Appointmentdetails />,
         },
         {
           path: "/404",
           element: <Notfound />,
         },
       ],
+    },
+
+    {
+      path: "/thong-tin-khach-hang/idNFC",
+      element: <ProfileNFC />,
     },
     {
       path: "register",
@@ -96,6 +107,11 @@ const Router = (): JSX.Element | null => {
       path: "forgot",
       element: <ForgotPass />,
     },
+    {
+      path: "dat-lai-mat-khau/:user_id/:token",
+      element: <ResetPassword />,
+    },
+
     {
       path: "*",
       element: <Navigate to="/404" />,

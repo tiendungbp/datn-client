@@ -1,13 +1,65 @@
 @media screen and (max-width: 1080px) {
-    .services__client{
-        width: 93% !important;
-        margin-bottom: 20px;
-        .title__services__client{
-            margin-top: 10px;
-            font-size: 14px;
-        }
-   }
+	.services__client {
+		width: 93% !important;
+		margin-bottom: 20px;
+		.title__services__client {
+			margin-top: 10px;
+			font-size: 14px;
+		}
+	}
 }
-@media screen and (max-width: 475px) {
-   
+
+/*** Service ***/
+.service-item {
+	transition: 0.5s;
+	background-color: #eff5ff !important;
+}
+
+.service-item:hover {
+	margin-top: -10px;
+	box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+.service-item .btn {
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	background: #ffffff;
+	border-radius: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.service-item:hover .btn {
+	width: 140px;
+}
+
+/*** Team ***/
+.team-item img {
+	position: relative;
+	top: 0;
+	transition: 0.5s;
+}
+
+.team-item:hover img {
+	top: -30px;
+}
+
+.team-item .team-text {
+	position: relative;
+	height: 100px;
+	transition: 0.5s;
+	background-color: #eff5ff !important;
+}
+
+.team-item:hover .team-text {
+	margin-top: -60px;
+	height: 160px;
+}
+
+.team-item .team-text .team-social {
+	opacity: 0;
+	transition: 0.5s;
 }

@@ -1,9 +1,16 @@
-import React from 'react'
+import http from '../API/api';
 
-const managerStatistical = () => {
-  return (
-    <div>managerStatistical</div>
-  )
+interface ScheduleAPI {
+	getDoctorSchedulesByDate: (
+		appointment_id: string,
+		user_id: string,
+	) => Promise<any>;
 }
 
-export default managerStatistical
+const scheduleAPI: ScheduleAPI = {
+	getDoctorSchedulesByDate: (doctor_id, date) => {
+		return http.get(`schedule/all/doctor/${doctor_id}/${date}`);
+	},
+};
+
+export default scheduleAPI;

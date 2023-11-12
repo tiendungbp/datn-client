@@ -44,6 +44,7 @@ const TablePriceList: React.FC<PriceListProps> = ({
     };
 
     fetchData(); // Gọi hàm fetchData khi component được render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (listCategory && listService) {

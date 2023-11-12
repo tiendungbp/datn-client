@@ -1,7 +1,6 @@
 import { Breadcrumb, Card, Select } from "antd";
 import React, { useEffect, useState } from "react";
 import "./PriceList.scss";
-import MenuServices from "./MenuServices/MenuServices";
 import TablePriceList from "./TablePriceList/TablePriceList";
 import { NavLink } from "react-router-dom";
 import { RootState, useAppDispatch } from "../../../store";
@@ -65,7 +64,7 @@ const PriceList = () => {
   };
 
   return (
-    <div className="m-auto w-wd-primary md:w-wd-secondary my-6 lg:mt-[1rem]">
+    <div className="price__list__client m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
       {/* BreadCrumb */}
       <Breadcrumb
         className={`title__price__list text-base mb-8`}
@@ -121,9 +120,9 @@ const PriceList = () => {
             Tại ToothHive sẽ có các chi nhánh về các địa điểm khác nhau
           </p>
         </div>
-        <div className="flex flex-wrap sm:flex-nowrap justify-center">
-          <div className="item box-shadow sm:mr-5 mb-5">
-            <div className="max-w-sm w-full lg:max-w-full lg:flex">
+        <div className="box__basis__client__pricelist flex gap-7 flex-wrap justify-center">
+          <div className="item box-shadow ">
+            <div className=" w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style={{
@@ -145,8 +144,8 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-          <div className="item box-shadow sm:mr-5 mb-5">
-            <div className="max-w-sm w-full lg:max-w-full lg:flex">
+          <div className="item box-shadow ">
+            <div className=" w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style={{
@@ -168,8 +167,8 @@ const PriceList = () => {
               </div>
             </div>
           </div>
-          <div className="item box-shadow sm:mr-5 mb-5">
-            <div className="max-w-sm w-full lg:max-w-full lg:flex">
+          <div className="item box-shadow ">
+            <div className=" w-full lg:max-w-full lg:flex">
               <div
                 className="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style={{
