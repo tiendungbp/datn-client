@@ -32,6 +32,7 @@ const Router = (): JSX.Element | null => {
           path: "/",
           element: <Home />,
         },
+
         {
           path: "/contact",
           element: <Contact />,
@@ -88,13 +89,13 @@ const Router = (): JSX.Element | null => {
           path: "/404",
           element: <Notfound />,
         },
+        {
+          path: "/thong-tin-khach-hang/:idNFC",
+          element: <ProfileNFC />,
+        },
       ],
     },
 
-    {
-      path: "/thong-tin-khach-hang/:idNFC",
-      element: <ProfileNFC />,
-    },
     {
       path: "register",
       element: <Register />,
