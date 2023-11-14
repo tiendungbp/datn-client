@@ -1,6 +1,5 @@
 import { Breadcrumb, Button } from "antd";
 import React, { useEffect, useState } from "react";
-import "./Introduce.scss";
 import IntroduceBannerImage from "../../../assets/img/BacSiVaEmBe.png";
 import IntroduceReasonImage from "../../../assets/img/BacSiNhoRang.png";
 import CertificateImage from "../../../assets/img/certificate.png";
@@ -15,6 +14,7 @@ import {
   TwoUsersIcon,
 } from "../../../assets/icons/icons";
 
+import "./Introduce.scss";
 import MyCollapse from "./MyCollapse/MyCollapse";
 
 const Introduce = () => {
@@ -88,7 +88,7 @@ const Introduce = () => {
                   color: "white",
                   height: 40,
                   padding: "0 20px",
-                  fontWeight:"500"
+                  fontWeight: "500",
                 }}
               >
                 Xem Thêm
@@ -106,7 +106,11 @@ const Introduce = () => {
       <div className="reasons__introduce m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  reason">
         <div className="flex sm:flex-row flex-col">
           <div className="left flex-col sm:w-2/5 w-full pr-0 sm:pr-10 h-[580px]">
-            <img src={IntroduceReasonImage} alt="" className="w-full h-full object-cover rounded-lg" />
+            <img
+              src={IntroduceReasonImage}
+              alt=""
+              className="w-full h-full object-cover rounded-lg"
+            />
           </div>
           <div className="right sm:w-3/5 w-full">
             <div>
