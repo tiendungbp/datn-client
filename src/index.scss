@@ -2,38 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 body {
-	margin: 0;
-	padding: 0;
-	font-family: 'Poppins', sans-serif;
-	background-color: #fff;
-	color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #000;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .custom-blur {
-	filter: blur(240px);
-	opacity: 0.5;
+  filter: blur(240px);
+  opacity: 0.5;
 }
 .box-shadow {
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .shadow-xl {
-	box-shadow: #c0d6ed 8px -6px 0px 5px;
+  box-shadow: #c0d6ed 8px -6px 0px 5px;
 }
 
 .shadow-2xl {
-	box-shadow: #a2cbf6 -12px 12px 0px 5px;
+  box-shadow: #a2cbf6 -12px 12px 0px 5px;
 }
-// scss 
+
+// Button
+.booking {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 32px;
+  height: 52px;
+  border: solid 1px #1386ed;
+  font-size: 18px;
+  padding: 15px 35px;
+  white-space: nowrap;
+}
+.booking::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: -55%;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.75s;
+}
+.bgBlue {
+  color: #fff;
+  background: #1386ed;
+  transition: 0.5s;
+}
+.booking:hover::before {
+  left: 125%;
+}
+
+// scss
 @import "./component/header/Header.scss";
 @import "./component/footer/Footer.scss";
 @import "./pages/client/detailDoctor/DetailDoctor.scss";
-@import "./pages/client/detailNews/DetailNews.scss";
 @import "./pages/client/booking_profile/Booking_profile.scss";
 @import "./pages/client/booking/Booking.scss";
 @import "./pages/client/login/Login.scss";

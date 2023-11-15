@@ -79,10 +79,10 @@ const PriceList = () => {
       />
       {/* Title */}
       <div className="sm:flex flex-wrap justify-between block">
-        <h3 className="title__price__list__client textColor text-3xl font-medium order-1">
+        <h3 className="title__price__list__client textColor text-lg sm:text-3xl font-medium order-1">
           Bảng giá tại ToothHive
         </h3>
-        <p className="content__price__lisst order-3 my-5">
+        <p className="content__price__lisst order-3 my-5 text-sm sm:text-[1rem]">
           Nha Khoa ToothHIve cam kết đem đến cho khách hàng các gói dịch vụ Răng
           hàm mặt chất lượng hàng đầu với mức chi phí tốt nhất. Nha Khoa
           ToothHIve cam kết đem đến cho khách hàng các gói dịch vụ Răng hàm mặt

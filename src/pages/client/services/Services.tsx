@@ -49,7 +49,7 @@ const Services = () => {
   return (
     <div className="services__client m-auto w-wd-primary md:w-wd-secondary lg:mt-[1rem] sm:mt-[0rem] md:mt-[0rem] xl:mt-[1rem]">
       <Breadcrumb
-        className={`title__services__client text-base mb-8 `}
+        className={`title__services__client text-base mb-8 text-xs`}
         items={[
           {
             title: <a href="/">Trang chủ</a>,
@@ -62,10 +62,10 @@ const Services = () => {
       {/*start category service*/}
       <div>
         <div className="py-2  text-center ">
-          <h1 className="text-[#1386ED] font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
+          <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
             Các danh mục dịch vụ tại ToothHive
           </h1>
-          <p className="text-[0.9rem] text-gray-500">
+          <p className="text-sm text-gray-500">
             Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
           </p>
         </div>
@@ -82,10 +82,10 @@ const Services = () => {
       {/*start doctor*/}
       <div>
         <div className="mt-4 py-8  text-center">
-          <h1 className="text-[#1386ED] font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
+          <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
             Đội ngũ bác sĩ tại ToothHive
           </h1>
-          <p className="text-[0.9rem] text-gray-500">
+          <p className="text-sm text-gray-500">
             Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
           </p>
         </div>
@@ -103,7 +103,7 @@ const Services = () => {
                   <div className="team-item relative rounded overflow-hidden">
                     <div className="overflow-hidden">
                       <img
-                        className="w-full"
+                        className="w-full mt-5"
                         src={doctor.avatar}
                         alt="hinh-doctor"
                       />
@@ -129,10 +129,10 @@ const Services = () => {
       {/*start map*/}
       <div className="mb-[2rem] md:mb-[3rem] ">
         <div className="mt-4 py-8  text-center">
-          <h1 className="text-[#1386ED] font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
+          <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
             Hệ Thống Nha Khoa ToothHive
           </h1>
-          <p className="text-[0.9rem] text-gray-500">
+          <p className="text-sm text-gray-500">
             Tại ToothHive sẽ có các chi nhánh về các địa điểm khác nhau
           </p>
         </div>

@@ -7,9 +7,7 @@ import Notfound from "../pages/client/notfound/Notfound";
 import ForgotPass from "../pages/client/forgotPass/ForgotPass";
 import Home from "../pages/client/home/Home";
 import Contact from "../pages/client/contact/Contact";
-import DetailNews from "../pages/client/detailNews/DetailNews";
 import DetailDoctor from "../pages/client/detailDoctor/DetailDoctor";
-import News from "../pages/client/news/News";
 import Services from "../pages/client/services/Services";
 import Introduce from "../pages/client/introduce/Introduce";
 import Booking from "../pages/client/booking/Booking";
@@ -21,6 +19,7 @@ import Appointmentdetails from "../pages/client/Appointmentdetails/Appointmentde
 import ResetPassword from "../pages/client/ResetPassword/ResetPassword";
 import Appointmentlist from "../pages/client/Appointmentlist/Appointmentlist";
 import ProfileNFC from "../pages/client/ProfileNFC";
+import Booking_profile from "../pages/client/booking_profile/Booking_profile";
 
 const Router = (): JSX.Element | null => {
   const element = useRoutes([
@@ -37,10 +36,6 @@ const Router = (): JSX.Element | null => {
           element: <Contact />,
         },
         {
-          path: "/detailNews",
-          element: <DetailNews />,
-        },
-        {
           path: "/detailDoctor/:id",
           element: <DetailDoctor />,
         },
@@ -51,10 +46,6 @@ const Router = (): JSX.Element | null => {
         {
           path: "/priceList",
           element: <PriceList />,
-        },
-        {
-          path: "/news",
-          element: <News />,
         },
         {
           path: "/services",

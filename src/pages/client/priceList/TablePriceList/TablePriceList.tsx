@@ -75,7 +75,7 @@ const TablePriceList: React.FC<PriceListProps> = ({
               {arrCategory.map((itemCategory, index) => (
                 <React.Fragment key={index}>
                   <tr>
-                    <td className="p-5 text-lg font-bold">
+                    <td colSpan={3} className="p-5 text-lg font-bold">
                       {itemCategory.category_name.toUpperCase()}
                     </td>
                   </tr>
@@ -87,7 +87,10 @@ const TablePriceList: React.FC<PriceListProps> = ({
                         itemCategory.category_id
                       ) {
                         return (
-                          <tr key={serviceIndex}>
+                          <tr
+                            key={serviceIndex}
+                            className="text-sm sm:text-[1rem]"
+                          >
                             <td className="border-collapse border border-slate-500 p-5">
                               {itemService.service_name}
                             </td>
@@ -110,7 +113,7 @@ const TablePriceList: React.FC<PriceListProps> = ({
             <>
               {id_category.length !== 0 ? (
                 <tr>
-                  <td className="p-5 text-lg font-bold">
+                  <td colSpan={3} className="p-5 text-lg font-bold">
                     {id_category[0].label.toUpperCase()}
                   </td>
                 </tr>
@@ -119,7 +122,7 @@ const TablePriceList: React.FC<PriceListProps> = ({
                   {arrCategory.map((itemCategory, index) => (
                     <React.Fragment key={index}>
                       <tr>
-                        <td className="p-5 text-lg font-bold">
+                        <td colSpan={3} className="p-5 text-lg font-bold">
                           {itemCategory.category_name.toUpperCase()}
                         </td>
                       </tr>
@@ -131,7 +134,10 @@ const TablePriceList: React.FC<PriceListProps> = ({
                             itemCategory.category_id
                           ) {
                             return (
-                              <tr key={serviceIndex}>
+                              <tr
+                                key={serviceIndex}
+                                className="text-sm sm:text-[1rem]"
+                              >
                                 <td className="border-collapse border border-slate-500 p-5">
                                   {itemService.service_name}
                                 </td>

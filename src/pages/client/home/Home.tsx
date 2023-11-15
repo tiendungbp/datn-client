@@ -196,12 +196,12 @@ const Home = () => {
               </div>
             </div>
             <div className="md:order-1 md:w-[70%]">
-              <h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
+              <h1 className="pb-4 text-lg md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
                 Đánh bay sâu, giữ vững{" "}
                 <span className="text-[#157FEC]">nụ cười</span>
               </h1>
               <div className=" flex flex-col gap-4">
-                <h2 className="text-[1.2rem] md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
+                <h2 className="text-xs md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
                   Đến với ToothHive
                 </h2>
                 <div className="flex gap-4  items-center">
@@ -209,7 +209,7 @@ const Home = () => {
                     icon={faUserTag}
                     className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
                   />
-                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
                     Sự chăm sóc nhiệt tình
                   </p>
                 </div>
@@ -218,7 +218,7 @@ const Home = () => {
                     icon={faPeopleGroup}
                     className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
                   />
-                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
                     Đội ngũ nhân viên chuyên nghiệp
                   </p>
                 </div>
@@ -228,7 +228,7 @@ const Home = () => {
                     icon={faCircleNotch}
                     className=" bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem] rounded-[8px] text-[#1386ED]"
                   />
-                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
                     Công nghệ tiên tiến
                   </p>
                 </div>
@@ -237,7 +237,7 @@ const Home = () => {
                     icon={faBellConcierge}
                     className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
                   />
-                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
                     Dịch vụ đa dạng
                   </p>
                 </div>
@@ -252,10 +252,10 @@ const Home = () => {
             {/* //blur */}
             {/* <div className='w-[390px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[90%] translate-y-[30%] blur-[300px]'></div> */}
 
-            <h1 className="text-[#1386ED] font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
+            <h1 className="text-[#1386ED] font-bold text-lg md:text-[1.5rem] lg:text-[1.7rem]">
               Các Danh Mục Dịch Vụ Tại ToothHive
             </h1>
-            <p className="text-[0.9rem] text-gray-500">
+            <p className="text-sm text-gray-500">
               Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
             </p>
           </div>
@@ -290,7 +290,7 @@ const Home = () => {
                   isChooseDoctor === i && (
                     <div
                       key={i}
-                      className="p-4 h-[18rem] relative flex justify-center shadow-2xl bg-[#DCEDFF] w-full max-w-[32rem] rounded-xl"
+                      className="p-4 h-[18rem] relative flex justify-center lg:shadow-2xl bg-[#DCEDFF] w-full max-w-[32rem] rounded-xl"
                     >
                       <div className="  absolute bottom-0 h-[120%] cursor-pointer ">
                         <motion.img
@@ -308,7 +308,7 @@ const Home = () => {
               )}
               {isShowChooseListDoctor ? (
                 <motion.div
-                  className="absolute bg-white box-shadow cursor-pointer rounded-xl py-4 px-8 w-[20rem] top-1/2 translate-y-[-50%] left-6 md:left-1/2 md:-translate-x-1/2"
+                  className="absolute bg-white box-shadow cursor-pointer rounded-xl py-4 px-8 w-[20rem] top-1/2 translate-y-[-50%] md:left-1/2 md:-translate-x-1/2"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
@@ -367,7 +367,7 @@ const Home = () => {
                 </motion.div>
               ) : (
                 <motion.div
-                  className="absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-6 md:left-1/2 md:-translate-x-1/2"
+                  className="absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-1/2 -translate-x-1/2 mx-auto"
                   animate={{
                     scale: [1, 1.2, 1], // Mảng giá trị để tạo hiệu ứng scale
                   }}
@@ -388,7 +388,7 @@ const Home = () => {
                 <span className="text-[#1386ED] text-[0.8rem] md:text-[0.9rem]">
                   Thông tin
                 </span>
-                <h1 className="font-bold text-[1.2rem] md:text-[1.4rem] xl:text-[1.5rem]">
+                <h1 className="font-bold text-lg md:text-[1.4rem] xl:text-[1.5rem]">
                   Đội ngũ nhân viên tại{" "}
                   <span className="text-[#1386ED] ">ToothHive</span>
                 </h1>
@@ -398,7 +398,7 @@ const Home = () => {
                 (item, index) =>
                   isChooseDoctor === index && (
                     <>
-                      <p className="text-[#143566] leading-9 text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]">
+                      <p className="text-[#143566] leading-9 text-sm md:text-sm lg:text-[1.2rem]">
                         {item.description}
                       </p>
                       <div className="flex items-center gap-4">
@@ -406,7 +406,7 @@ const Home = () => {
                           icon={faCalendar}
                           className="text-[#1386ED]"
                         />
-                        <p className="font-medium ">
+                        <p className="font-medium text-sm ">
                           Hoạt động: {item.schedule}
                         </p>
                       </div>
@@ -415,12 +415,14 @@ const Home = () => {
                           icon={faTrophy}
                           className="text-[#1386ED]"
                         />
-                        <p className="font-medium">{item.experience}</p>
+                        <p className="font-medium text-sm">{item.experience}</p>
                       </div>
                       <div>
-                        <button className="bg-[#1386ED] px-8 py-3 rounded-[30px] text-white">
-                          <NavLink to={"/detailDoctor"}>Xem chi tiết</NavLink>
-                        </button>
+                        <NavLink to={"/detailDoctor"}>
+                          <button className="bg-[#1386ed] px-8 py-3 rounded-[30px] text-white booking">
+                            Xem chi tiết
+                          </button>
+                        </NavLink>
                       </div>
                     </>
                   )
@@ -433,10 +435,10 @@ const Home = () => {
         <div className="bg-[#DCEDFF] m-auto w-full my-4 py-12">
           <div className=" m-auto w-[90%]">
             <div className="text-center pb-8 ">
-              <h1 className="text-[#1386ED] font-bold  text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
+              <h1 className="text-[#1386ED] font-bold  text-lg md:text-[1.5rem] lg:text-[1.7rem]">
                 Vị Trí Của Chúng Tôi Trên Google Maps{" "}
               </h1>
-              <p className="text-[0.9rem] md:text-[1rem] text-gray-500">
+              <p className="text-[0.9rem] md:text-sm text-gray-500">
                 {" "}
                 Hãy cùng khám phá và tới thăm chúng tôi tại đây để trải nghiệm
                 dịch vụ nha khoa chất lượng và tận hưởng nụ cười khỏe đẹp!
@@ -452,10 +454,10 @@ const Home = () => {
                 loading="lazy"
               ></iframe>
               <div className=" bg-white box-shadow absolute md:bottom-[-3rem]  md:left-1/2  transform md:translate-x-[-50%]  p-4 md:p-8 md:px-12 rounded-lg mt-4 mb-8">
-                <h1 className=" text-center text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] font-bold text-[#1386ED] md:py-4 py-2">
+                <h1 className=" text-center text-lg md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] font-bold text-[#1386ED] md:py-4 py-2">
                   Phòng khám nha khoa ToothHive
                 </h1>
-                <p className="text-[0.9rem] md:text-[1.1rem] text-center md:text-start md:leading-8">
+                <p className="text-[0.9rem] text-sm text-center md:text-start md:leading-8">
                   Trụ sở chính: 237 Nguyễn Tất Thành, Quận 5, Tp.HCM <br />
                   Cơ sở 2: 172 Trường chinh, Tân Thới HIệp, Quận 12, Tp.HCM{" "}
                   <br />
@@ -472,10 +474,10 @@ const Home = () => {
           <div className="text-center pb-8 ">
             {/* <div className='w-[300px] h-[300px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[150%] translate-y-[20%] blur-[250px]'></div> */}
 
-            <h1 className="text-[#1386ED] font-bold  text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
+            <h1 className="text-[#1386ED] font-bold  text-lg md:text-[1.5rem] lg:text-[1.7rem]">
               Cảm Nhận Của Khách Hàng{" "}
             </h1>
-            <p className="text-[0.9rem] md:text-[1rem] text-gray-500">
+            <p className="text-[0.9rem] md:text-sm text-gray-500">
               {" "}
               Những đánh giá của khách hàng sau khi sử dụng dịch vụ tuyệt vời
               của ToothHive
