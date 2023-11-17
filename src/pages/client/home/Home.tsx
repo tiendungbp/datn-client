@@ -453,7 +453,7 @@ const Home = () => {
                 height="450"
                 loading="lazy"
               ></iframe>
-              <div className=" bg-white box-shadow absolute md:bottom-[-3rem]  md:left-1/2  transform md:translate-x-[-50%]  p-4 md:p-8 md:px-12 rounded-lg mt-4 mb-8">
+              <div className=" bg-white box-shadow absolute md:bottom-[-3rem]  md:left-1/2  transform md:translate-x-[-50%]  p-4 md:p-8 md:px-12 rounded-lg my-8">
                 <h1 className=" text-center text-lg md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] font-bold text-[#1386ED] md:py-4 py-2">
                   Phòng khám nha khoa ToothHive
                 </h1>
@@ -483,7 +483,7 @@ const Home = () => {
               của ToothHive
             </p>
           </div>
-          <div className=" space-x-4 rounded-box carousel carousel-center w-full">
+          <div className=" space-x-4 rounded-box carousel w-full">
             {slides.map((item, index) => (
               <div
                 key={index}

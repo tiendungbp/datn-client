@@ -6,15 +6,26 @@
     .shadow-xl {
       box-shadow: #c0d6ed 0px 0px 0px 5px;
     }
+    .slick-dots {
+      bottom: 0 !important;
+      li {
+        background-color: #aaa;
+      }
+      .slick-active {
+        button {
+          background-color: #1386ed !important;
+        }
+      }
+    }
   }
 }
-@media screen and (max-width: 475px) {
-  .home__client {
-    .text-right {
-      margin-top: 10px;
-    }
-    .shadow-xl {
-      box-shadow: #c0d6ed 0px 0px 0px 5px;
-    }
-  }
-}
+// @media screen and (max-width: 475px) {
+//   .home__client {
+//     .text-right {
+//       margin-top: 10px;
+//     }
+//     .shadow-xl {
+//       box-shadow: #c0d6ed 0px 0px 0px 5px;
+//     }
+//   }
+// }
