@@ -158,12 +158,12 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 ">
             <div className="md:order-2 md:p-4 float-right">
               <div>
-                <p className="text-right font-normal text-[#143566] text-[0.8rem] pb-4 md:text-[1rem] lg:text-[1.2rem]">
+                <p className="text-right font-normal text-[#143566] text-[0.8rem] pb-4 md:text-[1rem] lg:text-[1.2rem] pr-1">
                   Khám phá hành trình chăm sóc răng miệng. Cùng ToothHive chắp
                   cánh ước mơ về nụ cười tươi sáng và sức khỏe vững bền!
                 </p>
               </div>
-              <div className="md:w-full">
+              <div className="md:w-full" style={{ padding: "0 5px" }}>
                 <div className=" right-0 w-full  relative ">
                   <img
                     src={Banner}
@@ -247,7 +247,7 @@ const Home = () => {
         </div>
         {/* end banner */}
         {/*start category service*/}
-        <div className="m-auto w-wd-primary md:w-wd-secondary">
+        <div className="m-auto w-wd-primary md:w-wd-secondary mb-32">
           <div className=" mt-4 py-8  text-center ">
             {/* //blur */}
             {/* <div className='w-[390px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[90%] translate-y-[30%] blur-[300px]'></div> */}
@@ -265,20 +265,6 @@ const Home = () => {
           />
         </div>
         {/* end category service */}
-
-        {/*start top 5 service  */}
-        <div className=" m-auto w-wd-primary md:w-wd-secondary my-5">
-          <div className="text-center my-4 py-8">
-            <h1 className="text-[#1386ED] font-bold  text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]">
-              Top 5 Dịch Vụ Nổi Bật
-            </h1>
-            <p className="text-[0.9rem] text-gray-500">
-              Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
-            </p>
-          </div>
-          <Top5Services mobileScreen={mobileScreen} />
-        </div>
-        {/* end top 5 service  */}
 
         {/* start about doctor */}
 

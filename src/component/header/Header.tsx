@@ -25,6 +25,21 @@ const Header = () => {
     toast.success("Đăng xuất thành công");
     navigate("/login");
   };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const items: MenuProps["items"] = [
     {
       label: (
@@ -124,6 +139,28 @@ const Header = () => {
           </div>
           <div className="box__reponsive__nav ">
             <div className="box__reponsive__nav1">
+              {windowWidth < 380 && (
+                <div className="dropdownWelcome my-5">
+                  {user ? (
+                    <>
+                      <Dropdown menu={{ items }} trigger={["click"]}>
+                        <Link to={"/"} onClick={(e) => e.preventDefault()}>
+                          <Button>
+                            <Space>
+                              {`Xin chào, ${user.fullname}`}
+                              <DownOutlined />
+                            </Space>
+                          </Button>
+                        </Link>
+                      </Dropdown>
+                    </>
+                  ) : (
+                    <NavLink to={"/login"}>
+                      <button className="booking bgBlue">Đăng nhập</button>
+                    </NavLink>
+                  )}
+                </div>
+              )}
               <div className="header__box2">
                 <div className="header__box2__notification">
                   <div className="box__text">
@@ -174,64 +211,32 @@ const Header = () => {
                 </div>
               </div>
               <div className="header__box3">
-                <NavLink to={"/booking"}>
-                  <button className="booking">
+                <NavLink to={"/booking"} className="w-full">
+                  <button className="booking justify-center">
                     <p>Đặt lịch</p>
                   </button>
                 </NavLink>
-                {user ? (
+                {windowWidth > 380 && (
                   <>
-                    {/* <Dropdown>
-											<Dropdown.Toggle
-												id="dropdown-basic"
-												style={{ width: '200px' }}
-											>
-												<span
-													className="d-inline-block text-truncate"
-													style={{ width: '150px' }}
-												>
-													{`Xin chào, ${user.fullname}`}
-												</span>
-											</Dropdown.Toggle>
-											<Dropdown.Menu style={{ width: '200px' }}>
-												<Dropdown.Item
-													onClick={() => navigate('/quan-ly-tai-khoan')}
-												>
-													Quản lý tài khoản
-												</Dropdown.Item>
-												<Dropdown.Item
-													onClick={() => navigate('/quan-ly-lich-hen')}
-												>
-													Quản lý lịch hẹn
-												</Dropdown.Item>
-												<Popconfirm
-													title="Bạn có muốn đăng xuất?"
-													placement="bottom"
-													cancelText="Hủy"
-													okText="Có"
-													onConfirm={handleLogout}
-												>
-													<Button className="border-0 w-100 mt-2">
-														Đăng xuất
-													</Button>
-												</Popconfirm>
-											</Dropdown.Menu>
-										</Dropdown> */}
-                    <Dropdown menu={{ items }} trigger={["click"]}>
-                      <Link to={"/"} onClick={(e) => e.preventDefault()}>
-                        <Button>
-                          <Space>
-                            {`Xin chào, ${user.fullname}`}
-                            <DownOutlined />
-                          </Space>
-                        </Button>
-                      </Link>
-                    </Dropdown>
+                    {user ? (
+                      <>
+                        <Dropdown menu={{ items }} trigger={["click"]}>
+                          <Link to={"/"} onClick={(e) => e.preventDefault()}>
+                            <Button>
+                              <Space>
+                                {`Xin chào, ${user.fullname}`}
+                                <DownOutlined />
+                              </Space>
+                            </Button>
+                          </Link>
+                        </Dropdown>
+                      </>
+                    ) : (
+                      <NavLink to={"/login"}>
+                        <button className="booking bgBlue">Đăng nhập</button>
+                      </NavLink>
+                    )}
                   </>
-                ) : (
-                  <NavLink to={"/login"}>
-                    <button className="booking bgBlue">Đăng nhập</button>
-                  </NavLink>
                 )}
               </div>
             </div>

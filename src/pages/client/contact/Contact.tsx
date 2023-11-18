@@ -10,7 +10,7 @@ const Contact = () => {
       <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
         {/* BreadCrumb */}
         <Breadcrumb
-          className={`title__services__client text-base mb-8 text-xs`}
+          className={`title__services__client text-base mb-8 text-xs md:text-sm`}
           items={[
             {
               title: <a href="/">Trang chủ</a>,
@@ -48,7 +48,7 @@ const Contact = () => {
         </div>
       </div>
       {/* Div contact form */}
-      <div className="contact xl:mt-80 lg:mt-32">
+      <div className="contact xl:mt-52 lg:mt-32">
         <div className=" m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[4rem]">
           <div className="block sm:flex gap-4 py-16">
             <div className="contactInfo flex-1">

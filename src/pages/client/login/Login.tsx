@@ -90,35 +90,6 @@ const Login = () => {
           <span className="font-light text-gray-500 mt-2">
             Đăng nhập vào tài khoản của bạn
           </span>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            <button className="py-4 px-6 rounded-xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
-              <div className="flex gap-4 justify-center items-center">
-                <img src={IconGg} className="w-5" alt="" />
-                <span className=" font-medium tracking-wide text-sm text-[#1386ED]">
-                  {" "}
-                  Đăng nhập với Google
-                </span>
-              </div>
-            </button>
-            <button className="py-4 px-6 rounded-xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
-              <div className="flex gap-4 items-center justify-center">
-                <img src={IconFace} className="w-5" alt="" />
-
-                <span className="font-medium tracking-wide text-sm text-[#1386ED]">
-                  {" "}
-                  Đăng nhập với Facebook
-                </span>
-              </div>
-            </button>
-          </div>
-
-          <div className="flex justify-between items-center pt-6">
-            <hr className="w-full border-gray-400" />
-            <span className="px-4 font-light tracking-wider text-gray-500">
-              Hoặc
-            </span>
-            <hr className="w-full border-gray-400" />
-          </div>
           <div className="form_login mt-8">
             <Spin spinning={isLoading}>
               <Form

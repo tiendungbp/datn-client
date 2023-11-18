@@ -67,7 +67,7 @@ const PriceList = () => {
     <div className="price__list__client m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
       {/* BreadCrumb */}
       <Breadcrumb
-        className={`title__price__list text-base mb-8`}
+        className={`title__price__list text-base mb-8 text-xs md:text-sm`}
         items={[
           {
             title: <a href="/">Trang chủ</a>,
