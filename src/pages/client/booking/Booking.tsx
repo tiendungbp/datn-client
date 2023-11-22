@@ -1,11 +1,4 @@
-import {
-  Select,
-  Form,
-  DatePicker,
-  Breadcrumb,
-  theme,
-  Steps,
-} from "antd";
+import { Select, Form, DatePicker, Breadcrumb, theme, Steps } from "antd";
 import React, { useState } from "react";
 import dayjs from "dayjs";
 import {
@@ -55,15 +48,14 @@ const Booking = () => {
   const next = () => {
     if (groundwork) {
       setCurrent(current + 1);
-    }else{  
+    } else {
       toast.error("Vui lòng điền thông để tiếp tục :((");
     }
   };
 
   const prev = () => {
     setCurrent(current - 1);
-    setGroundwork(true)
-
+    setGroundwork(true);
   };
   const steps = [
     {
@@ -288,14 +280,14 @@ const Booking = () => {
         />
       </div>
       <Steps
-              style={{
-                marginBottom: "40px",
-                marginTop: "30px",
-                width: "100%",
-              }}
-              current={current}
-              items={items}
-            />
+        style={{
+          marginBottom: "40px",
+          marginTop: "30px",
+          width: "100%",
+        }}
+        current={current}
+        items={items}
+      />
       <Form
         name="basic"
         style={{ maxWidth: "100%" }}
@@ -304,15 +296,13 @@ const Booking = () => {
       >
         <div className="box__first__booking">
           <div className="box__booking__tsx">
-            
             <div style={contentStyle}>{steps[current].content}</div>
             <div
               style={{
-                width: "100%",
-                display:"flex",
-                marginTop:"-70px",
-                marginLeft:"50px"
+                display: "flex",
+                marginTop: "-70px",
               }}
+              className="ml-6 md:ml-12"
             >
               {current < steps.length - 1 && (
                 <button

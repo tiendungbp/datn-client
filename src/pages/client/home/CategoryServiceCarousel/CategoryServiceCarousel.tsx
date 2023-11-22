@@ -7,9 +7,7 @@ import { faArrowRight, faTooth } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../../../store";
-import {
-  getAllCategory,
-} from "../../../../services/managerCategory";
+import { getAllCategory } from "../../../../services/managerCategory";
 import { getAllCategoryStore } from "../../../../store/managerCategory.services/thunkAction";
 
 const SampleNextArrow = (props: any) => {
@@ -110,12 +108,12 @@ const CategoryServiceCarousel = ({
     }
 
     const newGroupedItems: any[][] = [];
-   
-    for (let i = 0,colorIndex = 0; i < arrCategory.length; i += itemsPerDiv) {
+
+    for (let i = 0, colorIndex = 0; i < arrCategory.length; i += itemsPerDiv) {
       const group = arrCategory.slice(i, i + itemsPerDiv);
       const updatedGroup = group.map((item, index) => {
         const colorIndexWithinGroup = colorIndex % arrColor.length;
-        
+
         const updatedItem = {
           ...item,
           backgroundColor: arrColor[colorIndexWithinGroup].backgroundColor,
@@ -158,7 +156,7 @@ const CategoryServiceCarousel = ({
               {groupedItems &&
                 groupedItems.map((group, index) => (
                   <div key={index}>
-                    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8 py-2">
+                    <div className="lg:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8 py-2">
                       {group.map((item, itemIndex) => (
                         <div
                           key={itemIndex}
