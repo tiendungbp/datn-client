@@ -187,7 +187,7 @@ const Home = () => {
 										<div className="flex gap-2 justify-center items-center">
 											<FontAwesomeIcon icon={faLocationDot} />
 											<p className=" text-[0.9rem] md:text-[1.2rem]">
-												Trụ sở chính: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM
+											Địa chỉ: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM
 											</p>
 										</div>
 									</div>
@@ -375,10 +375,10 @@ const Home = () => {
 										duration: 1, // Thời gian mỗi chu kỳ
 									}}
 								>
-									<FontAwesomeIcon
+									{/* <FontAwesomeIcon
 										icon={faArrowPointer}
 										className="text-2xl text-white"
-									/>
+									/> */}
 								</motion.div>
 							)}
 						</div>
@@ -441,26 +441,16 @@ const Home = () => {
 								dịch vụ nha khoa chất lượng và tận hưởng nụ cười khỏe đẹp!
 							</p>
 						</div>
-						<div className=" md:h-[80vh] h-[30vh]  relative rounded-lg flex items-center justify-center">
+						<div className=" md:h-[80vh] h-[30vh] rounded-lg flex items-center justify-center">
 							<iframe
 								title="Google Maps"
-								className="hidden md:block w-full h-full object-cover rounded-lg shadow-lg"
+								className="w-full h-full object-cover rounded-lg shadow-lg"
 								src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d53522.97506443701!2d105.77621636333734!3d21.021569763823155!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f6367a16f17%3A0x67abfeb7e2245dc5!2zMjM3IE5ndXnhu4VuIFThuqV0IFRow6BuaCwgUGjGsOG7nW5nIDE4LCBRdeG6rW4gNCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1698481773076!5m2!1svi!2s"
 								width="600"
-								height="450"
+								height="480"
 								loading="lazy"
 							></iframe>
-							<div className=" bg-white box-shadow absolute md:bottom-[-3rem]  md:left-1/2  transform md:translate-x-[-50%]  p-4 md:p-8 md:px-12 rounded-lg mt-4 mb-8">
-								<h1 className=" text-center text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] font-bold text-[#1386ED] md:py-4 py-2">
-									Phòng khám nha khoa ToothHive
-								</h1>
-								<p className="text-[0.9rem] md:text-[1.1rem] text-center md:text-start md:leading-8">
-									Trụ sở chính: 237 Nguyễn Tất Thành, Quận 5, Tp.HCM <br />
-									Cơ sở 2: 172 Trường chinh, Tân Thới HIệp, Quận 12, Tp.HCM{' '}
-									<br />
-									Cơ sở 3: 287 Trần Xuân Soạn, Tân Kiểng, Quận 7, Tp.HCM
-								</p>
-							</div>
+							
 						</div>
 					</div>
 				</div>

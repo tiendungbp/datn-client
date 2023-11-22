@@ -183,11 +183,11 @@ const Header = () => {
 								</div>
 							</div>
 							<div className="header__box3">
+								<Link to={'/booking'}>
 								<button className="booking">
-									<NavLink to={'/booking'}>
 										<p>Đặt lịch</p>
-									</NavLink>
 								</button>
+								</Link>
 								{user ? (
 									<>
 										{/* <Dropdown>
