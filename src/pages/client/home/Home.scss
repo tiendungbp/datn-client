@@ -19,13 +19,15 @@
     }
   }
 }
-// @media screen and (max-width: 475px) {
-//   .home__client {
-//     .text-right {
-//       margin-top: 10px;
-//     }
-//     .shadow-xl {
-//       box-shadow: #c0d6ed 0px 0px 0px 5px;
-//     }
-//   }
-// }
+
+.handleShadow {
+  box-shadow: #a2cbf6 -12px 12px 0px 5px;
+}
+
+@media screen and (max-width: 380px) {
+  .home__client {
+    .handleShadow {
+      box-shadow: #c0d6ed 0px 5px 0px 2px;
+    }
+  }
+}

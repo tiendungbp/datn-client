@@ -26,15 +26,20 @@ code {
   box-shadow: #c0d6ed 8px -6px 0px 5px;
 }
 
-.shadow-2xl {
+.shadow-home {
   box-shadow: #a2cbf6 -12px 12px 0px 5px;
 }
 
 //Carousel
 
 .carousel-item {
-  flex: 0 0 100%; /* 100% width for each slide */
+  flex: 0 0 50%; /* 100% width for each slide */
   box-sizing: border-box;
+}
+@media screen and (max-width: 380px) {
+  .carousel-item {
+    flex: 0 0 100%; /* 100% width for each slide */
+  }
 }
 
 // Button

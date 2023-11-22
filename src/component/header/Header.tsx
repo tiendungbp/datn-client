@@ -139,28 +139,26 @@ const Header = () => {
           </div>
           <div className="box__reponsive__nav ">
             <div className="box__reponsive__nav1">
-              {windowWidth < 380 && (
-                <div className="dropdownWelcome my-5">
-                  {user ? (
-                    <>
-                      <Dropdown menu={{ items }} trigger={["click"]}>
-                        <Link to={"/"} onClick={(e) => e.preventDefault()}>
-                          <Button>
-                            <Space>
-                              {`Xin chào, ${user.fullname}`}
-                              <DownOutlined />
-                            </Space>
-                          </Button>
-                        </Link>
-                      </Dropdown>
-                    </>
-                  ) : (
-                    <NavLink to={"/login"}>
-                      <button className="booking bgBlue">Đăng nhập</button>
-                    </NavLink>
-                  )}
+              {windowWidth < 380 && user && (
+                <div className="dropdownWelcome my-5 mx-auto">
+                  <Dropdown menu={{ items }} trigger={["click"]}>
+                    <Link to={"/"} onClick={(e) => e.preventDefault()}>
+                      <Button
+                        style={{
+                          height: "43px",
+                          borderRadius: "32px",
+                        }}
+                      >
+                        <Space className="">
+                          Xin chào, {user.fullname}
+                          <DownOutlined />
+                        </Space>
+                      </Button>
+                    </Link>
+                  </Dropdown>
                 </div>
               )}
+
               <div className="header__box2">
                 <div className="header__box2__notification">
                   <div className="box__text">
@@ -216,24 +214,39 @@ const Header = () => {
                     <p>Đặt lịch</p>
                   </button>
                 </NavLink>
-                {windowWidth > 380 && (
+                {windowWidth > 380 ? (
                   <>
                     {user ? (
-                      <>
-                        <Dropdown menu={{ items }} trigger={["click"]}>
-                          <Link to={"/"} onClick={(e) => e.preventDefault()}>
-                            <Button>
-                              <Space>
-                                {`Xin chào, ${user.fullname}`}
-                                <DownOutlined />
-                              </Space>
-                            </Button>
-                          </Link>
-                        </Dropdown>
-                      </>
+                      <Dropdown menu={{ items }} trigger={["click"]}>
+                        <Link to={"/"} onClick={(e) => e.preventDefault()}>
+                          <Button
+                            style={{
+                              height: "43px",
+                              borderRadius: "32px",
+                            }}
+                          >
+                            <Space>
+                              {`Xin chào, ${user.fullname}`}
+                              <DownOutlined />
+                            </Space>
+                          </Button>
+                        </Link>
+                      </Dropdown>
                     ) : (
-                      <NavLink to={"/login"}>
-                        <button className="booking bgBlue">Đăng nhập</button>
+                      <NavLink to={"/login"} className="w-full">
+                        <button className="booking bgBlue justify-center">
+                          Đăng nhập
+                        </button>
+                      </NavLink>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {!user && (
+                      <NavLink to="/login" className="w-full">
+                        <button className="booking bgBlue justify-center">
+                          Đăng nhập
+                        </button>
                       </NavLink>
                     )}
                   </>

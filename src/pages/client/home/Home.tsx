@@ -196,11 +196,11 @@ const Home = () => {
               </div>
             </div>
             <div className="md:order-1 md:w-[70%]">
-              <h1 className="pb-4 text-lg md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
+              <h1 className="pb-4 text-lg md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem] md:leading-10 md:mb-12">
                 Đánh bay sâu, giữ vững{" "}
                 <span className="text-[#157FEC]">nụ cười</span>
               </h1>
-              <div className=" flex flex-col gap-4">
+              <div className=" flex flex-col gap-4 md:gap-6">
                 <h2 className="text-xs md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
                   Đến với ToothHive
                 </h2>
@@ -248,7 +248,7 @@ const Home = () => {
         {/* end banner */}
         {/*start category service*/}
         <div className="m-auto w-wd-primary md:w-wd-secondary mb-32">
-          <div className=" mt-4 py-8  text-center ">
+          <div className=" mt-12 py-8  text-center ">
             {/* //blur */}
             {/* <div className='w-[390px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[90%] translate-y-[30%] blur-[300px]'></div> */}
 
@@ -276,9 +276,9 @@ const Home = () => {
                   isChooseDoctor === i && (
                     <div
                       key={i}
-                      className="p-4 h-[18rem] relative flex justify-center lg:shadow-2xl bg-[#DCEDFF] w-full max-w-[32rem] rounded-xl"
+                      className="p-4 h-[18rem] relative flex justify-center bg-[#DCEDFF] w-full max-w-[32rem] rounded-xl handleShadow"
                     >
-                      <div className="  absolute bottom-0 h-[120%] cursor-pointer ">
+                      <div className="absolute bottom-0 h-[120%] cursor-pointer ">
                         <motion.img
                           src={item.image}
                           alt={item.name}
@@ -352,24 +352,25 @@ const Home = () => {
                   </div>
                 </motion.div>
               ) : (
-                <motion.div
-                  className="absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-1/2 -translate-x-1/2 mx-auto"
-                  animate={{
-                    scale: [1, 1.2, 1], // Mảng giá trị để tạo hiệu ứng scale
-                  }}
-                  transition={{
-                    repeat: Infinity, // Lặp vô hạn
-                    duration: 1, // Thời gian mỗi chu kỳ
-                  }}
-                >
-                  <FontAwesomeIcon
-                    icon={faArrowPointer}
-                    className="text-2xl text-white"
-                  />
-                </motion.div>
+                // <motion.div
+                //   className="absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-1/2 -translate-x-1/2 mx-auto"
+                //   animate={{
+                //     scale: [1, 1.2, 1], // Mảng giá trị để tạo hiệu ứng scale
+                //   }}
+                //   transition={{
+                //     repeat: Infinity, // Lặp vô hạn
+                //     duration: 1, // Thời gian mỗi chu kỳ
+                //   }}
+                // >
+                //   <FontAwesomeIcon
+                //     icon={faArrowPointer}
+                //     className="text-2xl text-white"
+                //   />
+                // </motion.div>
+                <></>
               )}
             </div>
-            <div className="p-4 md:p-8 flex flex-col gap-4 ">
+            <div className="p-2 md:p-8 flex flex-col gap-4 ">
               <div>
                 <span className="text-[#1386ED] text-[0.8rem] md:text-[0.9rem]">
                   Thông tin
@@ -392,7 +393,7 @@ const Home = () => {
                           icon={faCalendar}
                           className="text-[#1386ED]"
                         />
-                        <p className="font-medium text-sm ">
+                        <p className="font-medium text-sm md:text-base">
                           Hoạt động: {item.schedule}
                         </p>
                       </div>
@@ -401,7 +402,9 @@ const Home = () => {
                           icon={faTrophy}
                           className="text-[#1386ED]"
                         />
-                        <p className="font-medium text-sm">{item.experience}</p>
+                        <p className="font-medium text-sm md:text-base">
+                          {item.experience}
+                        </p>
                       </div>
                       <div>
                         <NavLink to={"/detailDoctor"}>
@@ -473,7 +476,7 @@ const Home = () => {
             {slides.map((item, index) => (
               <div
                 key={index}
-                className="p-4 w-full md:w-[46%] carousel-item cursor-pointer "
+                className="p-1 w-full md:w-[46%] carousel-item cursor-pointer"
               >
                 <div className="bg-white box-shadow p-4 rounded-lg flex flex-col gap-2">
                   <div className="flex justify-between items-center">

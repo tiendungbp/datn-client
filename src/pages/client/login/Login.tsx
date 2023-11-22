@@ -83,7 +83,10 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full md:w-[60%] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white">
+        <div
+          className=" w-full md:w-[60%] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white"
+          style={{ height: "100vh" }}
+        >
           <h1 className=" text-2xl md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap">
             Đăng nhập tới Tooth<span className="text-[#1386ED]">Hive</span>
           </h1>
@@ -139,10 +142,18 @@ const Login = () => {
                     Đăng nhập
                   </Button>
                 </Form.Item>
-                <div className="text-center mb-4">
-                  <Link to={"/forgot"} className="text-sky-600 font-bold">
-                    Quên mật khẩu
-                  </Link>
+                <div className="flex justify-evenly">
+                  <div className=" mb-4">
+                    <Link to={"/"} className="text-sky-600 font-bold">
+                      Về trang chủ
+                    </Link>
+                  </div>
+                  <div>|</div>
+                  <div className=" mb-4">
+                    <Link to={"/forgot"} className="text-sky-600 font-bold">
+                      Quên mật khẩu
+                    </Link>
+                  </div>
                 </div>
                 <div className="text-center">
                   <span className="text-center">
