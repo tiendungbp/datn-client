@@ -5,7 +5,12 @@ import StatisticImage from "../../../../assets/icons/statistics.png";
 import HeartImage from "../../../../assets/icons/heart.png";
 import UserVectorImage from "../../../../assets/icons/userVector.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown, faChevronDown, faChevronUp, faTooth } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronCircleDown,
+  faChevronDown,
+  faChevronUp,
+  faTooth,
+} from "@fortawesome/free-solid-svg-icons";
 
 const MyCollapse = () => {
   const [selected, setSelected] = useState(1);
@@ -30,7 +35,16 @@ const MyCollapse = () => {
               Chuyên nghiệp và Kinh nghiệm
             </p>
           </div>
-          <div className="toggle-button">{selected === 1 ? <FontAwesomeIcon className="text-[1.4rem] text-[#1386ed]" icon={faChevronUp} /> : <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />}</div>
+          <div className="toggle-button">
+            {selected === 1 ? (
+              <FontAwesomeIcon
+                className="text-[1.4rem] text-[#1386ed]"
+                icon={faChevronUp}
+              />
+            ) : (
+              <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />
+            )}
+          </div>
         </div>
         <div className={`toggle-content ${selected === 1 ? "open" : ""}`}>
           <div className="content mt-2">
@@ -54,11 +68,20 @@ const MyCollapse = () => {
               Tiện nghi và hiện đại
             </p>
           </div>
-          <div className="toggle-button">{selected === 2 ? <FontAwesomeIcon className="text-[1.4rem] text-[#1386ed]" icon={faChevronUp} /> : <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />}</div>
+          <div className="toggle-button">
+            {selected === 2 ? (
+              <FontAwesomeIcon
+                className="text-[1.4rem] text-[#1386ed]"
+                icon={faChevronUp}
+              />
+            ) : (
+              <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />
+            )}
+          </div>
         </div>
         <div className={`toggle-content ${selected === 2 ? "open" : ""}`}>
           <div className="content mt-2">
-            <p className="leading-8">
+            <p className="leading-8 sm:text-[1rem] text-sm">
               Với đội ngũ nha sĩ giàu kinh nghiệm và được đào tạo chuyên sâu,
               chúng tôi cam kết cung cấp những dịch vụ nha khoa chất lượng và
               tối ưu nhất. Chúng tôi luôn cập nhật những công nghệ và phương
@@ -78,7 +101,16 @@ const MyCollapse = () => {
               Chuyên nghiệp và Kinh nghiệm
             </p>
           </div>
-          <div className="toggle-button">{selected === 3 ? <FontAwesomeIcon className="text-[1.4rem] text-[#1386ed]" icon={faChevronUp} /> : <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />}</div>
+          <div className="toggle-button">
+            {selected === 3 ? (
+              <FontAwesomeIcon
+                className="text-[1.4rem] text-[#1386ed]"
+                icon={faChevronUp}
+              />
+            ) : (
+              <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />
+            )}
+          </div>
         </div>
         <div className={`toggle-content ${selected === 3 ? "open" : ""}`}>
           <div className="content mt-2">
@@ -102,7 +134,16 @@ const MyCollapse = () => {
               Chuyên nghiệp và Kinh nghiệm
             </p>
           </div>
-          <div className="toggle-button">{selected === 4 ? <FontAwesomeIcon className="text-[1.4rem] text-[#1386ed]" icon={faChevronUp} /> : <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />}</div>
+          <div className="toggle-button">
+            {selected === 4 ? (
+              <FontAwesomeIcon
+                className="text-[1.4rem] text-[#1386ed]"
+                icon={faChevronUp}
+              />
+            ) : (
+              <FontAwesomeIcon className="text-[1.4rem]" icon={faChevronDown} />
+            )}
+          </div>
         </div>
         <div className={`toggle-content ${selected === 4 ? "open" : ""}`}>
           <div className="content mt-2">

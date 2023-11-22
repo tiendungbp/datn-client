@@ -4,6 +4,9 @@
       background-color: #1386ed !important;
     }
   }
+  .slick-dots {
+    z-index: 1;
+  }
   .slick-prev {
     inset-inline-start: 0px;
     &::before {
