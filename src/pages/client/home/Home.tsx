@@ -352,22 +352,21 @@ const Home = () => {
                   </div>
                 </motion.div>
               ) : (
-                // <motion.div
-                //   className="absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-1/2 -translate-x-1/2 mx-auto"
-                //   animate={{
-                //     scale: [1, 1.2, 1], // Mảng giá trị để tạo hiệu ứng scale
-                //   }}
-                //   transition={{
-                //     repeat: Infinity, // Lặp vô hạn
-                //     duration: 1, // Thời gian mỗi chu kỳ
-                //   }}
-                // >
-                //   <FontAwesomeIcon
-                //     icon={faArrowPointer}
-                //     className="text-2xl text-white"
-                //   />
-                // </motion.div>
-                <></>
+                <motion.div
+                  className="absolute cursor-pointer w-[3rem] h-[3rem] rounded-full  border-2 border-white flex justify-center items-center top-1/2 translate-y-[-50%] left-1/2 -translate-x-1/2 mx-auto"
+                  animate={{
+                    scale: [1, 1.2, 1], // Mảng giá trị để tạo hiệu ứng scale
+                  }}
+                  transition={{
+                    repeat: Infinity, // Lặp vô hạn
+                    duration: 1, // Thời gian mỗi chu kỳ
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowPointer}
+                    className="text-2xl text-white"
+                  />
+                </motion.div>
               )}
             </div>
             <div className="p-2 md:p-8 flex flex-col gap-4 ">
