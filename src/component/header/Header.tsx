@@ -238,9 +238,11 @@ const Header = () => {
 										</Dropdown>
 									</>
 								) : (
-									<button className="booking">
-										<NavLink to={'/login'}>Đăng nhập</NavLink>
+									<Link className="booking" to={'/login'}>
+									<button>
+										Đăng nhập
 									</button>
+									</Link>
 								)}
 							</div>
 						</div>
