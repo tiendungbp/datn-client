@@ -35,34 +35,31 @@
       width: 100%;
       top: 0;
       position: absolute;
-      
+
       .item {
         height: 160px;
         width: 210px;
         background-color: white;
-       
       }
     }
   }
-  
 }
 
 @media screen and (max-width: 1080px), screen and (max-width: 500px) {
   .introduce__client {
-    
-    .mt-6{
+    .mt-6 {
       margin-top: 10px;
-      .mb-8{
+      .mb-8 {
         margin-bottom: 15px;
       }
     }
-    .text-base{
-      font-size: 14px;
+    .text-base {
+      font-size: 12px;
     }
-    .w-wd-primary{
+    .w-wd-primary {
       width: 94%;
     }
-   
+
     .data {
       background-image: none;
       height: 1100px;
@@ -70,36 +67,24 @@
         left: 0%;
       }
     }
-    .flex{
-      .left__text__intro__client{
-        h3,p{
-          font-size: 21px;
-        }
-      }
+    .left {
+      max-width: 100%;
     }
-    .reasons__introduce{
-      .right{
-        h3{
+    .right {
+      width: 100%;
+    }
+    .flex {
+      max-width: 100%;
+    }
+    .reasons__introduce {
+      .right {
+        h3 {
           margin-top: 10px;
-          font-size: 21px;
         }
       }
     }
-    .certificate__client{
+    .certificate__client {
       margin-top: 10px;
-      h3{
-        font-size: 21px;
-      }
-    }
-    .showData{
-      h3{
-        font-size: 21px;
-      }
-    }
-    .dental_care_journey{
-      h3{
-        font-size: 21px;
-      }
     }
   }
 }

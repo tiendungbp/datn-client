@@ -9,6 +9,7 @@ import {
   PhoneOutlined,
   YoutubeOutlined,
 } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 const Footer = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isMenuOpen1, setIsMenuOpen1] = useState<boolean>(false);
@@ -77,7 +78,7 @@ const Footer = () => {
             <p>Nụ Cười Hoàn Hảo <br /> Với Tooth Hive</p>
           </div>
           <div className="btn__first__footer">
-            <button className="booking">Liên hệ ToothHive</button>
+            <button className="booking">Liên hệ tư vấn</button>
           </div>
         </div>
         <div className="content__footer pb-3">
@@ -115,7 +116,7 @@ const Footer = () => {
               <p>Liên hệ</p>
             </div>
             <div className="box__content__footer1">
-              <p>Tin tức</p>
+              <p>Dịch vụ</p>
             </div>
             <div className="box__content__footer1">
               <p>Đội ngũ bác sĩ</p>
@@ -169,17 +170,13 @@ const Footer = () => {
             </div>
             <div className="box__content__footer1">
               <MailOutlined className="text-white mr-2" />{" "}
-              <p>Toothhive@gmail.com</p>
+              <p>toothhive@gmail.com</p>
             </div>
             <div className="box__content__footer1">
               <EnvironmentOutlined className="text-white mr-2" />
               <div>
-                <p>Trụ sở chính: 237 Nguyễn Tất Thành, Quận 5, Tp.HCM </p>
-                <p>
-                  {" "}
-                  Cơ sở 2: 172 Trường chinh, Tân Thới Hiệp, Quận 12, Tp.HCM{" "}
-                </p>
-                <p> Cơ sở 3: 287 Trần Xuân Soạn, Tân Kiểng, Quận 7, Tp.HCM</p>
+                <p>Địa chỉ: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM </p>
+             
               </div>
             </div>
           </div>
@@ -192,7 +189,10 @@ const Footer = () => {
             </p>
           </div>
           <div className="box__the__footer">
+            <Link to={'https://www.facebook.com/nhakhoatoothhive'}>
             <FacebookOutlined className="text-2xl"/>
+            </Link>
+           
             <YoutubeOutlined className="text-2xl"/>
             <MailOutlined className="text-2xl"/>
           </div>

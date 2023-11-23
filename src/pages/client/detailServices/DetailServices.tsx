@@ -95,13 +95,13 @@ const DetailServices = () => {
 						title: <NavLink to={'/services'}>Dịch vụ</NavLink>,
 					},
 					{
-						title: <span className="textColor">{category?.category_name}</span>,
+						title: <span className="textColor capitalize">{category?.category_name}</span>,
 					},
 				]}
 			/>
 			{/* nd title va mo ta cua dich vu */}
 			<div className="py-8">
-				<h1 className="font-bold text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] py-2  text-[#1386ED] ">
+				<h1 className=" capitalize font-bold text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] py-2  text-[#1386ED] ">
 					{category?.category_name}
 				</h1>
 				<span className='text-1rem md <Table columns={columns} dataSource={data} size="middle" />:text-[1.1rem] lg:text-[1.2rem] leading-9'>
@@ -121,13 +121,7 @@ const DetailServices = () => {
 					sẽ được giải đáp trong bài viết bên dưới.
 				</span>
 			</div>
-			{/* mo ta dich vu */}
-			<div className="py-8">
-				<p className="bg-pink-100">
-					{' '}
-					Day la noi dung show ra du lieu phan mo ta chi tiet nhe{' '}
-				</p>
-			</div>
+			
 
 			{/* bang gia */}
 			<div className="w-70% md:w-[50%] m-auto py-8">
