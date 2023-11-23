@@ -19,7 +19,6 @@ import { NavLink } from "react-router-dom";
 import Banner from "../../../assets/img/banner.png";
 import { Rate } from "antd";
 import CategoryServiceCarousel from "./CategoryServiceCarousel/CategoryServiceCarousel";
-import Top5Services from "./Top5Services/Top5Services";
 import "./Home.scss";
 // import Top5Services from "./Top5Services/Top5Services";
 

@@ -6,10 +6,8 @@ import HeartImage from "../../../../assets/icons/heart.png";
 import UserVectorImage from "../../../../assets/icons/userVector.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronCircleDown,
   faChevronDown,
   faChevronUp,
-  faTooth,
 } from "@fortawesome/free-solid-svg-icons";
 
 const MyCollapse = () => {
