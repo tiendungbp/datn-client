@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Input, InputNumber } from "antd";
+import { Button, Form, Input } from "antd";
 import "./ContactForm.scss";
 
 /* eslint-disable no-template-curly-in-string */

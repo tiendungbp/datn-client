@@ -13,4 +13,5 @@ export const managerCategoryServices = {
 	getOneCategory: (id: getAllCategory['category_id']) =>
 		http.get(`category/${id}`),
 	getActive: () => http.get(`category/active`),
+	getAllByDoctorID:(id:any)=>http.get(`category/all/doctor/${id}`)
 };
