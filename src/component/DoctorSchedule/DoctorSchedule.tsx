@@ -13,7 +13,7 @@ import {
 	Col,
 	Row,
 } from 'antd';
-import toast from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import dayjs from 'dayjs';
 import moment from 'moment';
 import Swal from 'sweetalert2';
@@ -24,6 +24,7 @@ import { bookingAppointmentService } from '../../store/managerAppointment.servic
 import { getDetailPatientService } from '../../store/managerPatient.services/thunkAction';
 import './DoctorSchedule.scss';
 import scheduleAPI from '../../services/managerSchedule';
+import { clearMessageAppointment } from '../../store/managerAppointment.services/slice';
 export default function DoctorSchedule(props: any) {
 	const Appdispatch = useAppDispatch();
 	// KHAI BÁO BIẾN
@@ -43,6 +44,36 @@ export default function DoctorSchedule(props: any) {
 	const { messageBooking } = useSelector(
 		(state: RootState) => state.appointment,
 	);
+	useEffect(() => {
+		if (messageBooking) {
+			const { errCode, type } = messageBooking;
+			if (errCode === 0) {
+				toast.success('Gửi yêu cầu thành công');
+				handleResetState();
+			} else if (errCode === 2 && type === 'status') {
+				toast.error('Lịch làm việc chưa được duyệt');
+				handleResetState();
+			} else if (errCode === 2 && type === 'date') {
+				toast.error('Không thể đặt lịch cho quá khứ');
+				handleResetState();
+			} else if (errCode === 2 && type === 'time') {
+				toast.error('Đã qua thời gian của ca khám');
+				handleResetState();
+			} else if (errCode === 9) {
+				toast.error('Lịch làm việc này không còn khả dụng');
+				handleResetState();
+			} else if (errCode === 10) {
+				toast.error('Đã đạt giới hạn đặt 3 lịch hẹn/ngày');
+				handleResetState();
+			} else {
+				// errCode === 1 || errCode === 5
+				toast.error('Gửi yêu cầu thất bại');
+				handleResetState();
+			}
+			Appdispatch(clearMessageAppointment());
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [messageBooking]);
 	// const { messageSchedule } = useSelector((state: RootState) => state.schedule);
 	// SO SÁNH THỜI GIAN TRUY CẬP TRONG NGÀY
 	const currentDate = moment(newDate).format('dddd');
@@ -97,35 +128,7 @@ export default function DoctorSchedule(props: any) {
 		if (patient) form.setFieldsValue(initPatientInfo);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [patient]);
-	useEffect(() => {
-		if (messageBooking) {
-			const { errCode, type } = messageBooking;
-			if (errCode === 0) {
-				toast.success('Gửi yêu cầu thành công');
-				handleResetState();
-			} else if (errCode === 2 && type === 'status') {
-				toast.error('Lịch làm việc chưa được duyệt');
-				handleResetState();
-			} else if (errCode === 2 && type === 'date') {
-				toast.error('Không thể đặt lịch cho quá khứ');
-				handleResetState();
-			} else if (errCode === 2 && type === 'time') {
-				toast.error('Đã qua thời gian của ca khám');
-				handleResetState();
-			} else if (errCode === 9) {
-				toast.error('Lịch làm việc này không còn khả dụng');
-				handleResetState();
-			} else if (errCode === 10) {
-				toast.error('Đã đạt giới hạn đặt 3 lịch hẹn/ngày');
-				handleResetState();
-			} else {
-				// errCode === 1 || errCode === 5
-				toast.error('Gửi yêu cầu thất bại');
-				handleResetState();
-			}
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [messageBooking]);
+
 	useEffect(() => {
 		if (messagePatient) {
 			setPatient(messagePatient.data);
@@ -155,7 +158,7 @@ export default function DoctorSchedule(props: any) {
 		if (patient_id) {
 			setSelectedSchedule(schedule);
 			setIsOpen(true);
-		} else {
+		} else if (!patient_id) {
 			toast.error('Bạn cần đăng nhập để đặt lịch hẹn');
 		}
 	};
@@ -221,6 +224,7 @@ export default function DoctorSchedule(props: any) {
 		setOption(1);
 		setIsOpen(false);
 		handleChangeDate(selectedDate);
+		Appdispatch(clearMessageAppointment());
 	};
 	return (
 		<Col md={12}>
@@ -345,8 +349,8 @@ export default function DoctorSchedule(props: any) {
 									<Col md={12} className="mt-3">
 										<Form.Item label="Giới tính" name="gender">
 											<Radio.Group disabled={option ? true : false}>
-												<Radio value={true}>Nam</Radio>
-												<Radio value={false}>Nữ</Radio>
+												<Radio value={1}>Nam</Radio>
+												<Radio value={0}>Nữ</Radio>
 											</Radio.Group>
 										</Form.Item>
 									</Col>
@@ -371,6 +375,7 @@ export default function DoctorSchedule(props: any) {
 										</Form.Item>
 									</Col>
 								</Row>
+
 								<div className="mt-3">
 									<Button
 										htmlType="submit"
