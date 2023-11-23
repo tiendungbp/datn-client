@@ -66,3 +66,23 @@
         margin: 50px auto 0;
     }
 }
+
+/*** Doctor Details Page ***/
+.doctor-category-table {
+    width: 100%;
+    font-size: 16px;
+    margin-top: -5px;
+}
+
+.doctor-category-table tbody tr {
+    height: 30px;
+}
+
+.doctor-category-table tbody tr td:first-child {
+    font-weight: bold;
+}
+
+.doctor-category-table tbody tr td:last-child:hover {
+    cursor: pointer;
+    color: var(--primary);
+}

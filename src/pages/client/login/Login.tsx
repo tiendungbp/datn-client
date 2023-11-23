@@ -1,5 +1,4 @@
-import IconGg from "../../../assets/icons/google.svg";
-import IconFace from "../../../assets/icons/facebook.png";
+
 import { Button, Form, Input, Spin } from "antd";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -58,7 +57,7 @@ const Login = () => {
   return (
     <div>
       <div className="w-full  flex flex-col md:flex-row items-start">
-        <div className="relative  w-[40%] h-screen flex flex-col bg-pink-200 hidden md:block">
+        <div className="relative  w-[40%] h-screen flex flex-col bg-pink-200 md:block">
           <img
             src="https://i.pinimg.com/564x/f2/b4/fa/f2b4fa6132ec15d5d7457045fe9678ef.jpg"
             alt=""

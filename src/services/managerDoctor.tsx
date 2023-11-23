@@ -25,6 +25,7 @@ export type getAllDoctor = {
 };
 export const managerDoctorServices = {
 	getAllDoctor: () => http.get(`doctor/all`),
+	getActiveDoctor: () => http.get(`doctor/active`),
 	getOneDoctor: (id: getAllDoctor['doctor_id']) => http.get(`doctor/${id}`),
 	getAllByCategoryID: (id: any) => http.get(`doctor/all/category/${id}`),
 };

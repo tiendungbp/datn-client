@@ -30,7 +30,7 @@ export const getAllDoctorService = createAsyncThunk(
 	'Toohhive/getAllDoctor',
 	async (_, { rejectWithValue }) => {
 		try {
-			const res = await managerDoctorServices.getAllDoctor();
+			const res = await managerDoctorServices.getActiveDoctor();
 			return res;
 		} catch (error) {
 			return rejectWithValue(error);
