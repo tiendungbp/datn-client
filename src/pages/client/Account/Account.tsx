@@ -454,7 +454,7 @@ const Account = () => {
       <Spin tip="Đang tải..." spinning={false}>
         <div className="m-auto w-wd-primary md:w-wd-secondary mb-12 lg:mt-[1rem]">
           <Breadcrumb
-            className={`text-base mb-12`}
+            className={`md:text-base text-xs`}
             items={[
               {
                 title: <a href="/">Trang chủ</a>,
@@ -656,7 +656,7 @@ const Account = () => {
                       </Col>
                     </Row>
 
-                    <div className="mt-4 mb-4 flex">
+                    <div className="mt-4 mb-4 md:flex block">
                       <Button
                         type="primary"
                         htmlType="submit"
