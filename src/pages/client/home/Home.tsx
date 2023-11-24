@@ -19,7 +19,6 @@ import { NavLink } from "react-router-dom";
 import Banner from "../../../assets/img/banner.png";
 import { Rate } from "antd";
 import CategoryServiceCarousel from "./CategoryServiceCarousel/CategoryServiceCarousel";
-import Top5Services from "./Top5Services/Top5Services";
 import "./Home.scss";
 // import Top5Services from "./Top5Services/Top5Services";
 
@@ -149,79 +148,79 @@ const Home = () => {
     };
   }, []);
 
-  return (
-    <>
-      <div className="home__client  lg:mt-[1rem] ">
-        {/* start banner  */}
-        <div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-3xl "></div>
-        <div className="m-auto w-wd-primary md:w-wd-secondary relative z-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 ">
-            <div className="md:order-2 md:p-4 float-right">
-              <div>
-                <p className="text-right font-normal text-[#143566] text-[0.8rem] pb-4 md:text-[1rem] lg:text-[1.2rem] pr-1">
-                  Khám phá hành trình chăm sóc răng miệng. Cùng ToothHive chắp
-                  cánh ước mơ về nụ cười tươi sáng và sức khỏe vững bền!
-                </p>
-              </div>
-              <div className="md:w-full" style={{ padding: "0 5px" }}>
-                <div className=" right-0 w-full  relative ">
-                  <img
-                    src={Banner}
-                    alt=""
-                    className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
-                  />
-                  <div className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
-                    <div className="flex justify-between gap-2 pb-3">
-                      <div className="flex gap-2 justify-center items-center">
-                        <FontAwesomeIcon icon={faPhone} />
-                        <p className="text-[0.9rem] md:text-[1.2rem]">
-                          0975 383 291
-                        </p>
-                      </div>
-                      <div className="flex gap-2 justify-center items-center">
-                        <FontAwesomeIcon icon={faEnvelope} />
-                        <p className="text-[0.9rem] md:text-[1.2rem]">
-                          toothhive@gmail.com
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex gap-2 justify-center items-center">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <p className=" text-[0.9rem] md:text-[1.2rem]">
-                        Trụ sở chính: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="md:order-1 md:w-[70%]">
-              <h1 className="pb-4 text-lg md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem] md:leading-10 md:mb-12">
-                Đánh bay sâu, giữ vững{" "}
-                <span className="text-[#157FEC]">nụ cười</span>
-              </h1>
-              <div className=" flex flex-col gap-4 md:gap-6">
-                <h2 className="text-xs md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
-                  Đến với ToothHive
-                </h2>
-                <div className="flex gap-4  items-center">
-                  <FontAwesomeIcon
-                    icon={faUserTag}
-                    className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
-                  />
-                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
-                    Sự chăm sóc nhiệt tình
-                  </p>
-                </div>
-                <div className=" flex gap-4  items-center">
-                  <FontAwesomeIcon
-                    icon={faPeopleGroup}
-                    className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
-                  />
-                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
-                    Đội ngũ nhân viên chuyên nghiệp
-                  </p>
-                </div>
+	return (
+		<>
+			<div className="home__client  lg:mt-[1rem] ">
+				{/* start banner  */}
+				<div className="m-auto w-wd-primary md:w-wd-secondary">
+				<div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-3xl"></div>
+					<div className="grid grid-cols-1 md:grid-cols-2 ">
+						<div className="md:order-2 md:p-4 float-right">
+							<div>
+								<p className="text-right font-normal text-[#143566] text-[0.8rem] pb-4 md:text-[1rem] lg:text-[1.2rem]">
+									Khám phá hành trình chăm sóc răng miệng. Cùng ToothHive chắp
+									cánh ước mơ về nụ cười tươi sáng và sức khỏe vững bền!
+								</p>
+							</div>
+							<div className="md:w-full">
+								<div className=" right-0 w-full  relative ">
+									<img
+										src={Banner}
+										alt=""
+										className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
+									/>
+									<div className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
+										<div className="flex justify-between gap-2 pb-3">
+											<div className="flex gap-2 justify-center items-center">
+												<FontAwesomeIcon icon={faPhone} />
+												<p className="text-[0.9rem] md:text-[1.2rem]">
+													0975 383 291
+												</p>
+											</div>
+											<div className="flex gap-2 justify-center items-center">
+												<FontAwesomeIcon icon={faEnvelope} />
+												<p className="text-[0.9rem] md:text-[1.2rem]">
+													toothhive@gmail.com
+												</p>
+											</div>
+										</div>
+										<div className="flex gap-2 justify-center items-center">
+											<FontAwesomeIcon icon={faLocationDot} />
+											<p className=" text-[0.9rem] md:text-[1.2rem]">
+											Địa chỉ: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="md:order-1 md:w-[70%]">
+							<h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
+								Đánh bay sâu, giữ vững{' '}
+								<span className="text-[#157FEC]">nụ cười</span>
+							</h1>
+							<div className=" flex flex-col gap-4">
+								<h2 className="text-[1.2rem] md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
+									Đến với ToothHive
+								</h2>
+								<div className="flex gap-4  items-center">
+									<FontAwesomeIcon
+										icon={faUserTag}
+										className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
+									/>
+									<p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+										Sự chăm sóc nhiệt tình
+									</p>
+								</div>
+								<div className=" flex gap-4  items-center">
+									<FontAwesomeIcon
+										icon={faPeopleGroup}
+										className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
+									/>
+									<p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+										Đội ngũ nhân viên chuyên nghiệp
+									</p>
+								</div>
 
                 <div className="flex gap-4  items-center">
                   <FontAwesomeIcon
@@ -432,26 +431,16 @@ const Home = () => {
                 dịch vụ nha khoa chất lượng và tận hưởng nụ cười khỏe đẹp!
               </p>
             </div>
-            <div className=" md:h-[80vh] h-[30vh]  relative rounded-lg flex items-center justify-center m-auto">
+            <div className=" md:h-[80vh] h-[30vh] rounded-lg flex items-center justify-center m-auto">
               <iframe
                 title="Google Maps"
-                className="hidden md:block w-full h-full object-cover rounded-lg shadow-lg"
+                className=" w-full h-full object-cover rounded-lg shadow-lg"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d53522.97506443701!2d105.77621636333734!3d21.021569763823155!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f6367a16f17%3A0x67abfeb7e2245dc5!2zMjM3IE5ndXnhu4VuIFThuqV0IFRow6BuaCwgUGjGsOG7nW5nIDE4LCBRdeG6rW4gNCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1698481773076!5m2!1svi!2s"
                 width="600"
-                height="450"
+                height="500"
                 loading="lazy"
               ></iframe>
-              <div className=" bg-white box-shadow absolute md:bottom-[-3rem]  md:left-1/2  transform md:translate-x-[-50%]  p-4 md:p-8 md:px-12 rounded-lg my-8">
-                <h1 className=" text-center text-lg md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.5rem] font-bold text-[#1386ED] md:py-4 py-2">
-                  Phòng khám nha khoa ToothHive
-                </h1>
-                <p className="text-[0.9rem] text-sm text-center md:text-start md:leading-8">
-                  Trụ sở chính: 237 Nguyễn Tất Thành, Quận 5, Tp.HCM <br />
-                  Cơ sở 2: 172 Trường chinh, Tân Thới HIệp, Quận 12, Tp.HCM{" "}
-                  <br />
-                  Cơ sở 3: 287 Trần Xuân Soạn, Tân Kiểng, Quận 7, Tp.HCM
-                </p>
-              </div>
+             
             </div>
           </div>
         </div>

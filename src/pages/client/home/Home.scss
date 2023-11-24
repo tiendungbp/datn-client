@@ -31,3 +31,16 @@
     }
   }
 }
+@media screen and (max-width: 475px) {
+   .home__client{
+        .text-right{
+            margin-top: 10px;
+        }
+       .shadow-xl{
+        box-shadow: #c0d6ed 0px 0px 0px 5px;
+      }
+   }
+}
+.blur-3xl {
+    filter: blur(250px); /* Điều chỉnh giá trị "blur-radius" tại đây */
+  }

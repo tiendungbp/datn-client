@@ -31,6 +31,7 @@ export const { reducer: appointmentReducer, actions: appointmentAction } =
 				state.message = null;
 				state.messageCancel = null;
 				state.messageDetail = null;
+				state.messageBooking = null;
 			},
 		},
 		extraReducers: (builder) => {

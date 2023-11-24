@@ -9,6 +9,7 @@ import { getAllServiceStore } from '../../../store/managerService.services/thunk
 import { Vertical } from '../../../utils/AnimatedPage';
 import DoctorCard from '../../../component/DoctorCard/DoctorCard';
 import { getAllDoctorByCategoryService } from '../../../store/managerDoctor.services/thunkAction';
+import CommonUtils from '../../../utils/commonUtils';
 
 interface DataServiceProp {
 	key: React.Key;
@@ -23,11 +24,14 @@ const columnService: ColumnsType<DataServiceProp> = [
 		title: 'Dịch vụ',
 		dataIndex: 'name',
 		key: 'name',
+		render: (text: any) => CommonUtils.capitalizeEachWord(text),
 	},
 	{
 		title: 'Giá (VNĐ)',
 		dataIndex: 'price',
 		key: 'price',
+		align: 'center' as const,
+		render: (text: any) => CommonUtils.VND.format(text),
 	},
 ];
 
@@ -79,8 +83,6 @@ const DetailServices = () => {
 					key: index,
 					name: service.service_name,
 					price: service.price,
-					guarantee: 'string',
-					description: 'string',
 				}))
 		: [];
 	return (
@@ -95,13 +97,17 @@ const DetailServices = () => {
 						title: <NavLink to={'/services'}>Dịch vụ</NavLink>,
 					},
 					{
-						title: <span className="textColor">{category?.category_name}</span>,
+						title: (
+							<span className="textColor capitalize">
+								{category?.category_name}
+							</span>
+						),
 					},
 				]}
 			/>
 			{/* nd title va mo ta cua dich vu */}
 			<div className="py-8">
-				<h1 className="font-bold text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] py-2  text-[#1386ED] ">
+				<h1 className=" capitalize font-bold text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] py-2  text-[#1386ED] ">
 					{category?.category_name}
 				</h1>
 				<span className='text-1rem md <Table columns={columns} dataSource={data} size="middle" />:text-[1.1rem] lg:text-[1.2rem] leading-9'>
@@ -121,24 +127,12 @@ const DetailServices = () => {
 					sẽ được giải đáp trong bài viết bên dưới.
 				</span>
 			</div>
-			{/* mo ta dich vu */}
-			<div className="py-8">
-				<p className="bg-pink-100">
-					{' '}
-					Day la noi dung show ra du lieu phan mo ta chi tiet nhe{' '}
-				</p>
-			</div>
 
 			{/* bang gia */}
 			<div className="w-70% md:w-[50%] m-auto py-8">
 				<Table
 					columns={columnService}
-					expandable={{
-						expandedRowRender: (record) => (
-							<p style={{ margin: 0 }}>{record.description}</p>
-						),
-						rowExpandable: (record) => record.name !== 'Not Expandable',
-					}}
+					pagination={false}
 					dataSource={dataService}
 				/>
 			</div>
