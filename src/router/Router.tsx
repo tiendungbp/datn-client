@@ -102,7 +102,7 @@ const Router = (): JSX.Element | null => {
 			element: <ResetPassword />,
 		},
 		{
-			path: '/thong-tin-khach-hang/idNFC',
+			path: '/thong-tin-khach-hang/:idNFC',
 			element: <ProfileNFC />,
 		},
 		{
