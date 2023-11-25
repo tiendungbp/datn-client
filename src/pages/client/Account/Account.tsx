@@ -454,7 +454,7 @@ const Account = () => {
       <Spin tip="Đang tải..." spinning={false}>
         <div className="m-auto w-wd-primary md:w-wd-secondary mb-12 lg:mt-[1rem]">
           <Breadcrumb
-            className={`text-base mb-12`}
+            className={`md:text-base text-xs`}
             items={[
               {
                 title: <a href="/">Trang chủ</a>,
@@ -656,19 +656,19 @@ const Account = () => {
                       </Col>
                     </Row>
 
-                    <div className="mt-4 mb-4">
+                    <div className="mt-4 mb-4 md:flex block">
                       <Button
                         type="primary"
                         htmlType="submit"
-                        className="px-6 my-2 mr-2 w-full"
+                        className="px-6 my-2 mr-2 w-full md:w-[15%] booking justify-center"
                         style={{ backgroundColor: "#1386ED", height: 40 }}
                       >
                         Lưu thông tin
                       </Button>
                       <Button
                         htmlType="reset"
-                        className="px-6 w-full my-2"
-                        style={{ height: 40 }}
+                        className="px-6 w-full md:w-[10%] my-2"
+                        style={{ height: 40, borderRadius: 32 }}
                       >
                         Reset
                       </Button>
@@ -694,7 +694,7 @@ const Account = () => {
                       <Col md={4} className="mt-4 w-1/2">
                         <Form.Item label="Đổi email">
                           <Button
-                            className="w-full"
+                            className="booking w-full justify-center"
                             style={{
                               backgroundColor: "rgb(19, 134, 237)",
                               color: "white",
@@ -797,7 +797,7 @@ const Account = () => {
                       <Col md={4} className="mt-4 w-1/2">
                         <Form.Item label="Đổi mật khẩu">
                           <Button
-                            className="w-full"
+                            className="booking w-full justify-center"
                             style={{
                               backgroundColor: "rgb(19, 134, 237)",
                               color: "white",

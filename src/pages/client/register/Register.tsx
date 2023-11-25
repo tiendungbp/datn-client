@@ -75,12 +75,13 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="w-full  flex flex-col md:flex-row items-start">
-        <div className="relative  w-[40%] h-screen flex flex-col bg-pink-200 hidden md:block">
+      <div className="w-full md:h-[100vh] h-full flex flex-col md:flex-row items-start">
+        <div className="relative  w-[40%] h-screen flex h-full flex-col bg-pink-200 hidden md:block">
           <img
             src="https://i.pinimg.com/564x/f2/b4/fa/f2b4fa6132ec15d5d7457045fe9678ef.jpg"
             alt=""
-            className="w-full h-full object-cover brightness-50"
+            className="w-full object-cover brightness-50"
+            style={{ height: "100%" }}
           />
 
           <div className="absolute top-[25%] left-[10%] flex flex-col">
@@ -101,11 +102,11 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full md:w-[60%] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white">
-          <h1 className=" text-2xl md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap">
+        <div className=" w-full md:w-[60%] md:h-[100vh] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white">
+          <h1 className=" text-lg md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap ">
             Đăng ký tài khoản Tooth<span className="text-[#1386ED]">Hive</span>
           </h1>
-          <span className="font-light text-gray-500 mt-2">
+          <span className="font-light text-gray-500 mt-2 text-sm md:text-base">
             Đăng ký tài khoản để trở thành một thành viên của ToothHive
           </span>
 
@@ -223,16 +224,20 @@ const Register = () => {
                   </Col>
                 </Row>
 
-                <div className="pt-4 mb-4">
+                <div className="mb-4 block md:flex">
                   <Button
                     htmlType="submit"
                     type="primary"
-                    className="px-5 mr-3 my-3 w-full"
-                    style={{ backgroundColor: "#1386ED" }}
+                    className="px-5 mr-3 my-3 md:my-0 w-full booking justify-center"
+                    style={{ backgroundColor: "#1386ED", height: 40 }}
                   >
                     Đăng ký
                   </Button>
-                  <Button htmlType="reset" className="px-5 w-full">
+                  <Button
+                    htmlType="reset"
+                    className="px-5 w-full booking justify-center"
+                    style={{ height: 40 }}
+                  >
                     Reset
                   </Button>
                 </div>

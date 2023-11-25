@@ -1,9 +1,8 @@
-
 import { Button, Form, Input, Spin } from "antd";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../../store";
 import { loginService } from "../../../store/managerAuth.services/thunkAction";
@@ -54,10 +53,11 @@ const Login = () => {
     }
     Appdispatch(clearMessageAuth());
   };
+
   return (
     <div>
       <div className="w-full  flex flex-col md:flex-row items-start">
-        <div className="relative  w-[40%] h-screen flex flex-col bg-pink-200 md:block">
+        <div className="relative  w-[40%] h-screen flex flex-col bg-pink-200 md:block hidden">
           <img
             src="https://i.pinimg.com/564x/f2/b4/fa/f2b4fa6132ec15d5d7457045fe9678ef.jpg"
             alt=""
@@ -86,10 +86,10 @@ const Login = () => {
           className=" w-full md:w-[60%] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white"
           style={{ height: "100vh" }}
         >
-          <h1 className=" text-2xl md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap">
+          <h1 className=" text-lg md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap">
             Đăng nhập tới Tooth<span className="text-[#1386ED]">Hive</span>
           </h1>
-          <span className="font-light text-gray-500 mt-2">
+          <span className="font-light text-gray-500 mt-2 md:text-base text-sm">
             Đăng nhập vào tài khoản của bạn
           </span>
           <div className="form_login mt-8">
@@ -137,17 +137,23 @@ const Login = () => {
                   />
                 </Form.Item>
                 <Form.Item>
-                  <Button type="primary" htmlType="submit">
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    className="booking justify-center"
+                  >
                     Đăng nhập
                   </Button>
                 </Form.Item>
                 <div className="flex justify-evenly">
-                  <div className=" mb-4">
-                    <Link to={"/"} className="text-sky-600 font-bold">
-                      Về trang chủ
-                    </Link>
+                  <div className="flex justify-around w-1/2 md:hidden">
+                    <div className=" mb-4 ">
+                      <Link to={"/"} className="text-sky-600 font-bold">
+                        Về trang chủ
+                      </Link>
+                    </div>
+                    <div>|</div>
                   </div>
-                  <div>|</div>
                   <div className=" mb-4">
                     <Link to={"/forgot"} className="text-sky-600 font-bold">
                       Quên mật khẩu
