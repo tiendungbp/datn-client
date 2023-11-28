@@ -459,7 +459,7 @@ const Home = () => {
               của ToothHive
             </p>
           </div>
-          <div className=" space-x-3 rounded-box carousel w-full">
+          <div className=" space-x-2 rounded-box carousel w-full">
             {slides.map((item, index) => (
               <div
                 key={index}
