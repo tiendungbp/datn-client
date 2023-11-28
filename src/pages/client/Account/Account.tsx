@@ -454,7 +454,7 @@ const Account = () => {
       <Spin tip="Đang tải..." spinning={false}>
         <div className="m-auto w-wd-primary md:w-wd-secondary mb-12 lg:mt-[1rem]">
           <Breadcrumb
-            className={`md:text-base text-xs`}
+            className={`md:text-sm text-xs`}
             items={[
               {
                 title: <a href="/">Trang chủ</a>,
