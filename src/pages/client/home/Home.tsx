@@ -148,79 +148,79 @@ const Home = () => {
     };
   }, []);
 
-	return (
-		<>
-			<div className="home__client  lg:mt-[1rem] ">
-				{/* start banner  */}
-				<div className="m-auto w-wd-primary md:w-wd-secondary">
-				<div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-3xl"></div>
-					<div className="grid grid-cols-1 md:grid-cols-2 ">
-						<div className="md:order-2 md:p-4 float-right">
-							<div>
-								<p className="text-right font-normal text-[#143566] text-[0.8rem] pb-4 md:text-[1rem] lg:text-[1.2rem]">
-									Khám phá hành trình chăm sóc răng miệng. Cùng ToothHive chắp
-									cánh ước mơ về nụ cười tươi sáng và sức khỏe vững bền!
-								</p>
-							</div>
-							<div className="md:w-full">
-								<div className=" right-0 w-full  relative ">
-									<img
-										src={Banner}
-										alt=""
-										className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
-									/>
-									<div className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
-										<div className="flex justify-between gap-2 pb-3">
-											<div className="flex gap-2 justify-center items-center">
-												<FontAwesomeIcon icon={faPhone} />
-												<p className="text-[0.9rem] md:text-[1.2rem]">
-													0975 383 291
-												</p>
-											</div>
-											<div className="flex gap-2 justify-center items-center">
-												<FontAwesomeIcon icon={faEnvelope} />
-												<p className="text-[0.9rem] md:text-[1.2rem]">
-													toothhive@gmail.com
-												</p>
-											</div>
-										</div>
-										<div className="flex gap-2 justify-center items-center">
-											<FontAwesomeIcon icon={faLocationDot} />
-											<p className=" text-[0.9rem] md:text-[1.2rem]">
-											Địa chỉ: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="md:order-1 md:w-[70%]">
-							<h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
-								Đánh bay sâu, giữ vững{' '}
-								<span className="text-[#157FEC]">nụ cười</span>
-							</h1>
-							<div className=" flex flex-col gap-4">
-								<h2 className="text-[1.2rem] md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
-									Đến với ToothHive
-								</h2>
-								<div className="flex gap-4  items-center">
-									<FontAwesomeIcon
-										icon={faUserTag}
-										className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
-									/>
-									<p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
-										Sự chăm sóc nhiệt tình
-									</p>
-								</div>
-								<div className=" flex gap-4  items-center">
-									<FontAwesomeIcon
-										icon={faPeopleGroup}
-										className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
-									/>
-									<p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
-										Đội ngũ nhân viên chuyên nghiệp
-									</p>
-								</div>
+  return (
+    <>
+      <div className="home__client  lg:mt-[1rem] ">
+        {/* start banner  */}
+        <div className="m-auto w-wd-primary md:w-wd-secondary">
+          <div className="w-[590px] h-[400px] bg-[#1386ED] rounded-[100%] absolute z-1 translate-x-[-50%] translate-y-[-50%] blur-3xl"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 ">
+            <div className="md:order-2 md:p-4 float-right">
+              <div>
+                <p className="text-right font-normal text-[#143566] text-[0.8rem] pb-4 md:text-[1rem] lg:text-[1.2rem]">
+                  Khám phá hành trình chăm sóc răng miệng. Cùng ToothHive chắp
+                  cánh ước mơ về nụ cười tươi sáng và sức khỏe vững bền!
+                </p>
+              </div>
+              <div className="md:w-full">
+                <div className=" right-0 w-full  relative ">
+                  <img
+                    src={Banner}
+                    alt=""
+                    className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
+                  />
+                  <div className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
+                    <div className="flex justify-between gap-2 pb-3">
+                      <div className="flex gap-2 justify-center items-center">
+                        <FontAwesomeIcon icon={faPhone} />
+                        <p className="text-[0.9rem] md:text-[1.2rem]">
+                          0975 383 291
+                        </p>
+                      </div>
+                      <div className="flex gap-2 justify-center items-center">
+                        <FontAwesomeIcon icon={faEnvelope} />
+                        <p className="text-[0.9rem] md:text-[1.2rem]">
+                          toothhive@gmail.com
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 justify-center items-center">
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      <p className=" text-[0.9rem] md:text-[1.2rem]">
+                        Địa chỉ: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="md:order-1 md:w-[70%]">
+              <h1 className="pb-4 text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-bold mt-[2rem] md:mt-[2rem]">
+                Đánh bay sâu, giữ vững{" "}
+                <span className="text-[#157FEC]">nụ cười</span>
+              </h1>
+              <div className=" flex flex-col gap-4">
+                <h2 className="text-[1.2rem] md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
+                  Đến với ToothHive
+                </h2>
+                <div className="flex gap-4  items-center">
+                  <FontAwesomeIcon
+                    icon={faUserTag}
+                    className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
+                  />
+                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                    Sự chăm sóc nhiệt tình
+                  </p>
+                </div>
+                <div className=" flex gap-4  items-center">
+                  <FontAwesomeIcon
+                    icon={faPeopleGroup}
+                    className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
+                  />
+                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                    Đội ngũ nhân viên chuyên nghiệp
+                  </p>
+                </div>
 
                 <div className="flex gap-4  items-center">
                   <FontAwesomeIcon
@@ -440,7 +440,6 @@ const Home = () => {
                 height="500"
                 loading="lazy"
               ></iframe>
-             
             </div>
           </div>
         </div>
@@ -460,11 +459,11 @@ const Home = () => {
               của ToothHive
             </p>
           </div>
-          <div className=" space-x-4 rounded-box carousel w-full">
+          <div className=" space-x-3 rounded-box carousel w-full">
             {slides.map((item, index) => (
               <div
                 key={index}
-                className="p-1 w-full md:w-[46%] carousel-item cursor-pointer"
+                className="p-3 w-full md:w-[46%] carousel-item cursor-pointer"
               >
                 <div className="bg-white box-shadow p-4 rounded-lg flex flex-col gap-2">
                   <div className="flex justify-between items-center">

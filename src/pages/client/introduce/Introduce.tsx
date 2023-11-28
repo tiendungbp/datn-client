@@ -41,7 +41,7 @@ const Introduce = () => {
       <div className="m-auto w-wd-primary md:w-wd-secondary mt-6 lg:mt-[1rem] ">
         {/* BreadCrumb */}
         <Breadcrumb
-          className={`text-base mb-8 text-xs md:text-sm`}
+          className={`text-base mb-8 text-xs md:text-sm text-xs`}
           items={[
             {
               title: <a href="/">Trang chủ</a>,
