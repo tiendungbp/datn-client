@@ -418,7 +418,7 @@ const Home = () => {
                           <p>Hiện chưa có mô tả của bác sĩ này !</p>
                         )}
 
-                        <NavLink to={"/detailDoctor"}>
+                        <NavLink to={`/detailDoctor/${item.doctor_id}`}>
                           <button className="bg-[#1386ed] px-8 py-3 rounded-[30px] text-white booking">
                             Xem chi tiết
                           </button>

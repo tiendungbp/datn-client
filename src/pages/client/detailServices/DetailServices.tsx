@@ -147,7 +147,7 @@ const DetailServices = () => {
             </h2>
           </div>
           <div>
-            <div className="container pt-5">
+            <div className="pt-5">
               <div className="row">
                 <div className="col-md">
                   {doctorList?.map((doctor: any, index: any) => {
