@@ -38,7 +38,7 @@ const Introduce = () => {
 
   return (
     <div className="wrapper introduce__client">
-      <div className="m-auto w-wd-primary md:w-wd-secondary mt-6 lg:mt-[1rem] ">
+      <div className="m-auto w-wd-primary md:w-wd-secondary lg:mt-[1rem] ">
         {/* BreadCrumb */}
         <Breadcrumb
           className={`text-base mb-8 text-xs md:text-sm text-xs`}

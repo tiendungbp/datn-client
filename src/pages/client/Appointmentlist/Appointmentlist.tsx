@@ -364,10 +364,10 @@ const Appointmentlist = () => {
 
   return (
     <Vertical>
-      <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[1rem]">
+      <div className="m-auto w-[92%] md:w-wd-secondary lg:mt-[1rem]">
         <Spin tip="Đang tải..." spinning={isLoading}>
           <Breadcrumb
-            className={`text-lg mb-8 text-xs md:text-sm`}
+            className={`text-xs md:text-sm`}
             items={[
               {
                 title: <a href="/">Trang chủ</a>,

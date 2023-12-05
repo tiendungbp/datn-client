@@ -65,7 +65,7 @@ const PriceList = () => {
   };
 
   return (
-    <div className="price__list__client m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
+    <div className="price__list__client m-auto w-wd-primary md:w-wd-secondary mb-12 lg:mt-[1rem]">
       {/* BreadCrumb */}
       <Breadcrumb
         className={`title__price__list text-base mb-8 md:text-sm text-xs`}

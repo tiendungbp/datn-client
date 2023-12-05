@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm/ContactForm";
 const Contact = () => {
   return (
     <div className="contact__client wrapper">
-      <div className="m-auto w-wd-primary md:w-wd-secondary my-12 lg:mt-[1rem]">
+      <div className="m-auto w-wd-primary md:w-wd-secondary mb-12 lg:mt-[1rem]">
         {/* BreadCrumb */}
         <Breadcrumb
           className={`title__services__client text-base mb-8 text-xs md:text-sm`}

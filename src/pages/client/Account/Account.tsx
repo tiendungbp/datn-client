@@ -452,7 +452,7 @@ const Account = () => {
   return (
     <Vertical>
       <Spin tip="Đang tải..." spinning={false}>
-        <div className="m-auto w-wd-primary md:w-wd-secondary mb-12 lg:mt-[1rem]">
+        <div className="m-auto w-[92%] md:w-wd-secondary mb-12 lg:mt-[1rem]">
           <Breadcrumb
             className={`md:text-sm text-xs`}
             items={[
@@ -477,12 +477,12 @@ const Account = () => {
               <Col className="flex items-center flex-wrap">
                 {localPath ? (
                   <img
-                    className="user-avatar rounded mr-4"
+                    className="user-avatar rounded mr-2 md:mr-4"
                     src={localPath}
                     alt="user-avatar"
                   />
                 ) : (
-                  <div className="user-avatar mr-4 border-2 flex justify-center items-center rounded">
+                  <div className="user-avatar mr-2 md:mr-4 border-2 flex justify-center items-center rounded">
                     <small>Chưa có ảnh</small>
                   </div>
                 )}

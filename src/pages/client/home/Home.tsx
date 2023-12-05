@@ -27,59 +27,9 @@ import {
   getAllDoctorService,
   getAllDoctorStore,
 } from "../../../store/managerDoctor.services/thunkAction";
+import Top5Services from "./Top5Services/Top5Services";
+import CustomerComments from "./CustomerComments/CustomerComments";
 // import Top5Services from "./Top5Services/Top5Services";
-
-const slides = [
-  {
-    id: 1,
-    name: "Tran Thi Nga",
-    img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg",
-    content:
-      "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng.",
-  },
-  {
-    id: 2,
-    name: "Tran Thi Nga",
-    img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg",
-    content:
-      "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng.",
-  },
-  {
-    id: 3,
-    name: "Tran Thi Nga",
-    img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg",
-    content:
-      "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng.",
-  },
-  {
-    id: 4,
-    name: "Tran Thi Nga",
-    img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg",
-    content:
-      "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng.",
-  },
-  {
-    id: 5,
-    name: "Tran Thi Nga",
-    img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg",
-    content:
-      "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng.",
-  },
-  {
-    id: 6,
-    name: "Tran Thi Nga",
-    img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg",
-    content:
-      "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng.",
-  },
-  {
-    id: 7,
-    name: "Tran Thi Nga",
-    img: "https://i.pinimg.com/564x/a6/74/c2/a674c29ddf986e8ad938ac942574f6c5.jpg",
-    content:
-      "Nụ cười của tôi đã thay đổi hoàn toàn sau khi tôi đến với ToothHive. Tôi đã trải qua nhiều năm điều trị tại các phòng khám khác nhau, nhưng không nơi nào làm tôi cảm thấy thoải mái như ở đây. Đội ngũ tại ToothHive chăm sóc tận tình, và tôi rất hạnh phúc với kết quả cuối cùng.",
-  },
-];
 
 type dataWatchDetailDoctorProp = {
   name: string;
@@ -194,7 +144,10 @@ const Home = () => {
                     alt=""
                     className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
                   />
-                  <div className="hidden sm:hidden md:block lg:block xl:block absolute rounded-bl-[8px] translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] rounded-br-[8px] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]">
+                  <div
+                    className="hidden sm:hidden md:block absolute rounded-lg translate-y-1/2 md:translate-x-[2.5%] translate-x-[3%] pb-4 bottom-0 right-0 p-4 text-white bg-[#1386ED]"
+                    style={{ boxShadow: "-12px -10px 0px 0px white" }}
+                  >
                     <div className="flex justify-between gap-2 pb-3">
                       <div className="flex gap-2 justify-center items-center">
                         <FontAwesomeIcon icon={faPhone} />
@@ -472,40 +425,11 @@ const Home = () => {
               của ToothHive
             </p>
           </div>
-          <div className=" space-x-2 rounded-box carousel w-full">
-            {slides.map((item, index) => (
-              <div
-                key={index}
-                className="p-3 w-full md:w-[46%] carousel-item cursor-pointer"
-              >
-                <div className="bg-white box-shadow p-4 rounded-lg flex flex-col gap-2">
-                  <div className="flex justify-between items-center">
-                    <FontAwesomeIcon
-                      icon={faQuoteLeft}
-                      className="text-[2.3rem] md:text-[2.5rem] text-gray-500"
-                    />
-                    <div>
-                      <Rate disabled defaultValue={4} />
-                    </div>
-                  </div>
-                  <div className="line-clamp-3 overflow-ellipsis leading-[1.8rem] text-xs md:text-base">
-                    {item.content}
-                  </div>
-                  <div className="flex gap-4 items-center ">
-                    <div className="w-[3rem] h-[3rem] rounded-full bg-gray-100">
-                      <img
-                        className="w-full h-full object-cover rounded-full"
-                        src={item.img}
-                        alt={item.name}
-                      />
-                    </div>
-                    <div>
-                      <p>{item.name}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="w-full">
+            <CustomerComments
+              mobileScreen={mobileScreen}
+              windowWidth={windowWidth}
+            />
           </div>
         </div>
         {/* end customer comments */}

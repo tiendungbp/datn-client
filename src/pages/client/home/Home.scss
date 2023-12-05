@@ -3,50 +3,40 @@
     margin: 10px 0;
   }
 }
-
-@media screen and (max-width: 1080px) {
-  .home__client {
-    .text-right {
-      margin-top: 10px;
+.home__client {
+  .blur-3xl {
+    filter: blur(250px);
+  }
+  .handleShadow {
+    box-shadow: #a2cbf6 -12px 12px 0px 5px;
+  }
+  .text-right {
+    margin-top: 10px;
+  }
+  .slick-dots {
+    bottom: -15px !important;
+    z-index: 1;
+    li {
+      background-color: #aaa;
     }
-    .shadow-xl {
-      box-shadow: #c0d6ed 0px 0px 0px 5px;
-    }
-    .slick-dots {
-      bottom: 0 !important;
-      li {
-        background-color: #aaa;
-      }
-      .slick-active {
-        button {
-          background-color: #1386ed !important;
-        }
+    .slick-active {
+      button {
+        background-color: #1386ed !important;
       }
     }
   }
 }
 
-.handleShadow {
-  box-shadow: #a2cbf6 -12px 12px 0px 5px;
-}
-
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 450px) {
   .home__client {
+    .text-right {
+      margin-top: 10px;
+    }
     .handleShadow {
       box-shadow: #c0d6ed 0px 5px 0px 2px;
     }
-  }
-}
-@media screen and (max-width: 475px) {
-  .home__client {
-    .text-right {
-      margin-top: 10px;
-    }
     .shadow-xl {
-      box-shadow: #c0d6ed 0px 0px 0px 5px;
+      box-shadow: 0 0 0 5px #c0d6ed;
     }
   }
-}
-.blur-3xl {
-  filter: blur(250px); /* Điều chỉnh giá trị "blur-radius" tại đây */
 }
