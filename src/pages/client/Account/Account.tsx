@@ -494,7 +494,7 @@ const Account = () => {
                   onChange={handleChooseAvatar}
                 />
                 <label
-                  className="btn-choose-avatar btn bg-white border border-black-50 mx-2 border-1 px-4 py-2 rounded-md text-black hover:text-sky-600 hover:bg-white hover:border-sky-600"
+                  className="border-blue-400 text-blue-400 btn-choose-avatar btn bg-white border border-black-50 mx-2 border-1 px-4 py-2 rounded-md text-black hover:text-sky-600 hover:bg-sky-200 hover:border-sky-600"
                   htmlFor="avatar"
                   style={{ fontWeight: "400" }}
                 >
@@ -507,7 +507,9 @@ const Account = () => {
                     okText="Xóa"
                     onConfirm={handleDeleteAvatar}
                   >
-                    <Button className="mr-2">Xóa</Button>
+                    <Button className="mr-2 border-blue-400 text-blue-400 h-[48px]  hover:text-sky-600 hover:bg-sky-200 hover:border-sky-600">
+                      Xóa
+                    </Button>
                   </Popconfirm>
                 ) : (
                   <></>

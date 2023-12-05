@@ -52,8 +52,8 @@ const Introduce = () => {
           ]}
         />
         {/* Banner  */}
-        <div className="flex">
-          <div className="left flex-col sm:w-2/3 w-full pr-0 sm:pr-10">
+        <div className="flex banner">
+          <div className="left flex-col md:w-2/3 w-full pr-0 sm:pr-10">
             <div className="left__text__intro__client text-lg  sm:text-3xl">
               <h3 className=" font-bold">Khám phá ToothHive</h3>
               <p className="font-bold mb-7">
@@ -97,8 +97,12 @@ const Introduce = () => {
             </div>
           </div>
           {!isMobile ? (
-            <div className="right">
-              <img src={IntroduceBannerImage} alt="" />
+            <div className="right md:w-2/3">
+              <img
+                src={IntroduceBannerImage}
+                alt=""
+                className="md:w-full md:h-full object-cover rounded-lg"
+              />
             </div>
           ) : null}
         </div>
@@ -106,7 +110,7 @@ const Introduce = () => {
       {/* Reasons */}
       <div className="reasons__introduce m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[4rem]  reason">
         <div className="flex sm:flex-row flex-col">
-          <div className="left flex-col sm:w-2/5 w-full pr-0 sm:pr-10 h-[580px]">
+          <div className="left flex-col sm:w-2/5 w-full pr-0 sm:pr-10 xl:h-[536px] md:h-[636px]">
             <img
               src={IntroduceReasonImage}
               alt=""

@@ -9,7 +9,11 @@ import {
   PhoneOutlined,
   YoutubeOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { RootState, useAppDispatch } from "../../store";
+import { useSelector } from "react-redux";
+import { getAllCategory } from "../../services/managerCategory";
+import { getAllCategoryStore } from "../../store/managerCategory.services/thunkAction";
 const Footer = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isMenuOpen1, setIsMenuOpen1] = useState<boolean>(false);
@@ -70,15 +74,49 @@ const Footer = () => {
       }
     }
   });
+
+  const Appdispatch = useAppDispatch();
+  const { listCategoryActive } = useSelector(
+    (state: RootState) => state.managerCategory
+  );
+
+  const [arrCategoryActive, setArrCategoryActive] = useState<getAllCategory[]>(
+    []
+  );
+  console.log("arrCategoryActive: ", arrCategoryActive);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await Appdispatch(getAllCategoryStore());
+    };
+
+    fetchData();
+  }, []);
+  useEffect(() => {
+    if (listCategoryActive) {
+      const newCategoryList = listCategoryActive.data.slice(0, 4);
+      setArrCategoryActive(newCategoryList);
+    }
+  }, [listCategoryActive]);
+
   return (
     <div className="footer__client__toothHive">
       <div className="footer__client__toothHive__Behine">
         <div className="first__footer">
-          <div className="title__first__footer" style={{fontWeight:"bolder"}}>
-            <p>Nụ Cười Hoàn Hảo <br /> Với Tooth Hive</p>
+          <div
+            className="title__first__footer"
+            style={{ fontWeight: "bolder" }}
+          >
+            <p>
+              Nụ Cười Hoàn Hảo <br /> Với Tooth Hive
+            </p>
           </div>
           <div className="btn__first__footer">
-            <button className="booking">Liên hệ tư vấn</button>
+            <NavLink to={"/contact"} className="w-full">
+              <button className="booking justify-center">
+                <p>Liên hệ tư vấn</p>
+              </button>
+            </NavLink>
           </div>
         </div>
         <div className="content__footer pb-3">
@@ -110,16 +148,24 @@ const Footer = () => {
               />
             </div>
             <div className="box__content__footer1">
-              <p>Giới thiệu</p>
+              <NavLink to={"/introduce"} className="w-full">
+                <p>Giới thiệu</p>
+              </NavLink>
             </div>
             <div className="box__content__footer1">
-              <p>Liên hệ</p>
+              <NavLink to={"/contact"} className="w-full">
+                <p>Liên hệ</p>
+              </NavLink>
             </div>
             <div className="box__content__footer1">
-              <p>Dịch vụ</p>
+              <NavLink to={"/services"} className="w-full">
+                <p>Dịch vụ</p>
+              </NavLink>
             </div>
             <div className="box__content__footer1">
-              <p>Đội ngũ bác sĩ</p>
+              <NavLink to={"/services"} className="w-full">
+                <p>Đội ngũ bác sĩ</p>
+              </NavLink>
             </div>
           </div>
           <div className="box__content__footee1">
@@ -135,17 +181,21 @@ const Footer = () => {
                 icon={faAngleDown}
               />
             </div>
-            <div className="box__content__footer1">
-              <p>Trồng răng</p>
-            </div>
-            <div className="box__content__footer1">
-              <p>Niềng răng</p>
-            </div>
-            <div className="box__content__footer1">
-              <p>Nhổ răng</p>
-            </div>
-            <div className="box__content__footer1">
-              <p>Tẩy trắng răng</p>
+            <div>
+              {arrCategoryActive &&
+                arrCategoryActive.map((item, index) => (
+                  <div key={index} className="box__content__footer1">
+                    <NavLink
+                      to={`/detailServices/${item.category_id}`}
+                      className="w-full"
+                    >
+                      <p>
+                        {item.category_name.charAt(0).toUpperCase() +
+                          item.category_name.slice(1)}
+                      </p>
+                    </NavLink>
+                  </div>
+                ))}
             </div>
           </div>
           <div className="box__content__footee2">
@@ -176,7 +226,6 @@ const Footer = () => {
               <EnvironmentOutlined className="text-white mr-2" />
               <div>
                 <p>Địa chỉ: 237 Nguyễn Tất Thành, Quận 4, Tp.HCM </p>
-             
               </div>
             </div>
           </div>
@@ -189,12 +238,12 @@ const Footer = () => {
             </p>
           </div>
           <div className="box__the__footer">
-            <Link to={'https://www.facebook.com/nhakhoatoothhive'}>
-            <FacebookOutlined className="text-2xl"/>
+            <Link to={"https://www.facebook.com/nhakhoatoothhive"}>
+              <FacebookOutlined className="text-2xl" />
             </Link>
-           
-            <YoutubeOutlined className="text-2xl"/>
-            <MailOutlined className="text-2xl"/>
+
+            <YoutubeOutlined className="text-2xl" />
+            <MailOutlined className="text-2xl" />
           </div>
         </div>
       </div>

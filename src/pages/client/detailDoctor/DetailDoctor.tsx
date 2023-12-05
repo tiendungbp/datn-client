@@ -84,15 +84,15 @@ const DetailDoctor = () => {
           />
         </div>
         <div className="content_right mt-24">
-          <h1 className=" font-bold text-2xl text-blue-500">
+          <h1 className=" font-bold text-base md:text-2xl text-blue-500">
             Bác sĩ {aDoctor?.fullname}
           </h1>
-          <p className="mt-3 text-xl font-normal">
+          <p className="mt-3 text-sm md:text-base font-normal">
             “ Mỗi khách hàng đối với tôi như người anh, chị, em trong gia đình.
             Luôn mang đến cho họ những dịch vụ với kết quả tốt nhất là điều tôi
             hằng tâm niệm”
           </p>
-          <div className="text-xl mt-5">
+          <div className="text-sm md:text-base mt-5">
             <li>Bác sĩ Răng Hàm Mặt – Đại Học Y Dược TP Hồ Chí Minh 1996</li>
             <li>
               Chứng chỉ: Đào Tạo Implant Nha Khoa – Bệnh Viện Răng Hàm Mặt Trung
@@ -112,9 +112,9 @@ const DetailDoctor = () => {
           </div>
         </div>
       </div>
-      <div className="bottom_detailDoctor mt-24 mb-20 flex-wrap">
+      <div className="bottom_detailDoctor my-10 flex-wrap">
         <Row>
-          <Col md={6} xs={24}>
+          <Col md={6} xs={24} className="mb-8">
             <span className="flex items-center mb-4 font-semibold text-lg">
               <img src="./img/Group 232.png" alt="" />
               Danh mục điều trị của bác sĩ
@@ -125,7 +125,7 @@ const DetailDoctor = () => {
                   return (
                     <tr key={index}>
                       <td>{index + 1}</td>
-                      <td className="capitalize text-blue-600">
+                      <td className="capitalize text-blue-600 text-sm md:text-base">
                         <Link to={`/detailServices/${item.category_id}`}>
                           {CommonUtils.capitalizeEachWord(item.category_name)}
                         </Link>
@@ -136,7 +136,7 @@ const DetailDoctor = () => {
               </tbody>
             </table>
           </Col>
-          <Col md={6} xs={24} className="text-lg font-normal">
+          <Col md={6} xs={24} className="md:text-base text-sm font-normal">
             <span className="flex items-center font-semibold text-lg">
               <img src="./img/Group 236.png" alt="" />
               Địa chỉ và thời gian làm việc

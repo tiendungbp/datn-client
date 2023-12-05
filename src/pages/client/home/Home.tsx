@@ -20,6 +20,10 @@ import Banner from "../../../assets/img/banner.png";
 import { Rate } from "antd";
 import CategoryServiceCarousel from "./CategoryServiceCarousel/CategoryServiceCarousel";
 import "./Home.scss";
+import { RootState, useAppDispatch } from "../../../store";
+import { useSelector } from "react-redux";
+import { getAllDoctor } from "../../../services/managerDoctor";
+import { getAllDoctorStore } from "../../../store/managerDoctor.services/thunkAction";
 // import Top5Services from "./Top5Services/Top5Services";
 
 const slides = [
@@ -148,6 +152,24 @@ const Home = () => {
     };
   }, []);
 
+  const Appdispatch = useAppDispatch();
+  const { listDoctor } = useSelector((state: RootState) => state.managerDoctor);
+
+  const [arrDoctor, setArrDoctor] = useState<getAllDoctor[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await Appdispatch(getAllDoctorStore());
+    };
+
+    fetchData();
+  }, []);
+  useEffect(() => {
+    if (listDoctor) {
+      setArrDoctor(listDoctor.data);
+    }
+  }, [listDoctor]);
+
   return (
     <>
       <div className="home__client  lg:mt-[1rem] ">
@@ -199,8 +221,8 @@ const Home = () => {
                 Đánh bay sâu, giữ vững{" "}
                 <span className="text-[#157FEC]">nụ cười</span>
               </h1>
-              <div className=" flex flex-col gap-4">
-                <h2 className="text-[1.2rem] md:text-[1.5rem] lg:text-[2rem] font-medium text-[#1386ED]">
+              <div className=" flex flex-col gap-8">
+                <h2 className="text-[1.2rem] md:text-[1.5rem] lg:text-[2rem] font-bold text-[#1386ED]">
                   Đến với ToothHive
                 </h2>
                 <div className="flex gap-4  items-center">
@@ -208,7 +230,7 @@ const Home = () => {
                     icon={faUserTag}
                     className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
                   />
-                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
                     Sự chăm sóc nhiệt tình
                   </p>
                 </div>
@@ -217,7 +239,7 @@ const Home = () => {
                     icon={faPeopleGroup}
                     className="bg-[#BCDDFF] p-3 text-[1.2rem] md:text-[1.5rem]  rounded-[8px] text-[#1386ED]"
                   />
-                  <p className="font-normal text-[1.1rem] md:text-[1.4rem] lg:text-[1.4rem]">
+                  <p className="font-normal text-sm md:text-[1.4rem] lg:text-[1.4rem]">
                     Đội ngũ nhân viên chuyên nghiệp
                   </p>
                 </div>
@@ -270,7 +292,7 @@ const Home = () => {
         <div className=" m-auto w-wd-primary md:w-wd-secondary my-8">
           <div className=" w-full my-12 grid md:grid-cols-2 gap-4">
             <div className="flex justify-center items-center relative">
-              {dataWatchDetailDoctor.map(
+              {arrDoctor.map(
                 (item, i) =>
                   isChooseDoctor === i && (
                     <div
@@ -279,8 +301,8 @@ const Home = () => {
                     >
                       <div className="absolute bottom-0 h-[120%] cursor-pointer ">
                         <motion.img
-                          src={item.image}
-                          alt={item.name}
+                          src={item.avatar}
+                          alt={item.fullname}
                           className="h-full object-cover"
                           onClick={() =>
                             setIsShoChooseListDoctor(!isShowChooseListDoctor)
@@ -306,21 +328,21 @@ const Home = () => {
                       className="text-3xl text-blue-500"
                     />
                   </div>
-                  {dataWatchDetailDoctor.map(
+                  {arrDoctor.map(
                     (item, index) =>
                       isChooseDoctor === index && (
                         <div className="">
                           <h1 className="font-bold text-[#143566] text-[1.2rem]">
-                            {item.name}
+                            {item.fullname}
                           </h1>
                           <span className="text-[0.9rem] text-gray-500">
-                            {item.position}
+                            {item.degree}
                           </span>
                         </div>
                       )
                   )}
                   <div className="mt-4">
-                    {dataWatchDetailDoctor.map(
+                    {arrDoctor.map(
                       (item, index) =>
                         isChooseDoctor !== index && (
                           <div className=" mb-4 p-2 rounded-lg flex flex-col gap-2 relative hover:bg-[#DCEDFF] w-full duration-150">
@@ -334,14 +356,14 @@ const Home = () => {
                               >
                                 <div className="w-[4rem] h-[4rem] rounded-full overflow-hidden items-center border border-blue-500">
                                   <img
-                                    src={item.image}
-                                    alt={item.name}
+                                    src={item.avatar}
+                                    alt={item.fullname}
                                     className="w-full h-full object-cover "
                                   />
                                 </div>
                                 <div>
-                                  <h1>{item.name}</h1>
-                                  <span>{item.position}</span>
+                                  <h1>{item.fullname}</h1>
+                                  <span>{item.degree}</span>
                                 </div>
                               </div>
                             </div>
@@ -379,41 +401,29 @@ const Home = () => {
                 </h1>
               </div>
 
-              {dataWatchDetailDoctor.map(
-                (item, index) =>
-                  isChooseDoctor === index && (
-                    <>
-                      <p className="text-[#143566] leading-9 text-sm md:text-sm lg:text-[1.2rem]">
-                        {item.description}
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <FontAwesomeIcon
-                          icon={faCalendar}
-                          className="text-[#1386ED]"
-                        />
-                        <p className="font-medium text-sm md:text-base">
-                          Hoạt động: {item.schedule}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <FontAwesomeIcon
-                          icon={faTrophy}
-                          className="text-[#1386ED]"
-                        />
-                        <p className="font-medium text-sm md:text-base">
-                          {item.experience}
-                        </p>
-                      </div>
-                      <div>
+              {arrDoctor &&
+                arrDoctor.map(
+                  (item, index) =>
+                    isChooseDoctor === index && (
+                      <>
+                        {item.html ? (
+                          <div
+                            className="text-[#143566] leading-9 text-sm lg:text-[1.2rem] detailDoctor"
+                            dangerouslySetInnerHTML={{ __html: item.html }}
+                          ></div>
+                        ) : (
+                          <p>Hiện chưa có mô tả của bác sĩ này !</p>
+                        )}
+
                         <NavLink to={"/detailDoctor"}>
                           <button className="bg-[#1386ed] px-8 py-3 rounded-[30px] text-white booking">
                             Xem chi tiết
                           </button>
                         </NavLink>
-                      </div>
-                    </>
-                  )
-              )}
+                        {/* </div> */}
+                      </>
+                    )
+                )}
             </div>
           </div>
         </div>
@@ -475,7 +485,7 @@ const Home = () => {
                       <Rate disabled defaultValue={4} />
                     </div>
                   </div>
-                  <div className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
+                  <div className="line-clamp-3 overflow-ellipsis leading-[1.8rem] text-xs md:text-base">
                     {item.content}
                   </div>
                   <div className="flex gap-4 items-center ">

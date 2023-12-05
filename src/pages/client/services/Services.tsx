@@ -49,7 +49,7 @@ const Services = () => {
   return (
     <div className="services__client m-auto w-wd-primary md:w-wd-secondary lg:mt-[1rem] sm:mt-[0rem] md:mt-[0rem] xl:mt-[1rem]">
       <Breadcrumb
-        className={`title__services__client text-base mb-8 md:text-sm text-xs`}
+        className={`title__services__client text-base md:text-sm text-xs`}
         items={[
           {
             title: <a href="/">Trang chủ</a>,
@@ -61,7 +61,7 @@ const Services = () => {
       />
       {/*start category service*/}
       <div>
-        <div className="py-2  text-center ">
+        <div className="py-8 text-center">
           <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
             Các danh mục dịch vụ tại ToothHive
           </h1>
@@ -69,7 +69,11 @@ const Services = () => {
             Tại ToothHive sẽ cung cấp cho các bạn những dịch vụ tốt nhất
           </p>
         </div>
-        <Spin tip="Đang tải..." spinning={isLoadingCategory}>
+        <Spin
+          tip="Đang tải..."
+          spinning={isLoadingCategory}
+          className="justify-between"
+        >
           <Row gutter={16}>
             {categoryList.map((category, index) => {
               return <CategoryCard key={index} category={category} />;
@@ -80,7 +84,7 @@ const Services = () => {
       {/* end category service */}
 
       {/*start doctor*/}
-      <div>
+      <div className="mb-10">
         <div className="mt-4 py-8  text-center">
           <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
             Đội ngũ bác sĩ tại ToothHive
@@ -125,102 +129,6 @@ const Services = () => {
         </Spin>
       </div>
       {/* end doctor */}
-
-      {/*start map*/}
-      <div className="mb-[2rem] md:mb-[3rem] ">
-        <div className="mt-4 py-8  text-center">
-          <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
-            Hệ Thống Nha Khoa ToothHive
-          </h1>
-          <p className="text-sm text-gray-500">
-            Tại ToothHive sẽ có các chi nhánh về các địa điểm khác nhau
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-8  ">
-          <div className="bg-white box-shadow rounded-lg  flex flex-col gap-4 l">
-            <div className="w-ful flex gap-2">
-              <div className="w-[35%] h-[12rem] ">
-                <img
-                  src={Image_map}
-                  alt=""
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="w-[65%]  flex flex-col gap-4 py-4 px-2">
-                <h1 className="font-bold ">Cơ sở 1</h1>
-                <span>237 Nguyễn Tất Thành, Quận 5, Tp.HCM</span>
-                <Link to="/" className="flex items-center gap-2 text-[#1386ED]">
-                  {" "}
-                  <span>Tới Link map </span>
-                  <FontAwesomeIcon icon={faArrowRight} />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white box-shadow rounded-lg  flex flex-col gap-4 l">
-            <div className="w-ful flex gap-2">
-              <div className="w-[35%] h-[12rem] ">
-                <img
-                  src={Image_map}
-                  alt=""
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="w-[65%]  flex flex-col gap-4 py-4 px-2">
-                <h1 className="font-bold ">Cơ sở 1</h1>
-                <span>237 Nguyễn Tất Thành, Quận 5, Tp.HCM</span>
-                <Link to="/" className="flex items-center gap-2 text-[#1386ED]">
-                  {" "}
-                  <span>Tới Link map </span>
-                  <FontAwesomeIcon icon={faArrowRight} />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white box-shadow rounded-lg  flex flex-col gap-4 l">
-            <div className="w-ful flex gap-2">
-              <div className="w-[35%] h-[12rem] ">
-                <img
-                  src={Image_map}
-                  alt=""
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="w-[65%]  flex flex-col gap-4 py-4 px-2">
-                <h1 className="font-bold ">Cơ sở 1</h1>
-                <span>237 Nguyễn Tất Thành, Quận 5, Tp.HCM</span>
-                <Link to="/" className="flex items-center gap-2 text-[#1386ED]">
-                  {" "}
-                  <span>Tới Link map </span>
-                  <FontAwesomeIcon icon={faArrowRight} />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white box-shadow rounded-lg  flex flex-col gap-4 l">
-            <div className="w-ful flex gap-2">
-              <div className="w-[35%] h-[12rem] ">
-                <img
-                  src={Image_map}
-                  alt=""
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="w-[65%]  flex flex-col gap-4 py-4 px-2">
-                <h1 className="font-bold ">Cơ sở 1</h1>
-                <span>237 Nguyễn Tất Thành, Quận 5, Tp.HCM</span>
-                <Link to="/" className="flex items-center gap-2 text-[#1386ED]">
-                  {" "}
-                  <span>Tới Link map </span>
-                  <FontAwesomeIcon icon={faArrowRight} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* end map */}
     </div>
   );
 };

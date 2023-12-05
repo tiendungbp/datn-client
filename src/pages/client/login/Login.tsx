@@ -133,7 +133,7 @@ const Login = () => {
                   <Input.Password
                     size="large"
                     placeholder="Mật khẩu"
-                    visibilityToggle={false}
+                    visibilityToggle={true}
                   />
                 </Form.Item>
                 <Form.Item>

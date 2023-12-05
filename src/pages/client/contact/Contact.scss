@@ -64,32 +64,6 @@
   }
 }
 
-@media screen and (max-width: 1080px) {
-  .contact__client {
-    .my-12 {
-      margin-top: 10px;
-    }
-    .w-wd-primary {
-      width: 94%;
-    }
-    .myImage {
-      height: 300px;
-      img {
-        width: 80%;
-        height: 100%;
-      }
-    }
-    .flex {
-      width: 100%;
-      .left {
-        max-width: 100%;
-      }
-      .right {
-        width: 100%;
-      }
-    }
-  }
-}
 @media screen and (max-width: 500px) {
   .contact__client {
     .contact {
@@ -105,9 +79,6 @@
         }
       }
     }
-    // .my-12{
-    //   margin: 0px 6px;
-    // }
     .w-wd-primary {
       width: 92%;
     }

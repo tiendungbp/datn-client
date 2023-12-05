@@ -2,8 +2,23 @@
   .textColor {
     color: #1386ed;
   }
-  img {
-    // margin: 15px 0;
+  .banner {
+    max-width: 100%;
+    .left {
+      width: 100%;
+    }
+    .right {
+      width: 45%;
+    }
+  }
+  .reasons__introduce {
+    max-width: 100%;
+    .left {
+      width: 100%;
+    }
+    .right {
+      width: 100%;
+    }
   }
   .toggle-title {
     img {
@@ -44,8 +59,40 @@
     }
   }
 }
+@media screen and (max-width: 1080px) {
+  .introduce__client {
+    .data {
+      height: 380px;
+    }
+    .w-wd-primary {
+      width: 94%;
+    }
+    .banner {
+      max-width: 100%;
+      .left {
+        width: 100%;
+        max-width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+    .reasons__introduce {
+      max-width: 100%;
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+    .flex {
+      max-width: 100%;
+    }
+  }
+}
 
-@media screen and (max-width: 1080px), screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .introduce__client {
     .mt-6 {
       margin-top: 10px;

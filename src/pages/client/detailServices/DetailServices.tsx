@@ -110,7 +110,7 @@ const DetailServices = () => {
         <h1 className=" capitalize font-bold text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] py-2  text-[#1386ED] ">
           {category?.category_name}
         </h1>
-        <span className='text-1rem md <Table columns={columns} dataSource={data} size="middle" />:text-[1.1rem] lg:text-[1.2rem] leading-9'>
+        <span className="text-sm md:text-base leading-9">
           Bọc răng sứ thẩm mỹ là kỹ thuật phục hình cố định bằng vật liệu sứ có
           vai trò phục hồi chức năng ăn nhai, cải thiện thẩm mỹ giúp bạn tự tin
           với nụ cười rạng rỡ tự nhiên. Những thắc mắc về Bọc răng sứ có đau
@@ -146,7 +146,7 @@ const DetailServices = () => {
               {category?.category_name}
             </h2>
           </div>
-          <div style={{ backgroundColor: "#eff5ff" }}>
+          <div>
             <div className="container pt-5">
               <div className="row">
                 <div className="col-md">

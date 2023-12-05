@@ -102,7 +102,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full md:w-[60%] md:h-[100vh] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white">
+        <div className=" w-full md:w-[60%] md:h-[100vh] h-full flex flex-col p-8 md:p-12 lg:p-16 xl:p-[6rem] bg-white">
           <h1 className=" text-lg md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap ">
             Đăng ký tài khoản Tooth<span className="text-[#1386ED]">Hive</span>
           </h1>
@@ -218,7 +218,7 @@ const Register = () => {
                       <Input.Password
                         size="large"
                         placeholder="Mật khẩu (6 - 20 ký tự)"
-                        visibilityToggle={false}
+                        visibilityToggle={true}
                       />
                     </Form.Item>
                   </Col>

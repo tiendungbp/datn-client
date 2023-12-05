@@ -67,12 +67,10 @@ const CategoryServiceCarousel = ({
 
   useEffect(() => {
     const fetchData = async () => {
-      // Gửi yêu cầu lấy danh sách danh mục
       await Appdispatch(getAllCategoryStore());
     };
 
-    fetchData(); // Gọi hàm fetchData khi component được render
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    fetchData();
   }, []);
   useEffect(() => {
     if (listCategory) {
@@ -126,22 +124,7 @@ const CategoryServiceCarousel = ({
     }
 
     setGroupedItems(newGroupedItems);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [arrCategory, windowWidth]);
-  // TẠM CHƯA CÓ API ĐỂ TRỐNG
-  // useEffect(() => {
-  //   if (listCategory) {
-  //     // Thêm trường "description" cho mỗi phần tử trong mảng
-  //     const updatedCategory = listCategory.map((category, index) => {
-  //       return {
-  //         ...category,
-  //         description: arrDescriptions[index].description,
-  //       };
-  //     });
-
-  //     setArrCategory(updatedCategory);
-  //   }
-  // }, [listCategory]);
   return (
     <>
       {groupedItems.length !== 0 && (
@@ -172,7 +155,8 @@ const CategoryServiceCarousel = ({
                               }}
                             />
                             <h3 className="font-bold text-[1.2rem]">
-                              {item.category_name}
+                              {item.category_name.charAt(0).toUpperCase() +
+                                item.category_name.slice(1)}
                             </h3>
                           </div>
                           <p className="line-clamp-3 overflow-ellipsis leading-[1.8rem]">
