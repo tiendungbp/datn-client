@@ -13,7 +13,10 @@ import { Link, NavLink } from "react-router-dom";
 import { RootState, useAppDispatch } from "../../store";
 import { useSelector } from "react-redux";
 import { getAllCategory } from "../../services/managerCategory";
-import { getAllCategoryStore } from "../../store/managerCategory.services/thunkAction";
+import {
+  getAllCategoryService,
+  getAllCategoryStore,
+} from "../../store/managerCategory.services/thunkAction";
 const Footer = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isMenuOpen1, setIsMenuOpen1] = useState<boolean>(false);
@@ -87,7 +90,7 @@ const Footer = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await Appdispatch(getAllCategoryStore());
+      await Appdispatch(getAllCategoryService());
     };
 
     fetchData();

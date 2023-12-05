@@ -23,7 +23,10 @@ import "./Home.scss";
 import { RootState, useAppDispatch } from "../../../store";
 import { useSelector } from "react-redux";
 import { getAllDoctor } from "../../../services/managerDoctor";
-import { getAllDoctorStore } from "../../../store/managerDoctor.services/thunkAction";
+import {
+  getAllDoctorService,
+  getAllDoctorStore,
+} from "../../../store/managerDoctor.services/thunkAction";
 // import Top5Services from "./Top5Services/Top5Services";
 
 const slides = [
@@ -159,7 +162,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await Appdispatch(getAllDoctorStore());
+      await Appdispatch(getAllDoctorService());
     };
 
     fetchData();
