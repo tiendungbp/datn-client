@@ -140,7 +140,9 @@ const Home = () => {
               <div className="md:w-full">
                 <div className=" right-0 w-full  relative ">
                   <img
-                    src={Banner}
+                    src={
+                      "https://cdn.nhathuoclongchau.com.vn/unsafe/800x0/filters:quality(95)/https://cms-prod.s3-sgn09.fptcloud.com/bi_can_thi_co_nen_uong_dau_ca_5_1_a3b97ec589.jpg"
+                    }
                     alt=""
                     className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
                   />

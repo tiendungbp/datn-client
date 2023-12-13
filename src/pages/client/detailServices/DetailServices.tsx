@@ -86,7 +86,7 @@ const DetailServices = () => {
         }))
     : [];
   return (
-    <div className="m-auto w-wd-primary md:w-wd-secondary mt-12 lg:mt-[1rem]">
+    <div className="m-auto w-wd-primary md:w-wd-secondary lg:mt-[1rem] services__client ">
       <Breadcrumb
         className={`md:text-sm text-xs`}
         items={[

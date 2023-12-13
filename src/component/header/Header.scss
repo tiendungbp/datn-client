@@ -473,6 +473,12 @@
                 background: #1386ed;
                 transition: 0.5s;
               }
+              .bookingBtn {
+                order: 2;
+              }
+              .dropdownBtn {
+                order: 1;
+              }
             }
           }
         }

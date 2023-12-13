@@ -60,7 +60,7 @@ const DetailDoctor = () => {
   return (
     <div className="container_detailDoctor m-auto">
       <Breadcrumb
-        className={`md:text-sm text-xs mt-4`}
+        className={`md:text-sm text-xs`}
         items={[
           {
             title: <NavLink to={"/"}>Trang chủ</NavLink>,

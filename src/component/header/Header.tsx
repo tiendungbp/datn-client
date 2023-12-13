@@ -43,17 +43,31 @@ const Header = () => {
   const items: MenuProps["items"] = [
     {
       label: (
-        <Button className="border-0 w-full mt-2 flex items-start">
-          <Link to={"/quan-ly-tai-khoan"}>Quản lý tài khoản</Link>
-        </Button>
+        <Link
+          to={"/quan-ly-tai-khoan"}
+          onClick={() => {
+            handleSubmitMenu();
+          }}
+        >
+          <Button className="border-0 w-full mt-2 flex items-start">
+            Quản lý tài khoản
+          </Button>
+        </Link>
       ),
       key: "0",
     },
     {
       label: (
-        <Button className="border-0 w-full mt-2 flex items-start">
-          <Link to={"/quan-ly-lich-hen"}>Quản lý lịch hẹn</Link>
-        </Button>
+        <Link
+          to={"/quan-ly-lich-hen"}
+          onClick={() => {
+            handleSubmitMenu();
+          }}
+        >
+          <Button className="border-0 w-full mt-2 flex items-start">
+            Quản lý lịch hẹn
+          </Button>
+        </Link>
       ),
       key: "1",
     },
@@ -139,120 +153,107 @@ const Header = () => {
           </div>
           <div className="box__reponsive__nav ">
             <div className="box__reponsive__nav1">
-              {windowWidth < 1025 && user && (
-                <div className="dropdownWelcome my-5 mx-auto lg:w-1/2">
-                  <Dropdown menu={{ items }} trigger={["click"]}>
-                    <Link to={"/"} onClick={(e) => e.preventDefault()}>
-                      <Button
-                        style={{
-                          height: "43px",
-                          width: "100%",
-                          borderRadius: "32px",
-                        }}
-                      >
-                        <Space className="">
-                          Xin chào, {user.fullname}
-                          <DownOutlined />
-                        </Space>
-                      </Button>
-                    </Link>
-                  </Dropdown>
-                </div>
-              )}
-
               <div className="header__box2">
                 <div className="header__box2__notification">
-                  <div className="box__text">
-                    <p
-                      onClick={() => {
-                        handleSubmitMenu();
-                      }}
-                    >
-                      <NavLink to={"/"}>Trang chủ</NavLink>
-                    </p>
-                  </div>
-                  <div className="box__text">
-                    <p
-                      onClick={() => {
-                        handleSubmitMenu();
-                      }}
-                    >
-                      <NavLink to={"/services"}>Dịch vụ</NavLink>
-                    </p>
-                  </div>
-                  <div className="box__text">
-                    <p
-                      onClick={() => {
-                        handleSubmitMenu();
-                      }}
-                    >
-                      <NavLink to={"/priceList"}>Bảng giá</NavLink>
-                    </p>
-                  </div>
-                  <div className="box__text">
-                    <p
-                      onClick={() => {
-                        handleSubmitMenu();
-                      }}
-                    >
-                      <NavLink to={"/introduce"}>Giới thiệu</NavLink>
-                    </p>
-                  </div>
-                  <div className="box__text">
-                    <p
-                      onClick={() => {
-                        handleSubmitMenu();
-                      }}
-                    >
-                      <NavLink to={"/contact"}>Liên hệ</NavLink>
-                    </p>
-                  </div>
+                  <NavLink to={"/"}>
+                    <div className="box__text">
+                      <p
+                        onClick={() => {
+                          handleSubmitMenu();
+                        }}
+                      >
+                        Trang chủ
+                      </p>
+                    </div>
+                  </NavLink>
+                  <NavLink to={"/services"}>
+                    <div className="box__text">
+                      <p
+                        onClick={() => {
+                          handleSubmitMenu();
+                        }}
+                      >
+                        Dịch vụ
+                      </p>
+                    </div>
+                  </NavLink>
+                  <NavLink to={"/priceList"}>
+                    <div className="box__text">
+                      <p
+                        onClick={() => {
+                          handleSubmitMenu();
+                        }}
+                      >
+                        Bảng giá
+                      </p>
+                    </div>
+                  </NavLink>
+                  <NavLink to={"/introduce"}>
+                    <div className="box__text">
+                      <p
+                        onClick={() => {
+                          handleSubmitMenu();
+                        }}
+                      >
+                        Giới thiệu
+                      </p>
+                    </div>
+                  </NavLink>
+                  <NavLink to={"/contact"}>
+                    <div className="box__text">
+                      <p
+                        onClick={() => {
+                          handleSubmitMenu();
+                        }}
+                      >
+                        Liên hệ
+                      </p>
+                    </div>
+                  </NavLink>
                 </div>
               </div>
               <div className="header__box3">
-                <NavLink to={"/dat-lich"} className="w-full">
+                <NavLink to={"/dat-lich"} className="w-full bookingBtn">
                   <button className="booking justify-center">
-                    <p>Đặt lịch</p>
+                    <p
+                      onClick={() => {
+                        handleSubmitMenu();
+                      }}
+                    >
+                      Đặt lịch
+                    </p>
                   </button>
                 </NavLink>
-                {windowWidth > 1025 ? (
-                  <>
-                    {user ? (
-                      <Dropdown menu={{ items }} trigger={["click"]}>
-                        <Link to={"/"} onClick={(e) => e.preventDefault()}>
-                          <Button
-                            style={{
-                              height: "43px",
-                              width: "100%",
-                              borderRadius: "32px",
-                            }}
-                          >
-                            <Space>
-                              {`Xin chào, ${user.fullname}`}
-                              <DownOutlined />
-                            </Space>
-                          </Button>
-                        </Link>
-                      </Dropdown>
-                    ) : (
-                      <NavLink to={"/login"} className="w-full">
-                        <button className="booking bgBlue justify-center">
-                          Đăng nhập
-                        </button>
-                      </NavLink>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    {!user && (
-                      <NavLink to="/login" className="w-full">
-                        <button className="booking bgBlue justify-center">
-                          Đăng nhập
-                        </button>
-                      </NavLink>
-                    )}
-                  </>
-                )}
+                <>
+                  {user ? (
+                    <Dropdown
+                      menu={{ items }}
+                      trigger={["click"]}
+                      className="w-full dropdownBtn"
+                    >
+                      <Link to={"/"} onClick={(e) => e.preventDefault()}>
+                        <Button
+                          style={{
+                            height: "43px",
+                            width: "100%",
+                            borderRadius: "32px",
+                          }}
+                        >
+                          <Space>
+                            {`Xin chào, ${user.fullname}`}
+                            <DownOutlined />
+                          </Space>
+                        </Button>
+                      </Link>
+                    </Dropdown>
+                  ) : (
+                    <NavLink to={"/login"} className="w-full">
+                      <button className="booking bgBlue justify-center">
+                        Đăng nhập
+                      </button>
+                    </NavLink>
+                  )}
+                </>
               </div>
             </div>
           </div>

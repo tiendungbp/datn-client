@@ -62,7 +62,7 @@ const Services = () => {
       {/*start category service*/}
       <div>
         <div className="py-8 text-center">
-          <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
+          <h1 className="text-[#1386ED] font-bold text-lg md:text-[1.5rem] lg:text-[1.7rem]">
             Các danh mục dịch vụ tại ToothHive
           </h1>
           <p className="text-sm text-gray-500">
@@ -85,8 +85,8 @@ const Services = () => {
 
       {/*start doctor*/}
       <div className="mb-10">
-        <div className="mt-4 py-8  text-center">
-          <h1 className="text-[#1386ED] font-bold sm:text-lg md:text-[1.5rem] lg:text-[1.7rem]">
+        <div className="mt-4 py-8 text-center">
+          <h1 className="text-[#1386ED] font-bold text-lg md:text-[1.5rem] lg:text-[1.7rem]">
             Đội ngũ bác sĩ tại ToothHive
           </h1>
           <p className="text-sm text-gray-500">
@@ -104,7 +104,10 @@ const Services = () => {
                   className="wow fadeInUp w-full"
                   data-wow-delay="0.1s"
                 >
-                  <div className="team-item relative rounded overflow-hidden">
+                  <div
+                    className="team-item relative rounded overflow-hidden my-3"
+                    style={{ boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 7px" }}
+                  >
                     <div className="overflow-hidden">
                       <img
                         className="w-full mt-5"
