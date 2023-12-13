@@ -213,15 +213,15 @@ const Header = () => {
                 </div>
               </div>
               <div className="header__box3">
-                <NavLink to={"/dat-lich"} className="w-full bookingBtn">
+                <NavLink
+                  to={"/dat-lich"}
+                  className="w-full bookingBtn"
+                  onClick={() => {
+                    handleSubmitMenu();
+                  }}
+                >
                   <button className="booking justify-center">
-                    <p
-                      onClick={() => {
-                        handleSubmitMenu();
-                      }}
-                    >
-                      Đặt lịch
-                    </p>
+                    <p>Đặt lịch</p>
                   </button>
                 </NavLink>
                 <>
