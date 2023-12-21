@@ -152,13 +152,7 @@
       background-color: transparent;
       transition: background-color 0.3s ease;
       .header__box__setting {
-        margin: 0 auto;
-        height: 100%;
-        width: 90%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center !important;
+        
         .header__box1 {
           height: 30px;
           img {
@@ -167,7 +161,7 @@
           }
         }
         .box__reponsive__nav {
-          width: 90% !important;
+          width: 70% ;
           align-items: center;
           .box__reponsive__nav1 {
             display: flex;
@@ -268,6 +262,114 @@
     }
   }
 }
+@media screen and (max-width: 1280px) {
+  .header__nav {
+    height: 60px;
+    .header__box {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      .header__box__setting {
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        display: block;
+        .header__box1 {
+          height: 22px;
+          width: 151px;
+        }
+        .reponsive__logo__navbars {
+          padding-top: 14px;
+          width: 94%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .menu__nav {
+            display: block;
+            padding-top: 6px;
+            cursor: pointer;
+            .menu__icon__sm__ls {
+              font-size: 22px;
+            }
+          }
+        }
+        .box__reponsive__nav {
+          width: 90% !important;
+          height: 100vh;
+          overflow: hidden;
+          transition: height 0.5s ease;
+          .box__reponsive__nav1 {
+            height: 57vh;
+
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px 20px 20px;
+            margin-top: 14px;
+            background-color: #f5f4f4;
+            backdrop-filter: blur(5px); /* Điều chỉnh độ mờ tùy ý */
+            transition: backdrop-filter 0.3s ease;
+            .header__box2 {
+              display: flex;
+              width: 100%;
+              padding-bottom: 20px;
+              border-bottom: solid 1px #e7dfdf;
+              .header__box2__notification {
+                width: 100% !important;
+                display: flex;
+                flex-direction: column;
+                .box__text {
+                  padding: 10px 20px 10px 4px;
+                  margin-left: 0px !important;
+                  width: 100% !important;
+                  opacity: 0.9;
+                  text-align: left;
+                  p {
+                    width: 100% !important;
+                  }
+                }
+                .box__text:hover {
+                  background-color: #ebeaea;
+                }
+              }
+            }
+            .header__box3 {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              text-align: center;
+              margin-top: 20px;
+              .booking {
+                width: 100%;
+                border-radius: 30px;
+                height: 42px;
+                border: solid 1px #1386ed;
+                padding: 15px 35px;
+                color: #1386ed;
+                a {
+                  width: 100%;
+                  p {
+                    font-size: 16px;
+                    width: 100%;
+                    text-align: center;
+                  }
+                }
+              }
+              .booking:nth-child(2) {
+                color: #fff;
+                background: #1386ed;
+                transition: 0.5s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1080px) {
   .header__nav {
     height: 60px;
@@ -276,6 +378,7 @@
       display: flex;
       align-items: center;
       .header__box__setting {
+        justify-content: space-between;
         width: 100%;
         height: 60px;
         display: block;

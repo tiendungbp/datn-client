@@ -90,7 +90,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleScroll = () => {
+  const handleScroll = () => { 
     const currentScrollY: number = window.scrollY;
     setscrollY(currentScrollY);
   };
