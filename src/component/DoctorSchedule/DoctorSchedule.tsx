@@ -289,6 +289,7 @@ export default function DoctorSchedule(props: any) {
 						</div>
 					</Spin>
 					<Modal
+						forceRender
 						open={isOpen}
 						onCancel={() => {
 							setIsOpen(false);

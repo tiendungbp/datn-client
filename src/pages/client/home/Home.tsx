@@ -228,7 +228,7 @@ const Home = () => {
 									{arrDoctor.map(
 										(item, index) =>
 											isChooseDoctor === index && (
-												<div className="">
+												<div className="" key={index}>
 													<h1 className="font-bold text-[#143566] text-[1.2rem]">
 														{item.fullname}
 													</h1>
@@ -242,7 +242,10 @@ const Home = () => {
 										{arrDoctor.map(
 											(item, index) =>
 												isChooseDoctor !== index && (
-													<div className=" mb-4 p-2 rounded-lg flex flex-col gap-2 relative hover:bg-[#DCEDFF] w-full duration-150">
+													<div
+														className=" mb-4 p-2 rounded-lg flex flex-col gap-2 relative hover:bg-[#DCEDFF] w-full duration-150"
+														key={index}
+													>
 														<div className="">
 															<div
 																className="flex gap-4"
@@ -306,6 +309,7 @@ const Home = () => {
 												{item.html ? (
 													<div
 														className="text-[#143566] leading-9 text-sm lg:text-[1.2rem] detailDoctor"
+														key={index}
 														dangerouslySetInnerHTML={{ __html: item.html }}
 													></div>
 												) : (
