@@ -15,7 +15,6 @@ import { useSelector } from "react-redux";
 import { getAllCategory } from "../../services/managerCategory";
 import {
   getAllCategoryService,
-  getAllCategoryStore,
 } from "../../store/managerCategory.services/thunkAction";
 const Footer = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -92,8 +91,8 @@ const Footer = () => {
     const fetchData = async () => {
       await Appdispatch(getAllCategoryService());
     };
-
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (listCategoryActive) {
@@ -236,7 +235,7 @@ const Footer = () => {
         <div className="the__end__footer">
           <div className="box__the__footer">
             <p className="text-white">
-              @ 2022 ToothHive - Nụ cười hoàn hảo và sức khỏe răng miệng hàng
+              @ 2023 ToothHive - Nụ cười hoàn hảo và sức khỏe răng miệng hàng
               đầu
             </p>
           </div>

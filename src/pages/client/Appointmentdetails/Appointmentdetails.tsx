@@ -401,33 +401,37 @@ const Appointmentdetails = () => {
 												</h5>
 												<div className="flex">
 													<div className="left-content mr-3">
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Mã lịch hẹn:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Loại:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Ngày hẹn:</b>
 														</p>
-														<p className='mb-3'> 
+														<p className="mb-3">
 															<b className="text-black">Ca khám:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Người duyệt:</b>
 														</p>
 													</div>
 													<div className="right-content">
-														<p className='mb-3'>{appointment?.appointment_id.toUpperCase()}</p>
-														<p className='mb-3'>{appointment?.Type.type_name}</p>
-														<p className='mb-3'>
+														<p className="mb-3">
+															{appointment?.appointment_id.toUpperCase()}
+														</p>
+														<p className="mb-3">
+															{appointment?.Type.type_name}
+														</p>
+														<p className="mb-3">
 															<b className="text-blue-500">
 																{moment(
 																	appointment?.DoctorSchedule.Schedule.date,
 																).format('DD-MM-YYYY')}
 															</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-blue-500">
 																{
 																	appointment?.DoctorSchedule.Schedule.Session
@@ -435,7 +439,9 @@ const Appointmentdetails = () => {
 																}
 															</b>
 														</p>
-														<p className='mb-3'>{appointment?.Employee.fullname}</p>
+														<p className="mb-3">
+															{appointment?.Employee.fullname}
+														</p>
 													</div>
 												</div>
 											</Col>
@@ -445,32 +451,34 @@ const Appointmentdetails = () => {
 												</h5>
 												<div className="flex">
 													<div className="left-content mr-3">
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Mã bệnh nhân:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Họ và tên:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Ngày sinh:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Giới tính:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Số điện thoại:</b>
 														</p>
 													</div>
 													<div className="right-content">
-														<p className='mb-3'>
+														<p className="mb-3">
 															{appointment?.Patient.patient_id.toUpperCase()}
 														</p>
-														<p className='mb-3'>{appointment?.fullname}</p>
-														<p className='mb-3'>
+														<p className="mb-3">{appointment?.fullname}</p>
+														<p className="mb-3">
 															{moment(appointment?.dob).format('DD-MM-YYYY')}
 														</p>
-														<p className='mb-3'>{appointment?.gender ? 'Nam' : 'Nữ'}</p>
-														<p className='mb-3'>{appointment?.phone}</p>
+														<p className="mb-3">
+															{appointment?.gender ? 'Nam' : 'Nữ'}
+														</p>
+														<p className="mb-3">{appointment?.phone}</p>
 													</div>
 												</div>
 											</Col>
@@ -480,38 +488,42 @@ const Appointmentdetails = () => {
 												</h5>
 												<div className="flex">
 													<div className="left-content mr-3">
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Mã bác sĩ:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Họ và tên:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Ngày sinh:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Giới tính:</b>
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															<b className="text-black">Số điện thoại:</b>
 														</p>
 													</div>
 													<div className="right-content">
-														<p className='mb-3'>
+														<p className="mb-3">
 															{appointment?.DoctorSchedule.Doctor.doctor_id.toUpperCase()}
 														</p>
-														<p className='mb-3'>{appointment?.DoctorSchedule.Doctor.fullname}</p>
-														<p className='mb-3'>
+														<p className="mb-3">
+															{appointment?.DoctorSchedule.Doctor.fullname}
+														</p>
+														<p className="mb-3">
 															{moment(
 																appointment?.DoctorSchedule.Doctor.dob,
 															).format('DD-MM-YYYY')}
 														</p>
-														<p className='mb-3'>
+														<p className="mb-3">
 															{appointment?.DoctorSchedule.Doctor.gender
 																? 'Nam'
 																: 'Nữ'}
 														</p>
-														<p className='mb-3'>{appointment?.DoctorSchedule.Doctor.phone}</p>
+														<p className="mb-3">
+															{appointment?.DoctorSchedule.Doctor.phone}
+														</p>
 													</div>
 												</div>
 											</Col>

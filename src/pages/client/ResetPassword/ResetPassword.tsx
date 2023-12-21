@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../../store';
-import {
-	ResetPasswordService,
-} from '../../../store/managerAuth.services/thunkAction';
+import { ResetPasswordService } from '../../../store/managerAuth.services/thunkAction';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import { Horizontal } from '../../../utils/AnimatedPage';
@@ -37,11 +35,11 @@ const ResetPassword = () => {
 		const resultCheckPassword = CommonUtils.checkPasswordLength(
 			values.password,
 		);
-    const data:valueReset={
-      user_id: user_id as string,
-      token: token as string,
-      password: values.password as string,
-    }
+		const data: valueReset = {
+			user_id: user_id as string,
+			token: token as string,
+			password: values.password as string,
+		};
 		if (resultCheckPassword) {
 			await Appdispatch(ResetPasswordService(data));
 		} else {
@@ -50,18 +48,18 @@ const ResetPassword = () => {
 	};
 	const handleResetPassword = async () => {
 		const { errCode } = messageReset;
-			if (errCode === 0) {
-				toast.success('Đặt mật khẩu mới thành công');
-				form.resetFields();
-				setTimeout(() => navigate('/login'), 1500);
-			} else if (errCode === 1 || errCode === 2) {
-				navigate('/login');
-			} else if (errCode === 7) {
-				toast.error('Đã hết thời gian, hãy gửi yêu cầu mới');
-				setIsExpired(true);
-			} else {
-				toast.error('Gửi yêu cầu thất bại'); //errCode === 5
-			}
+		if (errCode === 0) {
+			toast.success('Đặt mật khẩu mới thành công');
+			form.resetFields();
+			setTimeout(() => navigate('/login'), 1500);
+		} else if (errCode === 1 || errCode === 2) {
+			navigate('/login');
+		} else if (errCode === 7) {
+			toast.error('Đã hết thời gian, hãy gửi yêu cầu mới');
+			setIsExpired(true);
+		} else {
+			toast.error('Gửi yêu cầu thất bại'); //errCode === 5
+		}
 	};
 	return (
 		<div>

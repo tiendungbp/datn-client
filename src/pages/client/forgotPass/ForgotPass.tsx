@@ -1,5 +1,5 @@
 import { Button, Col, Form, Input, Row, Spin } from "antd";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
@@ -44,7 +44,7 @@ const ForgotPass = () => {
   return (
     <div>
       <div className="w-full flex flex-col md:flex-row items-start">
-        <div className="relative w-[40%] h-screen flex flex-col bg-pink-200 md:block hidden">
+        <div className="relative w-[40%] h-screen  flex-col bg-pink-200 md:block hidden">
           <img
             src="https://i.pinimg.com/564x/f2/b4/fa/f2b4fa6132ec15d5d7457045fe9678ef.jpg"
             alt=""
