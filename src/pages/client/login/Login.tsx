@@ -83,7 +83,7 @@ const Login = () => {
           </div>
         </div>
         <div
-          className=" w-full md:w-[60%] h-full flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white"
+          className="w-full md:w-[60%] h-[100vh] flex flex-col p-8 md:p-16 lg:p-20 xl:p-[6rem] bg-white"
           style={{ height: "100vh" }}
         >
           <h1 className=" text-lg md:text-3xl font-bold tracking-wide leading-loose whitespace-nowrap">
