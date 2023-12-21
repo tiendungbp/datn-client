@@ -12,8 +12,15 @@ interface CategoryCardProps {
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
   return (
-    <Col md={8} lg={6} className="wow fadeInUp mb-4" data-wow-delay="0.1s">
-      <div className="service-item bg-white rounded h-full p-5 shadow-lg">
+    <Col
+      md={8}
+      sm={12}
+      xs={24}
+      lg={6}
+      className="wow fadeInUp mb-4"
+      data-wow-delay="0.1s"
+    >
+      <div className="service-item bg-white rounded h-full p-5 shadow-lg flex  sm:block flex-col justify-center items-center">
         <div className="flex items-center justify-center bg-white rounded-full mb-4 w-16 h-16">
           <i className="text-blue-500 text-2xl">
             <FontAwesomeIcon icon={faTooth} />
