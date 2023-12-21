@@ -558,8 +558,8 @@ const Account = () => {
 											<Col md={4} span={24}>
 												<Form.Item label="Giới tính" name="gender">
 													<Radio.Group>
-														<Radio value={true}>Nam</Radio>
-														<Radio value={false}>Nữ</Radio>
+														<Radio value={1}>Nam</Radio>
+														<Radio value={0}>Nữ</Radio>
 													</Radio.Group>
 												</Form.Item>
 											</Col>
