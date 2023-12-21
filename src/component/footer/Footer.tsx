@@ -85,7 +85,6 @@ const Footer = () => {
   const [arrCategoryActive, setArrCategoryActive] = useState<getAllCategory[]>(
     []
   );
-  console.log("arrCategoryActive: ", arrCategoryActive);
 
   useEffect(() => {
     const fetchData = async () => {

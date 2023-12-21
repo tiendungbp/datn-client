@@ -23,7 +23,6 @@ export const { reducer: managerServiceReducer, actions: managerServiceAction } =
           }
         })
         .addCase(getOneServiceStore.fulfilled, (state, action) => {
-          console.log("service from slice: ", action.payload.data);
           if (action.payload.status === 200) {
             state.service = action.payload.data.data;
           }

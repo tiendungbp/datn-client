@@ -11,9 +11,7 @@ const validateMessages = {
 };
 /* eslint-enable no-template-curly-in-string */
 
-const onFinish = (values: any) => {
-	console.log(values);
-};
+const onFinish = (values: any) => {};
 
 const ContactForm: React.FC = () => (
 	<Form

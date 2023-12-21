@@ -19,7 +19,6 @@ export const getOneServiceStore = createAsyncThunk(
   "Toohhive/getOneService",
   async (idService: getAllService["category_id"], { rejectWithValue }) => {
     try {
-      console.log("idService: ", idService);
       const res = await managerServiceServices.getOneService(idService);
       return res;
     } catch (error) {

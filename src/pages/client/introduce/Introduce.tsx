@@ -34,7 +34,6 @@ const Introduce = () => {
 			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
-	console.log(isMobile);
 
 	return (
 		<div className="wrapper introduce__client">

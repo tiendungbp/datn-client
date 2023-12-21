@@ -70,7 +70,6 @@ const ServicePageCarousel = ({
 		const group = arr.slice(i, i + itemsPerDiv);
 		groupedItems.push(group);
 	}
-	console.log('groupedItems: ', groupedItems);
 
 	return (
 		<>
