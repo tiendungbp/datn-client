@@ -14,7 +14,7 @@ const Header = () => {
   const [widthOpen, setWidthOpen] = useState<number>(
     window.innerWidth ||
       document.documentElement.clientWidth ||
-      document.body.clientWidth
+      document.body.clientWidth,
   );
   const user = useSelector((state: RootState) => state.user.user);
   const Appdispatch = useAppDispatch();
@@ -25,7 +25,7 @@ const Header = () => {
     toast.success("Đăng xuất thành công");
     navigate("/login");
   };
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -90,7 +90,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleScroll = () => { 
+  const handleScroll = () => {
     const currentScrollY: number = window.scrollY;
     setscrollY(currentScrollY);
   };
@@ -106,7 +106,7 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
     const box = document.querySelector(
-      ".box__reponsive__nav"
+      ".box__reponsive__nav",
     ) as HTMLElement | null;
 
     if (box) {
