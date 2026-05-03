@@ -1,7 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import { toast } from "react-toastify";
-export const baseURL = "https://datn-be-swt5.onrender.com/api/";
-// export const baseURL = "http://localhost:9090/api/";
+export const baseURL = `${process.env.REACT_APP_API_URL}/api/`;
 const http: AxiosInstance = axios.create();
 http.interceptors.request.use((config: any) => {
 	return {

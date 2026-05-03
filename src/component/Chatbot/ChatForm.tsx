@@ -8,7 +8,7 @@ interface Message {
 interface ChatFormProps {
   chatHistory: Message[];
   setChatHistory: React.Dispatch<React.SetStateAction<Message[]>>;
-  generateBotResponse: (history: Message[]) => void;
+  generateBotResponse: (history: Message[], messageText?: string) => void;
 }
 
 const ChatForm: React.FC<ChatFormProps> = ({
@@ -28,22 +28,11 @@ const ChatForm: React.FC<ChatFormProps> = ({
       inputRef.current.value = "";
     }
 
-    setChatHistory((history) => [
-      ...history,
-      { role: "user", text: userMessage },
-    ]);
+    const newHistory = [...chatHistory, { role: "user", text: userMessage }];
+    setChatHistory(newHistory);
 
-    setTimeout(() => {
-      setChatHistory((history) => [
-        ...history,
-        { role: "model", text: "Thinking..." },
-      ]);
-    }, 600);
-
-    generateBotResponse([
-      ...chatHistory,
-      { role: "user", text: userMessage },
-    ]);
+    // KHÔNG thêm "Thinking..." vào chatHistory — isTyping trong widget lo việc đó
+    generateBotResponse(newHistory, userMessage);
   };
 
   return (
