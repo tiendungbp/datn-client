@@ -125,7 +125,7 @@ const ChatbotWidget: React.FC = () => {
         }
       `}</style>
 
-      <div className="fixed bottom-7 right-7 z-[1000]">
+      <div className="fixed bottom-20 right-5 z-[1000]">
         <div className={`
           absolute bottom-20 right-0
           w-[420px] max-w-[90vw]
