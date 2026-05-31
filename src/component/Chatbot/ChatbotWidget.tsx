@@ -28,22 +28,73 @@ const QUICK_REPLIES = [
   { label: "Giờ làm việc", text: "Giờ làm việc của phòng khám?" },
 ];
 
+// ─── Session Storage keys ────────────────────────────────────────────────────
+const SS_CHAT_HISTORY = "chatbot_chat_history";
+const SS_GEMINI_HISTORY = "chatbot_gemini_history";
+const SS_SESSION_DATA = "chatbot_session_data";
+const SS_SHOW_QUICK = "chatbot_show_quick";
+
+const loadFromSession = <T,>(key: string, fallback: T): T => {
+  try {
+    const raw = sessionStorage.getItem(key);
+    if (raw) return JSON.parse(raw) as T;
+  } catch {
+    // ignore parse error
+  }
+  return fallback;
+};
+
+const saveToSession = (key: string, value: unknown) => {
+  try {
+    sessionStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // ignore quota error
+  }
+};
+
+// ─── Component ────────────────────────────────────────────────────────────────
 const ChatbotWidget: React.FC = () => {
-  const [chatHistory, setChatHistory] = useState<Message[]>([]);
-  const [geminiHistory, setGeminiHistory] = useState<GeminiHistory[]>([]);
-  const [sessionData, setSessionData] = useState<SessionData>({});
+  const [chatHistory, setChatHistory] = useState<Message[]>(() =>
+    loadFromSession<Message[]>(SS_CHAT_HISTORY, [])
+  );
+  const [geminiHistory, setGeminiHistory] = useState<GeminiHistory[]>(() =>
+    loadFromSession<GeminiHistory[]>(SS_GEMINI_HISTORY, [])
+  );
+  const [sessionData, setSessionData] = useState<SessionData>(() =>
+    loadFromSession<SessionData>(SS_SESSION_DATA, {})
+  );
   const [showChatbot, setShowChatbot] = useState<boolean>(false);
   const [isTyping, setIsTyping] = useState<boolean>(false);
-  const [showQuickReplies, setShowQuickReplies] = useState<boolean>(true);
+  const [showQuickReplies, setShowQuickReplies] = useState<boolean>(() =>
+    loadFromSession<boolean>(SS_SHOW_QUICK, true)
+  );
   const chatBodyRef = useRef<HTMLDivElement>(null);
+
+  // Persist chatHistory → sessionStorage
+  useEffect(() => {
+    saveToSession(SS_CHAT_HISTORY, chatHistory);
+  }, [chatHistory]);
+
+  // Persist geminiHistory → sessionStorage
+  useEffect(() => {
+    saveToSession(SS_GEMINI_HISTORY, geminiHistory);
+  }, [geminiHistory]);
+
+  // Persist sessionData → sessionStorage
+  useEffect(() => {
+    saveToSession(SS_SESSION_DATA, sessionData);
+  }, [sessionData]);
+
+  // Persist showQuickReplies → sessionStorage
+  useEffect(() => {
+    saveToSession(SS_SHOW_QUICK, showQuickReplies);
+  }, [showQuickReplies]);
 
   const generateBotResponse = async (
     history: Message[],
     messageText?: string
   ): Promise<void> => {
     const lastUserMsg = messageText || history[history.length - 1]?.text || "";
-
-    // Hiển thị typing indicator, KHÔNG thêm "Thinking..." vào history
     setIsTyping(true);
 
     try {
@@ -58,24 +109,36 @@ const ChatbotWidget: React.FC = () => {
 
       const { reply, sessionData: newSession } = response.data;
 
-      // Thêm reply của bot vào history (không cần filter Thinking... nữa)
-      setChatHistory((prev) => [...prev, { role: "model", text: reply }]);
+      setChatHistory((prev) => {
+        const updated = [...prev, { role: "model", text: reply }];
+        saveToSession(SS_CHAT_HISTORY, updated);
+        return updated;
+      });
       setIsTyping(false);
 
-      if (newSession) setSessionData(newSession);
+      if (newSession) {
+        setSessionData(newSession);
+      }
 
-      setGeminiHistory((prev) => [
-        ...prev.slice(-10),
-        { role: "user", parts: [{ text: lastUserMsg }] },
-        { role: "model", parts: [{ text: reply }] },
-      ]);
-
+      setGeminiHistory((prev) => {
+        const updated = [
+          ...prev.slice(-10),
+          { role: "user", parts: [{ text: lastUserMsg }] },
+          { role: "model", parts: [{ text: reply }] },
+        ];
+        saveToSession(SS_GEMINI_HISTORY, updated);
+        return updated;
+      });
     } catch (error: any) {
       setIsTyping(false);
       const errMsg =
         error?.response?.data?.reply ||
-        "Xin lỗi, đã có lỗi xảy ra. Vui lòng thử lại.";
-      setChatHistory((prev) => [...prev, { role: "model", text: errMsg }]);
+        "Xin lỗi, đã có lỗi xảy ra. Vui lòng thử lại hoặc gọi **(028) 1234 5678**.";
+      setChatHistory((prev) => {
+        const updated = [...prev, { role: "model", text: errMsg }];
+        saveToSession(SS_CHAT_HISTORY, updated);
+        return updated;
+      });
     }
   };
 
@@ -83,10 +146,10 @@ const ChatbotWidget: React.FC = () => {
     setShowQuickReplies(false);
     const newHistory = [...chatHistory, { role: "user", text }];
     setChatHistory(newHistory);
-    // KHÔNG thêm "Thinking..." — isTyping lo việc đó
     generateBotResponse(newHistory, text);
   };
 
+  // Auto scroll khi có tin nhắn mới
   useEffect(() => {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTo({
@@ -137,12 +200,12 @@ const ChatbotWidget: React.FC = () => {
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 bg-[#1386ed]">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 p-1.5">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
                 <ChatbotIcon />
               </div>
               <div>
                 <h3 className="text-white text-base font-semibold leading-tight m-0">
-                  Dũng — Tiếp Tân Ảo
+                  Linh - Tiếp Tân nha khoa ToothHive
                 </h3>
                 <p className="text-blue-100 text-xs mt-0.5 m-0 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-300 inline-block"></span>
@@ -167,7 +230,7 @@ const ChatbotWidget: React.FC = () => {
               [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-track]:rounded-full
               [&::-webkit-scrollbar-thumb]:bg-[#1386ed] [&::-webkit-scrollbar-thumb]:rounded-full"
           >
-            {/* Tin nhắn chào */}
+            {/* Tin nhắn chào mặc định */}
             <div className="flex items-start gap-2 mb-3">
               <div className="w-8 h-8 rounded-full bg-[#1386ed] flex items-center justify-center flex-shrink-0 mt-1">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" className="w-4 h-4 fill-white">
@@ -176,13 +239,13 @@ const ChatbotWidget: React.FC = () => {
               </div>
               <div className="flex flex-col gap-2 max-w-[80%]">
                 <p className="px-4 py-3 text-sm leading-relaxed text-gray-700 bg-[#f0f7ff] border-l-[3px] border-[#1386ed] rounded-[16px] rounded-tl-[4px] shadow-[0_2px_8px_rgba(19,134,237,0.1)] m-0">
-                  Xin chào! Tôi là <strong>Dũng</strong> — Tiếp Tân Ảo của Toothhive.<br />
+                  Xin chào! Tôi là <strong>Linh</strong> — Tiếp Tân Ảo của Toothhive.<br />
                   Tôi có thể giúp bạn đặt lịch, xem giá hoặc tra cứu thông tin. Bạn cần gì?
                 </p>
               </div>
             </div>
 
-            {/* Quick reply chips */}
+            {/* Quick reply chips — chỉ hiện khi chưa có chat history */}
             {showQuickReplies && chatHistory.length === 0 && (
               <div className="flex flex-wrap gap-2 mb-4 pl-10">
                 {QUICK_REPLIES.map((qr) => (
@@ -197,11 +260,12 @@ const ChatbotWidget: React.FC = () => {
               </div>
             )}
 
-            {/* Chat history */}
+            {/* Lịch sử chat */}
             {chatHistory.map((chat, index) => (
               <ChatMessage key={index} chat={chat} />
             ))}
 
+            {/* Typing indicator */}
             {isTyping && (
               <div className="flex items-start gap-2 mb-3">
                 <div className="w-8 h-8 rounded-full bg-[#1386ed] flex items-center justify-center flex-shrink-0">

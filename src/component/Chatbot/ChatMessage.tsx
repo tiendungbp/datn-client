@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -14,6 +15,19 @@ interface ChatMessageProps {
 
 const ChatMessage: React.FC<ChatMessageProps> = ({ chat }) => {
   const isBot = chat.role === "model";
+  const navigate = useNavigate();
+
+  // Xử lý click link: nếu là internal path thì dùng navigate, nếu external thì open tab mới
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (!href) return;
+    if (href.startsWith("http://") || href.startsWith("https://")) {
+      window.open(href, "_blank", "noopener,noreferrer");
+    } else {
+      // Internal path (e.g. /detailDoctor/bs123 hoặc /dat-lich)
+      navigate(href);
+    }
+  };
 
   return (
     <div
@@ -21,7 +35,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ chat }) => {
         isBot ? "flex-row" : "flex-col items-end"
       }`}
     >
-      {/* Icon bot — chỉ hiện bên trái khi là bot */}
+      {/* Icon bot */}
       {isBot && (
         <div className="w-9 h-9 rounded-full bg-[#1386ed] flex items-center justify-center flex-shrink-0 mt-1">
           <svg
@@ -60,6 +74,21 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ chat }) => {
               />
             ),
             p: ({ ...props }) => <p className="mb-1 last:mb-0" {...props} />,
+            // Link màu xanh, gạch chân, hover đậm hơn — dùng navigate cho internal link
+            a: ({ href, children, ...props }) => (
+              <a
+                href={href || "#"}
+                onClick={(e) => handleLinkClick(e, href || "")}
+                className={`underline font-medium cursor-pointer transition-colors duration-150 ${
+                  isBot
+                    ? "text-[#1386ed] hover:text-[#0d6abf]"
+                    : "text-white hover:text-blue-100"
+                }`}
+                {...props}
+              >
+                {children}
+              </a>
+            ),
           }}
         >
           {chat.text || ""}
