@@ -42,7 +42,7 @@ const DetailDoctor = () => {
 	useEffect(() => {
 		fetchData(); // Gọi hàm fetchData khi component được render
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [id]);
 	const fetchData = async () => {
 		// Gửi yêu cầu lấy danh sách danh mục
 		window.scrollTo({ top: 0, behavior: 'smooth' });
