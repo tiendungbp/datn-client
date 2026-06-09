@@ -13,9 +13,7 @@ import { Link, NavLink } from "react-router-dom";
 import { RootState, useAppDispatch } from "../../store";
 import { useSelector } from "react-redux";
 import { getAllCategory } from "../../services/managerCategory";
-import {
-  getAllCategoryService,
-} from "../../store/managerCategory.services/thunkAction";
+import { getAllCategoryService } from "../../store/managerCategory.services/thunkAction";
 const Footer = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isMenuOpen1, setIsMenuOpen1] = useState<boolean>(false);
@@ -31,22 +29,22 @@ const Footer = () => {
   };
   useEffect(() => {
     const box = document.querySelector(
-      ".box__content__footee"
+      ".box__content__footee",
     ) as HTMLElement | null;
     const box1 = document.querySelector(
-      ".box__content__footee1"
+      ".box__content__footee1",
     ) as HTMLElement | null;
     const box2 = document.querySelector(
-      ".box__content__footee2"
+      ".box__content__footee2",
     ) as HTMLElement | null;
     const iconDown = document.querySelector(
-      ".icon__footer__down"
+      ".icon__footer__down",
     ) as HTMLElement;
     const iconDown1 = document.querySelector(
-      ".icon__footer__down1"
+      ".icon__footer__down1",
     ) as HTMLElement;
     const iconDown2 = document.querySelector(
-      ".icon__footer__down2"
+      ".icon__footer__down2",
     ) as HTMLElement;
     if (box) {
       if (isMenuOpen) {
@@ -79,11 +77,11 @@ const Footer = () => {
 
   const Appdispatch = useAppDispatch();
   const { listCategoryActive } = useSelector(
-    (state: RootState) => state.managerCategory
+    (state: RootState) => state.managerCategory,
   );
 
   const [arrCategoryActive, setArrCategoryActive] = useState<getAllCategory[]>(
-    []
+    [],
   );
 
   useEffect(() => {
@@ -217,7 +215,7 @@ const Footer = () => {
                 className="text-white mr-2"
                 style={{ transform: "rotate(100deg)" }}
               />
-              <p>(+84) 0975 383 290</p>
+              <p>(+84) 0366764838</p>
             </div>
             <div className="box__content__footer1">
               <MailOutlined className="text-white mr-2" />{" "}
