@@ -79,7 +79,9 @@ const Home = () => {
               <div className="md:w-full">
                 <div className=" right-0 w-full  relative ">
                   <img
-                    src={"https://png.pngtree.com/thumb_back/fw800/background/20251011/pngtree-confident-team-of-medical-professionals-standing-together-image_19836521.webp"}
+                    src={
+                      "https://png.pngtree.com/thumb_back/fw800/background/20251011/pngtree-confident-team-of-medical-professionals-standing-together-image_19836521.webp"
+                    }
                     alt=""
                     className=" w-full h-full rounded-lg object-cover shadow-xl z-10"
                   />
@@ -91,7 +93,7 @@ const Home = () => {
                       <div className="flex gap-2 justify-center items-center">
                         <FontAwesomeIcon icon={faPhone} />
                         <p className="text-[0.9rem] md:text-[1.2rem]">
-                          0975 383 290
+                          0366764838
                         </p>
                       </div>
                       <div className="flex gap-2 justify-center items-center">
