@@ -188,10 +188,11 @@ const ChatbotWidget: React.FC = () => {
         }
       `}</style>
 
-      <div className="fixed bottom-20 right-5 z-[1000]">
+      <div className="fixed bottom-10 sm:bottom-20 right-5 z-[1000]">
         <div className={`
           absolute bottom-20 right-0
           w-[420px] max-w-[90vw]
+          max-h-[80vh] sm:max-h-none flex flex-col
           bg-white rounded-2xl overflow-hidden
           shadow-[0_20px_40px_rgba(19,134,237,0.15),0_10px_25px_rgba(0,0,0,0.1)]
           transition-all duration-300 origin-bottom-right
@@ -224,7 +225,7 @@ const ChatbotWidget: React.FC = () => {
           {/* Body */}
           <div
             ref={chatBodyRef}
-            className="flex flex-col h-[430px] overflow-y-auto overflow-x-hidden px-4 py-5 bg-gray-50
+            className="flex flex-col flex-1 min-h-0 sm:flex-none sm:h-[430px] overflow-y-auto overflow-x-hidden px-4 py-5 bg-gray-50
               [scrollbar-width:thin] [scrollbar-color:#1386ed_#f1f1f1]
               [&::-webkit-scrollbar]:w-1.5
               [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-track]:rounded-full
