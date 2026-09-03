@@ -5,16 +5,23 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import ChatbotIcon from "./ChatbotIcon";
 
+interface QuickReply {
+  label: string;
+  text: string;
+}
+
 interface Message {
   role: string;
   text: string;
+  quickReplies?: QuickReply[];
 }
 
 interface ChatMessageProps {
   chat: Message;
+  onQuickReply?: (text: string) => void;
 }
 
-const ChatMessage: React.FC<ChatMessageProps> = ({ chat }) => {
+const ChatMessage: React.FC<ChatMessageProps> = ({ chat, onQuickReply }) => {
   const isBot = chat.role === "model";
   const navigate = useNavigate();
 
@@ -32,9 +39,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ chat }) => {
 
   return (
     <div
-      className={`flex items-start gap-3 mb-4 ${
-        isBot ? "flex-row" : "flex-col items-end"
-      }`}
+      className={`flex items-start gap-3 mb-4 ${isBot ? "flex-row" : "flex-col items-end"
+        }`}
     >
       {/* Icon bot */}
       {isBot && (
@@ -43,51 +49,66 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ chat }) => {
         </div>
       )}
 
-      {/* Nội dung tin nhắn */}
-      <div
-        className={`px-4 py-3 max-w-[80%] text-sm leading-relaxed break-words rounded-[18px] animate-[fadeInUp_0.3s_ease] ${
-          isBot
+      {/* Cột chứa bubble + quick replies: bubble ở trên, quick replies nằm NGANG bên dưới */}
+      <div className={`flex flex-col ${isBot ? "items-start" : "items-end"} max-w-[80%]`}>
+        {/* Nội dung tin nhắn */}
+        <div
+          className={`px-4 py-3 text-sm leading-relaxed break-words rounded-[18px] animate-[fadeInUp_0.3s_ease] ${isBot
             ? "bg-[#f0f7ff] border-l-[3px] border-[#1386ed] rounded-tl-[4px] text-gray-700 shadow-[0_2px_8px_rgba(19,134,237,0.1)]"
             : "bg-[#1386ed] text-white rounded-tr-[4px] shadow-[0_2px_8px_rgba(19,134,237,0.3)]"
-        }`}
-      >
-        <ReactMarkdown
-          rehypePlugins={[rehypeRaw]}
-          remarkPlugins={[remarkGfm]}
-          components={{
-            ul: ({ ...props }) => (
-              <ul className="list-disc pl-5 my-2 space-y-1" {...props} />
-            ),
-            ol: ({ ...props }) => (
-              <ol className="list-decimal pl-5 my-2 space-y-1" {...props} />
-            ),
-            li: ({ ...props }) => <li className="my-1" {...props} />,
-            strong: ({ ...props }) => (
-              <strong
-                className={`font-semibold ${isBot ? "text-[#1386ed]" : "text-white"}`}
-                {...props}
-              />
-            ),
-            p: ({ ...props }) => <p className="mb-1 last:mb-0" {...props} />,
-            // Link màu xanh, gạch chân, hover đậm hơn — dùng navigate cho internal link
-            a: ({ href, children, ...props }) => (
-              <a
-                href={href || "#"}
-                onClick={(e) => handleLinkClick(e, href || "")}
-                className={`underline font-medium cursor-pointer transition-colors duration-150 ${
-                  isBot
+            }`}
+        >
+          <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
+            remarkPlugins={[remarkGfm]}
+            components={{
+              ul: ({ ...props }) => (
+                <ul className="list-disc pl-5 my-2 space-y-1" {...props} />
+              ),
+              ol: ({ ...props }) => (
+                <ol className="list-decimal pl-5 my-2 space-y-1" {...props} />
+              ),
+              li: ({ ...props }) => <li className="my-1" {...props} />,
+              strong: ({ ...props }) => (
+                <strong
+                  className={`font-semibold ${isBot ? "text-[#1386ed]" : "text-white"}`}
+                  {...props}
+                />
+              ),
+              p: ({ ...props }) => <p className="mb-1 last:mb-0" {...props} />,
+              a: ({ href, children, ...props }) => (
+                <a
+                  href={href || "#"}
+                  onClick={(e) => handleLinkClick(e, href || "")}
+                  className={`underline font-medium cursor-pointer transition-colors duration-150 ${isBot
                     ? "text-[#1386ed] hover:text-[#0d6abf]"
                     : "text-white hover:text-blue-100"
-                }`}
-                {...props}
+                    }`}
+                  {...props}
+                >
+                  {children}
+                </a>
+              ),
+            }}
+          >
+            {chat.text || ""}
+          </ReactMarkdown>
+        </div>
+
+        {/* Quick replies: nằm ngang, ngay dưới dòng chat */}
+        {isBot && chat.quickReplies && chat.quickReplies.length > 0 && (
+          <div className="flex flex-row flex-wrap gap-2 mt-2">
+            {chat.quickReplies.map((qr) => (
+              <button
+                key={qr.label}
+                className="quick-chip"
+                onClick={() => onQuickReply?.(qr.text)}
               >
-                {children}
-              </a>
-            ),
-          }}
-        >
-          {chat.text || ""}
-        </ReactMarkdown>
+                {qr.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
