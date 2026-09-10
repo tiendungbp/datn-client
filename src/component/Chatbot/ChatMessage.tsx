@@ -19,9 +19,10 @@ interface Message {
 interface ChatMessageProps {
   chat: Message;
   onQuickReply?: (text: string) => void;
+  disabled?: boolean;
 }
 
-const ChatMessage: React.FC<ChatMessageProps> = ({ chat, onQuickReply }) => {
+const ChatMessage: React.FC<ChatMessageProps> = ({ chat, onQuickReply, disabled = false }) => {
   const isBot = chat.role === "model";
   const navigate = useNavigate();
 
@@ -95,14 +96,14 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ chat, onQuickReply }) => {
           </ReactMarkdown>
         </div>
 
-        {/* Quick replies: nằm ngang, ngay dưới dòng chat */}
         {isBot && chat.quickReplies && chat.quickReplies.length > 0 && (
           <div className="flex flex-row flex-wrap gap-2 mt-2">
             {chat.quickReplies.map((qr) => (
               <button
                 key={qr.label}
-                className="quick-chip"
-                onClick={() => onQuickReply?.(qr.text)}
+                className={`quick-chip${disabled ? " quick-chip-disabled" : ""}`}
+                onClick={() => !disabled && onQuickReply?.(qr.text)}
+                disabled={disabled}
               >
                 {qr.label}
               </button>

@@ -33,6 +33,7 @@ const QUICK_REPLIES = [
   { label: "Bảng giá dịch vụ", text: "Cho tôi xem bảng giá dịch vụ" },
   { label: "Lịch trống hôm nay", text: "Còn lịch trống không?" },
   { label: "Tra cứu lịch hẹn", text: "Tra cứu lịch hẹn của tôi" },
+  { label: "Hủy lịch hẹn", text: "Tôi muốn hủy lịch hẹn" },
   { label: "Giới thiệu bác sĩ", text: "Giới thiệu các bác sĩ của phòng khám" },
   { label: "Giờ làm việc", text: "Giờ làm việc của phòng khám?" },
 ];
@@ -207,9 +208,14 @@ const ChatbotWidget: React.FC = () => {
           transition: all 0.2s;
           white-space: nowrap;
         }
-        .quick-chip:hover {
+                .quick-chip:hover {
           background: #1386ed;
           color: white;
+        }
+        .quick-chip-disabled {
+          opacity: 0.45;
+          cursor: not-allowed;
+          pointer-events: none;
         }
       `}</style>
 
@@ -286,7 +292,12 @@ const ChatbotWidget: React.FC = () => {
 
             {/* Lịch sử chat */}
             {chatHistory.map((chat, index) => (
-              <ChatMessage key={index} chat={chat} onQuickReply={sendQuickReply} />
+              <ChatMessage
+                key={index}
+                chat={chat}
+                onQuickReply={sendQuickReply}
+                disabled={index !== chatHistory.length - 1}
+              />
             ))}
 
             {/* Typing indicator */}
