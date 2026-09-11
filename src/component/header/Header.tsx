@@ -115,7 +115,7 @@ const Header = () => {
       } else {
         box.style.height = "0px";
       }
-      if (widthOpen >= 1080) {
+      if (widthOpen >= 1280) {
         box.style.height = "";
       } else {
         if (!isMenuOpen) {

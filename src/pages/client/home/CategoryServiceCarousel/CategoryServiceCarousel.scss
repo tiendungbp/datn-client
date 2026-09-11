@@ -3,10 +3,21 @@
     &::before {
       content: "";
     }
+    &::after {
+      display: none !important;
+    }
   }
   .slick-next {
     &::before {
       content: "";
+    }
+    &::after {
+      display: none !important;
+    }
+  }
+  .slick-dots{
+    .slick-active::after{
+      background: #aaa !important;
     }
   }
 }
