@@ -232,12 +232,12 @@ const Footer = () => {
         <div className="the__end__footer">
           <div className="box__the__footer">
             <p className="text-white">
-              @ 2023 ToothHive - Nụ cười hoàn hảo và sức khỏe răng miệng hàng
+              @ 2026 ToothHive - Nụ cười hoàn hảo và sức khỏe răng miệng hàng
               đầu
             </p>
           </div>
           <div className="box__the__footer">
-            <Link to={"https://www.facebook.com/nhakhoatoothhive"}>
+            <Link to={"#"}>
               <FacebookOutlined className="text-2xl" />
             </Link>
 
