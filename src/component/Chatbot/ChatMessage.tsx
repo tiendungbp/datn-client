@@ -77,6 +77,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ chat, onQuickReply, disabled 
                 />
               ),
               p: ({ ...props }) => <p className="mb-1 last:mb-0" {...props} />,
+              details: ({ ...props }) => <details className="my-1" {...props} />,
+              summary: ({ ...props }) => <summary className="cursor-pointer py-1" {...props} />,
               a: ({ href, children, ...props }) => (
                 <a
                   href={href || "#"}
