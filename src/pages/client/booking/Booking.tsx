@@ -350,7 +350,7 @@ const Booking = () => {
                 <div className="profile__user__booking">
                   <div className="profile__user__booking__inp">
                     <p>Phòng:</p>
-                    <span>Phòng khám đa khoa ToothHive</span>
+                    <span>Phòng khám nha khoa ToothHive</span>
                   </div>
                   <div className="profile__user__booking__inp">
                     <p>Địa chỉ:</p>
@@ -360,7 +360,7 @@ const Booking = () => {
                   </div>
                   <div className="profile__user__booking__inp">
                     <p>Ngày & Thời gian::</p>
-                    <span>28-11-2023 - 9:00-10:00</span>
+                    <span>28-11-2026 - 9:00-10:00</span>
                   </div>
                 </div>
                 <button onClick={handleSubmit}>Đăt lịch hẹn</button>
